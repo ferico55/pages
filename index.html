@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pages</title>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --border: #232733;
+    --accent: #6ee7b7;
+    --accent2: #60a5fa;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .container {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.2s;
+  }
+
+  li a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  li a span {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Pages</h1>
+  <p>A collection of self-contained pages.</p>
+  <ul>
+    <li>
+      <a href="./car-comparison/">
+        Car Comparison 2026
+        <span>→</span>
+      </a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

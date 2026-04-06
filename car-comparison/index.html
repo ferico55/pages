@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Comparison 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --border: #232733;
+    --accent: #6ee7b7;
+    --accent2: #60a5fa;
+    --accent3: #f472b6;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --good: #6ee7b7;
+    --ok: #fbbf24;
+    --bad: #f87171;
+    --tag-ice: #0ea5e9;
+    --tag-ev: #10b981;
+    --tag-petrol: #f59e0b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  header {
+    margin-bottom: 28px;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+  }
+
+  header p {
+    color: var(--muted);
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+
+  thead th {
+    background: var(--surface);
+    padding: 14px 12px;
+    text-align: left;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  thead th:first-child {
+    width: 160px;
+    position: sticky;
+    left: 0;
+    z-index: 3;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.03); }
+  tbody tr.hidden { display: none; }
+
+  td {
+    padding: 14px 12px;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--bg);
+    z-index: 1;
+    min-width: 160px;
+  }
+
+  tbody tr:hover td:first-child { background: #10131a; }
+
+  .car-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .car-type {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  .tag-ev { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+  .tag-petrol { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+
+  .price {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent2);
+    white-space: nowrap;
+  }
+
+  .price-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .score {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .score-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .score-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    min-width: 40px;
+  }
+
+  .score-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .score-5 .score-num { color: var(--good); }
+  .score-4 .score-num { color: #a7f3d0; }
+  .score-3 .score-num { color: var(--ok); }
+  .score-2 .score-num { color: #fb923c; }
+  .score-1 .score-num { color: var(--bad); }
+
+  .score-5 .score-fill { background: var(--good); width: 100%; }
+  .score-4 .score-fill { background: #a7f3d0; width: 80%; }
+  .score-3 .score-fill { background: var(--ok); width: 60%; }
+  .score-2 .score-fill { background: #fb923c; width: 40%; }
+  .score-1 .score-fill { background: var(--bad); width: 20%; }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .pill-yes { background: rgba(110,231,183,0.12); color: var(--good); border: 1px solid rgba(110,231,183,0.25); }
+  .pill-partial { background: rgba(251,191,36,0.12); color: var(--ok); border: 1px solid rgba(251,191,36,0.25); }
+  .pill-no { background: rgba(248,113,113,0.12); color: var(--bad); border: 1px solid rgba(248,113,113,0.25); }
+
+  .spec-val {
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  .spec-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .note {
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  .winner-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #000;
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+  }
+
+  .verdict-section {
+    margin-top: 28px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .verdict-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .verdict-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+  }
+
+  .verdict-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .verdict-card strong { color: var(--text); }
+
+  @media (max-width: 480px) {
+    header h1 { font-size: 20px; }
+    body { padding: 16px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Car Comparison 2026</h1>
+  <p>Ranked by Value · Reliability · Durability · Apple CarPlay · Sunroof · OTR Jakarta</p>
+</header>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot" style="background:#6ee7b7"></div> Excellent (5/5)</div>
+  <div class="legend-item"><div class="dot" style="background:#a7f3d0"></div> Good (4/5)</div>
+  <div class="legend-item"><div class="dot" style="background:#fbbf24"></div> Average (3/5)</div>
+  <div class="legend-item"><div class="dot" style="background:#fb923c"></div> Below Avg (2/5)</div>
+  <div class="legend-item"><div class="dot" style="background:#f87171"></div> Poor (1/5)</div>
+  <div class="legend-item"><span class="pill pill-yes">✓ Yes</span> Included</div>
+  <div class="legend-item"><span class="pill pill-partial">~ Partial</span> Top trim only</div>
+  <div class="legend-item"><span class="pill pill-no">✗ No</span> Not available</div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterCars('all', this)">All Cars</button>
+  <button class="filter-btn" onclick="filterCars('petrol', this)">Petrol Only</button>
+  <button class="filter-btn" onclick="filterCars('ev', this)">EV Only</button>
+  <button class="filter-btn" onclick="filterCars('budget', this)">Under Rp 300 jt</button>
+  <button class="filter-btn" onclick="filterCars('mid', this)">Rp 300–500 jt</button>
+  <button class="filter-btn" onclick="filterCars('premium', this)">Rp 500 jt+</button>
+</div>
+
+<div class="scroll-wrap">
+<table id="carTable">
+  <thead>
+    <tr>
+      <th>Car</th>
+      <th>Price Range</th>
+      <th>Value for Money</th>
+      <th>Reliability</th>
+      <th>Durability</th>
+      <th>Apple CarPlay</th>
+      <th>Sunroof</th>
+      <th>Powertrain</th>
+      <th>Range / Fuel</th>
+      <th>After Sales (ID)</th>
+      <th>Seats</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- PETROL / ICE Cars -->
+    <tr data-type="petrol" data-price="budget">
+      <td>
+        <div class="car-name">Honda Brio<br>Satya CVT</div>
+        <div class="car-type">LCGC Hatchback</div>
+        <span class="tag tag-petrol">Petrol</span>
+      </td>
+      <td>
+        <div class="price">Rp 183–202 jt</div>
+        <div class="price-sub">CVT variants</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Best-seller. Strong resale value, low running cost</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Honda i-VTEC proven & robust in Indonesia</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Long-proven LCGC platform since 2012</div>
+      </td>
+      <td><span class="pill pill-partial">~ Top trim RS only</span><div class="note">Satya E CVT: ✗ No CarPlay</div></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">1.2L i-VTEC 4-cyl</div>
+        <div class="spec-sub">90 PS / 110 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">~18–20 km/L</div>
+        <div class="spec-sub">Petrol (RON 92+)</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Honda dealers everywhere in Jakarta</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <tr data-type="petrol" data-price="budget">
+      <td>
+        <div class="car-name">Toyota Agya<br>1.2L G CVT</div>
+        <div class="car-type">LCGC Hatchback</div>
+        <span class="tag tag-petrol">Petrol</span>
+        <br><span class="winner-badge">⭐ Best Petrol Value</span>
+      </td>
+      <td>
+        <div class="price">Rp 197–263 jt</div>
+        <div class="price-sub">G CVT / GR Sport CVT</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Excellent value. Toyota name = strong resale</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Toyota/Daihatsu platform. Rock solid track record</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">DNGA platform, proven since 2023 refresh</div>
+      </td>
+      <td><span class="pill pill-partial">~ GR Sport CVT only</span><div class="note">G CVT: Android Auto only (no CarPlay)</div></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">1.2L 3-cyl DOHC</div>
+        <div class="spec-sub">87 PS / 113 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">~18–21 km/L</div>
+        <div class="spec-sub">Most efficient in class</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Toyota Auto2000 network. Excellent nationwide</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <tr data-type="petrol" data-price="budget">
+      <td>
+        <div class="car-name">Daihatsu Ayla<br>1.2L R CVT</div>
+        <div class="car-type">LCGC Hatchback</div>
+        <span class="tag tag-petrol">Petrol</span>
+      </td>
+      <td>
+        <div class="price">~Rp 196 jt</div>
+        <div class="price-sub">1.2 R CVT ADS</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Slightly cheaper than Agya. Similar platform</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Same DNGA platform as Agya. Very reliable</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Proven, locally assembled. Spare parts cheap & available</div>
+      </td>
+      <td><span class="pill pill-partial">~ Top trim ADS only</span></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">1.2L 3-cyl DOHC</div>
+        <div class="spec-sub">87 PS / 113 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">~18–20 km/L</div>
+        <div class="spec-sub">Eco Idle helps efficiency</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Daihatsu + Astra network. Very wide coverage</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <tr data-type="petrol" data-price="budget">
+      <td>
+        <div class="car-name">Daihatsu Sirion<br>CVT</div>
+        <div class="car-type">City Car (Non-LCGC)</div>
+        <span class="tag tag-petrol">Petrol</span>
+      </td>
+      <td>
+        <div class="price">Rp 234–243 jt</div>
+        <div class="price-sub">X CVT / R CVT</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Imported from Malaysia. Premium price, limited model</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Perodua-based (Toyota-derived). Generally reliable</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Good build quality. Imported = slightly limited parts</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">Both variants have CarPlay</div></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">1.3L 4-cyl D-CVT</div>
+        <div class="spec-sub">94 PS / 120 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">~16–18 km/L</div>
+        <div class="spec-sub">Largest engine in class</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Daihatsu network OK, but Sirion is niche model</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <!-- EV Cars -->
+    <tr data-type="ev" data-price="budget">
+      <td>
+        <div class="car-name">Changan<br>Lumin EV</div>
+        <div class="car-type">Micro EV City Car</div>
+        <span class="tag tag-ev">Electric</span>
+      </td>
+      <td>
+        <div class="price">Rp 178–183 jt</div>
+        <div class="price-sub">Single variant</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Best EV value at this price. 301 km range impressive</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">LFP battery is safe but brand new in Indonesia</div>
+      </td>
+      <td>
+        <div class="score score-2">
+          <span class="score-num">2</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Brand new entrant 2025. Long-term durability unproven locally</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">10.25" screen with CarPlay</div></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">35 kW electric motor</div>
+        <div class="spec-sub">48 PS / 83 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">301 km (NEDC)</div>
+        <div class="spec-sub">DC fast charge 30–80% in 35 min</div>
+      </td>
+      <td>
+        <div class="score score-2">
+          <span class="score-num">2</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Very new in Indonesia. Service network still growing</div>
+      </td>
+      <td>4</td>
+    </tr>
+
+    <tr data-type="ev" data-price="budget">
+      <td>
+        <div class="car-name">BYD Atto 1<br>Dynamic</div>
+        <div class="car-type">Compact EV Hatchback</div>
+        <span class="tag tag-ev">Electric</span>
+      </td>
+      <td>
+        <div class="price">Rp 199–235 jt</div>
+        <div class="price-sub">Dynamic / Premium</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">BYD brand credibility. Blade Battery at this price is outstanding</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">BYD's Blade Battery (LFP) is safe and durable globally</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Still new model, but BYD's track record globally is solid</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">NFC + wireless charge on Premium</div></td>
+      <td><span class="pill pill-no">✗ No</span></td>
+      <td>
+        <div class="spec-val">55 kW electric motor</div>
+        <div class="spec-sub">75 PS / 135 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">300–380 km (NEDC)</div>
+        <div class="spec-sub">DC fast charge supported</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">BYD expanding, 64 dealers in 29 cities. Growing fast</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <tr data-type="ev" data-price="mid">
+      <td>
+        <div class="car-name">BYD M6<br>Standard</div>
+        <div class="car-type">MPV 7-Seater EV</div>
+        <span class="tag tag-ev">Electric</span>
+        <br><span class="winner-badge">⭐ Best Family EV</span>
+      </td>
+      <td>
+        <div class="price">Rp 383–433 jt</div>
+        <div class="price-sub">Standard / Superior / Captain</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">7-seater EV MPV at this price is extraordinary value. Nothing competes</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Blade Battery is proven. Platform newer; some AC concerns noted by users</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">2 years in Indonesia. 10,100 units sold in year 1. Still building track record</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">12.8" rotating screen, all variants</div></td>
+      <td><span class="pill pill-partial">~ Superior & Captain only</span></td>
+      <td>
+        <div class="spec-val">120–150 kW motor</div>
+        <div class="spec-sub">161–201 PS / 310 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">420–530 km (NEDC)</div>
+        <div class="spec-sub">DC fast charge 89–115 kW</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">64 dealers, growing. Not yet as widespread as Toyota/Honda</div>
+      </td>
+      <td>7</td>
+    </tr>
+
+    <tr data-type="ev" data-price="mid">
+      <td>
+        <div class="car-name">BYD Atto 3<br>Advanced Plus</div>
+        <div class="car-type">Compact EV SUV</div>
+        <span class="tag tag-ev">Electric</span>
+      </td>
+      <td>
+        <div class="price">Rp 390–415 jt</div>
+        <div class="price-sub">Advanced / Advanced Plus</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">204 PS, ADAS, 360° cam at Rp 415jt is very competitive</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">LFP Blade Battery excellent. Some reports of software glitches</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Strong globally (1M+ units). Indonesia track record 2 yrs old</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">15.6" rotating screen + wireless CarPlay</div></td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">Advanced Plus & Superior</div></td>
+      <td>
+        <div class="spec-val">150 kW FWD motor</div>
+        <div class="spec-sub">204 PS / 350 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">410–480 km (NEDC)</div>
+        <div class="spec-sub">DC fast charge 70–80 kW</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Same as M6. Expanding but still behind Japanese brands</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+    <tr data-type="ev" data-price="premium">
+      <td>
+        <div class="car-name">Hyundai Kona<br>Electric Style SR</div>
+        <div class="car-type">Compact EV SUV</div>
+        <span class="tag tag-ev">Electric</span>
+        <br><span class="winner-badge">⭐ Most Reliable EV</span>
+      </td>
+      <td>
+        <div class="price">Rp 565–689 jt</div>
+        <div class="price-sub">Style SR → N Line LR</div>
+      </td>
+      <td>
+        <div class="score score-3">
+          <span class="score-num">3</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Premium pricing vs BYD. But Hyundai quality justifies the gap</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Best EV reliability in Asia. Built in Bojongmangu Indonesia. No fire incidents reported</div>
+      </td>
+      <td>
+        <div class="score score-5">
+          <span class="score-num">5</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">Hyundai EV platform battle-tested globally. 4-year/100,000km warranty</div>
+      </td>
+      <td><span class="pill pill-yes">✓ Yes</span><div class="note">All variants. Physical buttons retained!</div></td>
+      <td><span class="pill pill-partial">~ Signature & N Line only</span></td>
+      <td>
+        <div class="spec-val">99–160 kW motor</div>
+        <div class="spec-sub">134–218 PS / 255 Nm</div>
+      </td>
+      <td>
+        <div class="spec-val">448–602 km (WLTP)</div>
+        <div class="spec-sub">10–80% in 38 min (fast charge)</div>
+      </td>
+      <td>
+        <div class="score score-4">
+          <span class="score-num">4</span>
+          <div class="score-bar"><div class="score-fill"></div></div>
+        </div>
+        <div class="note">100+ Hyundai dealers nationwide. Bluelink connected car support. Free service 4yr/60k km</div>
+      </td>
+      <td>5</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div class="verdict-section">
+  <div class="verdict-card">
+    <h3>🏆 Best Overall Value for Money</h3>
+    <p><strong>Toyota Agya 1.2L G CVT (Rp 197 jt)</strong> for petrol. <strong>BYD M6 Standard (Rp 383 jt)</strong> for EV. The Agya gives you Toyota reliability, proven fuel efficiency, and the widest service network for the least money. The M6 gives you a 7-seater electric MPV at a price that simply has no equal in Indonesia — the value proposition is extraordinary.</p>
+  </div>
+  <div class="verdict-card" style="border-left-color: var(--accent2)">
+    <h3>🔧 Best Reliability & Durability</h3>
+    <p><strong>Toyota Agya / Daihatsu Ayla</strong> for petrol — Japanese reliability with 10+ years of proven track record in Indonesia, cheap spare parts everywhere. For EV, <strong>Hyundai Kona Electric</strong> wins clearly — built locally in Bojongmangu, Hyundai's EV battery has the best safety record in Asia, and the 4-year warranty + free service package is best-in-class.</p>
+  </div>
+  <div class="verdict-card" style="border-left-color: var(--accent3)">
+    <h3>🍎 Apple CarPlay Availability</h3>
+    <p><strong>Daihatsu Sirion CVT</strong> is the only petrol option with CarPlay on all variants. For EVs, all BYD models and Kona Electric include CarPlay. If CarPlay matters on a tight budget, consider <strong>BYD Atto 1 Premium (Rp 235 jt)</strong> — the most affordable CarPlay-equipped car in this list. Note: Toyota Agya and Honda Brio Satya only offer CarPlay on their top trims (GR Sport / RS CVT).</p>
+  </div>
+  <div class="verdict-card" style="border-left-color: #fbbf24">
+    <h3>☀️ Sunroof Options</h3>
+    <p>No petrol cars in this comparison come with a sunroof. For EVs: <strong>BYD Atto 3 Advanced Plus</strong> (Rp 415 jt) is the most affordable option with a panoramic sunroof. <strong>BYD M6 Superior</strong> (Rp 423 jt) also includes it. The Hyundai Kona Electric only adds a sunroof on the Signature and N Line variants (Rp 649 jt+). If sunroof is important, the BYD Atto 3 Advanced Plus offers the best sunroof-per-rupiah.</p>
+  </div>
+  <div class="verdict-card" style="border-left-color: #a78bfa">
+    <h3>📍 For Sunter, Jakarta Utara</h3>
+    <p>Nearest dealer concentrations are around Kelapa Gading and Sunter area. <strong>Toyota Auto2000</strong> and <strong>Honda</strong> have multiple branches nearby — strong advantage for the Agya/Brio if after-sales convenience matters. For BYD, the nearest dealers are around Kelapa Gading and Pluit. Hyundai has a branch in Kelapa Gading as well. EV charging infra in North Jakarta is growing but still less dense than South — worth considering for daily charging habits.</p>
+  </div>
+</div>
+
+<script>
+function filterCars(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const rows = document.querySelectorAll('#carTable tbody tr');
+  rows.forEach(row => {
+    const rType = row.dataset.type;
+    const rPrice = row.dataset.price;
+    let show = false;
+
+    if (type === 'all') show = true;
+    else if (type === 'petrol' && rType === 'petrol') show = true;
+    else if (type === 'ev' && rType === 'ev') show = true;
+    else if (type === 'budget' && rPrice === 'budget') show = true;
+    else if (type === 'mid' && rPrice === 'mid') show = true;
+    else if (type === 'premium' && rPrice === 'premium') show = true;
+
+    row.classList.toggle('hidden', !show);
+  });
+}
+</script>
+
+</body>
+</html>
