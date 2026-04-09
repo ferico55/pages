@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTC + ETH Deep Dive</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #f5f5f0; color: #1a1a1a; padding: 1.5rem; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 2rem; }
+  .sec-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #888; margin-bottom: .8rem; padding-bottom: .35rem; border-bottom: 1px solid #e0e0d8; }
+  .sec { margin-bottom: 2rem; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .card { background: #fff; border: 1px solid #e8e8e0; border-radius: 12px; padding: 1rem 1.1rem; }
+  .card.featured { border: 2px solid #378ADD; }
+  .ct { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .cb { font-size: 12px; color: #555; line-height: 1.7; }
+  .tag { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; margin: 2px 2px 0 0; }
+  .tg { background: #E1F5EE; color: #085041; }
+  .tr { background: #FCEBEB; color: #791F1F; }
+  .tb { background: #E6F1FB; color: #0C447C; }
+  .ta { background: #FAEEDA; color: #633806; }
+  .tgr { background: #F1EFE8; color: #444441; }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 6px; margin-bottom: 6px; }
+  .bg { background: #E1F5EE; color: #085041; }
+  .bb { background: #E6F1FB; color: #0C447C; }
+  .ba { background: #FAEEDA; color: #633806; }
+  .bar { height: 6px; border-radius: 3px; overflow: hidden; background: #e8e8e0; margin: 4px 0 2px; }
+  .bf { height: 6px; border-radius: 3px; }
+  .bl { display: flex; justify-content: space-between; font-size: 10px; color: #888; }
+  .sbar { height: 8px; border-radius: 4px; display: flex; overflow: hidden; margin: 6px 0 3px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid #f0f0e8; }
+  .row:last-child { border-bottom: none; }
+  .rn { font-size: 11px; color: #888; }
+  .rv-r { font-size: 12px; font-weight: 600; color: #E24B4A; }
+  .rv-b { font-size: 12px; font-weight: 600; color: #378ADD; }
+  .rv-g { font-size: 12px; font-weight: 600; color: #1D9E75; }
+  .why { display: flex; gap: 8px; margin-bottom: 8px; }
+  .wi { font-size: 14px; flex-shrink: 0; }
+  .wt { font-size: 12px; color: #555; line-height: 1.6; }
+  .wt b { font-weight: 600; color: #1a1a1a; }
+  .flag { border-radius: 8px; padding: .7rem .9rem; border-left: 3px solid; margin-bottom: 8px; background: #fafaf8; }
+  .ft { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
+  .fb { font-size: 11px; color: #666; line-height: 1.55; }
+  .split-alloc { font-size: 11px; color: #888; margin-bottom: 8px; }
+  .note { background: #f0f0e8; border-radius: 10px; padding: .9rem 1rem; font-size: 11px; color: #666; line-height: 1.7; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .g2, .g3 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Option 4 Deep Dive: BTC + ETH Diversification</h1>
+<p class="subtitle">$500 portfolio · Mid-term horizon (4–10 weeks) · Hands-off style</p>
+
+<!-- THESIS -->
+
+<div class="sec">
+<div class="sec-label">1 — Investment thesis: why BTC + ETH?</div>
+<div class="g2">
+<div class="card">
+  <div class="ct">The core logic</div>
+  <div class="why"><span class="wi">🔒</span><span class="wt"><b>BTC is your fortress.</b> Most liquid, most institutionally backed. BlackRock's IBIT absorbing supply at a structural pace. BTC is your downside floor.</span></div>
+  <div class="why"><span class="wi">⚙️</span><span class="wt"><b>ETH is a productive asset.</b> Generates real fee revenue from DeFi, tokenization, smart contracts. Has fundamentals beyond speculation.</span></div>
+  <div class="why"><span class="wi">🏛️</span><span class="wt"><b>Both have spot ETFs.</b> Post-2024 approvals created a structural demand floor that didn't exist in previous cycles.</span></div>
+  <div class="why"><span class="wi">📈</span><span class="wt"><b>ETH historically outperforms in recovery phases.</b> ETH tends to lag BTC initially, then catches up and exceeds BTC gains once sentiment shifts bullish.</span></div>
+</div>
+<div class="card">
+  <div class="ct">BTC vs ETH — asset profile</div>
+  <p style="font-size:11px;color:#888;margin-bottom:8px">Scoring out of 100</p>
+  <p style="font-size:11px;font-weight:600;margin-bottom:3px">Store of value / stability</p>
+  <div class="bar"><div class="bf" style="width:90%;background:#378ADD"></div></div>
+  <div class="bl"><span style="color:#185FA5">BTC — 90 (digital gold)</span></div>
+  <div class="bar" style="margin-top:5px"><div class="bf" style="width:62%;background:#1D9E75"></div></div>
+  <div class="bl"><span style="color:#0F6E56">ETH — 62 (utility asset)</span></div>
+  <p style="font-size:11px;font-weight:600;margin:10px 0 3px">Mid-term upside potential</p>
+  <div class="bar"><div class="bf" style="width:55%;background:#378ADD"></div></div>
+  <div class="bl"><span style="color:#185FA5">BTC — 55 (ETF + macro driven)</span></div>
+  <div class="bar" style="margin-top:5px"><div class="bf" style="width:72%;background:#1D9E75"></div></div>
+  <div class="bl"><span style="color:#0F6E56">ETH — 72 (upgrade catalysts)</span></div>
+  <p style="font-size:11px;font-weight:600;margin:10px 0 3px">Downside risk</p>
+  <div class="bar"><div class="bf" style="width:35%;background:#E24B4A"></div></div>
+  <div class="bl"><span style="color:#993535">BTC — 35 (lower risk)</span></div>
+  <div class="bar" style="margin-top:5px"><div class="bf" style="width:50%;background:#E24B4A"></div></div>
+  <div class="bl"><span style="color:#993535">ETH — 50 (more volatile)</span></div>
+</div>
+</div>
+</div>
+
+<!-- ETH FUNDAMENTALS -->
+
+<div class="sec">
+<div class="sec-label">2 — ETH fundamentals right now (why the entry timing is decent)</div>
+<div class="g3">
+<div class="card">
+  <div class="ct">Technical picture</div>
+  <div class="cb">
+    Price: <b>~$2,036–$2,122</b><br>
+    RSI: ~47–53 (neutral zone)<br>
+    200-day MA rising since Apr 4<br>
+    Support: <b>$1,994–$2,050</b><br>
+    Resistance: <b>$2,200 → $2,400</b><br><br>
+    Consolidating above $2,000 support. MACD bearish but losing steam — momentum shift developing. Neutral RSI often precedes a significant directional move.
+    <div style="margin-top:8px"><span class="tag tgr">Neutral RSI</span><span class="tag tb">Accumulation zone</span></div>
+  </div>
+</div>
+<div class="card">
+  <div class="ct">Upcoming catalysts</div>
+  <div class="why"><span class="wi">🔧</span><span class="wt"><b>Glamsterdam + Hegota forks:</b> 2026 roadmap upgrades targeting massive L1 scalability. If executed, ETH fee revenue re-rates upward.</span></div>
+  <div class="why"><span class="wi">📊</span><span class="wt"><b>ETF staking approval:</b> SEC reviewing staking yield inside spot ETH ETFs. Approval = institutional yield-seeking buyers enter.</span></div>
+  <div class="why"><span class="wi">💰</span><span class="wt"><b>DeFi + tokenization:</b> DeFi market at $37B+ institutional grade. ETH is the backbone of tokenized financial assets globally.</span></div>
+</div>
+<div class="card">
+  <div class="ct">ETH price projections</div>
+  <div style="font-size:10px;color:#888;margin-bottom:8px;display:flex;gap:14px"><span style="color:#E24B4A">● Bear</span><span style="color:#378ADD">● Base</span><span style="color:#1D9E75">● Bull</span></div>
+  <div class="row"><span class="rn">4 weeks</span><div style="display:flex;gap:8px"><span class="rv-r">$1,900</span><span class="rv-b">$2,300</span><span class="rv-g">$2,481</span></div></div>
+  <div class="row"><span class="rn">May 2026</span><div style="display:flex;gap:8px"><span class="rv-r">$2,008</span><span class="rv-b">$2,224</span><span class="rv-g">$2,481</span></div></div>
+  <div class="row"><span class="rn">Jun–Sep 2026</span><div style="display:flex;gap:8px"><span class="rv-r">$2,082</span><span class="rv-b">$2,554</span><span class="rv-g">$2,690</span></div></div>
+  <div class="row"><span class="rn">End 2026</span><div style="display:flex;gap:8px"><span class="rv-r">$2,995</span><span class="rv-b">$3,287</span><span class="rv-g">$4,572</span></div></div>
+  <div style="margin-top:8px;font-size:10px;color:#aaa">Sources: Changelly, CoinCodex, Cryptopolitan</div>
+</div>
+</div>
+</div>
+
+<!-- SPLIT RATIOS -->
+
+<div class="sec">
+<div class="sec-label">3 — Which split ratio fits your risk tolerance?</div>
+<div class="g3">
+<div class="card">
+  <span class="badge ba">Conservative</span>
+  <div class="ct">70% BTC / 30% ETH</div>
+  <div class="split-alloc">$350 BTC · $150 ETH (~0.073 ETH)</div>
+  <div class="sbar"><div style="width:70%;background:#378ADD"></div><div style="width:30%;background:#1D9E75"></div></div>
+  <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:10px;color:#888"><span>BTC 70%</span><span>ETH 30%</span></div>
+  <div class="cb">BTC dominates. ETH adds a small catalyst kicker without overexposing you. Best if you're still uncertain about ETH's near-term but want some exposure.<br><br>
+  <span class="tag tg">Lower swing</span><span class="tag tgr">Modest ETH upside</span></div>
+  <div style="margin-top:10px">
+    <div class="row"><span class="rn">Bull case</span><span class="rv-g">~$622–640</span></div>
+    <div class="row"><span class="rn">Base case</span><span class="rv-b">~$538–558</span></div>
+    <div class="row"><span class="rn">Bear case</span><span class="rv-r">~$437–455</span></div>
+  </div>
+</div>
+<div class="card featured">
+  <span class="badge bb">✦ Recommended</span>
+  <div class="ct">60% BTC / 40% ETH</div>
+  <div class="split-alloc">$300 BTC · $200 ETH (~0.097 ETH)</div>
+  <div class="sbar"><div style="width:60%;background:#378ADD"></div><div style="width:40%;background:#1D9E75"></div></div>
+  <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:10px;color:#888"><span>BTC 60%</span><span>ETH 40%</span></div>
+  <div class="cb">Sweet spot. BTC provides the floor; $200 in ETH gives meaningful exposure to Glamsterdam fork and staking ETF catalyst. If ETH hits $2,481 (CoinCodex base), that $200 becomes ~$242 — an extra +$42 on top of BTC gains. Clean, balanced, hands-off.<br><br>
+  <span class="tag tg">Balanced risk</span><span class="tag tb">Strong catalyst exposure</span></div>
+  <div style="margin-top:10px">
+    <div class="row"><span class="rn">Bull case</span><span class="rv-g">~$645–672</span></div>
+    <div class="row"><span class="rn">Base case</span><span class="rv-b">~$547–572</span></div>
+    <div class="row"><span class="rn">Bear case</span><span class="rv-r">~$420–448</span></div>
+  </div>
+</div>
+<div class="card">
+  <span class="badge ba">Aggressive</span>
+  <div class="ct">50% BTC / 50% ETH</div>
+  <div class="split-alloc">$250 BTC · $250 ETH (~0.122 ETH)</div>
+  <div class="sbar"><div style="width:50%;background:#378ADD"></div><div style="width:50%;background:#1D9E75"></div></div>
+  <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:10px;color:#888"><span>BTC 50%</span><span>ETH 50%</span></div>
+  <div class="cb">Maximum ETH upside. Justified only if you have strong conviction the Glamsterdam upgrade and staking ETF land within 6–8 weeks. BTC safety net is thinner here — needs slightly more attention.<br><br>
+  <span class="tag ta">Higher volatility</span><span class="tag tg">Max ETH upside</span></div>
+  <div style="margin-top:10px">
+    <div class="row"><span class="rn">Bull case</span><span class="rv-g">~$660–705</span></div>
+    <div class="row"><span class="rn">Base case</span><span class="rv-b">~$549–580</span></div>
+    <div class="row"><span class="rn">Bear case</span><span class="rv-r">~$405–430</span></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- RISKS -->
+
+<div class="sec">
+<div class="sec-label">4 — ETH-specific risks to know before swapping</div>
+<div class="g2">
+<div>
+  <div class="flag" style="border-color:#E24B4A">
+    <div class="ft" style="color:#791F1F">Bitcoin Season timing lag</div>
+    <div class="fb">BTC dominance at 58.5% = Bitcoin Season. ETH tends to lag BTC in early recovery, then catches up and outperforms. Don't be surprised if BTC gains first and ETH takes a few extra weeks to move.</div>
+  </div>
+  <div class="flag" style="border-color:#E24B4A">
+    <div class="ft" style="color:#791F1F">Glamsterdam upgrade delay risk</div>
+    <div class="fb">Ethereum has a history of pushing upgrade timelines. If Glamsterdam slips into Q4 2026, one of ETH's key mid-term catalysts disappears temporarily. Not fatal — but don't count on it as a certainty.</div>
+  </div>
+</div>
+<div>
+  <div class="flag" style="border-color:#EF9F27">
+    <div class="ft" style="color:#633806">Correlated downside</div>
+    <div class="fb">BTC and ETH are ~85–90% correlated in a broad market crash. BTC+ETH is an upside diversification strategy, not a crash hedge. If the whole market sells off, both go down together.</div>
+  </div>
+  <div class="flag" style="border-color:#1D9E75">
+    <div class="ft" style="color:#085041">ETH outperforms in every recovery cycle</div>
+    <div class="fb">In every post-bear recovery since 2019, ETH has ultimately outperformed BTC from the bottom. Entering at Extreme Fear (index: 11) has historically been one of the best ETH entry points across multiple cycles.</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- EXECUTION -->
+
+<div class="sec">
+<div class="sec-label">5 — Practical execution guide</div>
+<div class="card">
+  <div class="cb" style="line-height:2.1">
+    <b>Step 1 — Pick your exchange.</b> Binance, Indodax (local IDR), or Coinbase. All support direct BTC/ETH pairs with tight spreads. No need for DEXes at this size.<br>
+    <b>Step 2 — Calculate ETH amount.</b> At ~$2,050/ETH, $200 ≈ <b>0.0976 ETH</b>. At $2,100, it's ~0.0952 ETH. Use a market order.<br>
+    <b>Step 3 — One clean transaction.</b> Sell $200 of BTC → immediately buy ETH. Don't split across days unless BTC is actively crashing.<br>
+    <b>Step 4 — Record both entry prices.</b> Your BTC and ETH cost bases are your reference for every future decision.<br>
+    <b>Step 5 — Set two reminders only:</b> Week 4 (May 8) and Week 8 (June 4). Outside those dates — don't check.
+  </div>
+</div>
+</div>
+
+<div class="note">All projections aggregated from Changelly, CoinCodex, Cryptopolitan, LiteFinance, and CoinMarketCap AI — for educational reference only. Not financial advice. Crypto involves significant risk of loss including loss of principal.</div>
+
+</body>
+</html>
