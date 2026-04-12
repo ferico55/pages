@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 Manager 24 Setups</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --border: #232733;
+    --accent: #6ee7b7;
+    --accent2: #60a5fa;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --warn-bg: #1a1506;
+    --warn-border: #854d0e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    padding: 0 0 48px;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    padding: 28px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 16px;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #ca8a04;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .notice-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+
+  /* ── Search bar (sticky) ── */
+  .search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+  }
+  .search-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .search-input-wrap {
+    position: relative;
+    flex: 1;
+  }
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  input[type="text"] {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 12px 9px 38px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus { border-color: var(--accent); }
+  input[type="text"]::placeholder { color: var(--muted); }
+
+  .result-count {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .result-count strong { color: var(--text); }
+
+  /* ── Grid ── */
+  .grid-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+  }
+
+  .track-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .track-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .track-grid { grid-template-columns: 1fr; gap: 10px; }
+    .grid-wrap { padding: 14px 14px 0; }
+    .search-bar { padding: 10px 14px; }
+    .page-header { padding: 20px 14px 16px; }
+  }
+
+  /* ── Card ── */
+  .track-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .track-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    transform: translateY(-1px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .flag-img {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    min-width: 0;
+  }
+  .card-country {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-circuit {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  .setup-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  }
+  .setup-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .setup-label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .setup-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .empty-state svg { margin-bottom: 12px; opacity: 0.4; }
+  .empty-state p { font-size: 15px; color: var(--text); margin-bottom: 4px; }
+  .empty-state span { font-size: 13px; }
+
+  /* Source note */
+  .source-note {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .source-note a { color: var(--muted); }
+  .source-note a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="back-link" href="../">← Back</a>
+  <h1>F1 Manager 24 Setups</h1>
+  <p class="subtitle">Optimal car setups for every Formula 1 circuit</p>
+  <div class="notice">
+    <span class="notice-icon">⚠</span>
+    <span>These setups are excellent starting points but fine-tuning may be needed based on your driving style and car performance.</span>
+  </div>
+</div>
+
+<div class="search-bar">
+  <div class="search-inner">
+    <div class="search-input-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 20 20" fill="none">
+        <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="m13 13 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search" placeholder="Search by country or circuit… (e.g. Japan, Suzuka, Spa)" oninput="filterTracks(this.value)" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="result-count" id="count"><strong>24</strong> circuits</div>
+  </div>
+</div>
+
+<div class="grid-wrap">
+  <div class="track-grid" id="grid"></div>
+  <div class="empty-state" id="empty">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
+      <path d="m16.5 16.5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M8 11h6M11 8v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <p>No circuits found</p>
+    <span>Try a different country or circuit name</span>
+  </div>
+</div>
+
+<div class="source-note">
+  Data from <a href="https://docs.google.com/spreadsheets/d/1eoegnjYb6YGGtJW2y4kHOolWb-KFIxGoosqvEq_lpfQ/edit?gid=346893645#gid=346893645" target="_blank" rel="noopener">r/ProDevIthink</a> via f1man.xyz · Updated October 2025
+</div>
+
+<script>
+const FLAG = 'https://cdn.racingnews365.com/origin/images/flags/';
+
+const tracks = [
+  {
+    country: 'Bahrain', circuit: 'Bahrain International Circuit',
+    flag: 'bhr.png',
+    search: 'bahrain sakhir bahrain international circuit bic',
+    s: { fw: 4.5, rw: 11, arb: '6:4', cam: -3.35, toe: 0.35 }
+  },
+  {
+    country: 'Saudi Arabia', circuit: 'Jeddah Corniche Circuit',
+    flag: 'sau.png',
+    search: 'saudi arabia jeddah jeddah corniche circuit saudi',
+    s: { fw: 7, rw: 11, arb: '9:1', cam: -3.5, toe: 0 }
+  },
+  {
+    country: 'Australia', circuit: 'Albert Park Circuit',
+    flag: 'aus.png',
+    search: 'australia melbourne albert park australian gp',
+    s: { fw: 8, rw: 13, arb: '7:3', cam: -3.15, toe: 0.65 }
+  },
+  {
+    country: 'Japan', circuit: 'Suzuka Circuit',
+    flag: 'jpn.png',
+    search: 'japan suzuka suzuka circuit japanese gp',
+    s: { fw: 7, rw: 13, arb: '5:5', cam: -3.5, toe: 0 }
+  },
+  {
+    country: 'China', circuit: 'Shanghai International Circuit',
+    flag: 'chn.png',
+    search: 'china shanghai shanghai international circuit chinese gp',
+    s: { fw: 3, rw: 11.5, arb: '2:8', cam: -2.8, toe: 0.8 }
+  },
+  {
+    country: 'United States', circuit: 'Miami International Autodrome',
+    flag: 'usa.png',
+    search: 'miami united states usa florida miami international autodrome miami gp',
+    s: { fw: 7.5, rw: 13.5, arb: '3:7', cam: -3.5, toe: 0.35 }
+  },
+  {
+    country: 'Italy', circuit: 'Autodromo Enzo e Dino Ferrari',
+    flag: 'ita.png',
+    search: 'imola italy emilia romagna san marino autodromo enzo dino ferrari italian',
+    s: { fw: 6.5, rw: 13, arb: '4:6', cam: -3.5, toe: 0 }
+  },
+  {
+    country: 'Monaco', circuit: 'Circuit de Monaco',
+    flag: 'mco.png',
+    search: 'monaco monte carlo circuit de monaco',
+    s: { fw: 10, rw: 16, arb: '8:2', cam: -3.35, toe: 0.65 }
+  },
+  {
+    country: 'Canada', circuit: 'Circuit Gilles Villeneuve',
+    flag: 'can.png',
+    search: 'canada montreal circuit gilles villeneuve canadian gp',
+    s: { fw: 3.5, rw: 12, arb: '2:8', cam: -3.15, toe: 0.8 }
+  },
+  {
+    country: 'Spain', circuit: 'Circuit de Barcelona-Catalunya',
+    flag: 'esp.png',
+    search: 'spain barcelona catalunya circuit de barcelona spanish gp',
+    s: { fw: 8.5, rw: 14, arb: '7:3', cam: -3.25, toe: 0.8 }
+  },
+  {
+    country: 'Austria', circuit: 'Red Bull Ring',
+    flag: 'aut.png',
+    search: 'austria spielberg red bull ring styria austrian gp',
+    s: { fw: 5, rw: 13, arb: '1:9', cam: -3.1, toe: 0.8 }
+  },
+  {
+    country: 'Great Britain', circuit: 'Silverstone Circuit',
+    flag: 'gbr.png',
+    search: 'silverstone great britain gb uk england british gp british grand prix',
+    s: { fw: 6, rw: 11.5, arb: '9:1', cam: -3.25, toe: 0.35 }
+  },
+  {
+    country: 'Hungary', circuit: 'Hungaroring',
+    flag: 'hun.png',
+    search: 'hungaroring hungary budapest hungarian gp',
+    s: { fw: 9.5, rw: 15, arb: '2:8', cam: -3.2, toe: 0.75 }
+  },
+  {
+    country: 'Belgium', circuit: 'Circuit de Spa-Francorchamps',
+    flag: 'bel.png',
+    search: 'belgium spa spa-francorchamps belgian gp',
+    s: { fw: 3, rw: 9.5, arb: '4:6', cam: -3.4, toe: 0.6 }
+  },
+  {
+    country: 'Netherlands', circuit: 'Circuit Zandvoort',
+    flag: 'nld.png',
+    search: 'netherlands zandvoort dutch circuit zandvoort dutch gp',
+    s: { fw: 9.5, rw: 13.5, arb: '6:4', cam: -3.15, toe: 0.9 }
+  },
+  {
+    country: 'Italy', circuit: 'Autodromo Nazionale Monza',
+    flag: 'ita.png',
+    search: 'monza italy italian gp autodromo nazionale monza',
+    s: { fw: 1, rw: 9, arb: '1:9', cam: -3, toe: 0.9 }
+  },
+  {
+    country: 'Azerbaijan', circuit: 'Baku City Circuit',
+    flag: 'aze.png',
+    search: 'baku azerbaijan aze baku city circuit azerbaijan gp',
+    s: { fw: 1.5, rw: 10.5, arb: '3:7', cam: -2.95, toe: 0.85 }
+  },
+  {
+    country: 'Singapore', circuit: 'Marina Bay Street Circuit',
+    flag: 'sgp.png',
+    search: 'singapore marina bay marina bay street circuit singapore gp',
+    s: { fw: 8, rw: 15.5, arb: '8:2', cam: -2.75, toe: 1 }
+  },
+  {
+    country: 'United States', circuit: 'Circuit of the Americas',
+    flag: 'usa.png',
+    search: 'austin usa texas cota circuit of the americas us gp united states',
+    s: { fw: 8, rw: 13, arb: '2:8', cam: -3.45, toe: 0.25 }
+  },
+  {
+    country: 'Mexico', circuit: 'Autodromo Hermanos Rodriguez',
+    flag: 'mex.png',
+    search: 'mexico mexico city hermanos rodriguez autodromo mexican gp',
+    s: { fw: 6.5, rw: 13, arb: '2:8', cam: -3.45, toe: 0.35 }
+  },
+  {
+    country: 'Brazil', circuit: 'Autodromo Jose Carlos Pace',
+    flag: 'bra.png',
+    search: 'brazil sao paulo interlagos autodromo jose carlos pace brazilian gp',
+    s: { fw: 7, rw: 13, arb: '2:8', cam: -3.4, toe: 0.55 }
+  },
+  {
+    country: 'United States', circuit: 'Las Vegas Strip Circuit',
+    flag: 'usa.png',
+    search: 'las vegas vegas nevada usa las vegas strip circuit',
+    s: { fw: 0, rw: 10.5, arb: '1:9', cam: -3, toe: 0.55 }
+  },
+  {
+    country: 'Qatar', circuit: 'Lusail International Circuit',
+    flag: 'qat.png',
+    search: 'qatar lusail lusail international circuit qatar gp',
+    s: { fw: 8, rw: 13, arb: '7:3', cam: -3.35, toe: 0.9 }
+  },
+  {
+    country: 'Abu Dhabi', circuit: 'Yas Marina Circuit',
+    flag: 'are.png',
+    search: 'abu dhabi uae yas marina yas island yas marina circuit',
+    s: { fw: 5, rw: 12.5, arb: '3:7', cam: -3.3, toe: 0.95 }
+  }
+];
+
+function fmtVal(v) {
+  if (v === null || v === undefined) return '—';
+  if (typeof v === 'string') return v;
+  const n = Number(v);
+  return (n === 0 ? '0' : n % 1 === 0 ? n.toString() : n.toString()) + '°';
+}
+
+function buildCard(t) {
+  const { country, circuit, flag, s } = t;
+  const rows = [
+    ['Front Wing', fmtVal(s.fw)],
+    ['Rear Wing',  fmtVal(s.rw)],
+    ['Anti-Roll',  s.arb],
+    ['Camber',     fmtVal(s.cam)],
+    ['Toe-Out',    fmtVal(s.toe)],
+  ];
+  const rowsHtml = rows.map(([label, val]) =>
+    `<div class="setup-row"><span class="setup-label">${label}</span><span class="setup-value">${val}</span></div>`
+  ).join('');
+
+  const div = document.createElement('div');
+  div.className = 'track-card';
+  div.dataset.search = t.search + ' ' + country.toLowerCase() + ' ' + circuit.toLowerCase();
+  div.innerHTML = `
+    <div class="card-header">
+      <img class="flag-img" src="${FLAG}${flag}" alt="${country} flag" loading="lazy">
+      <div class="card-title">
+        <div class="card-country">${country}</div>
+        <div class="card-circuit">${circuit}</div>
+      </div>
+    </div>
+    ${rowsHtml}
+  `;
+  return div;
+}
+
+const grid = document.getElementById('grid');
+const countEl = document.getElementById('count');
+const empty = document.getElementById('empty');
+
+tracks.forEach(t => grid.appendChild(buildCard(t)));
+
+function filterTracks(q) {
+  const term = q.trim().toLowerCase();
+  const cards = grid.querySelectorAll('.track-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const match = !term || card.dataset.search.includes(term);
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  if (term && visible < tracks.length) {
+    countEl.innerHTML = `<strong>${visible}</strong> of ${tracks.length} circuits`;
+  } else {
+    countEl.innerHTML = `<strong>${visible}</strong> circuits`;
+  }
+  empty.style.display = visible === 0 ? 'block' : 'none';
+  grid.style.display = visible === 0 ? 'none' : '';
+}
+</script>
+</body>
+</html>
