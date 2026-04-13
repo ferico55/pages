@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 25 Controller Setups</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --border: #232733;
+    --accent: #6ee7b7;
+    --accent2: #60a5fa;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --warn-bg: #1a1506;
+    --warn-border: #854d0e;
+    --aero-min: #f87171;
+    --aero-low: #fb923c;
+    --aero-mid: #facc15;
+    --aero-high: #4ade80;
+    --aero-max: #a78bfa;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    padding: 0 0 48px;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    padding: 28px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 16px;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #ca8a04;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .notice-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+
+  /* ── Sticky search bar ── */
+  .search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+  }
+  .search-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .search-input-wrap {
+    position: relative;
+    flex: 1;
+  }
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  input[type="text"] {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 9px 12px 9px 38px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus { border-color: var(--accent); }
+  input[type="text"]::placeholder { color: var(--muted); }
+
+  .result-count {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .result-count strong { color: var(--text); }
+
+  /* ── Grid ── */
+  .grid-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+  }
+
+  .track-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 1000px) {
+    .track-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .track-grid { grid-template-columns: 1fr; gap: 10px; }
+    .grid-wrap { padding: 14px 14px 0; }
+    .search-bar { padding: 10px 14px; }
+    .page-header { padding: 20px 14px 16px; }
+  }
+
+  /* ── Card ── */
+  .track-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .track-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    transform: translateY(-1px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .flag-img {
+    width: 32px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    min-width: 0;
+    flex: 1;
+  }
+  .card-country {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-circuit {
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  /* Downforce badge */
+  .df-badge {
+    flex-shrink: 0;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid currentColor;
+    opacity: 0.85;
+  }
+  .df-min   { color: var(--aero-min); }
+  .df-low   { color: var(--aero-low); }
+  .df-med   { color: var(--aero-mid); }
+  .df-high  { color: var(--aero-high); }
+  .df-max   { color: var(--aero-max); }
+
+  /* ── Setup sections ── */
+  .setup-section {
+    margin-bottom: 8px;
+  }
+  .setup-section:last-child { margin-bottom: 0; }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  }
+
+  .param-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 8px;
+  }
+
+  .param-cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 2px 0;
+  }
+
+  .p-label {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .p-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .p-value.blue  { color: var(--accent2); }
+  .p-value.amber { color: #fbbf24; }
+  .p-value.red   { color: #f87171; }
+
+  /* ── Empty state ── */
+  .empty-state {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .empty-state svg { margin-bottom: 12px; opacity: 0.4; }
+  .empty-state p { font-size: 15px; color: var(--text); margin-bottom: 4px; }
+  .empty-state span { font-size: 13px; }
+
+  /* Source note */
+  .source-note {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .source-note a { color: var(--muted); }
+  .source-note a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="back-link" href="../">← Back</a>
+  <h1>F1 25 Controller Setups</h1>
+  <p class="subtitle">Top controller setups for every circuit of the 2025 F1 Season · 24 races</p>
+  <div class="notice">
+    <span class="notice-icon">⚠</span>
+    <span>Setups sourced from the sim racing community (simracingsetup.com, simracingconfigs.com, racinggames.gg). Use as a solid baseline and fine-tune to your driving style.</span>
+  </div>
+</div>
+
+<div class="search-bar">
+  <div class="search-inner">
+    <div class="search-input-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 20 20" fill="none">
+        <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="m13 13 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search" placeholder="Search circuit… (e.g. Monaco, Silverstone, Baku)" oninput="filterTracks(this.value)" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="result-count" id="count"><strong>24</strong> circuits</div>
+  </div>
+</div>
+
+<div class="grid-wrap">
+  <div class="track-grid" id="grid"></div>
+  <div class="empty-state" id="empty">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
+      <path d="m16.5 16.5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <p>No circuits found</p>
+    <span>Try a different country or circuit name</span>
+  </div>
+</div>
+
+<div class="source-note">
+  Community-sourced controller setups — <a href="https://simracingsetup.com/setups/f1-25/" target="_blank" rel="noopener">simracingsetup.com</a> ·
+  <a href="https://simracingconfigs.com/category/f1-25-setups/" target="_blank" rel="noopener">simracingconfigs.com</a> ·
+  <a href="https://racinggames.gg/" target="_blank" rel="noopener">racinggames.gg</a><br>
+  Updated for the 2025 F1 Season
+</div>
+
+<script>
+const FLAG = 'https://cdn.racingnews365.com/origin/images/flags/';
+
+// s = setup object:
+// fw/rw = front/rear wing  |  don/doff = diff on/off throttle %
+// sf/sr = susp front/rear  |  af/ar = anti-roll bar front/rear  |  rhf/rhr = ride height front/rear
+// cf/cr = camber front/rear  |  tf/tr = toe front/rear
+// bp/bb = brake pressure/bias %  |  tyf/tyr = tyre pressure front/rear (psi)
+
+const tracks = [
+  {
+    country: 'Australia', circuit: 'Albert Park Circuit',
+    flag: 'aus.png', round: 1,
+    search: 'australia melbourne albert park australian gp',
+    s: { fw:24, rw:24, don:30, doff:50, sf:38, sr:19, af:16, ar:9, rhf:23, rhr:50, cf:-3.50, cr:-2.00, tf:0.08, tr:0.18, bp:98, bb:57, tyf:24.2, tyr:21.5 }
+  },
+  {
+    country: 'China', circuit: 'Shanghai International Circuit',
+    flag: 'chn.png', round: 2,
+    search: 'china shanghai shanghai international circuit chinese gp',
+    s: { fw:32, rw:30, don:90, doff:10, sf:41, sr:3, af:12, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Japan', circuit: 'Suzuka Circuit',
+    flag: 'jpn.png', round: 3,
+    search: 'japan suzuka suzuka circuit japanese gp',
+    s: { fw:25, rw:27, don:90, doff:35, sf:41, sr:9, af:10, ar:19, rhf:22, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyf:27.5, tyr:21.0 }
+  },
+  {
+    country: 'Bahrain', circuit: 'Bahrain International Circuit',
+    flag: 'bhr.png', round: 4,
+    search: 'bahrain sakhir bahrain international circuit bic',
+    s: { fw:20, rw:30, don:70, doff:30, sf:41, sr:1, af:9, ar:18, rhf:21, rhr:52, cf:-2.50, cr:-1.20, tf:0.06, tr:0.18, bp:100, bb:54, tyf:29.5, tyr:20.5 }
+  },
+  {
+    country: 'Saudi Arabia', circuit: 'Jeddah Corniche Circuit',
+    flag: 'sau.png', round: 5,
+    search: 'saudi arabia jeddah jeddah corniche circuit saudi',
+    s: { fw:9, rw:7, don:90, doff:45, sf:41, sr:5, af:12, ar:18, rhf:20, rhr:47, cf:-3.50, cr:-2.20, tf:0.00, tr:0.10, bp:100, bb:54, tyf:22.5, tyr:20.0 }
+  },
+  {
+    country: 'United States', circuit: 'Miami International Autodrome',
+    flag: 'usa.png', round: 6,
+    search: 'miami united states usa florida miami international autodrome miami gp',
+    s: { fw:9, rw:13, don:75, doff:40, sf:40, sr:6, af:20, ar:20, rhf:21, rhr:51, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:98, bb:54, tyf:26.5, tyr:21.0 }
+  },
+  {
+    country: 'Italy', circuit: 'Autodromo Enzo e Dino Ferrari',
+    flag: 'ita.png', round: 7,
+    search: 'imola italy emilia romagna autodromo enzo dino ferrari italian imola gp',
+    s: { fw:33, rw:31, don:65, doff:40, sf:40, sr:3, af:14, ar:19, rhf:23, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Monaco', circuit: 'Circuit de Monaco',
+    flag: 'mco.png', round: 8,
+    search: 'monaco monte carlo circuit de monaco',
+    s: { fw:44, rw:47, don:50, doff:20, sf:39, sr:6, af:12, ar:18, rhf:22, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.15, bp:100, bb:54, tyf:26.5, tyr:20.5 }
+  },
+  {
+    country: 'Spain', circuit: 'Circuit de Barcelona-Catalunya',
+    flag: 'esp.png', round: 9,
+    search: 'spain barcelona catalunya circuit de barcelona spanish gp',
+    s: { fw:28, rw:30, don:100, doff:30, sf:40, sr:1, af:1, ar:7, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:20.5 }
+  },
+  {
+    country: 'Canada', circuit: 'Circuit Gilles Villeneuve',
+    flag: 'can.png', round: 10,
+    search: 'canada montreal circuit gilles villeneuve canadian gp',
+    s: { fw:34, rw:28, don:75, doff:35, sf:41, sr:5, af:12, ar:18, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Austria', circuit: 'Red Bull Ring',
+    flag: 'aut.png', round: 11,
+    search: 'austria spielberg red bull ring styria austrian gp',
+    s: { fw:16, rw:18, don:75, doff:45, sf:41, sr:5, af:10, ar:19, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.0, tyr:21.0 }
+  },
+  {
+    country: 'Great Britain', circuit: 'Silverstone Circuit',
+    flag: 'gbr.png', round: 12,
+    search: 'silverstone great britain gb uk england british gp british grand prix',
+    s: { fw:19, rw:21, don:100, doff:25, sf:41, sr:1, af:16, ar:21, rhf:21, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyf:29.5, tyr:26.5 }
+  },
+  {
+    country: 'Belgium', circuit: 'Circuit de Spa-Francorchamps',
+    flag: 'bel.png', round: 13,
+    search: 'belgium spa spa-francorchamps belgian gp',
+    s: { fw:3, rw:0, don:85, doff:45, sf:41, sr:1, af:16, ar:20, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Hungary', circuit: 'Hungaroring',
+    flag: 'hun.png', round: 14,
+    search: 'hungaroring hungary budapest hungarian gp',
+    s: { fw:44, rw:46, don:75, doff:30, sf:41, sr:1, af:17, ar:15, rhf:20, rhr:50, cf:-3.50, cr:-2.20, tf:0.00, tr:0.00, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Netherlands', circuit: 'Circuit Zandvoort',
+    flag: 'nld.png', round: 15,
+    search: 'netherlands zandvoort dutch circuit zandvoort dutch gp',
+    s: { fw:34, rw:36, don:75, doff:35, sf:41, sr:1, af:14, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Italy', circuit: 'Autodromo Nazionale Monza',
+    flag: 'ita.png', round: 16,
+    search: 'monza italy italian gp autodromo nazionale monza',
+    s: { fw:1, rw:0, don:75, doff:35, sf:41, sr:1, af:9, ar:21, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Azerbaijan', circuit: 'Baku City Circuit',
+    flag: 'aze.png', round: 17,
+    search: 'baku azerbaijan aze baku city circuit azerbaijan gp',
+    s: { fw:15, rw:10, don:45, doff:45, sf:41, sr:11, af:11, ar:10, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Singapore', circuit: 'Marina Bay Street Circuit',
+    flag: 'sgp.png', round: 18,
+    search: 'singapore marina bay marina bay street circuit singapore gp',
+    s: { fw:50, rw:45, don:100, doff:20, sf:41, sr:5, af:12, ar:18, rhf:22, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'United States', circuit: 'Circuit of the Americas',
+    flag: 'usa.png', round: 19,
+    search: 'austin usa texas cota circuit of the americas us gp united states',
+    s: { fw:41, rw:40, don:100, doff:40, sf:41, sr:3, af:21, ar:21, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.0, tyr:20.5 }
+  },
+  {
+    country: 'Mexico', circuit: 'Autodromo Hermanos Rodriguez',
+    flag: 'mex.png', round: 20,
+    search: 'mexico mexico city hermanos rodriguez autodromo mexican gp',
+    s: { fw:23, rw:40, don:75, doff:40, sf:37, sr:19, af:12, ar:15, rhf:21, rhr:50, cf:-3.40, cr:-1.90, tf:0.08, tr:0.18, bp:95, bb:52, tyf:29.5, tyr:21.0 }
+  },
+  {
+    country: 'Brazil', circuit: 'Autodromo Jose Carlos Pace',
+    flag: 'bra.png', round: 21,
+    search: 'brazil sao paulo interlagos autodromo jose carlos pace brazilian gp',
+    s: { fw:40, rw:31, don:100, doff:20, sf:40, sr:1, af:12, ar:20, rhf:20, rhr:60, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:26.5 }
+  },
+  {
+    country: 'United States', circuit: 'Las Vegas Strip Circuit',
+    flag: 'usa.png', round: 22,
+    search: 'las vegas vegas nevada usa las vegas strip circuit',
+    s: { fw:0, rw:5, don:100, doff:50, sf:41, sr:18, af:18, ar:9, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:25.0, tyr:21.5 }
+  },
+  {
+    country: 'Qatar', circuit: 'Lusail International Circuit',
+    flag: 'qat.png', round: 23,
+    search: 'qatar lusail lusail international circuit qatar gp',
+    s: { fw:36, rw:35, don:75, doff:35, sf:41, sr:1, af:15, ar:19, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+  },
+  {
+    country: 'Abu Dhabi', circuit: 'Yas Marina Circuit',
+    flag: 'are.png', round: 24,
+    search: 'abu dhabi uae yas marina yas island yas marina circuit',
+    s: { fw:24, rw:25, don:100, doff:25, sf:40, sr:1, af:4, ar:9, rhf:20, rhr:45, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:20.8 }
+  }
+];
+
+// Downforce badge based on rear wing
+function dfBadge(rw) {
+  if (rw <= 5)  return { cls: 'df-min', label: 'DRS' };
+  if (rw <= 15) return { cls: 'df-low', label: 'Low' };
+  if (rw <= 28) return { cls: 'df-med', label: 'Med' };
+  if (rw <= 40) return { cls: 'df-high', label: 'High' };
+  return { cls: 'df-max', label: 'Max' };
+}
+
+function fmtNum(v, decimals) {
+  if (v === null || v === undefined) return '—';
+  const n = Number(v);
+  return decimals !== undefined ? n.toFixed(decimals) : n.toString();
+}
+
+function buildCard(t) {
+  const { country, circuit, flag, round, s } = t;
+  const df = dfBadge(s.rw);
+
+  const html = `
+    <div class="card-header">
+      <img class="flag-img" src="${FLAG}${flag}" alt="${country} flag" loading="lazy">
+      <div class="card-title">
+        <div class="card-country">${country}</div>
+        <div class="card-circuit">${circuit}</div>
+      </div>
+      <span class="df-badge ${df.cls}">${df.label}</span>
+    </div>
+
+    <div class="setup-section">
+      <div class="section-label">Aerodynamics</div>
+      <div class="param-grid">
+        <div class="param-cell"><span class="p-label">Front Wing</span><span class="p-value">${s.fw}</span></div>
+        <div class="param-cell"><span class="p-label">Rear Wing</span><span class="p-value">${s.rw}</span></div>
+      </div>
+    </div>
+
+    <div class="setup-section">
+      <div class="section-label">Differential</div>
+      <div class="param-grid">
+        <div class="param-cell"><span class="p-label">On Throttle</span><span class="p-value blue">${s.don}%</span></div>
+        <div class="param-cell"><span class="p-label">Off Throttle</span><span class="p-value blue">${s.doff}%</span></div>
+      </div>
+    </div>
+
+    <div class="setup-section">
+      <div class="section-label">Suspension</div>
+      <div class="param-grid">
+        <div class="param-cell"><span class="p-label">Susp F</span><span class="p-value amber">${s.sf}</span></div>
+        <div class="param-cell"><span class="p-label">Susp R</span><span class="p-value amber">${s.sr}</span></div>
+        <div class="param-cell"><span class="p-label">ARB F</span><span class="p-value amber">${s.af}</span></div>
+        <div class="param-cell"><span class="p-label">ARB R</span><span class="p-value amber">${s.ar}</span></div>
+        <div class="param-cell"><span class="p-label">Ride Ht F</span><span class="p-value amber">${s.rhf}</span></div>
+        <div class="param-cell"><span class="p-label">Ride Ht R</span><span class="p-value amber">${s.rhr}</span></div>
+      </div>
+    </div>
+
+    <div class="setup-section">
+      <div class="section-label">Geometry</div>
+      <div class="param-grid">
+        <div class="param-cell"><span class="p-label">Camber F</span><span class="p-value">${fmtNum(s.cf, 2)}°</span></div>
+        <div class="param-cell"><span class="p-label">Camber R</span><span class="p-value">${fmtNum(s.cr, 2)}°</span></div>
+        <div class="param-cell"><span class="p-label">Toe F</span><span class="p-value">${fmtNum(s.tf, 2)}°</span></div>
+        <div class="param-cell"><span class="p-label">Toe R</span><span class="p-value">${fmtNum(s.tr, 2)}°</span></div>
+      </div>
+    </div>
+
+    <div class="setup-section">
+      <div class="section-label">Brakes &amp; Tyres</div>
+      <div class="param-grid">
+        <div class="param-cell"><span class="p-label">Brake Press</span><span class="p-value red">${s.bp}%</span></div>
+        <div class="param-cell"><span class="p-label">Brake Bias</span><span class="p-value red">${s.bb}%</span></div>
+        <div class="param-cell"><span class="p-label">Tyre F</span><span class="p-value">${fmtNum(s.tyf, 1)} psi</span></div>
+        <div class="param-cell"><span class="p-label">Tyre R</span><span class="p-value">${fmtNum(s.tyr, 1)} psi</span></div>
+      </div>
+    </div>
+  `;
+
+  const div = document.createElement('div');
+  div.className = 'track-card';
+  div.dataset.search = (t.search + ' ' + country.toLowerCase() + ' ' + circuit.toLowerCase() + ' round ' + round).toLowerCase();
+  div.innerHTML = html;
+  return div;
+}
+
+const grid    = document.getElementById('grid');
+const countEl = document.getElementById('count');
+const empty   = document.getElementById('empty');
+
+tracks.forEach(t => grid.appendChild(buildCard(t)));
+
+function filterTracks(q) {
+  const term = q.trim().toLowerCase();
+  const cards = grid.querySelectorAll('.track-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const match = !term || card.dataset.search.includes(term);
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  if (term && visible < tracks.length) {
+    countEl.innerHTML = `<strong>${visible}</strong> of ${tracks.length} circuits`;
+  } else {
+    countEl.innerHTML = `<strong>${visible}</strong> circuits`;
+  }
+  empty.style.display = visible === 0 ? 'block' : 'none';
+  grid.style.display  = visible === 0 ? 'none'  : '';
+}
+</script>
+</body>
+</html>
