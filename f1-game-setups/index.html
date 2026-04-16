@@ -355,152 +355,152 @@ const FLAG = 'https://cdn.racingnews365.com/origin/images/flags/';
 // fw/rw = front/rear wing  |  don/doff = diff on/off throttle %
 // sf/sr = susp front/rear  |  af/ar = anti-roll bar front/rear  |  rhf/rhr = ride height front/rear
 // cf/cr = camber front/rear  |  tf/tr = toe front/rear
-// bp/bb = brake pressure/bias %  |  tyf/tyr = tyre pressure front/rear (psi)
+// bp/bb = brake pressure/bias %  |  tyfl/tyfr/tyrl/tyrr = tyre pressure FL/FR/RL/RR (psi)
 
 const tracks = [
   {
     country: 'Australia', circuit: 'Albert Park Circuit',
     flag: 'aus.png', round: 1,
     search: 'australia melbourne albert park australian gp',
-    s: { fw:24, rw:24, don:30, doff:50, sf:38, sr:19, af:16, ar:9, rhf:23, rhr:50, cf:-3.50, cr:-2.00, tf:0.08, tr:0.18, bp:98, bb:57, tyf:24.2, tyr:21.5 }
+    s: { fw:24, rw:24, don:30, doff:50, sf:38, sr:19, af:16, ar:9, rhf:23, rhr:50, cf:-3.50, cr:-2.00, tf:0.08, tr:0.18, bp:98, bb:57, tyfl:24.2, tyfr:24.2, tyrl:21.5, tyrr:21.5 }
   },
   {
     country: 'China', circuit: 'Shanghai International Circuit',
     flag: 'chn.png', round: 2,
     search: 'china shanghai shanghai international circuit chinese gp',
-    s: { fw:32, rw:30, don:90, doff:10, sf:41, sr:3, af:12, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:32, rw:30, don:90, doff:10, sf:41, sr:3, af:12, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.0, tyrl:20.5, tyrr:20.0 }
   },
   {
     country: 'Japan', circuit: 'Suzuka Circuit',
     flag: 'jpn.png', round: 3,
     search: 'japan suzuka suzuka circuit japanese gp',
-    s: { fw:25, rw:27, don:90, doff:35, sf:41, sr:9, af:10, ar:19, rhf:22, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyf:27.5, tyr:21.0 }
+    s: { fw:25, rw:27, don:90, doff:35, sf:41, sr:9, af:10, ar:19, rhf:22, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyfl:27.5, tyfr:27.5, tyrl:21.0, tyrr:21.0 }
   },
   {
     country: 'Bahrain', circuit: 'Bahrain International Circuit',
     flag: 'bhr.png', round: 4,
     search: 'bahrain sakhir bahrain international circuit bic',
-    s: { fw:20, rw:30, don:70, doff:30, sf:41, sr:1, af:9, ar:18, rhf:21, rhr:52, cf:-2.50, cr:-1.20, tf:0.06, tr:0.18, bp:100, bb:54, tyf:29.5, tyr:20.5 }
+    s: { fw:20, rw:30, don:70, doff:30, sf:41, sr:1, af:9, ar:18, rhf:21, rhr:52, cf:-2.50, cr:-1.20, tf:0.06, tr:0.18, bp:100, bb:54, tyfl:29.5, tyfr:28.0, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Saudi Arabia', circuit: 'Jeddah Corniche Circuit',
     flag: 'sau.png', round: 5,
     search: 'saudi arabia jeddah jeddah corniche circuit saudi',
-    s: { fw:9, rw:7, don:90, doff:45, sf:41, sr:5, af:12, ar:18, rhf:20, rhr:47, cf:-3.50, cr:-2.20, tf:0.00, tr:0.10, bp:100, bb:54, tyf:22.5, tyr:20.0 }
+    s: { fw:9, rw:7, don:90, doff:45, sf:41, sr:5, af:12, ar:18, rhf:20, rhr:47, cf:-3.50, cr:-2.20, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:22.5, tyfr:22.5, tyrl:20.0, tyrr:20.0 }
   },
   {
     country: 'United States', circuit: 'Miami International Autodrome',
     flag: 'usa.png', round: 6,
     search: 'miami united states usa florida miami international autodrome miami gp',
-    s: { fw:9, rw:13, don:75, doff:40, sf:40, sr:6, af:20, ar:20, rhf:21, rhr:51, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:98, bb:54, tyf:26.5, tyr:21.0 }
+    s: { fw:9, rw:13, don:75, doff:40, sf:40, sr:6, af:20, ar:20, rhf:21, rhr:51, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:98, bb:54, tyfl:26.5, tyfr:26.5, tyrl:21.0, tyrr:21.0 }
   },
   {
     country: 'Italy', circuit: 'Autodromo Enzo e Dino Ferrari',
     flag: 'ita.png', round: 7,
     search: 'imola italy emilia romagna autodromo enzo dino ferrari italian imola gp',
-    s: { fw:33, rw:31, don:65, doff:40, sf:40, sr:3, af:14, ar:19, rhf:23, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyf:27.5, tyr:20.5 }
+    s: { fw:33, rw:31, don:65, doff:40, sf:40, sr:3, af:14, ar:19, rhf:23, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Monaco', circuit: 'Circuit de Monaco',
     flag: 'mco.png', round: 8,
     search: 'monaco monte carlo circuit de monaco',
-    s: { fw:44, rw:47, don:50, doff:20, sf:39, sr:6, af:12, ar:18, rhf:22, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.15, bp:100, bb:54, tyf:26.5, tyr:20.5 }
+    s: { fw:44, rw:47, don:50, doff:20, sf:39, sr:6, af:12, ar:18, rhf:22, rhr:52, cf:-3.50, cr:-2.00, tf:0.00, tr:0.15, bp:100, bb:54, tyfl:26.5, tyfr:26.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Spain', circuit: 'Circuit de Barcelona-Catalunya',
     flag: 'esp.png', round: 9,
     search: 'spain barcelona catalunya circuit de barcelona spanish gp',
-    s: { fw:28, rw:30, don:100, doff:30, sf:40, sr:1, af:1, ar:7, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:20.5 }
+    s: { fw:28, rw:30, don:100, doff:30, sf:40, sr:1, af:1, ar:7, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:29.5, tyfr:29.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Canada', circuit: 'Circuit Gilles Villeneuve',
     flag: 'can.png', round: 10,
     search: 'canada montreal circuit gilles villeneuve canadian gp',
-    s: { fw:34, rw:28, don:75, doff:35, sf:41, sr:5, af:12, ar:18, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:34, rw:28, don:75, doff:35, sf:41, sr:5, af:12, ar:18, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Austria', circuit: 'Red Bull Ring',
     flag: 'aut.png', round: 11,
     search: 'austria spielberg red bull ring styria austrian gp',
-    s: { fw:16, rw:18, don:75, doff:45, sf:41, sr:5, af:10, ar:19, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.0, tyr:21.0 }
+    s: { fw:16, rw:18, don:75, doff:45, sf:41, sr:5, af:10, ar:19, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.0, tyfr:27.0, tyrl:21.0, tyrr:21.0 }
   },
   {
     country: 'Great Britain', circuit: 'Silverstone Circuit',
     flag: 'gbr.png', round: 12,
     search: 'silverstone great britain gb uk england british gp british grand prix',
-    s: { fw:19, rw:21, don:100, doff:25, sf:41, sr:1, af:16, ar:21, rhf:21, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyf:29.5, tyr:26.5 }
+    s: { fw:19, rw:21, don:100, doff:25, sf:41, sr:1, af:16, ar:21, rhf:21, rhr:46, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:55, tyfl:29.5, tyfr:29.5, tyrl:26.5, tyrr:26.5 }
   },
   {
     country: 'Belgium', circuit: 'Circuit de Spa-Francorchamps',
     flag: 'bel.png', round: 13,
     search: 'belgium spa spa-francorchamps belgian gp',
-    s: { fw:3, rw:0, don:85, doff:45, sf:41, sr:1, af:16, ar:20, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:3, rw:0, don:85, doff:45, sf:41, sr:1, af:16, ar:20, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Hungary', circuit: 'Hungaroring',
     flag: 'hun.png', round: 14,
     search: 'hungaroring hungary budapest hungarian gp',
-    s: { fw:44, rw:46, don:75, doff:30, sf:41, sr:1, af:17, ar:15, rhf:20, rhr:50, cf:-3.50, cr:-2.20, tf:0.00, tr:0.00, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:44, rw:46, don:75, doff:30, sf:41, sr:1, af:17, ar:15, rhf:20, rhr:50, cf:-3.50, cr:-2.20, tf:0.00, tr:0.00, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Netherlands', circuit: 'Circuit Zandvoort',
     flag: 'nld.png', round: 15,
     search: 'netherlands zandvoort dutch circuit zandvoort dutch gp',
-    s: { fw:34, rw:36, don:75, doff:35, sf:41, sr:1, af:14, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyf:27.5, tyr:20.5 }
+    s: { fw:34, rw:36, don:75, doff:35, sf:41, sr:1, af:14, ar:18, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:53, tyfl:27.5, tyfr:26.5, tyrl:20.5, tyrr:19.5 }
   },
   {
     country: 'Italy', circuit: 'Autodromo Nazionale Monza',
     flag: 'ita.png', round: 16,
     search: 'monza italy italian gp autodromo nazionale monza',
-    s: { fw:1, rw:0, don:75, doff:35, sf:41, sr:1, af:9, ar:21, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:1, rw:0, don:75, doff:35, sf:41, sr:1, af:9, ar:21, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Azerbaijan', circuit: 'Baku City Circuit',
     flag: 'aze.png', round: 17,
     search: 'baku azerbaijan aze baku city circuit azerbaijan gp',
-    s: { fw:15, rw:10, don:45, doff:45, sf:41, sr:11, af:11, ar:10, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:15, rw:10, don:45, doff:45, sf:41, sr:11, af:11, ar:10, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Singapore', circuit: 'Marina Bay Street Circuit',
     flag: 'sgp.png', round: 18,
     search: 'singapore marina bay marina bay street circuit singapore gp',
-    s: { fw:50, rw:45, don:100, doff:20, sf:41, sr:5, af:12, ar:18, rhf:22, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:50, rw:45, don:100, doff:20, sf:41, sr:5, af:12, ar:18, rhf:22, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'United States', circuit: 'Circuit of the Americas',
     flag: 'usa.png', round: 19,
     search: 'austin usa texas cota circuit of the americas us gp united states',
-    s: { fw:41, rw:40, don:100, doff:40, sf:41, sr:3, af:21, ar:21, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.0, tyr:20.5 }
+    s: { fw:41, rw:40, don:100, doff:40, sf:41, sr:3, af:21, ar:21, rhf:21, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:29.0, tyfr:29.0, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Mexico', circuit: 'Autodromo Hermanos Rodriguez',
     flag: 'mex.png', round: 20,
     search: 'mexico mexico city hermanos rodriguez autodromo mexican gp',
-    s: { fw:23, rw:40, don:75, doff:40, sf:37, sr:19, af:12, ar:15, rhf:21, rhr:50, cf:-3.40, cr:-1.90, tf:0.08, tr:0.18, bp:95, bb:52, tyf:29.5, tyr:21.0 }
+    s: { fw:23, rw:40, don:75, doff:40, sf:37, sr:19, af:12, ar:15, rhf:21, rhr:50, cf:-3.40, cr:-1.90, tf:0.08, tr:0.18, bp:95, bb:52, tyfl:29.5, tyfr:29.5, tyrl:21.0, tyrr:21.0 }
   },
   {
     country: 'Brazil', circuit: 'Autodromo Jose Carlos Pace',
     flag: 'bra.png', round: 21,
     search: 'brazil sao paulo interlagos autodromo jose carlos pace brazilian gp',
-    s: { fw:40, rw:31, don:100, doff:20, sf:40, sr:1, af:12, ar:20, rhf:20, rhr:60, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:26.5 }
+    s: { fw:40, rw:31, don:100, doff:20, sf:40, sr:1, af:12, ar:20, rhf:20, rhr:60, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:29.5, tyfr:29.5, tyrl:26.5, tyrr:26.5 }
   },
   {
     country: 'United States', circuit: 'Las Vegas Strip Circuit',
     flag: 'usa.png', round: 22,
     search: 'las vegas vegas nevada usa las vegas strip circuit',
-    s: { fw:0, rw:5, don:100, doff:50, sf:41, sr:18, af:18, ar:9, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:25.0, tyr:21.5 }
+    s: { fw:0, rw:5, don:100, doff:50, sf:41, sr:18, af:18, ar:9, rhf:20, rhr:47, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:25.0, tyfr:25.0, tyrl:21.5, tyrr:21.5 }
   },
   {
     country: 'Qatar', circuit: 'Lusail International Circuit',
     flag: 'qat.png', round: 23,
     search: 'qatar lusail lusail international circuit qatar gp',
-    s: { fw:36, rw:35, don:75, doff:35, sf:41, sr:1, af:15, ar:19, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:27.5, tyr:20.5 }
+    s: { fw:36, rw:35, don:75, doff:35, sf:41, sr:1, af:15, ar:19, rhf:20, rhr:50, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:27.5, tyfr:27.5, tyrl:20.5, tyrr:20.5 }
   },
   {
     country: 'Abu Dhabi', circuit: 'Yas Marina Circuit',
     flag: 'are.png', round: 24,
     search: 'abu dhabi uae yas marina yas island yas marina circuit',
-    s: { fw:24, rw:25, don:100, doff:25, sf:40, sr:1, af:4, ar:9, rhf:20, rhr:45, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyf:29.5, tyr:20.8 }
+    s: { fw:24, rw:25, don:100, doff:25, sf:40, sr:1, af:4, ar:9, rhf:20, rhr:45, cf:-3.50, cr:-2.00, tf:0.00, tr:0.10, bp:100, bb:54, tyfl:29.5, tyfr:29.5, tyrl:20.8, tyrr:20.8 }
   }
 ];
 
@@ -576,8 +576,10 @@ function buildCard(t) {
       <div class="param-grid">
         <div class="param-cell"><span class="p-label">Brake Press</span><span class="p-value red">${s.bp}%</span></div>
         <div class="param-cell"><span class="p-label">Brake Bias</span><span class="p-value red">${s.bb}%</span></div>
-        <div class="param-cell"><span class="p-label">Tyre F</span><span class="p-value">${fmtNum(s.tyf, 1)} psi</span></div>
-        <div class="param-cell"><span class="p-label">Tyre R</span><span class="p-value">${fmtNum(s.tyr, 1)} psi</span></div>
+        <div class="param-cell"><span class="p-label">Tyre FL</span><span class="p-value">${fmtNum(s.tyfl, 1)} psi</span></div>
+        <div class="param-cell"><span class="p-label">Tyre FR</span><span class="p-value">${fmtNum(s.tyfr, 1)} psi</span></div>
+        <div class="param-cell"><span class="p-label">Tyre RL</span><span class="p-value">${fmtNum(s.tyrl, 1)} psi</span></div>
+        <div class="param-cell"><span class="p-label">Tyre RR</span><span class="p-value">${fmtNum(s.tyrr, 1)} psi</span></div>
       </div>
     </div>
   `;
