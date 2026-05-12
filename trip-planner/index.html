@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0f14;
+  --surface: #161921;
+  --surface2: #1c2030;
+  --border: #232733;
+  --accent: #6ee7b7;
+  --accent2: #60a5fa;
+  --text: #e8eaf0;
+  --muted: #6b7280;
+  --danger: #f87171;
+  --danger-dim: rgba(248,113,113,0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --touch: 44px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+/* ── VIEW SWITCHING ─────────────────────────────── */
+#view-list, #view-detail { display: none; }
+body[data-view="list"]   #view-list   { display: block; }
+body[data-view="detail"] #view-detail { display: block; }
+
+/* ── AUTH BAR ───────────────────────────────────── */
+#auth-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 48px;
+}
+.auth-user { display: flex; align-items: center; gap: 8px; }
+.auth-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+.auth-name { font-size: 12px; color: var(--muted); max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.btn-text { background: none; border: none; color: var(--muted); font-family: inherit; font-size: 12px; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.btn-text:hover { color: var(--text); }
+.btn-signin {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.btn-signin:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── PAGE CONTAINER ─────────────────────────────── */
+.page-container { max-width: 640px; margin: 0 auto; padding: 20px 16px 40px; }
+
+/* ── LIST VIEW ──────────────────────────────────── */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.list-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+.list-header p { color: var(--muted); font-size: 12px; margin-top: 3px; }
+
+#trip-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.trip-card {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.trip-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+
+.trip-card-body {
+  flex: 1;
+  padding: 14px 16px;
+  cursor: pointer;
+  min-height: var(--touch);
+}
+.trip-card-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+.trip-card-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+.trip-card-actions {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border);
+}
+.trip-card-actions .btn-icon {
+  flex: 1;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+}
+.trip-card-actions .btn-icon:last-child { border-bottom: none; }
+
+#list-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 0;
+  font-size: 13px;
+}
+#list-empty p { margin-top: 8px; }
+
+.btn-new-trip {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.btn-new-trip:hover { opacity: 0.85; }
+
+/* ── DETAIL HEADER ──────────────────────────────── */
+.detail-header {
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+#detail-header-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.btn-back {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: var(--touch);
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.btn-back:hover { color: var(--text); border-color: var(--text); }
+
+.trip-meta-editable { flex: 1; min-width: 0; }
+
+.trip-name-edit {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  outline: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+  word-break: break-word;
+  min-height: 28px;
+}
+.trip-name-edit:focus { border-bottom-color: var(--accent); }
+
+.trip-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.meta-select, .meta-input {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  min-height: 28px;
+}
+.meta-select:hover, .meta-input:hover,
+.meta-select:focus, .meta-input:focus {
+  border-color: var(--border);
+  outline: none;
+  color: var(--text);
+}
+.meta-label { font-size: 12px; color: var(--muted); }
+
+.btn-danger-icon {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  min-height: var(--touch);
+  min-width: var(--touch);
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.btn-danger-icon:hover { color: var(--danger); }
+
+/* ── SEARCH ─────────────────────────────────────── */
+.search-container {
+  position: sticky;
+  top: calc(48px + 70px);
+  z-index: 9;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+}
+.search-inner { max-width: 640px; margin: 0 auto; }
+#search-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#search-input:focus { border-color: var(--accent); }
+#search-input::placeholder { color: var(--muted); }
+
+#tag-filter-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 0 2px;
+  scrollbar-width: none;
+}
+#tag-filter-chips::-webkit-scrollbar { display: none; }
+
+.tag-filter-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+  min-height: 28px;
+}
+
+/* ── DAY JUMP NAV ───────────────────────────────── */
+#day-jump-nav {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px 16px;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--border);
+  max-width: 100%;
+}
+#day-jump-nav::-webkit-scrollbar { display: none; }
+.day-jump-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 32px;
+  transition: all 0.15s;
+}
+.day-jump-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+/* ── DAY SECTIONS ───────────────────────────────── */
+.detail-body { max-width: 640px; margin: 0 auto; }
+
+.day-section {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 200px;
+}
+.day-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 540px) { .slots-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .slots-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ── SLOT ───────────────────────────────────────── */
+.slot {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+.slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.slot-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.slot-morning { color: #6ee7b7; }
+.slot-noon    { color: #fbbf24; }
+.slot-evening { color: #60a5fa; }
+.slot-night   { color: #a78bfa; }
+
+.btn-add-activity {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 28px;
+  transition: all 0.15s;
+}
+.btn-add-activity:hover { border-color: var(--accent); color: var(--accent); }
+
+.activity-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+/* ── ACTIVITY CARD ──────────────────────────────── */
+.activity-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  transition: border-left-color 0.15s;
+}
+.activity-card:hover { border-left-color: var(--accent2); }
+
+.activity-name-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 0.15s;
+}
+.activity-name-link:hover { color: var(--accent2); }
+.activity-name-link.auto-link { color: var(--muted); }
+.activity-name-link.auto-link:hover { color: var(--accent2); }
+
+.activity-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+
+.activity-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS ────────────────────────────────────── */
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 28px;
+  min-width: 28px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-icon:hover:not(:disabled) { border-color: var(--text); color: var(--text); }
+.btn-icon:disabled { opacity: 0.25; cursor: default; }
+.btn-icon.btn-del { color: var(--danger); border-color: transparent; }
+.btn-icon.btn-del:hover { border-color: var(--danger); }
+
+/* ── TAG PILL ───────────────────────────────────── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 0 0 0 2px;
+  line-height: 1;
+  opacity: 0.7;
+  color: inherit;
+}
+.tag-remove:hover { opacity: 1; }
+
+/* ── SEARCH RESULTS ─────────────────────────────── */
+#search-results { padding: 12px 16px; max-width: 640px; margin: 0 auto; }
+.search-result-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.search-result-context {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 4px;
+}
+.search-empty { text-align: center; color: var(--muted); padding: 32px 0; font-size: 13px; }
+
+/* ── MODAL ──────────────────────────────────────── */
+.modal[hidden] { display: none; }
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0);
+  transition: background 0.25s;
+}
+.modal.open { background: rgba(0,0,0,0.7); }
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 20px 16px 32px;
+  max-height: 92vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.modal.open .modal-card { transform: translateY(0); }
+
+.modal-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+@media (min-width: 600px) {
+  .modal { justify-content: center; align-items: center; }
+  .modal-card {
+    border-radius: var(--radius-lg);
+    max-width: 480px;
+    width: 100%;
+    max-height: 85vh;
+  }
+  .modal-handle { display: none; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.modal-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-height: var(--touch);
+  min-width: var(--touch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover { color: var(--text); }
+
+/* ── FORMS ──────────────────────────────────────── */
+.form-field { margin-bottom: 16px; }
+.form-field label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.form-field input,
+.form-field select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  min-height: var(--touch);
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+.form-field input:focus,
+.form-field select:focus { border-color: var(--accent); }
+.form-field input::placeholder { color: var(--muted); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.btn-primary {
+  width: 100%;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-height: var(--touch);
+  margin-top: 8px;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+/* ── TAG SELECTOR ───────────────────────────────── */
+.tag-section-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.tag-preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.tag-preset-chip {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  min-height: 32px;
+  transition: all 0.15s;
+}
+.custom-tag-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.custom-tag-row input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  min-height: 36px;
+  transition: border-color 0.15s;
+}
+.custom-tag-row input:focus { border-color: var(--accent); }
+.custom-tag-row input::placeholder { color: var(--muted); }
+.btn-add-custom {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-height: 36px;
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+.btn-add-custom:hover { border-color: var(--accent); }
+#selected-tags-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+.no-tags { font-size: 12px; color: var(--muted); }
+
+/* ── TOAST ──────────────────────────────────────── */
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  z-index: 200;
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+#toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ── BACKLOG SECTION ────────────────────────────── */
+.backlog-section {
+  padding: 16px;
+  border-top: 2px dashed var(--border);
+  margin-top: 8px;
+}
+.backlog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.backlog-heading-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+}
+
+/* ── DRAG AND DROP ──────────────────────────────── */
+.activity-phantom {
+  border: 1px dashed var(--accent2);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent2) 8%, transparent);
+  list-style: none;
+  flex-shrink: 0;
+}
+
+/* ── AUTH REQUIRED ──────────────────────────────── */
+#list-unauth {
+  text-align: center;
+  color: var(--muted);
+  padding: 56px 0;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+#list-unauth p { line-height: 1.6; }
+</style>
+</head>
+<body data-view="list">
+
+<!-- AUTH BAR -->
+<div id="auth-bar"></div>
+
+<!-- ══ VIEW: LIST ══════════════════════════════════════ -->
+<div id="view-list">
+  <div class="page-container">
+    <div class="list-header">
+      <div>
+        <h1>Trip Planner</h1>
+        <p>Plan your holidays, day by day</p>
+      </div>
+      <button class="btn-new-trip" id="btn-new-trip">+ New Trip</button>
+    </div>
+    <ul id="trip-list"></ul>
+    <div id="list-empty" hidden>
+      <p style="font-size:32px">✈</p>
+      <p>No trips yet. Create your first one!</p>
+    </div>
+    <div id="list-unauth" hidden>
+      <p style="font-size:32px">🔒</p>
+      <p>Sign in to view and manage your trips.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VIEW: DETAIL ════════════════════════════════════ -->
+<div id="view-detail">
+  <div class="detail-header">
+    <div id="detail-header-inner"></div>
+  </div>
+  <div class="search-container">
+    <div class="search-inner">
+      <input id="search-input" type="search" placeholder="Search activities by name...">
+      <div id="tag-filter-chips"></div>
+    </div>
+  </div>
+  <div id="day-jump-nav"></div>
+  <div class="detail-body">
+    <div id="search-results" hidden></div>
+    <div id="days-container"></div>
+  </div>
+</div>
+
+<!-- ══ MODAL: CREATE TRIP ══════════════════════════════ -->
+<div id="modal-create-trip" class="modal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <h2>New Trip</h2>
+      <button class="modal-close" data-close="modal-create-trip">✕</button>
+    </div>
+    <form id="form-create-trip">
+      <div class="form-field">
+        <label>Destination *</label>
+        <input name="name" type="text" required placeholder="e.g. Tokyo" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Month</label>
+          <select name="month">
+            <option value="">— optional —</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Year *</label>
+          <input name="year" type="number" required min="2000" max="2040">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Number of days *</label>
+        <input name="days" type="number" required min="1" max="60" placeholder="e.g. 7">
+      </div>
+      <button type="submit" class="btn-primary">Create Trip</button>
+    </form>
+  </div>
+</div>
+
+<!-- ══ MODAL: ACTIVITY ═════════════════════════════════ -->
+<div id="modal-activity" class="modal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <h2 id="activity-modal-title">Add Activity</h2>
+      <button class="modal-close" data-close="modal-activity">✕</button>
+    </div>
+    <form id="form-activity">
+      <div class="form-field">
+        <label>Activity name *</label>
+        <input name="name" type="text" required placeholder="e.g. Tsukiji Market" autocomplete="off">
+      </div>
+      <div class="form-field">
+        <label>Link <span style="color:var(--muted);text-transform:none;font-size:10px">(optional — auto Google search if empty)</span></label>
+        <input name="link" type="url" placeholder="https://...">
+      </div>
+      <div class="form-field">
+        <div class="tag-section-label">Tags</div>
+        <div class="tag-preset-chips" id="tag-preset-chips"></div>
+        <div class="custom-tag-row">
+          <input id="custom-tag-input" type="text" placeholder="Custom tag...">
+          <button type="button" class="btn-add-custom" id="btn-add-custom-tag">Add</button>
+        </div>
+        <div id="selected-tags-display"></div>
+      </div>
+      <button type="submit" class="btn-primary">Save Activity</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script type="module">
+// ── FIREBASE CONFIG ────────────────────────────────────────────────────────
+// Replace with your Firebase project config.
+// Get it from: Firebase Console → Project Settings → Your apps → SDK setup
+// Firestore Security Rules (set in Firebase Console):
+//   rules_version = '2';
+//   service cloud.firestore {
+//     match /databases/{database}/documents {
+//       match /trips/{tripId} {
+//         allow read, write: if request.auth != null;
+//       }
+//     }
+//   }
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBrw2P_bDnHhRmz244ZxVWvA0Rvenv_zPI",
+  authDomain: "fer-trip-planner.firebaseapp.com",
+  projectId: "fer-trip-planner",
+  storageBucket: "fer-trip-planner.firebasestorage.app",
+  messagingSenderId: "1016400203344",
+  appId: "1:1016400203344:web:8d7f41dd3d8886fe25cb55"
+};
+
+// ── IMPORTS ────────────────────────────────────────────────────────────────
+import { initializeApp }
+  from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'
+import {
+  getFirestore, collection, doc, setDoc, updateDoc, deleteDoc,
+  onSnapshot, serverTimestamp, query, orderBy
+} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'
+import {
+  getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect,
+  getRedirectResult, signOut, onAuthStateChanged
+} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js'
+
+const app      = initializeApp(FIREBASE_CONFIG)
+const db       = getFirestore(app)
+const auth     = getAuth(app)
+const tripsCol = collection(db, 'trips')
+
+// ── CONSTANTS ──────────────────────────────────────────────────────────────
+const MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December']
+
+const SLOTS = [
+  { key: 'morning', label: 'Morning' },
+  { key: 'noon',    label: 'Noon'    },
+  { key: 'evening', label: 'Evening' },
+  { key: 'night',   label: 'Night'   },
+]
+
+const PRESET_TAGS = ['food','cafe','sightseeing','activity','nature','shopping','transport','accommodation']
+
+const TAG_COLORS = {
+  food:          '#fb923c',
+  cafe:          '#fbbf24',
+  sightseeing:   '#60a5fa',
+  activity:      '#a78bfa',
+  nature:        '#6ee7b7',
+  shopping:      '#f472b6',
+  transport:     '#94a3b8',
+  accommodation: '#34d399',
+}
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+const state = {
+  user:            null,
+  trips:           [],
+  currentTrip:     null,
+  searchQuery:     '',
+  searchTags:      [],
+  activityContext: { dayIndex: null, slot: null, activityId: null, isBacklog: false },
+  unsubTrips:      null,
+}
+
+let modalTags = []
+
+// ── UTILITIES ──────────────────────────────────────────────────────────────
+const uuid = () => crypto.randomUUID()
+
+function esc(str) {
+  return String(str ?? '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+}
+
+function tagColor(tag) { return TAG_COLORS[tag] || '#94a3b8' }
+
+function tagPillHTML(tag, removable = false) {
+  const c = esc(tagColor(tag))
+  const rm = removable
+    ? `<button type="button" class="tag-remove" data-tag="${esc(tag)}">✕</button>`
+    : ''
+  return `<span class="tag-pill" style="background:color-mix(in srgb,${c} 15%,transparent);color:${c};border-color:color-mix(in srgb,${c} 30%,transparent)">${esc(tag)}${rm}</span>`
+}
+
+function resolveLink(name, link) {
+  if (link && link.trim()) return link.trim()
+  return `https://www.google.com/search?q=${encodeURIComponent(name)}`
+}
+
+function formatTripMeta(trip) {
+  const parts = []
+  if (trip.month) parts.push(MONTHS[trip.month - 1])
+  if (trip.year)  parts.push(String(trip.year))
+  parts.push(`${trip.days} day${trip.days !== 1 ? 's' : ''}`)
+  return parts.join(' · ')
+}
+
+function buildEmptyDayPlans(n) {
+  return Array.from({ length: n }, (_, i) => ({
+    dayIndex: i,
+    slots: { morning: [], noon: [], evening: [], night: [] }
+  }))
+}
+
+let toastTimer = null
+function showToast(msg, ms = 2800) {
+  const el = document.getElementById('toast')
+  el.textContent = msg
+  el.classList.add('show')
+  clearTimeout(toastTimer)
+  toastTimer = setTimeout(() => el.classList.remove('show'), ms)
+}
+
+function requireAuth() {
+  if (!state.user) { showToast('Sign in to edit'); return false }
+  return true
+}
+
+// ── AUTH ───────────────────────────────────────────────────────────────────
+function renderAuthBar() {
+  const bar = document.getElementById('auth-bar')
+  if (state.user) {
+    const photo = state.user.photoURL
+      ? `<img src="${esc(state.user.photoURL)}" class="auth-avatar" alt="">`
+      : ''
+    bar.innerHTML = `<div class="auth-user">
+      ${photo}
+      <span class="auth-name">${esc(state.user.displayName || state.user.email || '')}</span>
+      <button class="btn-text" id="btn-signout">Sign out</button>
+    </div>`
+  } else {
+    bar.innerHTML = `<button class="btn-signin" id="btn-signin">Sign in with Google</button>`
+  }
+}
+
+async function signIn() {
+  try {
+    await signInWithPopup(auth, new GoogleAuthProvider())
+  } catch (err) {
+    if (err.code === 'auth/popup-blocked' || err.code === 'auth/cancelled-popup-request') {
+      await signInWithRedirect(auth, new GoogleAuthProvider())
+    } else if (err.code === 'auth/unauthorized-domain') {
+      showToast('Add this domain to Firebase Auth → Authorized Domains', 6000)
+    } else if (err.code !== 'auth/popup-closed-by-user') {
+      showToast(`Sign-in error: ${err.code}`, 5000)
+    }
+  }
+}
+
+// ── FIRESTORE OPS ──────────────────────────────────────────────────────────
+function startTripListener() {
+  if (state.unsubTrips) state.unsubTrips()
+  const q = query(tripsCol, orderBy('order', 'asc'))
+  state.unsubTrips = onSnapshot(q, snap => {
+    state.trips = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    if (state.currentTrip) {
+      const updated = state.trips.find(t => t.id === state.currentTrip.id)
+      if (updated) state.currentTrip = updated
+    }
+    renderTripList()
+  }, err => {
+    console.error(err)
+    showToast('Could not load trips')
+  })
+}
+
+async function createTrip({ name, month, year, days }) {
+  if (!requireAuth()) return
+  const id = uuid()
+  await setDoc(doc(db, 'trips', id), {
+    name, month: month || null, year, days,
+    order: state.trips.length,
+    createdAt: serverTimestamp(),
+    dayPlans: buildEmptyDayPlans(days),
+    backlog: []
+  })
+}
+
+async function patchTrip(id, patch) {
+  if (!requireAuth()) return
+  await updateDoc(doc(db, 'trips', id), patch)
+}
+
+async function deleteTrip(id) {
+  if (!requireAuth()) return
+  if (!confirm('Delete this trip and all its activities?')) return
+  await deleteDoc(doc(db, 'trips', id))
+  state.currentTrip = null
+  showView('list')
+}
+
+async function reorderTrip(id, dir) {
+  if (!requireAuth()) return
+  const idx = state.trips.findIndex(t => t.id === id)
+  const swapIdx = dir === 'up' ? idx - 1 : idx + 1
+  if (swapIdx < 0 || swapIdx >= state.trips.length) return
+  const a = state.trips[idx], b = state.trips[swapIdx]
+  await Promise.all([
+    updateDoc(doc(db, 'trips', a.id), { order: b.order }),
+    updateDoc(doc(db, 'trips', b.id), { order: a.order }),
+  ])
+}
+
+async function saveDayPlans(dayPlans) {
+  const id = state.currentTrip.id
+  await updateDoc(doc(db, 'trips', id), { dayPlans })
+  state.currentTrip = { ...state.currentTrip, dayPlans }
+  renderTripDetail()
+  if (state.searchQuery || state.searchTags.length) renderSearchResults()
+}
+
+function clonePlans() {
+  return JSON.parse(JSON.stringify(state.currentTrip.dayPlans || []))
+}
+
+async function addActivity(dayIndex, slot, activity) {
+  if (!requireAuth()) return
+  const plans = clonePlans()
+  activity.order = plans[dayIndex].slots[slot].length
+  plans[dayIndex].slots[slot].push(activity)
+  await saveDayPlans(plans)
+}
+
+async function editActivity(dayIndex, slot, activityId, patch) {
+  if (!requireAuth()) return
+  const plans = clonePlans()
+  const arr = plans[dayIndex].slots[slot]
+  const i = arr.findIndex(a => a.id === activityId)
+  if (i === -1) return
+  arr[i] = { ...arr[i], ...patch }
+  await saveDayPlans(plans)
+}
+
+async function deleteActivity(dayIndex, slot, activityId) {
+  if (!requireAuth()) return
+  if (!confirm('Remove this activity?')) return
+  const plans = clonePlans()
+  plans[dayIndex].slots[slot] = plans[dayIndex].slots[slot].filter(a => a.id !== activityId)
+  await saveDayPlans(plans)
+}
+
+async function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
+  if (!requireAuth()) return
+  const plans = clonePlans()
+  const arr = plans[dayIndex].slots[slot]
+  const reordered = newIdOrder.map((id, i) => {
+    const item = arr.find(a => a.id === id)
+    return item ? { ...item, order: i } : null
+  }).filter(Boolean)
+  plans[dayIndex].slots[slot] = reordered
+  await saveDayPlans(plans)
+}
+
+async function reorderActivity(dayIndex, slot, activityId, dir) {
+  if (!requireAuth()) return
+  const plans = clonePlans()
+  const arr = plans[dayIndex].slots[slot]
+  const idx = arr.findIndex(a => a.id === activityId)
+  const swapIdx = dir === 'up' ? idx - 1 : idx + 1
+  if (swapIdx < 0 || swapIdx >= arr.length) return
+  ;[arr[idx], arr[swapIdx]] = [arr[swapIdx], arr[idx]]
+  arr.forEach((a, i) => { a.order = i })
+  await saveDayPlans(plans)
+}
+
+// ── BACKLOG CRUD ───────────────────────────────────────────────────────────
+async function saveBacklog(backlog) {
+  const id = state.currentTrip.id
+  await updateDoc(doc(db, 'trips', id), { backlog })
+  state.currentTrip = { ...state.currentTrip, backlog }
+  renderTripDetail()
+  if (state.searchQuery || state.searchTags.length) renderSearchResults()
+}
+
+function cloneBacklog() {
+  return JSON.parse(JSON.stringify(state.currentTrip.backlog || []))
+}
+
+async function addBacklogActivity(activity) {
+  if (!requireAuth()) return
+  const backlog = cloneBacklog()
+  activity.order = backlog.length
+  backlog.push(activity)
+  await saveBacklog(backlog)
+}
+
+async function editBacklogActivity(activityId, patch) {
+  if (!requireAuth()) return
+  const backlog = cloneBacklog()
+  const i = backlog.findIndex(a => a.id === activityId)
+  if (i === -1) return
+  backlog[i] = { ...backlog[i], ...patch }
+  await saveBacklog(backlog)
+}
+
+async function deleteBacklogActivity(activityId) {
+  if (!requireAuth()) return
+  if (!confirm('Remove this activity?')) return
+  await saveBacklog(cloneBacklog().filter(a => a.id !== activityId))
+}
+
+async function reorderBacklogActivity(activityId, dir) {
+  if (!requireAuth()) return
+  const backlog = cloneBacklog()
+  const idx = backlog.findIndex(a => a.id === activityId)
+  const swapIdx = dir === 'up' ? idx - 1 : idx + 1
+  if (swapIdx < 0 || swapIdx >= backlog.length) return
+  ;[backlog[idx], backlog[swapIdx]] = [backlog[swapIdx], backlog[idx]]
+  backlog.forEach((a, i) => { a.order = i })
+  await saveBacklog(backlog)
+}
+
+async function reorderBacklogToOrder(newIdOrder) {
+  if (!requireAuth()) return
+  const backlog = cloneBacklog()
+  const reordered = newIdOrder.map((id, i) => {
+    const item = backlog.find(a => a.id === id)
+    return item ? { ...item, order: i } : null
+  }).filter(Boolean)
+  await saveBacklog(reordered)
+}
+
+// ── RENDER: TRIP LIST ──────────────────────────────────────────────────────
+function renderTripList() {
+  const list   = document.getElementById('trip-list')
+  const empty  = document.getElementById('list-empty')
+  const unauth = document.getElementById('list-unauth')
+  if (!state.user) {
+    list.innerHTML = ''
+    empty.hidden = true
+    unauth.hidden = false
+    return
+  }
+  unauth.hidden = true
+  if (!state.trips.length) {
+    list.innerHTML = ''
+    empty.hidden = false
+    return
+  }
+  empty.hidden = true
+  list.innerHTML = state.trips.map((trip, idx) => `
+    <li class="trip-card" data-id="${esc(trip.id)}">
+      <div class="trip-card-body">
+        <div class="trip-card-name">${esc(trip.name)}</div>
+        <div class="trip-card-meta">${esc(formatTripMeta(trip))}</div>
+      </div>
+      <div class="trip-card-actions">
+        <button class="btn-icon btn-trip-up" data-id="${esc(trip.id)}" title="Move up" ${idx === 0 ? 'disabled' : ''}>↑</button>
+        <button class="btn-icon btn-trip-dn" data-id="${esc(trip.id)}" title="Move down" ${idx === state.trips.length - 1 ? 'disabled' : ''}>↓</button>
+      </div>
+    </li>`).join('')
+}
+
+// ── RENDER: TRIP DETAIL ────────────────────────────────────────────────────
+function renderTripDetail() {
+  if (!state.currentTrip) return
+  const trip = state.currentTrip
+
+  const monthOpts = MONTHS.map((m, i) =>
+    `<option value="${i+1}" ${trip.month === i+1 ? 'selected' : ''}>${m}</option>`
+  ).join('')
+
+  document.getElementById('detail-header-inner').innerHTML = `
+    <button class="btn-back" id="btn-back">← Back</button>
+    <div class="trip-meta-editable">
+      <span id="trip-name-edit" class="trip-name-edit" contenteditable="true" spellcheck="false">${esc(trip.name)}</span>
+      <div class="trip-meta-row">
+        <select id="trip-month-edit" class="meta-select">
+          <option value="">Month</option>${monthOpts}
+        </select>
+        <input id="trip-year-edit" class="meta-input" type="number" value="${trip.year}" min="2000" max="2040" style="width:60px">
+        <input id="trip-days-edit" class="meta-input" type="number" value="${trip.days}" min="1" max="60" style="width:44px">
+        <span class="meta-label">days</span>
+      </div>
+    </div>
+    <button class="btn-danger-icon" id="btn-delete-trip" title="Delete trip">✕</button>`
+
+  document.getElementById('day-jump-nav').innerHTML =
+    Array.from({ length: trip.days }, (_, i) =>
+      `<button class="day-jump-btn" data-day="${i}">D${i+1}</button>`
+    ).join('')
+
+  renderTagFilterChips()
+
+  document.getElementById('days-container').innerHTML =
+    (trip.dayPlans || []).map(dp => `
+      <section class="day-section" id="day-${dp.dayIndex}">
+        <div class="day-heading">Day ${dp.dayIndex + 1}</div>
+        <div class="slots-grid">
+          ${SLOTS.map(s => renderSlot(dp.dayIndex, s, dp.slots[s.key] || [])).join('')}
+        </div>
+      </section>`).join('')
+    + renderBacklogSection(trip.backlog || [])
+}
+
+function renderSlot(dayIndex, slot, activities) {
+  const sorted = [...activities].sort((a, b) => a.order - b.order)
+  return `
+    <div class="slot">
+      <div class="slot-header">
+        <span class="slot-label slot-${slot.key}">${slot.label}</span>
+        <button class="btn-add-activity" data-day="${dayIndex}" data-slot="${slot.key}">+ Add</button>
+      </div>
+      <ul class="activity-list">
+        ${sorted.map((act, i) => renderActivityCard(act, dayIndex, slot.key, i, sorted.length)).join('')}
+      </ul>
+    </div>`
+}
+
+function renderActivityCard(act, dayIndex, slotKey, idx, total) {
+  const href   = esc(resolveLink(act.name, act.link))
+  const isAuto = !act.link
+  const tags   = (act.tags || []).map(t => tagPillHTML(t)).join('')
+  return `
+    <li class="activity-card" data-id="${esc(act.id)}" data-day="${dayIndex}" data-slot="${slotKey}">
+      <a class="activity-name-link${isAuto ? ' auto-link' : ''}" href="${href}" target="_blank" rel="noopener">${esc(act.name)}</a>
+      ${tags ? `<div class="activity-tags">${tags}</div>` : ''}
+      <div class="activity-actions">
+        <button class="btn-icon" data-act="up"   data-id="${esc(act.id)}" data-day="${dayIndex}" data-slot="${slotKey}" ${idx === 0 ? 'disabled' : ''}>↑</button>
+        <button class="btn-icon" data-act="dn"   data-id="${esc(act.id)}" data-day="${dayIndex}" data-slot="${slotKey}" ${idx === total-1 ? 'disabled' : ''}>↓</button>
+        <button class="btn-icon" data-act="edit" data-id="${esc(act.id)}" data-day="${dayIndex}" data-slot="${slotKey}">Edit</button>
+        <button class="btn-icon btn-del" data-act="del" data-id="${esc(act.id)}" data-day="${dayIndex}" data-slot="${slotKey}">Del</button>
+      </div>
+    </li>`
+}
+
+function renderBacklogSection(backlog) {
+  const sorted = [...backlog].sort((a, b) => a.order - b.order)
+  return `
+    <div class="backlog-section">
+      <div class="backlog-heading">
+        <span class="backlog-heading-label">Backlog / Ideas</span>
+        <button class="btn-add-activity" id="btn-add-backlog">+ Add</button>
+      </div>
+      <ul class="activity-list">
+        ${sorted.map((act, i) => renderBacklogCard(act, i, sorted.length)).join('')}
+      </ul>
+    </div>`
+}
+
+function renderBacklogCard(act, idx, total) {
+  const href   = esc(resolveLink(act.name, act.link))
+  const isAuto = !act.link
+  const tags   = (act.tags || []).map(t => tagPillHTML(t)).join('')
+  return `
+    <li class="activity-card" data-id="${esc(act.id)}" data-backlog="true">
+      <a class="activity-name-link${isAuto ? ' auto-link' : ''}" href="${href}" target="_blank" rel="noopener">${esc(act.name)}</a>
+      ${tags ? `<div class="activity-tags">${tags}</div>` : ''}
+      <div class="activity-actions">
+        <button class="btn-icon" data-act="bl-up"   data-id="${esc(act.id)}" ${idx === 0 ? 'disabled' : ''}>↑</button>
+        <button class="btn-icon" data-act="bl-dn"   data-id="${esc(act.id)}" ${idx === total-1 ? 'disabled' : ''}>↓</button>
+        <button class="btn-icon" data-act="bl-edit" data-id="${esc(act.id)}">Edit</button>
+        <button class="btn-icon btn-del" data-act="bl-del" data-id="${esc(act.id)}">Del</button>
+      </div>
+    </li>`
+}
+
+// ── RENDER: TAG FILTER CHIPS ───────────────────────────────────────────────
+function renderTagFilterChips() {
+  const allTags = new Set()
+  state.currentTrip?.dayPlans?.forEach(dp =>
+    SLOTS.forEach(s => (dp.slots[s.key] || []).forEach(act => act.tags?.forEach(t => allTags.add(t))))
+  )
+  state.currentTrip?.backlog?.forEach(act => act.tags?.forEach(t => allTags.add(t)))
+  const container = document.getElementById('tag-filter-chips')
+  if (!allTags.size) { container.innerHTML = ''; return }
+  container.innerHTML = [...allTags].map(tag => {
+    const active = state.searchTags.includes(tag)
+    const c = esc(tagColor(tag))
+    const style = active
+      ? `background:color-mix(in srgb,${c} 20%,transparent);color:${c};border-color:color-mix(in srgb,${c} 50%,transparent)`
+      : ''
+    return `<button class="tag-filter-chip" data-tag="${esc(tag)}" style="${style}">${esc(tag)}</button>`
+  }).join('')
+}
+
+// ── RENDER: SEARCH RESULTS ─────────────────────────────────────────────────
+function renderSearchResults() {
+  const q      = state.searchQuery
+  const tags   = state.searchTags
+  const results = []
+
+  state.currentTrip?.dayPlans?.forEach(dp =>
+    SLOTS.forEach(s => (dp.slots[s.key] || []).forEach(act => {
+      const matchName = !q || act.name.toLowerCase().includes(q)
+      const matchTag  = !tags.length || tags.some(t => act.tags?.includes(t))
+      if (matchName && matchTag) results.push({ act, dayIndex: dp.dayIndex, slot: s, context: null })
+    }))
+  )
+
+  // Also search backlog
+  ;(state.currentTrip?.backlog || []).forEach(act => {
+    const matchName = !q || act.name.toLowerCase().includes(q)
+    const matchTag  = !tags.length || tags.some(t => act.tags?.includes(t))
+    if (matchName && matchTag) results.push({ act, context: 'Backlog' })
+  })
+
+  const container = document.getElementById('search-results')
+  if (!results.length) {
+    container.innerHTML = '<div class="search-empty">No activities match</div>'
+    return
+  }
+  container.innerHTML = results.map(({ act, dayIndex, slot, context }) => {
+    const href   = esc(resolveLink(act.name, act.link))
+    const isAuto = !act.link
+    const label  = context || `Day ${dayIndex + 1} · ${slot.label}`
+    return `<div class="search-result-item">
+      <div class="search-result-context">${label}</div>
+      <a class="activity-name-link${isAuto ? ' auto-link' : ''}" href="${href}" target="_blank" rel="noopener">${esc(act.name)}</a>
+      ${act.tags?.length ? `<div class="activity-tags">${act.tags.map(t => tagPillHTML(t)).join('')}</div>` : ''}
+    </div>`
+  }).join('')
+}
+
+// ── VIEW SWITCHING ─────────────────────────────────────────────────────────
+function showView(view) { document.body.dataset.view = view }
+
+function openTrip(id) {
+  const trip = state.trips.find(t => t.id === id)
+  if (!trip) return
+  state.currentTrip   = trip
+  state.searchQuery   = ''
+  state.searchTags    = []
+  document.getElementById('search-input').value = ''
+  document.getElementById('search-results').hidden  = true
+  document.getElementById('days-container').hidden   = false
+  showView('detail')
+  renderTripDetail()
+}
+
+// ── MODAL HELPERS ──────────────────────────────────────────────────────────
+function openModal(id) {
+  const m = document.getElementById(id)
+  m.hidden = false
+  requestAnimationFrame(() => m.classList.add('open'))
+}
+
+function closeModal(id) {
+  const m = document.getElementById(id)
+  m.classList.remove('open')
+  setTimeout(() => { m.hidden = true }, 280)
+}
+
+// ── ACTIVITY MODAL ─────────────────────────────────────────────────────────
+function renderActivityTagUI() {
+  document.getElementById('tag-preset-chips').innerHTML = PRESET_TAGS.map(tag => {
+    const sel = modalTags.includes(tag)
+    const c   = esc(tagColor(tag))
+    const style = sel ? `background:color-mix(in srgb,${c} 20%,transparent);color:${c};border-color:color-mix(in srgb,${c} 40%,transparent)` : ''
+    return `<button type="button" class="tag-preset-chip" data-tag="${esc(tag)}" style="${style}">${esc(tag)}</button>`
+  }).join('')
+
+  const disp = document.getElementById('selected-tags-display')
+  disp.innerHTML = modalTags.length
+    ? modalTags.map(t => tagPillHTML(t, true)).join('')
+    : '<span class="no-tags">No tags selected</span>'
+}
+
+function openActivityModal(dayIndex, slot, activityId = null, isBacklog = false) {
+  state.activityContext = { dayIndex, slot, activityId, isBacklog }
+  const form = document.getElementById('form-activity')
+  form.reset()
+
+  let existing = null
+  if (activityId) {
+    existing = isBacklog
+      ? state.currentTrip.backlog.find(a => a.id === activityId)
+      : state.currentTrip.dayPlans[dayIndex].slots[slot].find(a => a.id === activityId)
+  }
+
+  document.getElementById('activity-modal-title').textContent = activityId ? 'Edit Activity' : 'Add Activity'
+  form.querySelector('[name=name]').value = existing?.name || ''
+  form.querySelector('[name=link]').value = existing?.link || ''
+  modalTags = [...(existing?.tags || [])]
+
+  renderActivityTagUI()
+  openModal('modal-activity')
+}
+
+// ── SEARCH ─────────────────────────────────────────────────────────────────
+function handleSearch() {
+  state.searchQuery = document.getElementById('search-input').value.trim().toLowerCase()
+  const isActive = state.searchQuery.length > 0 || state.searchTags.length > 0
+  document.getElementById('search-results').hidden  = !isActive
+  document.getElementById('days-container').hidden   = isActive
+  if (isActive) renderSearchResults()
+}
+
+// ── EVENT: AUTH BAR ────────────────────────────────────────────────────────
+document.getElementById('auth-bar').addEventListener('click', e => {
+  if (e.target.closest('#btn-signin'))  signIn()
+  if (e.target.closest('#btn-signout')) signOut(auth)
+})
+
+// ── EVENT: LIST VIEW ───────────────────────────────────────────────────────
+document.getElementById('view-list').addEventListener('click', e => {
+  if (e.target.closest('#btn-new-trip')) { openModal('modal-create-trip'); return }
+
+  const up = e.target.closest('.btn-trip-up')
+  if (up) { reorderTrip(up.dataset.id, 'up'); return }
+
+  const dn = e.target.closest('.btn-trip-dn')
+  if (dn) { reorderTrip(dn.dataset.id, 'down'); return }
+
+  const card = e.target.closest('.trip-card-body')
+  if (card) openTrip(card.closest('.trip-card').dataset.id)
+})
+
+// ── EVENT: DETAIL VIEW ────────────────────────────────────────────────────
+document.getElementById('view-detail').addEventListener('click', e => {
+  if (e.target.closest('#btn-back'))         { showView('list'); return }
+  if (e.target.closest('#btn-delete-trip'))  { deleteTrip(state.currentTrip.id); return }
+
+  if (e.target.closest('#btn-add-backlog')) { openActivityModal(null, null, null, true); return }
+
+  const addBtn = e.target.closest('.btn-add-activity')
+  if (addBtn) { openActivityModal(Number(addBtn.dataset.day), addBtn.dataset.slot); return }
+
+  const actBtn = e.target.closest('[data-act]')
+  if (actBtn) {
+    const { act, id, day, slot } = actBtn.dataset
+    const d = Number(day)
+    if (act === 'edit')    openActivityModal(d, slot, id)
+    if (act === 'del')     deleteActivity(d, slot, id)
+    if (act === 'up')      reorderActivity(d, slot, id, 'up')
+    if (act === 'dn')      reorderActivity(d, slot, id, 'down')
+    if (act === 'bl-edit') openActivityModal(null, null, id, true)
+    if (act === 'bl-del')  deleteBacklogActivity(id)
+    if (act === 'bl-up')   reorderBacklogActivity(id, 'up')
+    if (act === 'bl-dn')   reorderBacklogActivity(id, 'down')
+    return
+  }
+
+  const jumpBtn = e.target.closest('.day-jump-btn')
+  if (jumpBtn) {
+    document.getElementById(`day-${jumpBtn.dataset.day}`)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    return
+  }
+})
+
+// ── EVENT: INLINE TRIP EDITING ────────────────────────────────────────────
+document.getElementById('view-detail').addEventListener('blur', async e => {
+  const el = e.target.closest('#trip-name-edit')
+  if (!el || !state.currentTrip) return
+  const newName = el.textContent.trim()
+  if (newName && newName !== state.currentTrip.name) {
+    await patchTrip(state.currentTrip.id, { name: newName })
+    state.currentTrip = { ...state.currentTrip, name: newName }
+  }
+}, true)
+
+document.getElementById('view-detail').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.closest('#trip-name-edit')) {
+    e.preventDefault(); e.target.blur()
+  }
+})
+
+document.getElementById('view-detail').addEventListener('change', async e => {
+  if (!state.currentTrip) return
+  const id = state.currentTrip.id
+
+  if (e.target.id === 'trip-month-edit') {
+    const val = e.target.value ? Number(e.target.value) : null
+    await patchTrip(id, { month: val })
+    state.currentTrip = { ...state.currentTrip, month: val }
+  }
+  if (e.target.id === 'trip-year-edit') {
+    const val = Number(e.target.value)
+    if (val >= 2000 && val <= 2040) {
+      await patchTrip(id, { year: val })
+      state.currentTrip = { ...state.currentTrip, year: val }
+    }
+  }
+  if (e.target.id === 'trip-days-edit') {
+    const newDays = Number(e.target.value)
+    if (!newDays || newDays < 1 || newDays > 60) return
+    const curDays = state.currentTrip.dayPlans?.length || 0
+    let plans = clonePlans()
+    if (newDays > curDays) {
+      for (let i = curDays; i < newDays; i++)
+        plans.push({ dayIndex: i, slots: { morning:[], noon:[], evening:[], night:[] } })
+    } else if (newDays < curDays) {
+      if (!confirm(`Remove the last ${curDays - newDays} day(s) and all their activities?`)) {
+        e.target.value = curDays; return
+      }
+      plans = plans.slice(0, newDays)
+    }
+    await patchTrip(id, { days: newDays, dayPlans: plans })
+    state.currentTrip = { ...state.currentTrip, days: newDays, dayPlans: plans }
+    renderTripDetail()
+  }
+})
+
+// ── EVENT: SEARCH ──────────────────────────────────────────────────────────
+document.getElementById('search-input').addEventListener('input', handleSearch)
+
+document.getElementById('tag-filter-chips').addEventListener('click', e => {
+  const chip = e.target.closest('.tag-filter-chip')
+  if (!chip) return
+  const tag = chip.dataset.tag
+  const i   = state.searchTags.indexOf(tag)
+  if (i === -1) state.searchTags.push(tag)
+  else           state.searchTags.splice(i, 1)
+  renderTagFilterChips()
+  handleSearch()
+})
+
+// ── EVENT: CREATE TRIP FORM ────────────────────────────────────────────────
+document.getElementById('form-create-trip').addEventListener('submit', async e => {
+  e.preventDefault()
+  if (!requireAuth()) return
+  const fd = new FormData(e.target)
+  try {
+    await createTrip({
+      name:  fd.get('name').trim(),
+      month: fd.get('month') ? Number(fd.get('month')) : null,
+      year:  Number(fd.get('year')),
+      days:  Number(fd.get('days')),
+    })
+    closeModal('modal-create-trip')
+    showToast('Trip created!')
+    document.getElementById('form-create-trip').reset()
+  } catch (err) {
+    showToast('Failed to create trip: ' + (err.code || err.message), 5000)
+  }
+})
+
+// ── EVENT: ACTIVITY FORM ───────────────────────────────────────────────────
+document.getElementById('form-activity').addEventListener('submit', async e => {
+  e.preventDefault()
+  if (!requireAuth()) return
+  const fd = new FormData(e.target)
+  const { dayIndex, slot, activityId, isBacklog } = state.activityContext
+  const patch = {
+    name: fd.get('name').trim(),
+    link: fd.get('link').trim() || null,
+    tags: [...modalTags],
+  }
+  try {
+    if (isBacklog) {
+      if (activityId) await editBacklogActivity(activityId, patch)
+      else             await addBacklogActivity({ id: uuid(), ...patch })
+    } else {
+      if (activityId) await editActivity(dayIndex, slot, activityId, patch)
+      else             await addActivity(dayIndex, slot, { id: uuid(), ...patch })
+    }
+    closeModal('modal-activity')
+    showToast(activityId ? 'Activity updated!' : 'Activity added!')
+    renderTagFilterChips()
+  } catch (err) {
+    showToast('Failed to save: ' + (err.code || err.message), 5000)
+  }
+})
+
+document.getElementById('tag-preset-chips').addEventListener('click', e => {
+  const chip = e.target.closest('.tag-preset-chip')
+  if (!chip) return
+  const tag = chip.dataset.tag
+  const i   = modalTags.indexOf(tag)
+  if (i === -1) modalTags.push(tag)
+  else           modalTags.splice(i, 1)
+  renderActivityTagUI()
+})
+
+document.getElementById('btn-add-custom-tag').addEventListener('click', () => {
+  const input = document.getElementById('custom-tag-input')
+  const tag   = input.value.trim().toLowerCase().replace(/\s+/g, '-')
+  if (!tag || modalTags.includes(tag)) { input.value = ''; return }
+  modalTags.push(tag)
+  input.value = ''
+  renderActivityTagUI()
+})
+
+document.getElementById('custom-tag-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-add-custom-tag').click() }
+})
+
+document.getElementById('selected-tags-display').addEventListener('click', e => {
+  const btn = e.target.closest('.tag-remove')
+  if (!btn) return
+  modalTags = modalTags.filter(t => t !== btn.dataset.tag)
+  renderActivityTagUI()
+})
+
+// ── EVENT: MODAL CLOSE ────────────────────────────────────────────────────
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.querySelector('.modal-backdrop')?.addEventListener('click', () => {
+    closeModal(modal.id)
+  })
+  modal.querySelector('.modal-close')?.addEventListener('click', () => {
+    closeModal(modal.id)
+  })
+})
+
+// ── DRAG AND DROP ─────────────────────────────────────────────────────────
+const dnd = {
+  active: false, timer: null, card: null, clone: null,
+  phantom: null, list: null, context: null, offsetY: 0, lastY: 0,
+}
+
+function dndPointerStart(e) {
+  const card = e.target.closest('.activity-card')
+  if (!card) return
+  if (e.target.closest('a, button')) return
+  const y = e.touches ? e.touches[0].clientY : e.clientY
+  dnd.card = card
+  dnd.lastY = y
+  clearTimeout(dnd.timer)
+  dnd.timer = setTimeout(() => dndActivate(y), 500)
+}
+
+function dndActivate(startY) {
+  if (!dnd.card) return
+  dnd.active = true
+  dnd.list = dnd.card.closest('ul')
+  dnd.context = {
+    isBacklog: !!dnd.card.dataset.backlog,
+    dayIndex:  dnd.card.dataset.day !== undefined ? Number(dnd.card.dataset.day) : null,
+    slot:      dnd.card.dataset.slot || null,
+  }
+  const rect = dnd.card.getBoundingClientRect()
+  dnd.offsetY = startY - rect.top
+
+  dnd.phantom = document.createElement('li')
+  dnd.phantom.className = 'activity-phantom'
+  dnd.phantom.style.height = rect.height + 'px'
+  dnd.list.insertBefore(dnd.phantom, dnd.card)
+  dnd.card.style.visibility = 'hidden'
+
+  dnd.clone = dnd.card.cloneNode(true)
+  Object.assign(dnd.clone.style, {
+    position: 'fixed', left: rect.left + 'px', width: rect.width + 'px',
+    top: rect.top + 'px', zIndex: '999', pointerEvents: 'none',
+    opacity: '0.95', boxShadow: '0 12px 40px rgba(0,0,0,0.7)',
+    transform: 'scale(1.03)', transition: 'transform 0.1s',
+    borderColor: 'var(--accent2)',
+  })
+  document.body.appendChild(dnd.clone)
+  navigator.vibrate?.(40)
+}
+
+function dndPointerMove(e) {
+  const y = e.touches ? e.touches[0].clientY : e.clientY
+  if (!dnd.active) {
+    if (Math.abs(y - dnd.lastY) > 8) clearTimeout(dnd.timer)
+    return
+  }
+  if (e.cancelable) e.preventDefault()
+  dnd.clone.style.top = (y - dnd.offsetY) + 'px'
+
+  const cards = [...dnd.list.querySelectorAll('.activity-card')]
+  let before = null
+  for (const c of cards) {
+    const r = c.getBoundingClientRect()
+    if (y < r.top + r.height / 2) { before = c; break }
+  }
+  before ? dnd.list.insertBefore(dnd.phantom, before) : dnd.list.appendChild(dnd.phantom)
+}
+
+function dndPointerEnd() {
+  clearTimeout(dnd.timer)
+  if (!dnd.active) { dnd.card = null; return }
+  dnd.active = false
+
+  const newOrder = []
+  for (const child of dnd.list.children) {
+    if (child === dnd.phantom) newOrder.push(dnd.card.dataset.id)
+    else if (child.dataset.id && child !== dnd.card) newOrder.push(child.dataset.id)
+  }
+  if (!newOrder.includes(dnd.card.dataset.id)) newOrder.push(dnd.card.dataset.id)
+
+  dnd.clone.remove()
+  dnd.phantom.remove()
+  dnd.card.style.visibility = ''
+  const ctx = { ...dnd.context }
+  dnd.card = dnd.clone = dnd.phantom = dnd.context = null
+
+  if (ctx.isBacklog) reorderBacklogToOrder(newOrder)
+  else reorderActivityToOrder(ctx.dayIndex, ctx.slot, newOrder)
+}
+
+document.getElementById('view-detail').addEventListener('touchstart', dndPointerStart, { passive: true })
+document.getElementById('view-detail').addEventListener('mousedown',  dndPointerStart)
+document.addEventListener('touchmove', e => { if (dnd.active || dnd.timer) dndPointerMove(e) }, { passive: false })
+document.addEventListener('mousemove', e => { if (dnd.active || dnd.timer) dndPointerMove(e) })
+document.addEventListener('touchend',  dndPointerEnd)
+document.addEventListener('mouseup',   dndPointerEnd)
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+getRedirectResult(auth).catch(() => {})
+
+onAuthStateChanged(auth, user => {
+  state.user = user
+  renderAuthBar()
+  if (user) {
+    startTripListener()
+  } else {
+    if (state.unsubTrips) { state.unsubTrips(); state.unsubTrips = null }
+    state.trips       = []
+    state.currentTrip = null
+    showView('list')
+    renderTripList()
+  }
+})
+
+document.querySelector('#form-create-trip [name=year]').value = new Date().getFullYear()
+showView('list')
+</script>
+</body>
+</html>
