@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xbox Steering Wheel Comparison 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161921;
+    --surface2: #1c2030;
+    --border: #232733;
+    --accent: #6ee7b7;
+    --accent2: #60a5fa;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --good: #6ee7b7;
+    --ok: #fbbf24;
+    --bad: #f87171;
+    --tag-budget: #34d399;
+    --tag-mid: #60a5fa;
+    --tag-premium: #c084fc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 32px 16px 64px;
+  }
+
+  .container {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  h1 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+    max-width: 620px;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12px;
+  }
+
+  .legend-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .legend-label {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    margin-right: 2px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Filter */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .filter-label {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Table */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 32px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 920px;
+    font-size: 13px;
+  }
+
+  thead th {
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody tr:hover { background: rgba(255,255,255,0.03); }
+  tbody tr:hover td:first-child { background: #1a1f2e; }
+  tbody tr.hidden { display: none; }
+
+  td {
+    padding: 14px;
+    vertical-align: middle;
+    background: var(--bg);
+  }
+
+  td:first-child {
+    background: var(--bg);
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 190px;
+  }
+
+  .wheel-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .wheel-sub {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+
+  .winner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(135deg, rgba(110,231,183,0.15), rgba(96,165,250,0.15));
+    border: 1px solid rgba(110,231,183,0.3);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+    display: block;
+    width: fit-content;
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-budget  { background: rgba(52,211,153,0.15);  color: var(--tag-budget); }
+  .tag-mid     { background: rgba(96,165,250,0.15);   color: var(--tag-mid); }
+  .tag-premium { background: rgba(192,132,252,0.15);  color: var(--tag-premium); }
+
+  /* Pill */
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .pill-yes     { background: rgba(110,231,183,0.12); color: var(--good); }
+  .pill-partial { background: rgba(251,191,36,0.12);  color: var(--ok); }
+  .pill-no      { background: rgba(248,113,113,0.12); color: var(--bad); }
+
+  /* FFB Type badge */
+  .ffb-type {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  .ffb-gear   { background: rgba(251,191,36,0.12);   color: var(--ok); }
+  .ffb-belt   { background: rgba(96,165,250,0.12);    color: var(--accent2); }
+  .ffb-direct { background: rgba(110,231,183,0.12);   color: var(--good); }
+  .ffb-none   { background: rgba(107,114,128,0.15);   color: var(--muted); }
+
+  /* Score bars */
+  .score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 80px;
+  }
+
+  .score-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    width: 14px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .score-bar {
+    flex: 1;
+    height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .score-fill { height: 100%; border-radius: 3px; }
+
+  .score-1 .score-fill { width: 20%;  background: var(--bad); }
+  .score-2 .score-fill { width: 40%;  background: var(--bad); }
+  .score-3 .score-fill { width: 60%;  background: var(--ok); }
+  .score-4 .score-fill { width: 80%;  background: var(--good); }
+  .score-5 .score-fill { width: 100%; background: var(--good); }
+
+  /* Price */
+  .price-cell {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .price-note {
+    color: var(--muted);
+    font-size: 10px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Verdict */
+  .verdict-section { margin-top: 40px; }
+
+  .verdict-section h2 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+  }
+
+  .verdict-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .verdict-card.blue   { border-left-color: var(--accent2); }
+  .verdict-card.amber  { border-left-color: var(--ok); }
+  .verdict-card.purple { border-left-color: #c084fc; }
+
+  .verdict-card h3 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .verdict-card .pick {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .verdict-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .verdict-card p strong { color: var(--text); }
+
+  /* Notes */
+  .notes-section {
+    margin-top: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .notes-section h2 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .note-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .note-item:last-child { margin-bottom: 0; }
+
+  .note-icon { flex-shrink: 0; margin-top: 1px; }
+
+  .note-item strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .verdict-grid { grid-template-columns: 1fr; }
+    .filter-bar { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="../" class="back-link">← Back</a>
+
+  <h1>Xbox Steering Wheel Comparison 2026</h1>
+  <p class="subtitle">Budget-focused guide to force feedback wheels for Xbox. Good FFB without breaking the bank — ranked by value.</p>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-group">
+      <span class="legend-label">FFB Type</span>
+      <span class="legend-item"><span class="ffb-type ffb-none">None</span> No feedback</span>
+      <span class="legend-item"><span class="ffb-type ffb-gear">Gear</span> Gear drive — louder, cheaper</span>
+      <span class="legend-item"><span class="ffb-type ffb-belt">Belt</span> Belt drive — smoother, quieter</span>
+      <span class="legend-item"><span class="ffb-type ffb-direct">DD</span> Direct drive — best, premium</span>
+    </div>
+    <div class="legend-group">
+      <span class="legend-label">Ratings</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--bad)"></span> 1–2 Weak</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--ok)"></span> 3 Average</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--good)"></span> 4–5 Great</span>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterWheels('all', this)">All</button>
+    <button class="filter-btn" onclick="filterWheels('budget', this)">Budget (&lt;$150)</button>
+    <button class="filter-btn" onclick="filterWheels('mid', this)">Mid ($150–$300)</button>
+    <button class="filter-btn" onclick="filterWheels('premium', this)">Premium ($300+)</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Wheel</th>
+          <th>Price</th>
+          <th>FFB Type</th>
+          <th>Torque</th>
+          <th>Rotation</th>
+          <th>Pedals</th>
+          <th>Xbox</th>
+          <th>PC</th>
+          <th>FFB Feel</th>
+          <th>Build</th>
+          <th>Noise</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Hori Racing Wheel Overdrive -->
+        <tr data-tier="budget">
+          <td>
+            <div class="wheel-name">Hori Racing Wheel<br>Overdrive</div>
+            <div class="wheel-sub">Entry-level, officially licensed</div>
+            <span class="tag tag-budget">Budget</span>
+          </td>
+          <td>
+            <div class="price-cell">~$75</div>
+            <span class="price-note">No FFB</span>
+          </td>
+          <td><span class="ffb-type ffb-none">None</span></td>
+          <td style="color:var(--muted)">—</td>
+          <td>270°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-no">No</span></td>
+          <td>
+            <div class="score score-1">
+              <span class="score-num">1</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-5">
+              <span class="score-num">5</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Thrustmaster TMX FFB -->
+        <tr data-tier="budget">
+          <td>
+            <div class="wheel-name">Thrustmaster TMX<br>Force Feedback</div>
+            <div class="wheel-sub">Cheapest real FFB on Xbox</div>
+            <span class="tag tag-budget">Budget</span>
+            <span class="winner-badge">★ Best Budget FFB</span>
+          </td>
+          <td>
+            <div class="price-cell">~$120</div>
+            <span class="price-note">Incl. 2-pedal set</span>
+          </td>
+          <td><span class="ffb-type ffb-gear">Gear</span></td>
+          <td>2.5 Nm</td>
+          <td>900°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-2">
+              <span class="score-num">2</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-5">
+              <span class="score-num">5</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Logitech G920 -->
+        <tr data-tier="mid">
+          <td>
+            <div class="wheel-name">Logitech G920<br>Driving Force</div>
+            <div class="wheel-sub">Reliable dual-motor, 3 pedals</div>
+            <span class="tag tag-mid">Mid</span>
+            <span class="winner-badge">★ Best All-Rounder</span>
+          </td>
+          <td>
+            <div class="price-cell">~$200</div>
+            <span class="price-note">Incl. 3-pedal set</span>
+          </td>
+          <td><span class="ffb-type ffb-gear">Gear</span></td>
+          <td>2.5 Nm</td>
+          <td>900°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Thrustmaster T248X -->
+        <tr data-tier="mid">
+          <td>
+            <div class="wheel-name">Thrustmaster T248X</div>
+            <div class="wheel-sub">Hybrid belt-gear, magnetic paddles</div>
+            <span class="tag tag-mid">Mid</span>
+            <span class="winner-badge">★ Best Mid FFB</span>
+          </td>
+          <td>
+            <div class="price-cell">~$200</div>
+            <span class="price-note">Incl. 3-pedal set</span>
+          </td>
+          <td><span class="ffb-type ffb-belt">Belt</span></td>
+          <td>3.5 Nm</td>
+          <td>1080°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Thrustmaster TX -->
+        <tr data-tier="premium">
+          <td>
+            <div class="wheel-name">Thrustmaster TX<br>Racing Wheel</div>
+            <div class="wheel-sub">True belt drive, smooth & quiet</div>
+            <span class="tag tag-premium">Premium</span>
+            <span class="winner-badge">★ Best FFB Feel</span>
+          </td>
+          <td>
+            <div class="price-cell">~$350</div>
+            <span class="price-note">Incl. 3-pedal set</span>
+          </td>
+          <td><span class="ffb-type ffb-belt">Belt</span></td>
+          <td>4 Nm</td>
+          <td>900°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td>
+            <div class="score score-5">
+              <span class="score-num">5</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-4">
+              <span class="score-num">4</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Fanatec CSL DD -->
+        <tr data-tier="premium">
+          <td>
+            <div class="wheel-name">Fanatec CSL DD<br>Starter Bundle</div>
+            <div class="wheel-sub">Direct drive, maximum immersion</div>
+            <span class="tag tag-premium">Premium</span>
+          </td>
+          <td>
+            <div class="price-cell">~$500+</div>
+            <span class="price-note">Base + rim + pedals</span>
+          </td>
+          <td><span class="ffb-type ffb-direct">DD</span></td>
+          <td>5–8 Nm</td>
+          <td>2520°</td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td><span class="pill pill-yes">Yes</span></td>
+          <td>
+            <div class="score score-5">
+              <span class="score-num">5</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-5">
+              <span class="score-num">5</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-3">
+              <span class="score-num">3</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="score score-2">
+              <span class="score-num">2</span>
+              <div class="score-bar"><div class="score-fill"></div></div>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Verdict -->
+  <div class="verdict-section">
+    <h2>Our Picks</h2>
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <h3>Best Budget FFB</h3>
+        <div class="pick">Thrustmaster TMX Force Feedback</div>
+        <p>The cheapest way to get real force feedback on Xbox. Gear-driven and audibly noisy, but the FFB is <strong>genuinely present and communicates the road</strong>. Perfect if you're new to sim racing and want to feel the wheel pull without spending $200+.</p>
+      </div>
+      <div class="verdict-card blue">
+        <h3>Best All-Rounder</h3>
+        <div class="pick">Logitech G920 Driving Force</div>
+        <p>Solid, reliable, and extremely well-supported. The dual-motor helical gear system delivers <strong>consistent FFB that's never overwhelming</strong>. Includes a quality 3-pedal set. A safe choice that rarely disappoints — and goes on sale often.</p>
+      </div>
+      <div class="verdict-card blue">
+        <h3>Best Mid-Range FFB</h3>
+        <div class="pick">Thrustmaster T248X</div>
+        <p>Higher torque and a smoother belt-hybrid mechanism compared to the G920. Magnetic paddle shifters feel noticeably premium. <strong>Best choice if you want more FFB detail</strong> at the same price point as the G920.</p>
+      </div>
+      <div class="verdict-card amber">
+        <h3>Best FFB Feel</h3>
+        <div class="pick">Thrustmaster TX Racing Wheel</div>
+        <p>The TX's belt drive delivers the most <strong>smooth, nuanced, and quiet FFB</strong> you'll find under $400. A meaningful step up from gear-drive. Worth the premium if you're serious about sim racing but not ready to go direct drive.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div class="notes-section">
+    <h2>Buying Notes</h2>
+    <div class="note-item">
+      <span class="note-icon">💡</span>
+      <span><strong>FFB Strength:</strong> Gear-drive wheels (TMX, G920) top out around 2.5 Nm — noticeable but not arm-straining, which is actually what you want for long sessions. Belt-drive (T248X, TX) at 3.5–4 Nm feels richer and more detailed without being aggressive.</span>
+    </div>
+    <div class="note-item">
+      <span class="note-icon">🎮</span>
+      <span><strong>Xbox Compatibility:</strong> All wheels listed work on Xbox Series X|S and Xbox One. The Fanatec CSL DD requires the Xbox-licensed version — double-check the product page before buying.</span>
+    </div>
+    <div class="note-item">
+      <span class="note-icon">🔊</span>
+      <span><strong>Noise:</strong> Gear-drive wheels hum and whir under heavy FFB. If you play late at night or share a space, the T248X or TX (belt drive) are significantly quieter and worth the extra cost.</span>
+    </div>
+    <div class="note-item">
+      <span class="note-icon">💰</span>
+      <span><strong>Sales tip:</strong> The G920 regularly drops to $160–$180 during sales (Amazon, Best Buy, Costco). At that price it's exceptional value and hard to beat at the budget end.</span>
+    </div>
+    <div class="note-item">
+      <span class="note-icon">🏎️</span>
+      <span><strong>Bottom line for budget players:</strong> The TMX gives you the FFB moment without heavy investment. If you can stretch to $200, the T248X edges out the G920 on FFB quality — but both are great daily drivers for Forza Motorsport and other titles.</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function filterWheels(tier, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('tbody tr').forEach(row => {
+    const show = tier === 'all' || row.dataset.tier === tier;
+    row.classList.toggle('hidden', !show);
+  });
+}
+</script>
+</body>
+</html>
