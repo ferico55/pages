@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-07-29T11:35:41.010912+00:00",
+  "last_updated": "2026-07-29T12:49:56.671201+00:00",
   "races": [
     {
       "round": 1,
@@ -13,7 +13,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "George Russell",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "6"
     },
     {
       "round": 2,
@@ -26,7 +27,8 @@
       "sprint_date_utc": "2026-03-14T03:00:00Z",
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "R"
     },
     {
       "round": 3,
@@ -39,7 +41,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "8"
     },
     {
       "round": 4,
@@ -52,7 +55,8 @@
       "sprint_date_utc": "2026-05-02T16:00:00Z",
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "5"
     },
     {
       "round": 5,
@@ -65,7 +69,8 @@
       "sprint_date_utc": "2026-05-23T16:00:00Z",
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "3"
     },
     {
       "round": 6,
@@ -78,7 +83,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "R"
     },
     {
       "round": 7,
@@ -91,7 +97,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "Lewis Hamilton",
-      "winner_constructor": "Ferrari"
+      "winner_constructor": "Ferrari",
+      "verstappen_finish": "4"
     },
     {
       "round": 8,
@@ -104,7 +111,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "George Russell",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "2"
     },
     {
       "round": 9,
@@ -117,7 +125,8 @@
       "sprint_date_utc": "2026-07-04T11:00:00Z",
       "status": "completed",
       "winner": "Charles Leclerc",
-      "winner_constructor": "Ferrari"
+      "winner_constructor": "Ferrari",
+      "verstappen_finish": "20"
     },
     {
       "round": 10,
@@ -130,7 +139,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes"
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "3"
     },
     {
       "round": 11,
@@ -143,7 +153,8 @@
       "sprint_date_utc": null,
       "status": "completed",
       "winner": "Lando Norris",
-      "winner_constructor": "McLaren"
+      "winner_constructor": "McLaren",
+      "verstappen_finish": "2"
     },
     {
       "round": 12,
@@ -156,7 +167,8 @@
       "sprint_date_utc": "2026-08-22T10:00:00Z",
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 13,
@@ -169,7 +181,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 14,
@@ -182,7 +195,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 15,
@@ -195,7 +209,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 16,
@@ -208,7 +223,8 @@
       "sprint_date_utc": "2026-10-10T09:00:00Z",
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 17,
@@ -221,7 +237,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 18,
@@ -234,7 +251,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 19,
@@ -247,7 +265,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 20,
@@ -260,7 +279,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 21,
@@ -273,7 +293,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     },
     {
       "round": 22,
@@ -286,7 +307,8 @@
       "sprint_date_utc": null,
       "status": "scheduled",
       "winner": null,
-      "winner_constructor": null
+      "winner_constructor": null,
+      "verstappen_finish": null
     }
   ]
 }
