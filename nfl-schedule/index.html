@@ -135,6 +135,23 @@
   tr.favorite td:first-child { border-left: 3px solid var(--eagles); }
   .standings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
   .standings-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
+  .standings-card + .standings-card { margin-top: 14px; }
+
+  .tab-bar { display: flex; gap: 6px; margin-bottom: 10px; }
+  .tab-btn {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    cursor: pointer;
+  }
+  .tab-btn.active { color: var(--text); border-color: var(--eagles); }
+  .tab-panel.hidden { display: none; }
 
   .error-msg, .empty-msg { color: var(--muted); font-size: 12px; padding: 14px; text-align: center; }
 
@@ -175,6 +192,7 @@
 
   <section class="panel">
     <h2 class="sec-title">Standings</h2>
+    <div id="nfl-standings-tabs"></div>
     <div class="panel-body" id="nfl-standings"></div>
   </section>
 
@@ -321,29 +339,47 @@
   }
 
   function renderStandings(standings) {
+    var tabsEl = document.getElementById('nfl-standings-tabs');
     var el = document.getElementById('nfl-standings');
     var conferences = (standings && standings.conferences) || [];
     if (conferences.length === 0) {
+      tabsEl.innerHTML = '';
       el.innerHTML = '<div class="empty-msg">Standings not available yet.</div>';
       return;
     }
-    var html = '';
-    conferences.forEach(function (conf) {
-      html += '<h3 class="sub-title">' + esc(conf.name) + '</h3><div class="standings-grid">';
+
+    var tabsHtml = '<div class="tab-bar">';
+    var panelsHtml = '';
+    conferences.forEach(function (conf, i) {
+      tabsHtml += '<button class="tab-btn' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '">' + esc(conf.name) + '</button>';
+      panelsHtml += '<div class="tab-panel' + (i === 0 ? '' : ' hidden') + '" data-idx="' + i + '">';
       (conf.divisions || []).forEach(function (div) {
-        html += '<div class="standings-card"><h3 class="sub-title" style="margin-top:0">' + esc(div.name) + '</h3>' +
+        panelsHtml += '<div class="standings-card"><h3 class="sub-title" style="margin-top:0">' + esc(div.name) + '</h3>' +
           '<table><thead><tr><th>Team</th><th>W</th><th>L</th><th>T</th><th>Pct</th></tr></thead><tbody>';
         (div.teams || []).forEach(function (t) {
-          html += '<tr class="' + (t.is_eagles ? 'favorite' : '') + '">' +
+          panelsHtml += '<tr class="' + (t.is_eagles ? 'favorite' : '') + '">' +
             '<td>' + esc(t.team) + (t.is_eagles ? '<span class="badge">EAGLES</span>' : '') + '</td>' +
             '<td>' + t.wins + '</td><td>' + t.losses + '</td><td>' + t.ties + '</td><td>' + (t.win_pct != null ? t.win_pct.toFixed(3) : '—') + '</td>' +
             '</tr>';
         });
-        html += '</tbody></table></div>';
+        panelsHtml += '</tbody></table></div>';
       });
-      html += '</div>';
+      panelsHtml += '</div>';
     });
-    el.innerHTML = html;
+    tabsHtml += '</div>';
+
+    tabsEl.innerHTML = tabsHtml;
+    el.innerHTML = panelsHtml;
+
+    tabsEl.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        tabsEl.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        el.querySelectorAll('.tab-panel').forEach(function (panel) {
+          panel.classList.toggle('hidden', panel.dataset.idx !== btn.dataset.idx);
+        });
+      });
+    });
   }
 
   function renderUpdatedLine(schedule) {

@@ -23,6 +23,21 @@ STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/football/nfl/standings
 
 EAGLES_ABBR = "PHI"
 
+# NFL divisions are fixed and don't change season to season. ESPN's
+# standings endpoint returns each conference's 16 teams as one flat list
+# with no division-level nesting, so we group them ourselves rather than
+# relying on API structure that doesn't actually exist.
+TEAM_DIVISIONS = {
+    "BUF": "AFC East", "MIA": "AFC East", "NE": "AFC East", "NYJ": "AFC East",
+    "BAL": "AFC North", "CIN": "AFC North", "CLE": "AFC North", "PIT": "AFC North",
+    "HOU": "AFC South", "IND": "AFC South", "JAX": "AFC South", "TEN": "AFC South",
+    "DEN": "AFC West", "KC": "AFC West", "LV": "AFC West", "LAC": "AFC West",
+    "DAL": "NFC East", "NYG": "NFC East", "PHI": "NFC East", "WSH": "NFC East",
+    "CHI": "NFC North", "DET": "NFC North", "GB": "NFC North", "MIN": "NFC North",
+    "ATL": "NFC South", "CAR": "NFC South", "NO": "NFC South", "TB": "NFC South",
+    "ARI": "NFC West", "LAR": "NFC West", "SF": "NFC West", "SEA": "NFC West",
+}
+
 SEASON_TYPES = {
     2: ("regular", range(1, 19)),   # regular season, weeks 1-18
     3: ("postseason", range(1, 6)),  # wild card through Super Bowl
@@ -98,26 +113,36 @@ def fetch_schedule(year):
     return games
 
 
-def parse_division(div):
-    name = div.get("name") or div.get("abbreviation") or "Division"
-    entries = ((div.get("standings") or {}).get("entries")) or []
-    teams = []
-    for entry in entries:
-        team = entry.get("team") or {}
-        stats = {s.get("name"): s.get("value") for s in entry.get("stats", []) if isinstance(s, dict)}
-        abbr = team.get("abbreviation", "")
-        teams.append({
-            "team": team.get("displayName", "Unknown"),
-            "abbr": abbr,
-            "wins": int(stats.get("wins", 0) or 0),
-            "losses": int(stats.get("losses", 0) or 0),
-            "ties": int(stats.get("ties", 0) or 0),
-            "win_pct": stats.get("winPercent", stats.get("percentage")),
-            "division_rank": int(stats.get("divisionRank", stats.get("rank", 0)) or 0),
-            "is_eagles": abbr == EAGLES_ABBR,
-        })
-    teams.sort(key=lambda t: t["division_rank"] or 99)
-    return {"name": name, "teams": teams}
+def parse_team_entry(entry):
+    team = entry.get("team") or {}
+    stats = {s.get("name"): s.get("value") for s in entry.get("stats", []) if isinstance(s, dict)}
+    abbr = team.get("abbreviation", "")
+    return {
+        "team": team.get("displayName", "Unknown"),
+        "abbr": abbr,
+        "wins": int(stats.get("wins", 0) or 0),
+        "losses": int(stats.get("losses", 0) or 0),
+        "ties": int(stats.get("ties", 0) or 0),
+        "win_pct": stats.get("winPercent", stats.get("percentage")) or 0.0,
+        "division_rank": 0,  # filled in below, after grouping into real divisions
+        "is_eagles": abbr == EAGLES_ABBR,
+    }
+
+
+def group_by_division(teams):
+    groups = {}
+    for t in teams:
+        div_name = TEAM_DIVISIONS.get(t["abbr"], "Other")
+        groups.setdefault(div_name, []).append(t)
+
+    divisions = []
+    for name in sorted(groups.keys()):  # alphabetical sorts East/North/South/West correctly
+        group_teams = groups[name]
+        group_teams.sort(key=lambda t: (-(t["win_pct"] or 0), -t["wins"]))
+        for i, t in enumerate(group_teams, start=1):
+            t["division_rank"] = i
+        divisions.append({"name": name, "teams": group_teams})
+    return divisions
 
 
 def fetch_standings(year):
@@ -129,12 +154,16 @@ def fetch_standings(year):
     conferences = []
     for conf in top_children:
         conf_name = conf.get("name") or conf.get("abbreviation") or "Conference"
+        entries = []
         div_children = conf.get("children")
         if div_children:
-            divisions = [parse_division(d) for d in div_children]
+            for div in div_children:
+                entries.extend(((div.get("standings") or {}).get("entries")) or [])
         else:
-            divisions = [parse_division(conf)]
-        conferences.append({"name": conf_name, "divisions": divisions})
+            entries = ((conf.get("standings") or {}).get("entries")) or []
+
+        teams = [parse_team_entry(e) for e in entries]
+        conferences.append({"name": conf_name, "divisions": group_by_division(teams)})
     return conferences
 
 

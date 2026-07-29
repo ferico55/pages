@@ -132,7 +132,22 @@
   tr:last-child td { border-bottom: none; }
   tr.favorite td:first-child { border-left: 3px solid var(--rb-navy); }
   .standings-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
-  .standings-card + .standings-card { margin-top: 14px; }
+
+  .tab-bar { display: flex; gap: 6px; margin-bottom: 10px; }
+  .tab-btn {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    cursor: pointer;
+  }
+  .tab-btn.active { color: var(--text); border-color: var(--rb-navy); }
+  .tab-panel.hidden { display: none; }
 
   .error-msg, .empty-msg { color: var(--muted); font-size: 12px; padding: 14px; text-align: center; }
 
@@ -173,7 +188,14 @@
 
   <section class="panel">
     <h2 class="sec-title">Standings</h2>
-    <div class="panel-body" id="f1-standings"></div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="drivers">Drivers</button>
+      <button class="tab-btn" data-tab="constructors">Constructors</button>
+    </div>
+    <div class="panel-body">
+      <div class="tab-panel" id="f1-standings-drivers"></div>
+      <div class="tab-panel hidden" id="f1-standings-constructors"></div>
+    </div>
   </section>
 
   <section class="panel past">
@@ -305,15 +327,16 @@
   }
 
   function renderStandings(standings) {
-    var el = document.getElementById('f1-standings');
+    var driversEl = document.getElementById('f1-standings-drivers');
+    var constructorsEl = document.getElementById('f1-standings-constructors');
     var drivers = (standings && standings.drivers) || [];
     var constructors = (standings && standings.constructors) || [];
     if (drivers.length === 0 && constructors.length === 0) {
-      el.innerHTML = '<div class="empty-msg">Standings not available yet.</div>';
+      driversEl.innerHTML = '<div class="empty-msg">Standings not available yet.</div>';
+      constructorsEl.innerHTML = '<div class="empty-msg">Standings not available yet.</div>';
       return;
     }
-    var driversHtml = '<div class="standings-card"><h3 class="sub-title">Drivers</h3>' +
-      '<table><thead><tr><th>#</th><th>Driver</th><th>Team</th><th>Pts</th></tr></thead><tbody>';
+    var driversHtml = '<div class="standings-card"><table><thead><tr><th>#</th><th>Driver</th><th>Team</th><th>Pts</th></tr></thead><tbody>';
     drivers.forEach(function (d) {
       driversHtml += '<tr class="' + (d.is_red_bull ? 'favorite' : '') + '">' +
         '<td>' + d.position + '</td>' +
@@ -322,9 +345,9 @@
         '<td>' + d.points + '</td></tr>';
     });
     driversHtml += '</tbody></table></div>';
+    driversEl.innerHTML = driversHtml;
 
-    var constructorsHtml = '<div class="standings-card"><h3 class="sub-title">Constructors</h3>' +
-      '<table><thead><tr><th>#</th><th>Team</th><th>Pts</th></tr></thead><tbody>';
+    var constructorsHtml = '<div class="standings-card"><table><thead><tr><th>#</th><th>Team</th><th>Pts</th></tr></thead><tbody>';
     constructors.forEach(function (c) {
       constructorsHtml += '<tr class="' + (c.is_red_bull ? 'favorite' : '') + '">' +
         '<td>' + c.position + '</td>' +
@@ -332,8 +355,7 @@
         '<td>' + c.points + '</td></tr>';
     });
     constructorsHtml += '</tbody></table></div>';
-
-    el.innerHTML = driversHtml + constructorsHtml;
+    constructorsEl.innerHTML = constructorsHtml;
   }
 
   function renderUpdatedLine(schedule) {
@@ -362,7 +384,24 @@
     else document.getElementById('f1-upcoming').innerHTML = '<div class="error-msg">Couldn\'t load schedule. Try refreshing.</div>';
 
     if (standings) renderStandings(standings);
-    else document.getElementById('f1-standings').innerHTML = '<div class="error-msg">Couldn\'t load standings. Try refreshing.</div>';
+    else {
+      var errMsg = '<div class="error-msg">Couldn\'t load standings. Try refreshing.</div>';
+      document.getElementById('f1-standings-drivers').innerHTML = errMsg;
+      document.getElementById('f1-standings-constructors').innerHTML = errMsg;
+    }
+  });
+
+  document.querySelectorAll('.tab-bar').forEach(function (bar) {
+    bar.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        bar.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var panelBody = bar.nextElementSibling;
+        panelBody.querySelectorAll('.tab-panel').forEach(function (panel) {
+          panel.classList.toggle('hidden', panel.id !== 'f1-standings-' + btn.dataset.tab);
+        });
+      });
+    });
   });
 })();
 </script>
