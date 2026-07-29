@@ -250,6 +250,11 @@
     return 'in ' + mins + 'm';
   }
 
+  function fmtFinish(pos) {
+    if (pos == null || pos === '') return '—';
+    return /^\d+$/.test(String(pos)) ? 'P' + pos : String(pos);
+  }
+
   // Splits items into upcoming/past based on the CURRENT time at call time,
   // never a pre-computed "status" field, so re-opening the page later
   // always re-buckets against the real current date.
@@ -313,13 +318,14 @@
       el.innerHTML = '<div class="empty-msg">No past races yet.</div>';
       return;
     }
-    var html = '<table><thead><tr><th>Date</th><th>Race</th><th>Winner</th></tr></thead><tbody>';
+    var html = '<table><thead><tr><th>Date</th><th>Race</th><th>Winner</th><th>VER</th></tr></thead><tbody>';
     past.forEach(function (r) {
       var isRb = r.winner_constructor === 'Red Bull';
       html += '<tr class="' + (isRb ? 'favorite' : '') + '">' +
         '<td>' + fmtDateOnly(r.race_date_utc) + '</td>' +
         '<td>Round ' + r.round + ' — ' + esc(r.race_name) + '</td>' +
         '<td>' + (r.winner ? esc(r.winner) + (isRb ? '<span class="badge">RED BULL</span>' : '') : '—') + '</td>' +
+        '<td>' + esc(fmtFinish(r.verstappen_finish)) + '</td>' +
         '</tr>';
     });
     html += '</tbody></table>';
