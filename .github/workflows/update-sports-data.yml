@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: update-sports-data
@@ -31,13 +32,26 @@ jobs:
         continue-on-error: true
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add nfl-schedule/data/*.json f1-schedule/data/*.json
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No data changes, skipping commit."
             exit 0
           fi
           git commit -m "chore: update NFL/F1 schedule and standings data"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Pages redeploy
+        # A push made with the default GITHUB_TOKEN does not trigger other
+        # workflows' `on: push` events (GitHub's anti-recursion safeguard),
+        # so deploy.yml won't fire on its own after the commit above — kick
+        # it off explicitly instead.
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
