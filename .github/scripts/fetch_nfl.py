@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetches the NFL season schedule + standings from ESPN's public API and
-writes nfl-f1-schedules/data/nfl-schedule.json and nfl-standings.json.
+writes nfl-schedule/data/schedule.json and standings.json.
 
 ESPN's site.api.espn.com endpoints are undocumented but widely used
 community-known JSON APIs; no API key required. Since their exact field
@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _util import fetch_json, write_json_atomic, die  # noqa: E402
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-SCHEDULE_OUT = os.path.join(REPO_ROOT, "nfl-f1-schedules", "data", "nfl-schedule.json")
-STANDINGS_OUT = os.path.join(REPO_ROOT, "nfl-f1-schedules", "data", "nfl-standings.json")
+SCHEDULE_OUT = os.path.join(REPO_ROOT, "nfl-schedule", "data", "schedule.json")
+STANDINGS_OUT = os.path.join(REPO_ROOT, "nfl-schedule", "data", "standings.json")
 
 SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/football/nfl/standings"
