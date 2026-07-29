@@ -1,0 +1,43 @@
+name: Update Sports Data
+
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-sports-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch NFL data
+        run: python3 .github/scripts/fetch_nfl.py
+        continue-on-error: true
+
+      - name: Fetch F1 data
+        run: python3 .github/scripts/fetch_f1.py
+        continue-on-error: true
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add nfl-f1-schedules/data/*.json
+          if git diff --cached --quiet; then
+            echo "No data changes, skipping commit."
+            exit 0
+          fi
+          git commit -m "chore: update NFL/F1 schedule and standings data"
+          git push
