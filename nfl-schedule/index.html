@@ -22,18 +22,18 @@
     background: var(--bg);
     color: var(--text);
     font-family: system-ui, -apple-system, sans-serif;
-    padding: 24px 16px 64px;
+    padding: 24px 20px 48px;
   }
 
-  .wrap { max-width: 900px; margin: 0 auto; }
+  .wrap { max-width: 1600px; margin: 0 auto; }
 
-  header { margin-bottom: 28px; }
+  header { margin-bottom: 20px; }
 
   .back { display: inline-block; font-size: 12px; color: var(--muted); text-decoration: none; margin-bottom: 10px; }
   .back:hover { color: var(--accent); }
 
   h1 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     -webkit-background-clip: text;
@@ -46,25 +46,29 @@
   .updated { color: var(--muted); font-size: 11px; margin-top: 6px; }
 
   h2.sec-title {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--muted);
-    margin: 34px 0 14px;
     padding-bottom: 8px;
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
   }
 
   h3.sub-title {
     font-size: 13px;
     font-weight: 600;
     color: var(--text);
-    margin: 18px 0 8px;
+    margin: 14px 0 8px;
   }
+  h3.sub-title:first-child { margin-top: 0; }
 
   /* Hero */
-  .hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
   .hero-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -77,6 +81,20 @@
   .hero-countdown { font-size: 13px; font-weight: 700; color: var(--accent); }
   .hero-empty { font-size: 13px; color: var(--muted); }
 
+  /* Dashboard: horizontal columns on desktop, stacked on mobile */
+  .dashboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    min-width: 0;
+  }
+  .panel-body { max-height: 68vh; overflow-y: auto; padding-right: 2px; }
+  .panel-body .standings-grid { grid-template-columns: 1fr; }
+
+  .count-tag { font-weight: 400; color: var(--muted); text-transform: none; letter-spacing: 0; }
+
   /* Cards / rows */
   .list { display: flex; flex-direction: column; gap: 8px; }
   .week-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 6px; }
@@ -87,13 +105,13 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    background: var(--surface);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 13px;
   }
-  .row.favorite { border-color: var(--eagles); background: linear-gradient(90deg, rgba(0,76,84,0.35), var(--surface) 60%); }
+  .row.favorite { border-color: var(--eagles); background: linear-gradient(90deg, rgba(0,76,84,0.35), var(--bg) 60%); }
 
   .row .matchup { font-weight: 600; }
   .row .meta { color: var(--muted); font-size: 11px; }
@@ -111,25 +129,29 @@
 
   /* Standings tables */
   table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 4px; }
-  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; padding: 6px 8px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); }
   td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
   tr:last-child td { border-bottom: none; }
   tr.favorite td:first-child { border-left: 3px solid var(--eagles); }
   .standings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
-  .standings-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
-
-  details { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin-top: 10px; }
-  summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--muted); outline: none; }
-  details[open] summary { margin-bottom: 10px; }
+  .standings-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
 
   .error-msg, .empty-msg { color: var(--muted); font-size: 12px; padding: 14px; text-align: center; }
 
-  footer { margin-top: 40px; font-size: 11px; color: var(--muted); text-align: center; }
+  footer { margin-top: 24px; font-size: 11px; color: var(--muted); text-align: center; }
   footer a { color: var(--muted); }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1100px) {
+    .dashboard { grid-template-columns: 1fr 1fr; }
+    .panel.past { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 700px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .standings-grid { grid-template-columns: 1fr; }
+    .dashboard { grid-template-columns: 1fr; }
+    .panel.past { grid-column: auto; }
+    .panel-body { max-height: none; overflow: visible; }
+    th { position: static; }
   }
 </style>
 </head>
@@ -143,25 +165,24 @@
   <p class="updated" id="updated-line"></p>
 </header>
 
-<section>
-  <h2 class="sec-title">Up Next</h2>
-  <div class="hero-grid" id="hero-grid"></div>
-</section>
+<div class="hero-grid" id="hero-grid"></div>
 
-<section>
-  <h2 class="sec-title">Upcoming Schedule</h2>
-  <div class="list" id="nfl-upcoming"></div>
-</section>
+<div class="dashboard">
+  <section class="panel">
+    <h2 class="sec-title">Upcoming Schedule</h2>
+    <div class="panel-body list" id="nfl-upcoming"></div>
+  </section>
 
-<section>
-  <h2 class="sec-title">Standings</h2>
-  <div id="nfl-standings"></div>
-</section>
+  <section class="panel">
+    <h2 class="sec-title">Standings</h2>
+    <div class="panel-body" id="nfl-standings"></div>
+  </section>
 
-<details id="nfl-past">
-  <summary id="nfl-past-summary">Past games</summary>
-  <div id="nfl-past-list"></div>
-</details>
+  <section class="panel past">
+    <h2 class="sec-title">Past Games <span class="count-tag" id="nfl-past-count"></span></h2>
+    <div class="panel-body" id="nfl-past-list"></div>
+  </section>
+</div>
 
 <footer>
   Data refreshes nightly via GitHub Actions ·
@@ -277,11 +298,11 @@
   }
 
   function renderPast(schedule) {
-    var summary = document.getElementById('nfl-past-summary');
+    var count = document.getElementById('nfl-past-count');
     var el = document.getElementById('nfl-past-list');
     var games = (schedule && schedule.games) || [];
     var past = bucket(games, 'date_utc').past;
-    summary.textContent = 'Past games (' + past.length + ')';
+    count.textContent = '(' + past.length + ')';
     if (past.length === 0) {
       el.innerHTML = '<div class="empty-msg">No past games yet.</div>';
       return;
