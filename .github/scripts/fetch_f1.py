@@ -2,7 +2,7 @@
 """Fetches the current F1 season calendar + standings from the Jolpica-F1 API
 (https://api.jolpi.ca/ergast/f1/), a free, keyless, community-maintained
 drop-in replacement for the retired Ergast API. Writes
-nfl-f1-schedules/data/f1-schedule.json and f1-standings.json.
+f1-schedule/data/schedule.json and standings.json.
 """
 import datetime
 import os
@@ -12,8 +12,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _util import fetch_json, write_json_atomic, die  # noqa: E402
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-SCHEDULE_OUT = os.path.join(REPO_ROOT, "nfl-f1-schedules", "data", "f1-schedule.json")
-STANDINGS_OUT = os.path.join(REPO_ROOT, "nfl-f1-schedules", "data", "f1-standings.json")
+SCHEDULE_OUT = os.path.join(REPO_ROOT, "f1-schedule", "data", "schedule.json")
+STANDINGS_OUT = os.path.join(REPO_ROOT, "f1-schedule", "data", "standings.json")
 
 BASE = "https://api.jolpi.ca/ergast/f1"
 
