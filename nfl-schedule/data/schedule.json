@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-07-29T12:49:53.604642+00:00",
+  "last_updated": "2026-07-30T05:23:24.208705+00:00",
   "games": [
     {
       "id": "401772510",
@@ -15,7 +15,9 @@
       "home_score": 24,
       "away_score": 20,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772714",
@@ -30,7 +32,9 @@
       "home_score": 27,
       "away_score": 21,
       "venue": "Corinthians Arena",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772830",
@@ -45,7 +49,9 @@
       "home_score": 20,
       "away_score": 23,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772829",
@@ -60,7 +66,9 @@
       "home_score": 16,
       "away_score": 17,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772719",
@@ -75,7 +83,9 @@
       "home_score": 33,
       "away_score": 8,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772720",
@@ -90,7 +100,9 @@
       "home_score": 13,
       "away_score": 20,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772718",
@@ -105,7 +117,9 @@
       "home_score": 13,
       "away_score": 20,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772721",
@@ -120,7 +134,9 @@
       "home_score": 32,
       "away_score": 34,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772827",
@@ -135,7 +151,9 @@
       "home_score": 21,
       "away_score": 6,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772828",
@@ -150,7 +168,9 @@
       "home_score": 26,
       "away_score": 10,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772832",
@@ -165,7 +185,9 @@
       "home_score": 20,
       "away_score": 12,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772831",
@@ -180,7 +202,9 @@
       "home_score": 13,
       "away_score": 17,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772722",
@@ -195,7 +219,9 @@
       "home_score": 27,
       "away_score": 13,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772723",
@@ -210,7 +236,9 @@
       "home_score": 14,
       "away_score": 9,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772918",
@@ -225,7 +253,9 @@
       "home_score": 41,
       "away_score": 40,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772810",
@@ -240,7 +270,9 @@
       "home_score": 24,
       "away_score": 27,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772936",
@@ -255,7 +287,9 @@
       "home_score": 27,
       "away_score": 18,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "1-0"
     },
     {
       "id": "401772725",
@@ -270,7 +304,9 @@
       "home_score": 31,
       "away_score": 27,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "1-0"
     },
     {
       "id": "401772834",
@@ -285,7 +321,9 @@
       "home_score": 40,
       "away_score": 37,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "0-1"
     },
     {
       "id": "401772835",
@@ -300,7 +338,9 @@
       "home_score": 52,
       "away_score": 21,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "0-1"
     },
     {
       "id": "401772724",
@@ -315,7 +355,9 @@
       "home_score": 19,
       "away_score": 33,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "1-0"
     },
     {
       "id": "401772728",
@@ -330,7 +372,9 @@
       "home_score": 27,
       "away_score": 33,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "0-1"
     },
     {
       "id": "401772833",
@@ -345,7 +389,9 @@
       "home_score": 21,
       "away_score": 26,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "1-0"
     },
     {
       "id": "401772727",
@@ -360,7 +406,9 @@
       "home_score": 10,
       "away_score": 30,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "1-0"
     },
     {
       "id": "401772836",
@@ -375,7 +423,9 @@
       "home_score": 17,
       "away_score": 31,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "0-1"
     },
     {
       "id": "401772726",
@@ -390,7 +440,9 @@
       "home_score": 41,
       "away_score": 17,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "0-1"
     },
     {
       "id": "401772729",
@@ -405,7 +457,9 @@
       "home_score": 29,
       "away_score": 28,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "1-0"
     },
     {
       "id": "401772730",
@@ -420,7 +474,9 @@
       "home_score": 27,
       "away_score": 22,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "0-1"
     },
     {
       "id": "401772837",
@@ -435,7 +491,9 @@
       "home_score": 17,
       "away_score": 20,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "0-1",
+      "away_record": "1-0"
     },
     {
       "id": "401772919",
@@ -450,7 +508,9 @@
       "home_score": 6,
       "away_score": 22,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "0-1"
     },
     {
       "id": "401772715",
@@ -465,7 +525,9 @@
       "home_score": 19,
       "away_score": 20,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-1",
+      "away_record": "1-0"
     },
     {
       "id": "401772811",
@@ -480,7 +542,9 @@
       "home_score": 9,
       "away_score": 20,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "1-0"
     },
     {
       "id": "401772937",
@@ -495,7 +559,9 @@
       "home_score": 31,
       "away_score": 21,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-0",
+      "away_record": "0-2"
     },
     {
       "id": "401772842",
@@ -510,7 +576,9 @@
       "home_score": 13,
       "away_score": 10,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-2",
+      "away_record": "2-0"
     },
     {
       "id": "401772733",
@@ -525,7 +593,9 @@
       "home_score": 20,
       "away_score": 41,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-2",
+      "away_record": "2-0"
     },
     {
       "id": "401772731",
@@ -540,7 +610,9 @@
       "home_score": 48,
       "away_score": 10,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "2-0"
     },
     {
       "id": "401772732",
@@ -555,7 +627,9 @@
       "home_score": 14,
       "away_score": 21,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "1-1"
     },
     {
       "id": "401772839",
@@ -570,7 +644,9 @@
       "home_score": 33,
       "away_score": 26,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "2-0",
+      "away_record": "2-0"
     },
     {
       "id": "401772840",
@@ -585,7 +661,9 @@
       "home_score": 29,
       "away_score": 27,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-0",
+      "away_record": "0-2"
     },
     {
       "id": "401772841",
@@ -600,7 +678,9 @@
       "home_score": 41,
       "away_score": 24,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "1-1"
     },
     {
       "id": "401772838",
@@ -615,7 +695,9 @@
       "home_score": 30,
       "away_score": 0,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-2",
+      "away_record": "1-1"
     },
     {
       "id": "401772734",
@@ -630,7 +712,9 @@
       "home_score": 17,
       "away_score": 10,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "0-2"
     },
     {
       "id": "401772735",
@@ -645,7 +729,9 @@
       "home_score": 23,
       "away_score": 20,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-0",
+      "away_record": "1-1"
     },
     {
       "id": "401772736",
@@ -660,7 +746,9 @@
       "home_score": 44,
       "away_score": 13,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "0-2"
     },
     {
       "id": "401772844",
@@ -675,7 +763,9 @@
       "home_score": 31,
       "away_score": 14,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-2",
+      "away_record": "1-1"
     },
     {
       "id": "401772843",
@@ -690,7 +780,9 @@
       "home_score": 16,
       "away_score": 15,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-0",
+      "away_record": "2-0"
     },
     {
       "id": "401772920",
@@ -705,7 +797,9 @@
       "home_score": 9,
       "away_score": 22,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-2",
+      "away_record": "0-2"
     },
     {
       "id": "401772812",
@@ -720,7 +814,9 @@
       "home_score": 30,
       "away_score": 38,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "1-1"
     },
     {
       "id": "401772938",
@@ -735,7 +831,9 @@
       "home_score": 20,
       "away_score": 23,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-1",
+      "away_record": "2-1"
     },
     {
       "id": "401772632",
@@ -750,7 +848,9 @@
       "home_score": 24,
       "away_score": 21,
       "venue": "Croke Park",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-1",
+      "away_record": "2-1"
     },
     {
       "id": "401772739",
@@ -765,7 +865,9 @@
       "home_score": 34,
       "away_score": 27,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "2-1"
     },
     {
       "id": "401772740",
@@ -780,7 +882,9 @@
       "home_score": 31,
       "away_score": 19,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-0",
+      "away_record": "0-3"
     },
     {
       "id": "401772846",
@@ -795,7 +899,9 @@
       "home_score": 34,
       "away_score": 10,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-1",
+      "away_record": "1-2"
     },
     {
       "id": "401772847",
@@ -810,7 +916,9 @@
       "home_score": 42,
       "away_score": 13,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "1-2"
     },
     {
       "id": "401772737",
@@ -825,7 +933,9 @@
       "home_score": 21,
       "away_score": 18,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-3",
+      "away_record": "3-0"
     },
     {
       "id": "401772845",
@@ -840,7 +950,9 @@
       "home_score": 25,
       "away_score": 31,
       "venue": "Raymond James Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "3-0",
+      "away_record": "3-0"
     },
     {
       "id": "401772738",
@@ -855,7 +967,9 @@
       "home_score": 26,
       "away_score": 0,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-3",
+      "away_record": "0-3"
     },
     {
       "id": "401772849",
@@ -870,7 +984,9 @@
       "home_score": 27,
       "away_score": 20,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-1",
+      "away_record": "3-0"
     },
     {
       "id": "401772848",
@@ -885,7 +1001,9 @@
       "home_score": 21,
       "away_score": 26,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-0",
+      "away_record": "2-1"
     },
     {
       "id": "401772741",
@@ -900,7 +1018,9 @@
       "home_score": 37,
       "away_score": 20,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "1-2"
     },
     {
       "id": "401772742",
@@ -915,7 +1035,9 @@
       "home_score": 24,
       "away_score": 25,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "1-2"
     },
     {
       "id": "401772921",
@@ -930,7 +1052,9 @@
       "home_score": 40,
       "away_score": 40,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "2-1"
     },
     {
       "id": "401772813",
@@ -945,7 +1069,9 @@
       "home_score": 27,
       "away_score": 21,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-3",
+      "away_record": "0-3"
     },
     {
       "id": "401772716",
@@ -960,7 +1086,9 @@
       "home_score": 28,
       "away_score": 3,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "2-1"
     },
     {
       "id": "401772939",
@@ -975,7 +1103,9 @@
       "home_score": 23,
       "away_score": 26,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "3-1"
     },
     {
       "id": "401772633",
@@ -990,7 +1120,9 @@
       "home_score": 17,
       "away_score": 21,
       "venue": "Tottenham Hotspur Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-3",
+      "away_record": "2-2"
     },
     {
       "id": "401772851",
@@ -1005,7 +1137,9 @@
       "home_score": 40,
       "away_score": 6,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "1-3"
     },
     {
       "id": "401772744",
@@ -1020,7 +1154,9 @@
       "home_score": 26,
       "away_score": 14,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-4",
+      "away_record": "1-3"
     },
     {
       "id": "401772850",
@@ -1035,7 +1171,9 @@
       "home_score": 22,
       "away_score": 37,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-4",
+      "away_record": "1-2-1"
     },
     {
       "id": "401772745",
@@ -1050,7 +1188,9 @@
       "home_score": 17,
       "away_score": 21,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "4-0",
+      "away_record": "2-2"
     },
     {
       "id": "401772852",
@@ -1065,7 +1205,9 @@
       "home_score": 27,
       "away_score": 24,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-3",
+      "away_record": "1-3"
     },
     {
       "id": "401772743",
@@ -1080,7 +1222,9 @@
       "home_score": 10,
       "away_score": 44,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-3",
+      "away_record": "1-3"
     },
     {
       "id": "401772747",
@@ -1095,7 +1239,9 @@
       "home_score": 21,
       "away_score": 22,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-2",
+      "away_record": "0-4"
     },
     {
       "id": "401772746",
@@ -1110,7 +1256,9 @@
       "home_score": 35,
       "away_score": 38,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "3-1"
     },
     {
       "id": "401772854",
@@ -1125,7 +1273,9 @@
       "home_score": 24,
       "away_score": 37,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-2",
+      "away_record": "3-1"
     },
     {
       "id": "401772853",
@@ -1140,7 +1290,9 @@
       "home_score": 10,
       "away_score": 27,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "2-2"
     },
     {
       "id": "401772922",
@@ -1155,7 +1307,9 @@
       "home_score": 20,
       "away_score": 23,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-0",
+      "away_record": "2-2"
     },
     {
       "id": "401772814",
@@ -1170,7 +1324,9 @@
       "home_score": 31,
       "away_score": 28,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "2-2"
     },
     {
       "id": "401772940",
@@ -1185,7 +1341,9 @@
       "home_score": 34,
       "away_score": 17,
       "venue": "MetLife Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "1-4",
+      "away_record": "4-1"
     },
     {
       "id": "401772634",
@@ -1200,7 +1358,9 @@
       "home_score": 11,
       "away_score": 13,
       "venue": "Tottenham Hotspur Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-5",
+      "away_record": "3-2"
     },
     {
       "id": "401772856",
@@ -1215,7 +1375,9 @@
       "home_score": 31,
       "away_score": 27,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-1",
+      "away_record": "2-3"
     },
     {
       "id": "401772750",
@@ -1230,7 +1392,9 @@
       "home_score": 27,
       "away_score": 29,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-4",
+      "away_record": "3-2"
     },
     {
       "id": "401772751",
@@ -1245,7 +1409,9 @@
       "home_score": 19,
       "away_score": 25,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-4",
+      "away_record": "3-2"
     },
     {
       "id": "401772748",
@@ -1260,7 +1426,9 @@
       "home_score": 23,
       "away_score": 9,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-1",
+      "away_record": "1-4"
     },
     {
       "id": "401772858",
@@ -1275,7 +1443,9 @@
       "home_score": 30,
       "away_score": 27,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-3",
+      "away_record": "2-2-1"
     },
     {
       "id": "401772857",
@@ -1290,7 +1460,9 @@
       "home_score": 12,
       "away_score": 20,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-1",
+      "away_record": "3-2"
     },
     {
       "id": "401772855",
@@ -1305,7 +1477,9 @@
       "home_score": 3,
       "away_score": 17,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-4",
+      "away_record": "3-2"
     },
     {
       "id": "401772859",
@@ -1320,7 +1494,9 @@
       "home_score": 20,
       "away_score": 10,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-4",
+      "away_record": "1-4"
     },
     {
       "id": "401772752",
@@ -1335,7 +1511,9 @@
       "home_score": 27,
       "away_score": 18,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-1-1",
+      "away_record": "2-3"
     },
     {
       "id": "401772749",
@@ -1350,7 +1528,9 @@
       "home_score": 30,
       "away_score": 19,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-1",
+      "away_record": "4-1"
     },
     {
       "id": "401772923",
@@ -1365,7 +1545,9 @@
       "home_score": 30,
       "away_score": 17,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-3",
+      "away_record": "4-1"
     },
     {
       "id": "401772815",
@@ -1380,7 +1562,9 @@
       "home_score": 24,
       "away_score": 14,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-2",
+      "away_record": "4-1"
     },
     {
       "id": "401772717",
@@ -1395,7 +1579,9 @@
       "home_score": 24,
       "away_score": 25,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-2",
+      "away_record": "2-2"
     },
     {
       "id": "401772941",
@@ -1410,7 +1596,9 @@
       "home_score": 33,
       "away_score": 31,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-4",
+      "away_record": "4-1"
     },
     {
       "id": "401772635",
@@ -1425,7 +1613,9 @@
       "home_score": 7,
       "away_score": 35,
       "venue": "Wembley Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "4-2"
     },
     {
       "id": "401772861",
@@ -1440,7 +1630,9 @@
       "home_score": 26,
       "away_score": 14,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-2",
+      "away_record": "1-5"
     },
     {
       "id": "401772754",
@@ -1455,7 +1647,9 @@
       "home_score": 31,
       "away_score": 6,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-5",
+      "away_record": "1-5"
     },
     {
       "id": "401772755",
@@ -1470,7 +1664,9 @@
       "home_score": 13,
       "away_score": 31,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-5",
+      "away_record": "4-2"
     },
     {
       "id": "401772753",
@@ -1485,7 +1681,9 @@
       "home_score": 31,
       "away_score": 0,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-3",
+      "away_record": "2-4"
     },
     {
       "id": "401772862",
@@ -1500,7 +1698,9 @@
       "home_score": 22,
       "away_score": 28,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "3-2",
+      "away_record": "4-2"
     },
     {
       "id": "401772860",
@@ -1515,7 +1715,9 @@
       "home_score": 6,
       "away_score": 13,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-6",
+      "away_record": "3-3"
     },
     {
       "id": "401772757",
@@ -1530,7 +1732,9 @@
       "home_score": 33,
       "away_score": 32,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "2-4"
     },
     {
       "id": "401772756",
@@ -1545,7 +1749,9 @@
       "home_score": 24,
       "away_score": 38,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "5-1"
     },
     {
       "id": "401772864",
@@ -1560,7 +1766,9 @@
       "home_score": 44,
       "away_score": 22,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-3-1",
+      "away_record": "3-3"
     },
     {
       "id": "401772863",
@@ -1575,7 +1783,9 @@
       "home_score": 23,
       "away_score": 27,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-4",
+      "away_record": "3-1-1"
     },
     {
       "id": "401772924",
@@ -1590,7 +1800,9 @@
       "home_score": 20,
       "away_score": 10,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "3-2"
     },
     {
       "id": "401772816",
@@ -1605,7 +1817,9 @@
       "home_score": 24,
       "away_score": 9,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "5-1"
     },
     {
       "id": "401772826",
@@ -1620,7 +1834,9 @@
       "home_score": 27,
       "away_score": 19,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "2-3"
     },
     {
       "id": "401772942",
@@ -1635,7 +1851,9 @@
       "home_score": 37,
       "away_score": 10,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "3-3"
     },
     {
       "id": "401772760",
@@ -1650,7 +1868,9 @@
       "home_score": 10,
       "away_score": 34,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-3",
+      "away_record": "1-6"
     },
     {
       "id": "401772758",
@@ -1665,7 +1885,9 @@
       "home_score": 38,
       "away_score": 39,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-4",
+      "away_record": "0-7"
     },
     {
       "id": "401772868",
@@ -1680,7 +1902,9 @@
       "home_score": 32,
       "away_score": 13,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-2",
+      "away_record": "2-5"
     },
     {
       "id": "401772867",
@@ -1695,7 +1919,9 @@
       "home_score": 38,
       "away_score": 20,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "5-2",
+      "away_record": "2-5"
     },
     {
       "id": "401772865",
@@ -1710,7 +1936,9 @@
       "home_score": 9,
       "away_score": 40,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "4-2"
     },
     {
       "id": "401772759",
@@ -1725,7 +1953,9 @@
       "home_score": 30,
       "away_score": 16,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-5",
+      "away_record": "4-2"
     },
     {
       "id": "401772866",
@@ -1740,7 +1970,9 @@
       "home_score": 26,
       "away_score": 15,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-4",
+      "away_record": "5-2"
     },
     {
       "id": "401772869",
@@ -1755,7 +1987,9 @@
       "home_score": 3,
       "away_score": 23,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-6",
+      "away_record": "5-2"
     },
     {
       "id": "401772762",
@@ -1770,7 +2004,9 @@
       "home_score": 44,
       "away_score": 24,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-2",
+      "away_record": "3-3-1"
     },
     {
       "id": "401772761",
@@ -1785,7 +2021,9 @@
       "home_score": 38,
       "away_score": 14,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-1",
+      "away_record": "1-6"
     },
     {
       "id": "401772925",
@@ -1800,7 +2038,9 @@
       "home_score": 25,
       "away_score": 35,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-2",
+      "away_record": "4-1-1"
     },
     {
       "id": "401772817",
@@ -1815,7 +2055,9 @@
       "home_score": 28,
       "away_score": 7,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "3-4"
     },
     {
       "id": "401772943",
@@ -1830,7 +2072,9 @@
       "home_score": 6,
       "away_score": 28,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-6",
+      "away_record": "2-5"
     },
     {
       "id": "401772765",
@@ -1845,7 +2089,9 @@
       "home_score": 42,
       "away_score": 47,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-5",
+      "away_record": "4-3"
     },
     {
       "id": "401772871",
@@ -1860,7 +2106,9 @@
       "home_score": 24,
       "away_score": 27,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-2",
+      "away_record": "3-4"
     },
     {
       "id": "401772872",
@@ -1875,7 +2123,9 @@
       "home_score": 13,
       "away_score": 16,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-1-1",
+      "away_record": "4-4"
     },
     {
       "id": "401772764",
@@ -1890,7 +2140,9 @@
       "home_score": 20,
       "away_score": 27,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-7",
+      "away_record": "5-3"
     },
     {
       "id": "401772763",
@@ -1905,7 +2157,9 @@
       "home_score": 24,
       "away_score": 23,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-2",
+      "away_record": "3-4"
     },
     {
       "id": "401772767",
@@ -1920,7 +2174,9 @@
       "home_score": 24,
       "away_score": 34,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-6",
+      "away_record": "5-3"
     },
     {
       "id": "401772766",
@@ -1935,7 +2191,9 @@
       "home_score": 27,
       "away_score": 20,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "7-1"
     },
     {
       "id": "401772870",
@@ -1950,7 +2208,9 @@
       "home_score": 15,
       "away_score": 18,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-4",
+      "away_record": "6-2"
     },
     {
       "id": "401772873",
@@ -1965,7 +2225,9 @@
       "home_score": 29,
       "away_score": 30,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-5",
+      "away_record": "4-3"
     },
     {
       "id": "401772874",
@@ -1980,7 +2242,9 @@
       "home_score": 34,
       "away_score": 10,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-2",
+      "away_record": "1-7"
     },
     {
       "id": "401772768",
@@ -1995,7 +2259,9 @@
       "home_score": 28,
       "away_score": 21,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-2",
+      "away_record": "5-3"
     },
     {
       "id": "401772926",
@@ -2010,7 +2276,9 @@
       "home_score": 14,
       "away_score": 38,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-5",
+      "away_record": "5-2"
     },
     {
       "id": "401772818",
@@ -2025,7 +2293,9 @@
       "home_score": 17,
       "away_score": 27,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-4-1",
+      "away_record": "2-5"
     },
     {
       "id": "401772944",
@@ -2040,7 +2310,9 @@
       "home_score": 10,
       "away_score": 7,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-2",
+      "away_record": "2-6"
     },
     {
       "id": "401772636",
@@ -2055,7 +2327,9 @@
       "home_score": 31,
       "away_score": 25,
       "venue": "Olympic Stadium Berlin",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-2",
+      "away_record": "3-5"
     },
     {
       "id": "401772875",
@@ -2070,7 +2344,9 @@
       "home_score": 24,
       "away_score": 20,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-3",
+      "away_record": "2-7"
     },
     {
       "id": "401772771",
@@ -2085,7 +2361,9 @@
       "home_score": 30,
       "away_score": 13,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-7",
+      "away_record": "6-2"
     },
     {
       "id": "401772876",
@@ -2100,7 +2378,9 @@
       "home_score": 19,
       "away_score": 27,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-4",
+      "away_record": "3-5"
     },
     {
       "id": "401772769",
@@ -2115,7 +2395,9 @@
       "home_score": 27,
       "away_score": 20,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-7",
+      "away_record": "2-6"
     },
     {
       "id": "401772772",
@@ -2130,7 +2412,9 @@
       "home_score": 23,
       "away_score": 28,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-2",
+      "away_record": "7-2"
     },
     {
       "id": "401772877",
@@ -2145,7 +2429,9 @@
       "home_score": 7,
       "away_score": 17,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-4",
+      "away_record": "1-8"
     },
     {
       "id": "401772770",
@@ -2160,7 +2446,9 @@
       "home_score": 36,
       "away_score": 29,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-5",
+      "away_record": "5-3"
     },
     {
       "id": "401772773",
@@ -2175,7 +2463,9 @@
       "home_score": 44,
       "away_score": 22,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-2",
+      "away_record": "3-5"
     },
     {
       "id": "401772879",
@@ -2190,7 +2480,9 @@
       "home_score": 26,
       "away_score": 42,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-3",
+      "away_record": "6-2"
     },
     {
       "id": "401772878",
@@ -2205,7 +2497,9 @@
       "home_score": 22,
       "away_score": 44,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-6",
+      "away_record": "5-3"
     },
     {
       "id": "401772927",
@@ -2220,7 +2514,9 @@
       "home_score": 25,
       "away_score": 10,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-3",
+      "away_record": "5-3"
     },
     {
       "id": "401772630",
@@ -2235,7 +2531,9 @@
       "home_score": 7,
       "away_score": 10,
       "venue": "Lambeau Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "5-2-1",
+      "away_record": "6-2"
     },
     {
       "id": "401772945",
@@ -2250,7 +2548,9 @@
       "home_score": 27,
       "away_score": 14,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-2",
+      "away_record": "2-7"
     },
     {
       "id": "401772631",
@@ -2265,7 +2565,9 @@
       "home_score": 16,
       "away_score": 13,
       "venue": "Santiago Bernab\u00e9u",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-7",
+      "away_record": "3-7"
     },
     {
       "id": "401772882",
@@ -2280,7 +2582,9 @@
       "home_score": 27,
       "away_score": 30,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-6",
+      "away_record": "5-5"
     },
     {
       "id": "401772776",
@@ -2295,7 +2599,9 @@
       "home_score": 44,
       "away_score": 32,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-3",
+      "away_record": "6-3"
     },
     {
       "id": "401772881",
@@ -2310,7 +2616,9 @@
       "home_score": 13,
       "away_score": 16,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-8",
+      "away_record": "4-5"
     },
     {
       "id": "401772880",
@@ -2325,7 +2633,9 @@
       "home_score": 17,
       "away_score": 19,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-5",
+      "away_record": "6-3"
     },
     {
       "id": "401772883",
@@ -2340,7 +2650,9 @@
       "home_score": 20,
       "away_score": 27,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-8",
+      "away_record": "5-3-1"
     },
     {
       "id": "401772774",
@@ -2355,7 +2667,9 @@
       "home_score": 34,
       "away_score": 12,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-4",
+      "away_record": "3-6"
     },
     {
       "id": "401772775",
@@ -2370,7 +2684,9 @@
       "home_score": 35,
       "away_score": 6,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-4",
+      "away_record": "7-3"
     },
     {
       "id": "401772884",
@@ -2385,7 +2701,9 @@
       "home_score": 21,
       "away_score": 19,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-2",
+      "away_record": "7-2"
     },
     {
       "id": "401772885",
@@ -2400,7 +2718,9 @@
       "home_score": 22,
       "away_score": 41,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-6",
+      "away_record": "6-4"
     },
     {
       "id": "401772777",
@@ -2415,7 +2735,9 @@
       "home_score": 16,
       "away_score": 23,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-7",
+      "away_record": "4-5"
     },
     {
       "id": "401772778",
@@ -2430,7 +2752,9 @@
       "home_score": 22,
       "away_score": 19,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-2",
+      "away_record": "5-4"
     },
     {
       "id": "401772928",
@@ -2445,7 +2769,9 @@
       "home_score": 16,
       "away_score": 9,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "7-2",
+      "away_record": "6-3"
     },
     {
       "id": "401772819",
@@ -2460,7 +2786,9 @@
       "home_score": 16,
       "away_score": 33,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-7",
+      "away_record": "3-5-1"
     },
     {
       "id": "401772946",
@@ -2475,7 +2803,9 @@
       "home_score": 23,
       "away_score": 19,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-5",
+      "away_record": "7-3"
     },
     {
       "id": "401772780",
@@ -2490,7 +2820,9 @@
       "home_score": 31,
       "away_score": 28,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-3",
+      "away_record": "6-4"
     },
     {
       "id": "401772781",
@@ -2505,7 +2837,9 @@
       "home_score": 20,
       "away_score": 26,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-7",
+      "away_record": "9-2"
     },
     {
       "id": "401772888",
@@ -2520,7 +2854,9 @@
       "home_score": 34,
       "away_score": 27,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-4",
+      "away_record": "2-9"
     },
     {
       "id": "401772887",
@@ -2535,7 +2871,9 @@
       "home_score": 23,
       "away_score": 6,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-3-1",
+      "away_record": "4-6"
     },
     {
       "id": "401772886",
@@ -2550,7 +2888,9 @@
       "home_score": 24,
       "away_score": 30,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-9",
+      "away_record": "7-3"
     },
     {
       "id": "401772779",
@@ -2565,7 +2905,9 @@
       "home_score": 23,
       "away_score": 20,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-5",
+      "away_record": "8-2"
     },
     {
       "id": "401772782",
@@ -2580,7 +2922,9 @@
       "home_score": 23,
       "away_score": 10,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-5",
+      "away_record": "2-8"
     },
     {
       "id": "401772784",
@@ -2595,7 +2939,9 @@
       "home_score": 10,
       "away_score": 24,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-8",
+      "away_record": "2-8"
     },
     {
       "id": "401772783",
@@ -2610,7 +2956,9 @@
       "home_score": 24,
       "away_score": 27,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-7",
+      "away_record": "6-4"
     },
     {
       "id": "401772890",
@@ -2625,7 +2973,9 @@
       "home_score": 24,
       "away_score": 21,
       "venue": "AT&T Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "4-5-1",
+      "away_record": "8-2"
     },
     {
       "id": "401772889",
@@ -2640,7 +2990,9 @@
       "home_score": 10,
       "away_score": 24,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-8",
+      "away_record": "3-7"
     },
     {
       "id": "401772929",
@@ -2655,7 +3007,9 @@
       "home_score": 34,
       "away_score": 7,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-2",
+      "away_record": "6-4"
     },
     {
       "id": "401772820",
@@ -2670,7 +3024,9 @@
       "home_score": 20,
       "away_score": 9,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-4",
+      "away_record": "6-5"
     },
     {
       "id": "401772891",
@@ -2685,7 +3041,9 @@
       "home_score": 24,
       "away_score": 31,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-4",
+      "away_record": "7-3-1"
     },
     {
       "id": "401772694",
@@ -2700,7 +3058,9 @@
       "home_score": 31,
       "away_score": 28,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-5-1",
+      "away_record": "6-5"
     },
     {
       "id": "401772930",
@@ -2715,7 +3075,9 @@
       "home_score": 14,
       "away_score": 32,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-5",
+      "away_record": "3-8"
     },
     {
       "id": "401772621",
@@ -2730,7 +3092,9 @@
       "home_score": 15,
       "away_score": 24,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "8-3",
+      "away_record": "8-3"
     },
     {
       "id": "401772785",
@@ -2745,7 +3109,9 @@
       "home_score": 8,
       "away_score": 26,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-8",
+      "away_record": "8-4"
     },
     {
       "id": "401772786",
@@ -2760,7 +3126,9 @@
       "home_score": 3,
       "away_score": 25,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "1-10",
+      "away_record": "7-4"
     },
     {
       "id": "401772787",
@@ -2775,7 +3143,9 @@
       "home_score": 16,
       "away_score": 20,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-3",
+      "away_record": "6-5"
     },
     {
       "id": "401772892",
@@ -2790,7 +3160,9 @@
       "home_score": 21,
       "away_score": 17,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-7",
+      "away_record": "2-9"
     },
     {
       "id": "401772893",
@@ -2805,7 +3177,9 @@
       "home_score": 27,
       "away_score": 24,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-9",
+      "away_record": "4-7"
     },
     {
       "id": "401772895",
@@ -2820,7 +3194,9 @@
       "home_score": 20,
       "away_score": 17,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-5",
+      "away_record": "3-8"
     },
     {
       "id": "401772894",
@@ -2835,7 +3211,9 @@
       "home_score": 31,
       "away_score": 28,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-6",
+      "away_record": "9-2"
     },
     {
       "id": "401772896",
@@ -2850,7 +3228,9 @@
       "home_score": 26,
       "away_score": 0,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-3",
+      "away_record": "4-7"
     },
     {
       "id": "401772789",
@@ -2865,7 +3245,9 @@
       "home_score": 7,
       "away_score": 26,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-5",
+      "away_record": "7-4"
     },
     {
       "id": "401772788",
@@ -2880,7 +3262,9 @@
       "home_score": 31,
       "away_score": 14,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-4",
+      "away_record": "2-9"
     },
     {
       "id": "401772931",
@@ -2895,7 +3279,9 @@
       "home_score": 26,
       "away_score": 27,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-8",
+      "away_record": "9-2"
     },
     {
       "id": "401772821",
@@ -2910,7 +3296,9 @@
       "home_score": 33,
       "away_score": 15,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "10-2",
+      "away_record": "2-10"
     },
     {
       "id": "401772947",
@@ -2925,7 +3313,9 @@
       "home_score": 44,
       "away_score": 30,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-5",
+      "away_record": "6-5-1"
     },
     {
       "id": "401772900",
@@ -2940,7 +3330,9 @@
       "home_score": 9,
       "away_score": 37,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-8",
+      "away_record": "9-3"
     },
     {
       "id": "401772902",
@@ -2955,7 +3347,9 @@
       "home_score": 39,
       "away_score": 34,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-4",
+      "away_record": "4-8"
     },
     {
       "id": "401772898",
@@ -2970,7 +3364,9 @@
       "home_score": 29,
       "away_score": 31,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-9",
+      "away_record": "1-11"
     },
     {
       "id": "401772899",
@@ -2985,7 +3381,9 @@
       "home_score": 31,
       "away_score": 0,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-8",
+      "away_record": "3-9"
     },
     {
       "id": "401772790",
@@ -3000,7 +3398,9 @@
       "home_score": 10,
       "away_score": 34,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-9",
+      "away_record": "5-7"
     },
     {
       "id": "401772792",
@@ -3015,7 +3415,9 @@
       "home_score": 20,
       "away_score": 24,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-5",
+      "away_record": "2-10"
     },
     {
       "id": "401772793",
@@ -3030,7 +3432,9 @@
       "home_score": 36,
       "away_score": 19,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-4",
+      "away_record": "8-4"
     },
     {
       "id": "401772791",
@@ -3045,7 +3449,9 @@
       "home_score": 22,
       "away_score": 27,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-6",
+      "away_record": "6-6"
     },
     {
       "id": "401772794",
@@ -3060,7 +3466,9 @@
       "home_score": 17,
       "away_score": 24,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-10",
+      "away_record": "10-2"
     },
     {
       "id": "401772897",
@@ -3075,7 +3483,9 @@
       "home_score": 28,
       "away_score": 21,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-3-1",
+      "away_record": "9-3"
     },
     {
       "id": "401772901",
@@ -3090,7 +3500,9 @@
       "home_score": 17,
       "away_score": 45,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-9",
+      "away_record": "9-3"
     },
     {
       "id": "401772932",
@@ -3105,7 +3517,9 @@
       "home_score": 10,
       "away_score": 20,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-6",
+      "away_record": "7-5"
     },
     {
       "id": "401772822",
@@ -3120,7 +3534,9 @@
       "home_score": 22,
       "away_score": 19,
       "venue": "SoFi Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "8-4",
+      "away_record": "8-4"
     },
     {
       "id": "401772948",
@@ -3135,7 +3551,9 @@
       "home_score": 28,
       "away_score": 29,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-6",
+      "away_record": "4-9"
     },
     {
       "id": "401772904",
@@ -3150,7 +3568,9 @@
       "home_score": 31,
       "away_score": 3,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-4",
+      "away_record": "3-10"
     },
     {
       "id": "401772796",
@@ -3165,7 +3585,9 @@
       "home_score": 0,
       "away_score": 24,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-9",
+      "away_record": "6-7"
     },
     {
       "id": "401772798",
@@ -3180,7 +3602,9 @@
       "home_score": 13,
       "away_score": 16,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-7",
+      "away_record": "9-4"
     },
     {
       "id": "401772795",
@@ -3195,7 +3619,9 @@
       "home_score": 31,
       "away_score": 35,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-2",
+      "away_record": "9-4"
     },
     {
       "id": "401772905",
@@ -3210,7 +3636,9 @@
       "home_score": 21,
       "away_score": 29,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-11",
+      "away_record": "3-10"
     },
     {
       "id": "401772906",
@@ -3225,7 +3653,9 @@
       "home_score": 31,
       "away_score": 0,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "8-5",
+      "away_record": "2-11"
     },
     {
       "id": "401772797",
@@ -3240,7 +3670,9 @@
       "home_score": 48,
       "away_score": 20,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-4",
+      "away_record": "3-10"
     },
     {
       "id": "401772903",
@@ -3255,7 +3687,9 @@
       "home_score": 40,
       "away_score": 20,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-5",
+      "away_record": "3-10"
     },
     {
       "id": "401772800",
@@ -3270,7 +3704,9 @@
       "home_score": 34,
       "away_score": 26,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-2",
+      "away_record": "9-3-1"
     },
     {
       "id": "401772909",
@@ -3285,7 +3721,9 @@
       "home_score": 41,
       "away_score": 34,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "10-3",
+      "away_record": "8-5"
     },
     {
       "id": "401772908",
@@ -3300,7 +3738,9 @@
       "home_score": 20,
       "away_score": 17,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-10",
+      "away_record": "7-6"
     },
     {
       "id": "401772907",
@@ -3315,7 +3755,9 @@
       "home_score": 37,
       "away_score": 24,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-4",
+      "away_record": "2-11"
     },
     {
       "id": "401772799",
@@ -3330,7 +3772,9 @@
       "home_score": 18,
       "away_score": 16,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "10-3",
+      "away_record": "8-5"
     },
     {
       "id": "401772933",
@@ -3345,7 +3789,9 @@
       "home_score": 26,
       "away_score": 34,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-6-1",
+      "away_record": "5-8"
     },
     {
       "id": "401772823",
@@ -3360,7 +3806,9 @@
       "home_score": 28,
       "away_score": 15,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-6",
+      "away_record": "6-7"
     },
     {
       "id": "401772949",
@@ -3375,7 +3823,9 @@
       "home_score": 38,
       "away_score": 37,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-3",
+      "away_record": "11-3"
     },
     {
       "id": "401772612",
@@ -3390,7 +3840,9 @@
       "home_score": 18,
       "away_score": 29,
       "venue": "Northwest Stadium",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "4-10",
+      "away_record": "9-5"
     },
     {
       "id": "401772613",
@@ -3405,7 +3857,9 @@
       "home_score": 22,
       "away_score": 16,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "10-4",
+      "away_record": "9-4-1"
     },
     {
       "id": "401772802",
@@ -3420,7 +3874,9 @@
       "home_score": 20,
       "away_score": 23,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-11",
+      "away_record": "10-4"
     },
     {
       "id": "401772910",
@@ -3435,7 +3891,9 @@
       "home_score": 17,
       "away_score": 34,
       "venue": "AT&T Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-7-1",
+      "away_record": "10-4"
     },
     {
       "id": "401772803",
@@ -3450,7 +3908,9 @@
       "home_score": 26,
       "away_score": 9,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-12",
+      "away_record": "6-8"
     },
     {
       "id": "401772934",
@@ -3465,7 +3925,9 @@
       "home_score": 21,
       "away_score": 45,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-8",
+      "away_record": "4-10"
     },
     {
       "id": "401772801",
@@ -3480,7 +3942,9 @@
       "home_score": 29,
       "away_score": 6,
       "venue": "Caesars Superdome",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-10",
+      "away_record": "3-11"
     },
     {
       "id": "401772911",
@@ -3495,7 +3959,9 @@
       "home_score": 13,
       "away_score": 16,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-12",
+      "away_record": "6-8"
     },
     {
       "id": "401772912",
@@ -3510,7 +3976,9 @@
       "home_score": 23,
       "away_score": 20,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-7",
+      "away_record": "7-7"
     },
     {
       "id": "401772913",
@@ -3525,7 +3993,9 @@
       "home_score": 20,
       "away_score": 34,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "12-2",
+      "away_record": "10-4"
     },
     {
       "id": "401772914",
@@ -3540,7 +4010,9 @@
       "home_score": 19,
       "away_score": 26,
       "venue": "State Farm Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-11",
+      "away_record": "5-9"
     },
     {
       "id": "401772806",
@@ -3555,7 +4027,9 @@
       "home_score": 24,
       "away_score": 29,
       "venue": "Ford Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-6",
+      "away_record": "8-6"
     },
     {
       "id": "401772805",
@@ -3570,7 +4044,9 @@
       "home_score": 23,
       "away_score": 21,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-5",
+      "away_record": "2-12"
     },
     {
       "id": "401772804",
@@ -3585,7 +4061,9 @@
       "home_score": 24,
       "away_score": 28,
       "venue": "M&T Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-7",
+      "away_record": "11-3"
     },
     {
       "id": "401772824",
@@ -3600,7 +4078,9 @@
       "home_score": 27,
       "away_score": 48,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-6",
+      "away_record": "10-4"
     },
     {
       "id": "401772710",
@@ -3615,7 +4095,9 @@
       "home_score": 23,
       "away_score": 30,
       "venue": "Northwest Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "4-11",
+      "away_record": "6-8-1"
     },
     {
       "id": "401772711",
@@ -3630,7 +4112,9 @@
       "home_score": 23,
       "away_score": 10,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-8",
+      "away_record": "8-7"
     },
     {
       "id": "401772622",
@@ -3645,7 +4129,9 @@
       "home_score": 13,
       "away_score": 20,
       "venue": "GEHA Field at Arrowhead Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-9",
+      "away_record": "12-3"
     },
     {
       "id": "401772951",
@@ -3660,7 +4146,9 @@
       "home_score": 16,
       "away_score": 20,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-4",
+      "away_record": "10-5"
     },
     {
       "id": "401772953",
@@ -3675,7 +4163,9 @@
       "home_score": 24,
       "away_score": 41,
       "venue": "Lambeau Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-5-1",
+      "away_record": "7-8"
     },
     {
       "id": "401772954",
@@ -3690,7 +4180,9 @@
       "home_score": 37,
       "away_score": 14,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "5-10",
+      "away_record": "3-12"
     },
     {
       "id": "401772807",
@@ -3705,7 +4197,9 @@
       "home_score": 13,
       "away_score": 6,
       "venue": "Huntington Bank Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-12",
+      "away_record": "9-6"
     },
     {
       "id": "401772809",
@@ -3720,7 +4214,9 @@
       "home_score": 26,
       "away_score": 34,
       "venue": "Nissan Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-12",
+      "away_record": "5-10"
     },
     {
       "id": "401772915",
@@ -3735,7 +4231,9 @@
       "home_score": 17,
       "away_score": 23,
       "venue": "Lucas Oil Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-7",
+      "away_record": "11-4"
     },
     {
       "id": "401772916",
@@ -3750,7 +4248,9 @@
       "home_score": 20,
       "away_score": 17,
       "venue": "Hard Rock Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-9",
+      "away_record": "7-8"
     },
     {
       "id": "401772808",
@@ -3765,7 +4265,9 @@
       "home_score": 10,
       "away_score": 42,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-12",
+      "away_record": "12-3"
     },
     {
       "id": "401772952",
@@ -3780,7 +4282,9 @@
       "home_score": 10,
       "away_score": 27,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-7",
+      "away_record": "12-3"
     },
     {
       "id": "401772950",
@@ -3795,7 +4299,9 @@
       "home_score": 10,
       "away_score": 34,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-13",
+      "away_record": "2-13"
     },
     {
       "id": "401772917",
@@ -3810,7 +4316,9 @@
       "home_score": 12,
       "away_score": 13,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "11-4",
+      "away_record": "10-5"
     },
     {
       "id": "401772935",
@@ -3825,7 +4333,9 @@
       "home_score": 42,
       "away_score": 38,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-4",
+      "away_record": "11-4"
     },
     {
       "id": "401772825",
@@ -3840,7 +4350,9 @@
       "home_score": 27,
       "away_score": 24,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-9",
+      "away_record": "11-4"
     },
     {
       "id": "401772969",
@@ -3855,7 +4367,9 @@
       "home_score": 16,
       "away_score": 14,
       "venue": "Raymond James Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-9",
+      "away_record": "8-8"
     },
     {
       "id": "401772961",
@@ -3870,7 +4384,9 @@
       "home_score": 3,
       "away_score": 13,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "12-4",
+      "away_record": "13-3"
     },
     {
       "id": "401772966",
@@ -3885,7 +4401,9 @@
       "home_score": 19,
       "away_score": 17,
       "venue": "Mercedes-Benz Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "7-9",
+      "away_record": "6-10"
     },
     {
       "id": "401772964",
@@ -3900,7 +4418,9 @@
       "home_score": 18,
       "away_score": 20,
       "venue": "Paycor Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "6-10",
+      "away_record": "4-12"
     },
     {
       "id": "401772968",
@@ -3915,7 +4435,9 @@
       "home_score": 16,
       "away_score": 3,
       "venue": "U.S. Bank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-8",
+      "away_record": "9-6-1"
     },
     {
       "id": "401772963",
@@ -3930,7 +4452,9 @@
       "home_score": 34,
       "away_score": 17,
       "venue": "MetLife Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "3-13",
+      "away_record": "7-8-1"
     },
     {
       "id": "401772970",
@@ -3945,7 +4469,9 @@
       "home_score": 41,
       "away_score": 7,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "12-4",
+      "away_record": "3-13"
     },
     {
       "id": "401772962",
@@ -3960,7 +4486,9 @@
       "home_score": 38,
       "away_score": 30,
       "venue": "NRG Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-5",
+      "away_record": "8-8"
     },
     {
       "id": "401772967",
@@ -3975,7 +4503,9 @@
       "home_score": 35,
       "away_score": 8,
       "venue": "Highmark Stadium (Old)",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-5",
+      "away_record": "3-13"
     },
     {
       "id": "401772965",
@@ -3990,7 +4520,9 @@
       "home_score": 16,
       "away_score": 19,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-5",
+      "away_record": "8-8"
     },
     {
       "id": "401772956",
@@ -4005,7 +4537,9 @@
       "home_score": 19,
       "away_score": 3,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "13-3",
+      "away_record": "11-5"
     },
     {
       "id": "401772957",
@@ -4020,7 +4554,9 @@
       "home_score": 14,
       "away_score": 12,
       "venue": "Allegiant Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "2-14",
+      "away_record": "6-10"
     },
     {
       "id": "401772955",
@@ -4035,7 +4571,9 @@
       "home_score": 37,
       "away_score": 20,
       "venue": "SoFi Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-5",
+      "away_record": "3-13"
     },
     {
       "id": "401772958",
@@ -4050,7 +4588,9 @@
       "home_score": 38,
       "away_score": 10,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "13-3",
+      "away_record": "7-9"
     },
     {
       "id": "401772959",
@@ -4065,7 +4605,9 @@
       "home_score": 17,
       "away_score": 24,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "11-5",
+      "away_record": "4-12"
     },
     {
       "id": "401772960",
@@ -4080,7 +4622,9 @@
       "home_score": 26,
       "away_score": 24,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "9-7",
+      "away_record": "8-8"
     },
     {
       "id": "401772979",
@@ -4095,7 +4639,9 @@
       "home_score": 31,
       "away_score": 34,
       "venue": "Bank of America Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "8-9",
+      "away_record": "12-5"
     },
     {
       "id": "401772981",
@@ -4110,7 +4656,9 @@
       "home_score": 31,
       "away_score": 27,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-6",
+      "away_record": "9-7-1"
     },
     {
       "id": "401772977",
@@ -4125,7 +4673,9 @@
       "home_score": 24,
       "away_score": 27,
       "venue": "EverBank Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "13-4",
+      "away_record": "12-5"
     },
     {
       "id": "401772980",
@@ -4140,7 +4690,9 @@
       "home_score": 19,
       "away_score": 23,
       "venue": "Lincoln Financial Field",
-      "is_favorite": true
+      "is_favorite": true,
+      "home_record": "11-6",
+      "away_record": "12-5"
     },
     {
       "id": "401772978",
@@ -4155,7 +4707,9 @@
       "home_score": 16,
       "away_score": 3,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "11-6"
     },
     {
       "id": "401772976",
@@ -4170,7 +4724,9 @@
       "home_score": 6,
       "away_score": 30,
       "venue": "Acrisure Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "10-7",
+      "away_record": "12-5"
     },
     {
       "id": "401772982",
@@ -4185,7 +4741,9 @@
       "home_score": 33,
       "away_score": 30,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "12-5"
     },
     {
       "id": "401772984",
@@ -4200,7 +4758,9 @@
       "home_score": 41,
       "away_score": 6,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "12-5"
     },
     {
       "id": "401772983",
@@ -4215,7 +4775,9 @@
       "home_score": 28,
       "away_score": 16,
       "venue": "Gillette Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "12-5"
     },
     {
       "id": "401772985",
@@ -4230,7 +4792,9 @@
       "home_score": 17,
       "away_score": 20,
       "venue": "Soldier Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "11-6",
+      "away_record": "12-5"
     },
     {
       "id": "401772986",
@@ -4245,7 +4809,9 @@
       "home_score": 7,
       "away_score": 10,
       "venue": "Empower Field at Mile High",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "14-3"
     },
     {
       "id": "401772987",
@@ -4260,7 +4826,9 @@
       "home_score": 31,
       "away_score": 27,
       "venue": "Lumen Field",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "12-5"
     },
     {
       "id": "401831718",
@@ -4275,7 +4843,9 @@
       "home_score": 52,
       "away_score": 66,
       "venue": "Moscone Center",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
     },
     {
       "id": "401772988",
@@ -4290,7 +4860,9 @@
       "home_score": 13,
       "away_score": 29,
       "venue": "Levi's Stadium",
-      "is_favorite": false
+      "is_favorite": false,
+      "home_record": "14-3",
+      "away_record": "14-3"
     }
   ]
 }
