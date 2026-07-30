@@ -115,6 +115,7 @@
 
   .row .matchup { font-weight: 600; }
   .row .meta { color: var(--muted); font-size: 11px; }
+  .rec { color: var(--muted); font-weight: 400; font-size: 11px; }
   .badge {
     display: inline-block;
     font-size: 9px;
@@ -272,6 +273,10 @@
       '</div>';
   }
 
+  function teamWithRecord(name, record) {
+    return esc(name) + (record ? ' <span class="rec">(' + esc(record) + ')</span>' : '');
+  }
+
   function renderHero(schedule) {
     var el = document.getElementById('hero-grid');
     var games = (schedule && schedule.games) || [];
@@ -307,7 +312,7 @@
         lastWeek = weekKey;
       }
       html += '<div class="row' + (g.is_favorite ? ' favorite' : '') + '">' +
-        '<div><span class="matchup">' + esc(g.away_team) + ' @ ' + esc(g.home_team) + '</span>' +
+        '<div><span class="matchup">' + teamWithRecord(g.away_team, g.away_record) + ' @ ' + teamWithRecord(g.home_team, g.home_record) + '</span>' +
         (g.is_favorite ? '<span class="badge">EAGLES</span>' : '') + '</div>' +
         '<div class="meta">' + fmtDateTime(g.date_utc) + '</div>' +
         '</div>';
@@ -330,7 +335,7 @@
       var score = (g.home_score != null && g.away_score != null) ? (g.away_score + ' - ' + g.home_score) : '—';
       html += '<tr class="' + (g.is_favorite ? 'favorite' : '') + '">' +
         '<td>' + fmtDateOnly(g.date_utc) + '</td>' +
-        '<td>' + esc(g.away_team) + ' @ ' + esc(g.home_team) + (g.is_favorite ? '<span class="badge">EAGLES</span>' : '') + '</td>' +
+        '<td>' + teamWithRecord(g.away_team, g.away_record) + ' @ ' + teamWithRecord(g.home_team, g.home_record) + (g.is_favorite ? '<span class="badge">EAGLES</span>' : '') + '</td>' +
         '<td>' + score + '</td>' +
         '</tr>';
     });
@@ -348,11 +353,18 @@
       return;
     }
 
+    var defaultIdx = conferences.findIndex(function (conf) {
+      return (conf.divisions || []).some(function (div) {
+        return (div.teams || []).some(function (t) { return t.is_eagles; });
+      });
+    });
+    if (defaultIdx === -1) defaultIdx = 0;
+
     var tabsHtml = '<div class="tab-bar">';
     var panelsHtml = '';
     conferences.forEach(function (conf, i) {
-      tabsHtml += '<button class="tab-btn' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '">' + esc(conf.name) + '</button>';
-      panelsHtml += '<div class="tab-panel' + (i === 0 ? '' : ' hidden') + '" data-idx="' + i + '">';
+      tabsHtml += '<button class="tab-btn' + (i === defaultIdx ? ' active' : '') + '" data-idx="' + i + '">' + esc(conf.name) + '</button>';
+      panelsHtml += '<div class="tab-panel' + (i === defaultIdx ? '' : ' hidden') + '" data-idx="' + i + '">';
       (conf.divisions || []).forEach(function (div) {
         panelsHtml += '<div class="standings-card"><h3 class="sub-title" style="margin-top:0">' + esc(div.name) + '</h3>' +
           '<table><thead><tr><th>Team</th><th>W</th><th>L</th><th>T</th><th>Pct</th></tr></thead><tbody>';
