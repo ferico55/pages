@@ -89,7 +89,54 @@ def parse_event(event, season_type_label, week_num):
         "away_score": score(away) if status != "scheduled" else None,
         "venue": (comp.get("venue") or {}).get("fullName", ""),
         "is_favorite": home_abbr == EAGLES_ABBR or away_abbr == EAGLES_ABBR,
+        "home_record": None,
+        "away_record": None,
     }
+
+
+def format_record(wins, losses, ties):
+    return f"{wins}-{losses}-{ties}" if ties else f"{wins}-{losses}"
+
+
+def compute_running_records(games):
+    """Fills in each game's home_record/away_record: each team's W-L-T
+    entering that game (not their final season record), computed by
+    replaying the regular season in chronological order. Postseason games
+    show both teams' final regular-season record, matching how NFL
+    schedules conventionally display it (the record itself doesn't keep
+    incrementing through the playoffs)."""
+    record = {}
+
+    def tally(abbr):
+        return record.setdefault(abbr, {"w": 0, "l": 0, "t": 0})
+
+    regular = sorted(
+        (g for g in games if g["season_type"] == "regular"),
+        key=lambda g: g["date_utc"] or "",
+    )
+    for g in regular:
+        home, away = tally(g["home_abbr"]), tally(g["away_abbr"])
+        g["home_record"] = format_record(home["w"], home["l"], home["t"])
+        g["away_record"] = format_record(away["w"], away["l"], away["t"])
+
+        if g["status"] == "final" and g["home_score"] is not None and g["away_score"] is not None:
+            if g["home_score"] > g["away_score"]:
+                home["w"] += 1
+                away["l"] += 1
+            elif g["away_score"] > g["home_score"]:
+                away["w"] += 1
+                home["l"] += 1
+            else:
+                home["t"] += 1
+                away["t"] += 1
+
+    for g in games:
+        if g["season_type"] != "regular":
+            home, away = tally(g["home_abbr"]), tally(g["away_abbr"])
+            g["home_record"] = format_record(home["w"], home["l"], home["t"])
+            g["away_record"] = format_record(away["w"], away["l"], away["t"])
+
+    return games
 
 
 def fetch_schedule(year):
@@ -110,7 +157,7 @@ def fetch_schedule(year):
                     games.append(parse_event(event, label, week))
                 except (KeyError, StopIteration, TypeError) as e:
                     print(f"WARN: skipping malformed event {event.get('id')}: {e}", file=sys.stderr)
-    return games
+    return compute_running_records(games)
 
 
 def parse_team_entry(entry):
