@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-07-30T11:22:29.743682+00:00",
+  "last_updated": "2026-07-31T11:36:06.536196+00:00",
   "races": [
     {
       "round": 1,
@@ -214,6 +214,20 @@
     },
     {
       "round": 16,
+      "race_name": "Bahrain Grand Prix in Malaysia",
+      "circuit": "Sepang International Circuit",
+      "locality": "Kuala Lumpur",
+      "country": "Malaysia",
+      "race_date_utc": "2026-10-04T07:00:00Z",
+      "qualifying_date_utc": "2026-10-03T09:00:00Z",
+      "sprint_date_utc": null,
+      "status": "scheduled",
+      "winner": null,
+      "winner_constructor": null,
+      "verstappen_finish": null
+    },
+    {
+      "round": 17,
       "race_name": "Singapore Grand Prix",
       "circuit": "Marina Bay Street Circuit",
       "locality": "Marina Bay",
@@ -227,7 +241,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 17,
+      "round": 18,
       "race_name": "United States Grand Prix",
       "circuit": "Circuit of the Americas",
       "locality": "Austin",
@@ -241,7 +255,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 18,
+      "round": 19,
       "race_name": "Mexico City Grand Prix",
       "circuit": "Aut\u00f3dromo Hermanos Rodr\u00edguez",
       "locality": "Mexico City",
@@ -255,7 +269,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 19,
+      "round": 20,
       "race_name": "Brazilian Grand Prix",
       "circuit": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
       "locality": "S\u00e3o Paulo",
@@ -269,7 +283,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 20,
+      "round": 21,
       "race_name": "Las Vegas Grand Prix",
       "circuit": "Las Vegas Strip Street Circuit",
       "locality": "Las Vegas",
@@ -283,7 +297,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 21,
+      "round": 22,
       "race_name": "Qatar Grand Prix",
       "circuit": "Losail International Circuit",
       "locality": "Lusail",
@@ -297,7 +311,7 @@
       "verstappen_finish": null
     },
     {
-      "round": 22,
+      "round": 23,
       "race_name": "Abu Dhabi Grand Prix",
       "circuit": "Yas Marina Circuit",
       "locality": "Abu Dhabi",
