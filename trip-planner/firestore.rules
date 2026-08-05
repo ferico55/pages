@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /trips/{tripId} {
+      // A trip can only be created by its own owner.
+      allow create: if request.auth != null
+                    && request.resource.data.ownerId == request.auth.uid;
+
+      // Read/update/delete are allowed for the owner and for anyone whose
+      // (verified) sign-in email appears in the trip's `sharedWith` list —
+      // access is bound to the email address, not a user id, so an invite
+      // works even before the invited person has ever signed in.
+      allow read, update, delete: if request.auth != null
+                    && (
+                         resource.data.ownerId == request.auth.uid
+                         || (request.auth.token.email_verified == true
+                             && resource.data.sharedWith.hasAny([request.auth.token.email.lower()]))
+                       )
+                    // ownerId is fixed at creation time and can't be
+                    // reassigned by anyone, owner or invited editor included.
+                    && (request.method != 'update'
+                        || request.resource.data.ownerId == resource.data.ownerId);
+    }
+  }
+}
