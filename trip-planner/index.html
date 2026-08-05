@@ -91,7 +91,30 @@ body[data-view="detail"] #view-detail { display: block; }
 }
 .list-header p { color: var(--muted); font-size: 12px; margin-top: 3px; }
 
-#trip-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+#trip-list, #shared-trip-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.list-section-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 24px 0 10px;
+}
+
+.badge-shared {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent2);
+  background: color-mix(in srgb, var(--accent2) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent2) 30%, transparent);
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
 
 .trip-card {
   display: flex;
@@ -674,6 +697,22 @@ body[data-view="detail"] #view-detail { display: block; }
 }
 .no-tags { font-size: 12px; color: var(--muted); }
 
+/* ── SHARE LIST ─────────────────────────────────── */
+.share-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.share-list-empty { font-size: 12px; color: var(--muted); }
+.share-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.share-row-owner { color: var(--muted); }
+
 /* ── TOAST ──────────────────────────────────────── */
 #toast {
   position: fixed;
@@ -759,6 +798,10 @@ body[data-view="detail"] #view-detail { display: block; }
     <div id="list-empty" hidden>
       <p style="font-size:32px">✈</p>
       <p>No trips yet. Create your first one!</p>
+    </div>
+    <div id="shared-trip-section" hidden>
+      <div class="list-section-label">Shared with you</div>
+      <ul id="shared-trip-list"></ul>
     </div>
     <div id="list-unauth" hidden>
       <p style="font-size:32px">🔒</p>
@@ -864,6 +907,30 @@ body[data-view="detail"] #view-detail { display: block; }
   </div>
 </div>
 
+<!-- ══ MODAL: SHARE TRIP ═══════════════════════════════════════════════ -->
+<div id="modal-share" class="modal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <h2>Share Trip</h2>
+      <button class="modal-close" data-close="modal-share">✕</button>
+    </div>
+    <form id="form-share-trip">
+      <div class="form-field">
+        <label>Invite by email</label>
+        <input id="share-email-input" name="email" type="email" placeholder="someone@example.com" autocomplete="off">
+      </div>
+      <button type="submit" class="btn-primary">Invite</button>
+    </form>
+    <div class="form-field" style="margin-top:20px">
+      <div class="tag-section-label">People with access</div>
+      <ul id="share-list" class="share-list"></ul>
+    </div>
+    <button type="button" class="btn-add-custom" id="btn-copy-share-link" style="width:100%;margin-top:8px">Copy shareable link</button>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div id="toast"></div>
 
@@ -871,15 +938,9 @@ body[data-view="detail"] #view-detail { display: block; }
 // ── FIREBASE CONFIG ────────────────────────────────────────────────────────
 // Replace with your Firebase project config.
 // Get it from: Firebase Console → Project Settings → Your apps → SDK setup
-// Firestore Security Rules (set in Firebase Console):
-//   rules_version = '2';
-//   service cloud.firestore {
-//     match /databases/{database}/documents {
-//       match /trips/{tripId} {
-//         allow read, write: if request.auth != null;
-//       }
-//     }
-//   }
+// Firestore Security Rules: see trip-planner/firestore.rules in this repo.
+// Publish that file's contents in Firebase Console → Firestore → Rules —
+// it restricts each trip to its owner and the emails in `sharedWith`.
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyBrw2P_bDnHhRmz244ZxVWvA0Rvenv_zPI",
   authDomain: "fer-trip-planner.firebaseapp.com",
@@ -894,7 +955,8 @@ import { initializeApp }
   from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'
 import {
   getFirestore, collection, doc, setDoc, updateDoc, deleteDoc,
-  onSnapshot, serverTimestamp, query, orderBy
+  onSnapshot, serverTimestamp, query, orderBy, where,
+  arrayUnion, arrayRemove
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'
 import {
   getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect,
@@ -919,6 +981,8 @@ const SLOTS = [
 
 const PRESET_TAGS = ['food','cafe','sightseeing','activity','nature','shopping','transport','accommodation']
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 const TAG_COLORS = {
   food:          '#fb923c',
   cafe:          '#fbbf24',
@@ -934,11 +998,14 @@ const TAG_COLORS = {
 const state = {
   user:            null,
   trips:           [],
+  ownedTrips:      [],
+  sharedTrips:     [],
   currentTrip:     null,
   searchQuery:     '',
   searchTags:      [],
   activityContext: { dayIndex: null, slot: null, activityId: null, isBacklog: false },
-  unsubTrips:      null,
+  unsubOwnedTrips: null,
+  unsubSharedTrips:null,
 }
 
 let modalTags = []
@@ -996,6 +1063,19 @@ function requireAuth() {
   return true
 }
 
+function canAccess(trip) {
+  if (!state.user || !trip) return false
+  if (trip.ownerId === state.user.uid) return true
+  const email = (state.user.email || '').toLowerCase()
+  return !!email && (trip.sharedWith || []).includes(email)
+}
+
+function requireEditAccess(trip) {
+  if (!requireAuth()) return false
+  if (!canAccess(trip)) { showToast('You do not have access to this trip'); return false }
+  return true
+}
+
 // ── AUTH ───────────────────────────────────────────────────────────────────
 function renderAuthBar() {
   const bar = document.getElementById('auth-bar')
@@ -1028,19 +1108,51 @@ async function signIn() {
 }
 
 // ── FIRESTORE OPS ──────────────────────────────────────────────────────────
-function startTripListener() {
-  if (state.unsubTrips) state.unsubTrips()
-  const q = query(tripsCol, orderBy('order', 'asc'))
-  state.unsubTrips = onSnapshot(q, snap => {
-    state.trips = snap.docs.map(d => ({ id: d.id, ...d.data() }))
-    if (state.currentTrip) {
-      const updated = state.trips.find(t => t.id === state.currentTrip.id)
-      if (updated) state.currentTrip = updated
+function mergeTripLists() {
+  const owned  = state.ownedTrips.map(t => ({ ...t, isOwner: true }))
+  const shared = state.sharedTrips
+    .filter(t => t.ownerId !== state.user?.uid) // guard against overlap
+    .map(t => ({ ...t, isOwner: false }))
+  state.trips = [...owned, ...shared]
+  if (state.currentTrip) {
+    const updated = state.trips.find(t => t.id === state.currentTrip.id)
+    if (updated) {
+      state.currentTrip = updated
+      if (document.getElementById('modal-share').classList.contains('open')) renderShareModal()
+    } else if (document.body.dataset.view === 'detail') {
+      // trip was deleted or access was revoked while viewing it
+      state.currentTrip = null
+      closeTripHash()
+      showView('list')
+      showToast('This trip is no longer available')
     }
-    renderTripList()
+  }
+  renderTripList()
+  tryOpenPendingDeepLink()
+}
+
+function startTripListener() {
+  if (state.unsubOwnedTrips)  state.unsubOwnedTrips()
+  if (state.unsubSharedTrips) state.unsubSharedTrips()
+
+  const email = (state.user.email || '').toLowerCase()
+
+  const ownedQ = query(tripsCol, where('ownerId', '==', state.user.uid), orderBy('order', 'asc'))
+  state.unsubOwnedTrips = onSnapshot(ownedQ, snap => {
+    state.ownedTrips = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    mergeTripLists()
   }, err => {
     console.error(err)
     showToast('Could not load trips')
+  })
+
+  const sharedQ = query(tripsCol, where('sharedWith', 'array-contains', email))
+  state.unsubSharedTrips = onSnapshot(sharedQ, snap => {
+    state.sharedTrips = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    mergeTripLists()
+  }, err => {
+    console.error(err)
+    showToast('Could not load shared trips')
   })
 }
 
@@ -1049,7 +1161,10 @@ async function createTrip({ name, month, year, days }) {
   const id = uuid()
   await setDoc(doc(db, 'trips', id), {
     name, month: month || null, year, days,
-    order: state.trips.length,
+    order: state.ownedTrips.length,
+    ownerId: state.user.uid,
+    ownerEmail: state.user.email || null,
+    sharedWith: [],
     createdAt: serverTimestamp(),
     dayPlans: buildEmptyDayPlans(days),
     backlog: []
@@ -1057,28 +1172,52 @@ async function createTrip({ name, month, year, days }) {
 }
 
 async function patchTrip(id, patch) {
-  if (!requireAuth()) return
+  const trip = state.trips.find(t => t.id === id)
+  if (!requireEditAccess(trip)) return false
   await updateDoc(doc(db, 'trips', id), patch)
+  return true
 }
 
 async function deleteTrip(id) {
-  if (!requireAuth()) return
+  const trip = state.trips.find(t => t.id === id)
+  if (!requireEditAccess(trip)) return
   if (!confirm('Delete this trip and all its activities?')) return
   await deleteDoc(doc(db, 'trips', id))
   state.currentTrip = null
+  closeTripHash()
   showView('list')
 }
 
 async function reorderTrip(id, dir) {
-  if (!requireAuth()) return
-  const idx = state.trips.findIndex(t => t.id === id)
+  const trip = state.ownedTrips.find(t => t.id === id)
+  if (!requireEditAccess(trip)) return
+  const idx = state.ownedTrips.findIndex(t => t.id === id)
   const swapIdx = dir === 'up' ? idx - 1 : idx + 1
-  if (swapIdx < 0 || swapIdx >= state.trips.length) return
-  const a = state.trips[idx], b = state.trips[swapIdx]
+  if (swapIdx < 0 || swapIdx >= state.ownedTrips.length) return
+  const a = state.ownedTrips[idx], b = state.ownedTrips[swapIdx]
   await Promise.all([
     updateDoc(doc(db, 'trips', a.id), { order: b.order }),
     updateDoc(doc(db, 'trips', b.id), { order: a.order }),
   ])
+}
+
+// ── SHARING ────────────────────────────────────────────────────────────────
+async function shareTrip(tripId, rawEmail) {
+  const trip = state.trips.find(t => t.id === tripId)
+  if (!requireEditAccess(trip)) return
+  const email = rawEmail.trim().toLowerCase()
+  if (!EMAIL_RE.test(email)) { showToast('Enter a valid email address'); return }
+  if (trip.ownerEmail && email === trip.ownerEmail.toLowerCase()) {
+    showToast('That email already owns this trip'); return
+  }
+  if ((trip.sharedWith || []).includes(email)) { showToast('Already shared with that email'); return }
+  await updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayUnion(email) })
+}
+
+async function unshareTrip(tripId, email) {
+  const trip = state.trips.find(t => t.id === tripId)
+  if (!requireEditAccess(trip)) return
+  await updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayRemove(email) })
 }
 
 async function saveDayPlans(dayPlans) {
@@ -1094,7 +1233,7 @@ function clonePlans() {
 }
 
 async function addActivity(dayIndex, slot, activity) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   activity.order = plans[dayIndex].slots[slot].length
   plans[dayIndex].slots[slot].push(activity)
@@ -1102,7 +1241,7 @@ async function addActivity(dayIndex, slot, activity) {
 }
 
 async function editActivity(dayIndex, slot, activityId, patch) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
   const i = arr.findIndex(a => a.id === activityId)
@@ -1112,7 +1251,7 @@ async function editActivity(dayIndex, slot, activityId, patch) {
 }
 
 async function deleteActivity(dayIndex, slot, activityId) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   if (!confirm('Remove this activity?')) return
   const plans = clonePlans()
   plans[dayIndex].slots[slot] = plans[dayIndex].slots[slot].filter(a => a.id !== activityId)
@@ -1120,7 +1259,7 @@ async function deleteActivity(dayIndex, slot, activityId) {
 }
 
 async function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
   const reordered = newIdOrder.map((id, i) => {
@@ -1132,7 +1271,7 @@ async function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
 }
 
 async function reorderActivity(dayIndex, slot, activityId, dir) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
   const idx = arr.findIndex(a => a.id === activityId)
@@ -1157,7 +1296,7 @@ function cloneBacklog() {
 }
 
 async function addBacklogActivity(activity) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   activity.order = backlog.length
   backlog.push(activity)
@@ -1165,7 +1304,7 @@ async function addBacklogActivity(activity) {
 }
 
 async function editBacklogActivity(activityId, patch) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const i = backlog.findIndex(a => a.id === activityId)
   if (i === -1) return
@@ -1174,13 +1313,13 @@ async function editBacklogActivity(activityId, patch) {
 }
 
 async function deleteBacklogActivity(activityId) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   if (!confirm('Remove this activity?')) return
   await saveBacklog(cloneBacklog().filter(a => a.id !== activityId))
 }
 
 async function reorderBacklogActivity(activityId, dir) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const idx = backlog.findIndex(a => a.id === activityId)
   const swapIdx = dir === 'up' ? idx - 1 : idx + 1
@@ -1191,7 +1330,7 @@ async function reorderBacklogActivity(activityId, dir) {
 }
 
 async function reorderBacklogToOrder(newIdOrder) {
-  if (!requireAuth()) return
+  if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const reordered = newIdOrder.map((id, i) => {
     const item = backlog.find(a => a.id === id)
@@ -1202,33 +1341,55 @@ async function reorderBacklogToOrder(newIdOrder) {
 
 // ── RENDER: TRIP LIST ──────────────────────────────────────────────────────
 function renderTripList() {
-  const list   = document.getElementById('trip-list')
-  const empty  = document.getElementById('list-empty')
-  const unauth = document.getElementById('list-unauth')
+  const list        = document.getElementById('trip-list')
+  const empty       = document.getElementById('list-empty')
+  const unauth      = document.getElementById('list-unauth')
+  const sharedSect  = document.getElementById('shared-trip-section')
+  const sharedList  = document.getElementById('shared-trip-list')
   if (!state.user) {
     list.innerHTML = ''
+    sharedList.innerHTML = ''
+    sharedSect.hidden = true
     empty.hidden = true
     unauth.hidden = false
     return
   }
   unauth.hidden = true
-  if (!state.trips.length) {
+
+  const owned  = state.trips.filter(t => t.isOwner)
+  const shared = state.trips.filter(t => !t.isOwner)
+
+  if (!owned.length) {
     list.innerHTML = ''
     empty.hidden = false
-    return
+  } else {
+    empty.hidden = true
+    list.innerHTML = owned.map((trip, idx) => `
+      <li class="trip-card" data-id="${esc(trip.id)}">
+        <div class="trip-card-body">
+          <div class="trip-card-name">${esc(trip.name)}</div>
+          <div class="trip-card-meta">${esc(formatTripMeta(trip))}</div>
+        </div>
+        <div class="trip-card-actions">
+          <button class="btn-icon btn-trip-up" data-id="${esc(trip.id)}" title="Move up" ${idx === 0 ? 'disabled' : ''}>↑</button>
+          <button class="btn-icon btn-trip-dn" data-id="${esc(trip.id)}" title="Move down" ${idx === owned.length - 1 ? 'disabled' : ''}>↓</button>
+        </div>
+      </li>`).join('')
   }
-  empty.hidden = true
-  list.innerHTML = state.trips.map((trip, idx) => `
-    <li class="trip-card" data-id="${esc(trip.id)}">
-      <div class="trip-card-body">
-        <div class="trip-card-name">${esc(trip.name)}</div>
-        <div class="trip-card-meta">${esc(formatTripMeta(trip))}</div>
-      </div>
-      <div class="trip-card-actions">
-        <button class="btn-icon btn-trip-up" data-id="${esc(trip.id)}" title="Move up" ${idx === 0 ? 'disabled' : ''}>↑</button>
-        <button class="btn-icon btn-trip-dn" data-id="${esc(trip.id)}" title="Move down" ${idx === state.trips.length - 1 ? 'disabled' : ''}>↓</button>
-      </div>
-    </li>`).join('')
+
+  if (!shared.length) {
+    sharedSect.hidden = true
+    sharedList.innerHTML = ''
+  } else {
+    sharedSect.hidden = false
+    sharedList.innerHTML = shared.map(trip => `
+      <li class="trip-card" data-id="${esc(trip.id)}">
+        <div class="trip-card-body">
+          <div class="trip-card-name">${esc(trip.name)}<span class="badge-shared">Shared</span></div>
+          <div class="trip-card-meta">${esc(formatTripMeta(trip))}</div>
+        </div>
+      </li>`).join('')
+  }
 }
 
 // ── RENDER: TRIP DETAIL ────────────────────────────────────────────────────
@@ -1243,7 +1404,7 @@ function renderTripDetail() {
   document.getElementById('detail-header-inner').innerHTML = `
     <button class="btn-back" id="btn-back">← Back</button>
     <div class="trip-meta-editable">
-      <span id="trip-name-edit" class="trip-name-edit" contenteditable="true" spellcheck="false">${esc(trip.name)}</span>
+      <span id="trip-name-edit" class="trip-name-edit" contenteditable="true" spellcheck="false">${esc(trip.name)}</span>${trip.isOwner === false ? '<span class="badge-shared">Shared</span>' : ''}
       <div class="trip-meta-row">
         <select id="trip-month-edit" class="meta-select">
           <option value="">Month</option>${monthOpts}
@@ -1253,6 +1414,7 @@ function renderTripDetail() {
         <span class="meta-label">days</span>
       </div>
     </div>
+    <button class="btn-back" id="btn-share-trip" title="Share trip" style="min-height:var(--touch)">Share</button>
     <button class="btn-danger-icon" id="btn-delete-trip" title="Delete trip">✕</button>`
 
   document.getElementById('day-jump-nav').innerHTML =
@@ -1398,6 +1560,7 @@ function showView(view) { document.body.dataset.view = view }
 function openTrip(id) {
   const trip = state.trips.find(t => t.id === id)
   if (!trip) return
+  pendingDeepLink      = null
   state.currentTrip   = trip
   state.searchQuery   = ''
   state.searchTags    = []
@@ -1406,6 +1569,23 @@ function openTrip(id) {
   document.getElementById('days-container').hidden   = false
   showView('detail')
   renderTripDetail()
+  history.replaceState(null, '', `#trip/${id}`)
+}
+
+function closeTripHash() {
+  history.replaceState(null, '', location.pathname + location.search)
+}
+
+// Deep-link support: `#trip/<id>` opens that trip directly once it's loaded
+// (accessible trips only — used by the "Copy shareable link" button).
+let pendingDeepLink = null
+
+function tryOpenPendingDeepLink() {
+  if (!pendingDeepLink || state.currentTrip) return
+  const m = /^#trip\/(.+)$/.exec(pendingDeepLink)
+  if (!m) { pendingDeepLink = null; return }
+  const trip = state.trips.find(t => t.id === m[1])
+  if (trip) openTrip(trip.id)
 }
 
 // ── MODAL HELPERS ──────────────────────────────────────────────────────────
@@ -1457,6 +1637,38 @@ function openActivityModal(dayIndex, slot, activityId = null, isBacklog = false)
   openModal('modal-activity')
 }
 
+// ── SHARE MODAL ────────────────────────────────────────────────────────────
+function renderShareModal() {
+  const trip = state.currentTrip
+  if (!trip) return
+  const list = document.getElementById('share-list')
+  const rows = []
+  rows.push(`<li class="share-row share-row-owner">${esc(trip.ownerEmail || 'Owner')} (owner)</li>`)
+  const shared = trip.sharedWith || []
+  if (!shared.length) {
+    rows.push(`<li class="share-list-empty">No one else has access yet.</li>`)
+  } else {
+    shared.forEach(email => {
+      rows.push(`<li class="share-row">
+        <span>${esc(email)}</span>
+        <button type="button" class="btn-icon btn-del" data-remove-share="${esc(email)}">Remove</button>
+      </li>`)
+    })
+  }
+  list.innerHTML = rows.join('')
+}
+
+function openShareModal() {
+  if (!state.currentTrip) return
+  document.getElementById('share-email-input').value = ''
+  renderShareModal()
+  openModal('modal-share')
+}
+
+function shareLinkFor(tripId) {
+  return `${location.origin}${location.pathname}#trip/${tripId}`
+}
+
 // ── SEARCH ─────────────────────────────────────────────────────────────────
 function handleSearch() {
   state.searchQuery = document.getElementById('search-input').value.trim().toLowerCase()
@@ -1488,8 +1700,9 @@ document.getElementById('view-list').addEventListener('click', e => {
 
 // ── EVENT: DETAIL VIEW ────────────────────────────────────────────────────
 document.getElementById('view-detail').addEventListener('click', e => {
-  if (e.target.closest('#btn-back'))         { showView('list'); return }
+  if (e.target.closest('#btn-back'))         { closeTripHash(); showView('list'); return }
   if (e.target.closest('#btn-delete-trip'))  { deleteTrip(state.currentTrip.id); return }
+  if (e.target.closest('#btn-share-trip'))   { openShareModal(); return }
 
   if (e.target.closest('#btn-add-backlog')) { openActivityModal(null, null, null, true); return }
 
@@ -1525,8 +1738,11 @@ document.getElementById('view-detail').addEventListener('blur', async e => {
   if (!el || !state.currentTrip) return
   const newName = el.textContent.trim()
   if (newName && newName !== state.currentTrip.name) {
-    await patchTrip(state.currentTrip.id, { name: newName })
-    state.currentTrip = { ...state.currentTrip, name: newName }
+    if (await patchTrip(state.currentTrip.id, { name: newName })) {
+      state.currentTrip = { ...state.currentTrip, name: newName }
+    } else {
+      el.textContent = state.currentTrip.name
+    }
   }
 }, true)
 
@@ -1542,14 +1758,16 @@ document.getElementById('view-detail').addEventListener('change', async e => {
 
   if (e.target.id === 'trip-month-edit') {
     const val = e.target.value ? Number(e.target.value) : null
-    await patchTrip(id, { month: val })
-    state.currentTrip = { ...state.currentTrip, month: val }
+    if (await patchTrip(id, { month: val })) {
+      state.currentTrip = { ...state.currentTrip, month: val }
+    }
   }
   if (e.target.id === 'trip-year-edit') {
     const val = Number(e.target.value)
     if (val >= 2000 && val <= 2040) {
-      await patchTrip(id, { year: val })
-      state.currentTrip = { ...state.currentTrip, year: val }
+      if (await patchTrip(id, { year: val })) {
+        state.currentTrip = { ...state.currentTrip, year: val }
+      }
     }
   }
   if (e.target.id === 'trip-days-edit') {
@@ -1566,9 +1784,10 @@ document.getElementById('view-detail').addEventListener('change', async e => {
       }
       plans = plans.slice(0, newDays)
     }
-    await patchTrip(id, { days: newDays, dayPlans: plans })
-    state.currentTrip = { ...state.currentTrip, days: newDays, dayPlans: plans }
-    renderTripDetail()
+    if (await patchTrip(id, { days: newDays, dayPlans: plans })) {
+      state.currentTrip = { ...state.currentTrip, days: newDays, dayPlans: plans }
+      renderTripDetail()
+    }
   }
 })
 
@@ -1661,6 +1880,43 @@ document.getElementById('selected-tags-display').addEventListener('click', e => 
   if (!btn) return
   modalTags = modalTags.filter(t => t !== btn.dataset.tag)
   renderActivityTagUI()
+})
+
+// ── EVENT: SHARE MODAL ─────────────────────────────────────────────────────
+document.getElementById('form-share-trip').addEventListener('submit', async e => {
+  e.preventDefault()
+  if (!state.currentTrip) return
+  const input = document.getElementById('share-email-input')
+  const email = input.value.trim()
+  if (!email) return
+  try {
+    await shareTrip(state.currentTrip.id, email)
+    input.value = ''
+    showToast('Invited ' + email.toLowerCase())
+  } catch (err) {
+    showToast('Failed to share: ' + (err.code || err.message), 5000)
+  }
+})
+
+document.getElementById('share-list').addEventListener('click', async e => {
+  const btn = e.target.closest('[data-remove-share]')
+  if (!btn || !state.currentTrip) return
+  try {
+    await unshareTrip(state.currentTrip.id, btn.dataset.removeShare)
+  } catch (err) {
+    showToast('Failed to remove access: ' + (err.code || err.message), 5000)
+  }
+})
+
+document.getElementById('btn-copy-share-link').addEventListener('click', async () => {
+  if (!state.currentTrip) return
+  const link = shareLinkFor(state.currentTrip.id)
+  try {
+    await navigator.clipboard.writeText(link)
+    showToast('Link copied!')
+  } catch {
+    showToast(link, 6000)
+  }
 })
 
 // ── EVENT: MODAL CLOSE ────────────────────────────────────────────────────
@@ -1768,6 +2024,8 @@ document.addEventListener('touchend',  dndPointerEnd)
 document.addEventListener('mouseup',   dndPointerEnd)
 
 // ── INIT ───────────────────────────────────────────────────────────────────
+pendingDeepLink = location.hash || null
+
 getRedirectResult(auth).catch(() => {})
 
 onAuthStateChanged(auth, user => {
@@ -1776,8 +2034,11 @@ onAuthStateChanged(auth, user => {
   if (user) {
     startTripListener()
   } else {
-    if (state.unsubTrips) { state.unsubTrips(); state.unsubTrips = null }
+    if (state.unsubOwnedTrips)  { state.unsubOwnedTrips();  state.unsubOwnedTrips  = null }
+    if (state.unsubSharedTrips) { state.unsubSharedTrips(); state.unsubSharedTrips = null }
     state.trips       = []
+    state.ownedTrips  = []
+    state.sharedTrips = []
     state.currentTrip = null
     showView('list')
     renderTripList()
