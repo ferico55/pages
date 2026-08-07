@@ -39,6 +39,7 @@ TEAM_DIVISIONS = {
 }
 
 SEASON_TYPES = {
+    1: ("preseason", range(0, 5)),   # Hall of Fame game (week 0) through week 4
     2: ("regular", range(1, 19)),   # regular season, weeks 1-18
     3: ("postseason", range(1, 6)),  # wild card through Super Bowl
 }
@@ -101,10 +102,12 @@ def format_record(wins, losses, ties):
 def compute_running_records(games):
     """Fills in each game's home_record/away_record: each team's W-L-T
     entering that game (not their final season record), computed by
-    replaying the regular season in chronological order. Postseason games
-    show both teams' final regular-season record, matching how NFL
-    schedules conventionally display it (the record itself doesn't keep
-    incrementing through the playoffs)."""
+    replaying the regular season in chronological order. Preseason and
+    postseason games show both teams' final regular-season record,
+    matching how NFL schedules conventionally display it (preseason
+    happens before any regular-season games are played, so this is 0-0-0
+    until the following regular season starts; the record itself doesn't
+    keep incrementing through the playoffs)."""
     record = {}
 
     def tally(abbr):
