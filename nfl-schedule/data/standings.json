@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-06T11:34:46.809095+00:00",
+  "last_updated": "2026-08-07T10:13:31.922205+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -284,13 +284,23 @@
           "name": "NFC South",
           "teams": [
             {
+              "team": "Carolina Panthers",
+              "abbr": "CAR",
+              "wins": 1,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 1.0,
+              "division_rank": 1,
+              "is_eagles": false
+            },
+            {
               "team": "Atlanta Falcons",
               "abbr": "ATL",
               "wins": 0,
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 1,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
@@ -300,22 +310,12 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 2,
+              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Tampa Bay Buccaneers",
               "abbr": "TB",
-              "wins": 0,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
-              "division_rank": 3,
-              "is_eagles": false
-            },
-            {
-              "team": "Carolina Panthers",
-              "abbr": "CAR",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -339,8 +339,8 @@
               "is_eagles": false
             },
             {
-              "team": "Arizona Cardinals",
-              "abbr": "ARI",
+              "team": "San Francisco 49ers",
+              "abbr": "SF",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -349,8 +349,8 @@
               "is_eagles": false
             },
             {
-              "team": "San Francisco 49ers",
-              "abbr": "SF",
+              "team": "Seattle Seahawks",
+              "abbr": "SEA",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -359,10 +359,10 @@
               "is_eagles": false
             },
             {
-              "team": "Seattle Seahawks",
-              "abbr": "SEA",
+              "team": "Arizona Cardinals",
+              "abbr": "ARI",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
