@@ -894,6 +894,18 @@ body[data-view="detail"] #view-detail { display: block; }
         <label>Link <span style="color:var(--muted);text-transform:none;font-size:10px">(optional — auto Google search if empty)</span></label>
         <input name="link" type="url" placeholder="https://...">
       </div>
+      <div class="form-field" id="activity-schedule-field" hidden>
+        <label>Move to</label>
+        <div class="form-row">
+          <select id="activity-move-day" name="moveDay"></select>
+          <select id="activity-move-slot" name="moveSlot">
+            <option value="morning">Morning</option>
+            <option value="noon">Noon</option>
+            <option value="evening">Evening</option>
+            <option value="night">Night</option>
+          </select>
+        </div>
+      </div>
       <div class="form-field">
         <div class="tag-section-label">Tags</div>
         <div class="tag-preset-chips" id="tag-preset-chips"></div>
@@ -955,7 +967,8 @@ const FIREBASE_CONFIG = {
 import { initializeApp }
   from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'
 import {
-  getFirestore, collection, doc, setDoc, updateDoc, deleteDoc,
+  getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager,
+  collection, doc, setDoc, updateDoc, deleteDoc,
   onSnapshot, serverTimestamp, query, orderBy, where,
   arrayUnion, arrayRemove
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'
@@ -964,8 +977,22 @@ import {
   getRedirectResult, signOut, onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js'
 
-const app      = initializeApp(FIREBASE_CONFIG)
-const db       = getFirestore(app)
+const app = initializeApp(FIREBASE_CONFIG)
+
+// Persist reads to IndexedDB so a reload can paint from the local cache
+// instantly, while Firestore syncs with the server in the background.
+// Falls back to the default in-memory cache if persistence isn't
+// available (e.g. private browsing).
+let db
+try {
+  db = initializeFirestore(app, {
+    localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
+  })
+} catch (err) {
+  console.warn('Firestore persistent cache unavailable, using in-memory cache', err)
+  db = getFirestore(app)
+}
+
 const auth     = getAuth(app)
 const tripsCol = collection(db, 'trips')
 
@@ -1109,6 +1136,11 @@ async function signIn() {
 }
 
 // ── FIRESTORE OPS ──────────────────────────────────────────────────────────
+// IDs of the inline trip-meta editors — while one of these is focused we skip
+// re-rendering the detail view so an incoming snapshot doesn't yank focus or
+// clobber an in-progress edit.
+const DETAIL_EDIT_FIELD_IDS = ['trip-name-edit', 'trip-month-edit', 'trip-year-edit', 'trip-days-edit']
+
 function mergeTripLists() {
   const owned  = state.ownedTrips.map(t => ({ ...t, isOwner: true }))
   const shared = state.sharedTrips
@@ -1118,8 +1150,17 @@ function mergeTripLists() {
   if (state.currentTrip) {
     const updated = state.trips.find(t => t.id === state.currentTrip.id)
     if (updated) {
+      // This is also how any optimistic local update above eventually gets
+      // reconciled against the server: if a background write failed, the
+      // synced doc here will differ from our optimistic guess and we
+      // self-correct by re-rendering with the authoritative data.
+      const changed = JSON.stringify(updated) !== JSON.stringify(state.currentTrip)
       state.currentTrip = updated
       if (document.getElementById('modal-share').classList.contains('open')) renderShareModal()
+      if (changed && document.body.dataset.view === 'detail' &&
+          !DETAIL_EDIT_FIELD_IDS.includes(document.activeElement?.id)) {
+        renderTripDetail()
+      }
     } else if (document.body.dataset.view === 'detail') {
       // trip was deleted or access was revoked while viewing it
       state.currentTrip = null
@@ -1157,109 +1198,157 @@ function startTripListener() {
   })
 }
 
-async function createTrip({ name, month, year, days }) {
+// All mutations below follow the same "optimistic" shape: update local
+// state and re-render immediately, then fire the Firestore write in the
+// background (not awaited). If the write ultimately fails, we surface a
+// toast; mergeTripLists() reconciles the UI back to server truth once the
+// corrective snapshot arrives (see the `changed` check in there).
+
+function createTrip({ name, month, year, days }) {
   if (!requireAuth()) return
   const id = uuid()
-  await setDoc(doc(db, 'trips', id), {
-    name, month: month || null, year, days,
+  const trip = {
+    id, name, month: month || null, year, days,
     order: state.ownedTrips.length,
     ownerId: state.user.uid,
     ownerEmail: state.user.email || null,
     sharedWith: [],
-    createdAt: serverTimestamp(),
+    createdAt: null,
     dayPlans: buildEmptyDayPlans(days),
     backlog: []
+  }
+  state.ownedTrips = [...state.ownedTrips, trip]
+  mergeTripLists()
+  setDoc(doc(db, 'trips', id), { ...trip, createdAt: serverTimestamp() }).catch(err => {
+    state.ownedTrips = state.ownedTrips.filter(t => t.id !== id)
+    mergeTripLists()
+    showToast('Failed to create trip: ' + (err.code || err.message), 5000)
   })
 }
 
-async function patchTrip(id, patch) {
+function applyLocalTripPatch(id, patch) {
+  const apply = arr => arr.map(t => t.id === id ? { ...t, ...patch } : t)
+  state.ownedTrips  = apply(state.ownedTrips)
+  state.sharedTrips = apply(state.sharedTrips)
+  mergeTripLists()
+  if (state.currentTrip?.id === id) renderTripDetail()
+}
+
+function patchTrip(id, patch) {
   const trip = state.trips.find(t => t.id === id)
   if (!requireEditAccess(trip)) return false
-  await updateDoc(doc(db, 'trips', id), patch)
+  applyLocalTripPatch(id, patch)
+  updateDoc(doc(db, 'trips', id), patch).catch(err => {
+    showToast('Failed to save: ' + (err.code || err.message), 5000)
+  })
   return true
 }
 
-async function deleteTrip(id) {
+function deleteTrip(id) {
   const trip = state.trips.find(t => t.id === id)
   if (!requireEditAccess(trip)) return
   if (!confirm('Delete this trip and all its activities?')) return
-  await deleteDoc(doc(db, 'trips', id))
-  state.currentTrip = null
-  closeTripHash()
-  showView('list')
+  state.ownedTrips  = state.ownedTrips.filter(t => t.id !== id)
+  state.sharedTrips = state.sharedTrips.filter(t => t.id !== id)
+  if (state.currentTrip?.id === id) {
+    state.currentTrip = null
+    closeTripHash()
+    showView('list')
+  }
+  mergeTripLists()
+  deleteDoc(doc(db, 'trips', id)).catch(err => {
+    showToast('Failed to delete trip: ' + (err.code || err.message), 5000)
+  })
 }
 
-async function reorderTrip(id, dir) {
+function reorderTrip(id, dir) {
   const trip = state.ownedTrips.find(t => t.id === id)
   if (!requireEditAccess(trip)) return
   const idx = state.ownedTrips.findIndex(t => t.id === id)
   const swapIdx = dir === 'up' ? idx - 1 : idx + 1
   if (swapIdx < 0 || swapIdx >= state.ownedTrips.length) return
-  const a = state.ownedTrips[idx], b = state.ownedTrips[swapIdx]
-  await Promise.all([
-    updateDoc(doc(db, 'trips', a.id), { order: b.order }),
-    updateDoc(doc(db, 'trips', b.id), { order: a.order }),
-  ])
+  const arr = [...state.ownedTrips]
+  const aId = arr[idx].id, bId = arr[swapIdx].id
+  const aOrder = arr[idx].order, bOrder = arr[swapIdx].order
+  ;[arr[idx], arr[swapIdx]] = [
+    { ...arr[swapIdx], order: aOrder },
+    { ...arr[idx], order: bOrder },
+  ]
+  state.ownedTrips = arr
+  mergeTripLists()
+  Promise.all([
+    updateDoc(doc(db, 'trips', aId), { order: bOrder }),
+    updateDoc(doc(db, 'trips', bId), { order: aOrder }),
+  ]).catch(err => showToast('Failed to reorder: ' + (err.code || err.message), 5000))
 }
 
 // ── SHARING ────────────────────────────────────────────────────────────────
-async function shareTrip(tripId, rawEmail) {
+function shareTrip(tripId, rawEmail) {
   const trip = state.trips.find(t => t.id === tripId)
-  if (!requireEditAccess(trip)) return
+  if (!requireEditAccess(trip)) return false
   const email = rawEmail.trim().toLowerCase()
-  if (!EMAIL_RE.test(email)) { showToast('Enter a valid email address'); return }
+  if (!EMAIL_RE.test(email)) { showToast('Enter a valid email address'); return false }
   if (trip.ownerEmail && email === trip.ownerEmail.toLowerCase()) {
-    showToast('That email already owns this trip'); return
+    showToast('That email already owns this trip'); return false
   }
-  if ((trip.sharedWith || []).includes(email)) { showToast('Already shared with that email'); return }
-  await updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayUnion(email) })
+  if ((trip.sharedWith || []).includes(email)) { showToast('Already shared with that email'); return false }
+  applyLocalTripPatch(tripId, { sharedWith: [...(trip.sharedWith || []), email] })
+  updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayUnion(email) }).catch(err => {
+    showToast('Failed to share: ' + (err.code || err.message), 5000)
+  })
+  return true
 }
 
-async function unshareTrip(tripId, email) {
+function unshareTrip(tripId, email) {
   const trip = state.trips.find(t => t.id === tripId)
   if (!requireEditAccess(trip)) return
-  await updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayRemove(email) })
+  applyLocalTripPatch(tripId, { sharedWith: (trip.sharedWith || []).filter(e => e !== email) })
+  updateDoc(doc(db, 'trips', tripId), { sharedWith: arrayRemove(email) }).catch(err => {
+    showToast('Failed to remove access: ' + (err.code || err.message), 5000)
+  })
 }
 
-async function saveDayPlans(dayPlans) {
+function saveDayPlans(dayPlans) {
   const id = state.currentTrip.id
-  await updateDoc(doc(db, 'trips', id), { dayPlans })
   state.currentTrip = { ...state.currentTrip, dayPlans }
   renderTripDetail()
   if (state.searchQuery || state.searchTags.length) renderSearchResults()
+  updateDoc(doc(db, 'trips', id), { dayPlans }).catch(err => {
+    showToast('Failed to save changes: ' + (err.code || err.message), 5000)
+  })
 }
 
 function clonePlans() {
   return JSON.parse(JSON.stringify(state.currentTrip.dayPlans || []))
 }
 
-async function addActivity(dayIndex, slot, activity) {
+function addActivity(dayIndex, slot, activity) {
   if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   activity.order = plans[dayIndex].slots[slot].length
   plans[dayIndex].slots[slot].push(activity)
-  await saveDayPlans(plans)
+  saveDayPlans(plans)
 }
 
-async function editActivity(dayIndex, slot, activityId, patch) {
+function editActivity(dayIndex, slot, activityId, patch) {
   if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
   const i = arr.findIndex(a => a.id === activityId)
   if (i === -1) return
   arr[i] = { ...arr[i], ...patch }
-  await saveDayPlans(plans)
+  saveDayPlans(plans)
 }
 
-async function deleteActivity(dayIndex, slot, activityId) {
+function deleteActivity(dayIndex, slot, activityId) {
   if (!requireEditAccess(state.currentTrip)) return
   if (!confirm('Remove this activity?')) return
   const plans = clonePlans()
   plans[dayIndex].slots[slot] = plans[dayIndex].slots[slot].filter(a => a.id !== activityId)
-  await saveDayPlans(plans)
+  saveDayPlans(plans)
 }
 
-async function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
+function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
   if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
@@ -1268,10 +1357,10 @@ async function reorderActivityToOrder(dayIndex, slot, newIdOrder) {
     return item ? { ...item, order: i } : null
   }).filter(Boolean)
   plans[dayIndex].slots[slot] = reordered
-  await saveDayPlans(plans)
+  saveDayPlans(plans)
 }
 
-async function reorderActivity(dayIndex, slot, activityId, dir) {
+function reorderActivity(dayIndex, slot, activityId, dir) {
   if (!requireEditAccess(state.currentTrip)) return
   const plans = clonePlans()
   const arr = plans[dayIndex].slots[slot]
@@ -1280,46 +1369,48 @@ async function reorderActivity(dayIndex, slot, activityId, dir) {
   if (swapIdx < 0 || swapIdx >= arr.length) return
   ;[arr[idx], arr[swapIdx]] = [arr[swapIdx], arr[idx]]
   arr.forEach((a, i) => { a.order = i })
-  await saveDayPlans(plans)
+  saveDayPlans(plans)
 }
 
 // ── BACKLOG CRUD ───────────────────────────────────────────────────────────
-async function saveBacklog(backlog) {
+function saveBacklog(backlog) {
   const id = state.currentTrip.id
-  await updateDoc(doc(db, 'trips', id), { backlog })
   state.currentTrip = { ...state.currentTrip, backlog }
   renderTripDetail()
   if (state.searchQuery || state.searchTags.length) renderSearchResults()
+  updateDoc(doc(db, 'trips', id), { backlog }).catch(err => {
+    showToast('Failed to save changes: ' + (err.code || err.message), 5000)
+  })
 }
 
 function cloneBacklog() {
   return JSON.parse(JSON.stringify(state.currentTrip.backlog || []))
 }
 
-async function addBacklogActivity(activity) {
+function addBacklogActivity(activity) {
   if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   activity.order = backlog.length
   backlog.push(activity)
-  await saveBacklog(backlog)
+  saveBacklog(backlog)
 }
 
-async function editBacklogActivity(activityId, patch) {
+function editBacklogActivity(activityId, patch) {
   if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const i = backlog.findIndex(a => a.id === activityId)
   if (i === -1) return
   backlog[i] = { ...backlog[i], ...patch }
-  await saveBacklog(backlog)
+  saveBacklog(backlog)
 }
 
-async function deleteBacklogActivity(activityId) {
+function deleteBacklogActivity(activityId) {
   if (!requireEditAccess(state.currentTrip)) return
   if (!confirm('Remove this activity?')) return
-  await saveBacklog(cloneBacklog().filter(a => a.id !== activityId))
+  saveBacklog(cloneBacklog().filter(a => a.id !== activityId))
 }
 
-async function reorderBacklogActivity(activityId, dir) {
+function reorderBacklogActivity(activityId, dir) {
   if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const idx = backlog.findIndex(a => a.id === activityId)
@@ -1327,17 +1418,44 @@ async function reorderBacklogActivity(activityId, dir) {
   if (swapIdx < 0 || swapIdx >= backlog.length) return
   ;[backlog[idx], backlog[swapIdx]] = [backlog[swapIdx], backlog[idx]]
   backlog.forEach((a, i) => { a.order = i })
-  await saveBacklog(backlog)
+  saveBacklog(backlog)
 }
 
-async function reorderBacklogToOrder(newIdOrder) {
+function reorderBacklogToOrder(newIdOrder) {
   if (!requireEditAccess(state.currentTrip)) return
   const backlog = cloneBacklog()
   const reordered = newIdOrder.map((id, i) => {
     const item = backlog.find(a => a.id === id)
     return item ? { ...item, order: i } : null
   }).filter(Boolean)
-  await saveBacklog(reordered)
+  saveBacklog(reordered)
+}
+
+// ── MOVE ACTIVITY (between days/slots, or to/from backlog) ───────────────────
+function moveActivity(oldLoc, newLoc, patch) {
+  if (!requireEditAccess(state.currentTrip)) return false
+  const plans   = clonePlans()
+  const backlog = cloneBacklog()
+  const arrFor  = loc => loc.isBacklog ? backlog : plans[loc.dayIndex].slots[loc.slot]
+
+  const fromArr = arrFor(oldLoc)
+  const i = fromArr.findIndex(a => a.id === oldLoc.activityId)
+  if (i === -1) return false
+  const [activity] = fromArr.splice(i, 1)
+
+  const moved = { ...activity, ...patch }
+  const toArr = arrFor(newLoc)
+  moved.order = toArr.length
+  toArr.push(moved)
+
+  const id = state.currentTrip.id
+  state.currentTrip = { ...state.currentTrip, dayPlans: plans, backlog }
+  renderTripDetail()
+  if (state.searchQuery || state.searchTags.length) renderSearchResults()
+  updateDoc(doc(db, 'trips', id), { dayPlans: plans, backlog }).catch(err => {
+    showToast('Failed to save move: ' + (err.code || err.message), 5000)
+  })
+  return true
 }
 
 // ── RENDER: TRIP LIST ──────────────────────────────────────────────────────
@@ -1634,6 +1752,19 @@ function openActivityModal(dayIndex, slot, activityId = null, isBacklog = false)
   form.querySelector('[name=link]').value = existing?.link || ''
   modalTags = [...(existing?.tags || [])]
 
+  const scheduleField = document.getElementById('activity-schedule-field')
+  scheduleField.hidden = !activityId
+  if (activityId) {
+    const daySelect  = document.getElementById('activity-move-day')
+    const slotSelect = document.getElementById('activity-move-slot')
+    daySelect.innerHTML = ['<option value="backlog">Backlog</option>']
+      .concat(Array.from({ length: state.currentTrip.days }, (_, i) => `<option value="${i}">Day ${i + 1}</option>`))
+      .join('')
+    daySelect.value = isBacklog ? 'backlog' : String(dayIndex)
+    slotSelect.value = isBacklog ? 'morning' : slot
+    slotSelect.disabled = isBacklog
+  }
+
   renderActivityTagUI()
   openModal('modal-activity')
 }
@@ -1734,14 +1865,12 @@ document.getElementById('view-detail').addEventListener('click', e => {
 })
 
 // ── EVENT: INLINE TRIP EDITING ────────────────────────────────────────────
-document.getElementById('view-detail').addEventListener('blur', async e => {
+document.getElementById('view-detail').addEventListener('blur', e => {
   const el = e.target.closest('#trip-name-edit')
   if (!el || !state.currentTrip) return
   const newName = el.textContent.trim()
   if (newName && newName !== state.currentTrip.name) {
-    if (await patchTrip(state.currentTrip.id, { name: newName })) {
-      state.currentTrip = { ...state.currentTrip, name: newName }
-    } else {
+    if (!patchTrip(state.currentTrip.id, { name: newName })) {
       el.textContent = state.currentTrip.name
     }
   }
@@ -1753,23 +1882,17 @@ document.getElementById('view-detail').addEventListener('keydown', e => {
   }
 })
 
-document.getElementById('view-detail').addEventListener('change', async e => {
+document.getElementById('view-detail').addEventListener('change', e => {
   if (!state.currentTrip) return
   const id = state.currentTrip.id
 
   if (e.target.id === 'trip-month-edit') {
     const val = e.target.value ? Number(e.target.value) : null
-    if (await patchTrip(id, { month: val })) {
-      state.currentTrip = { ...state.currentTrip, month: val }
-    }
+    patchTrip(id, { month: val })
   }
   if (e.target.id === 'trip-year-edit') {
     const val = Number(e.target.value)
-    if (val >= 2000 && val <= 2040) {
-      if (await patchTrip(id, { year: val })) {
-        state.currentTrip = { ...state.currentTrip, year: val }
-      }
-    }
+    if (val >= 2000 && val <= 2040) patchTrip(id, { year: val })
   }
   if (e.target.id === 'trip-days-edit') {
     const newDays = Number(e.target.value)
@@ -1785,10 +1908,7 @@ document.getElementById('view-detail').addEventListener('change', async e => {
       }
       plans = plans.slice(0, newDays)
     }
-    if (await patchTrip(id, { days: newDays, dayPlans: plans })) {
-      state.currentTrip = { ...state.currentTrip, days: newDays, dayPlans: plans }
-      renderTripDetail()
-    }
+    patchTrip(id, { days: newDays, dayPlans: plans })
   }
 })
 
@@ -1807,27 +1927,27 @@ document.getElementById('tag-filter-chips').addEventListener('click', e => {
 })
 
 // ── EVENT: CREATE TRIP FORM ────────────────────────────────────────────────
-document.getElementById('form-create-trip').addEventListener('submit', async e => {
+document.getElementById('form-create-trip').addEventListener('submit', e => {
   e.preventDefault()
   if (!requireAuth()) return
   const fd = new FormData(e.target)
-  try {
-    await createTrip({
-      name:  fd.get('name').trim(),
-      month: fd.get('month') ? Number(fd.get('month')) : null,
-      year:  Number(fd.get('year')),
-      days:  Number(fd.get('days')),
-    })
-    closeModal('modal-create-trip')
-    showToast('Trip created!')
-    document.getElementById('form-create-trip').reset()
-  } catch (err) {
-    showToast('Failed to create trip: ' + (err.code || err.message), 5000)
-  }
+  createTrip({
+    name:  fd.get('name').trim(),
+    month: fd.get('month') ? Number(fd.get('month')) : null,
+    year:  Number(fd.get('year')),
+    days:  Number(fd.get('days')),
+  })
+  closeModal('modal-create-trip')
+  showToast('Trip created!')
+  e.target.reset()
 })
 
 // ── EVENT: ACTIVITY FORM ───────────────────────────────────────────────────
-document.getElementById('form-activity').addEventListener('submit', async e => {
+document.getElementById('activity-move-day').addEventListener('change', e => {
+  document.getElementById('activity-move-slot').disabled = e.target.value === 'backlog'
+})
+
+document.getElementById('form-activity').addEventListener('submit', e => {
   e.preventDefault()
   if (!requireAuth()) return
   const fd = new FormData(e.target)
@@ -1838,15 +1958,32 @@ document.getElementById('form-activity').addEventListener('submit', async e => {
     tags: [...modalTags],
   }
   try {
-    if (isBacklog) {
-      if (activityId) await editBacklogActivity(activityId, patch)
-      else             await addBacklogActivity({ id: uuid(), ...patch })
+    let moved = false
+    if (activityId) {
+      const moveDayVal   = fd.get('moveDay')
+      const newIsBacklog = moveDayVal === 'backlog'
+      const newDayIndex  = newIsBacklog ? null : Number(moveDayVal)
+      const newSlot       = newIsBacklog ? null : fd.get('moveSlot')
+      moved = newIsBacklog !== isBacklog || (!newIsBacklog && (newDayIndex !== dayIndex || newSlot !== slot))
+      if (moved) {
+        const ok = moveActivity(
+          { isBacklog, dayIndex, slot, activityId },
+          { isBacklog: newIsBacklog, dayIndex: newDayIndex, slot: newSlot },
+          patch
+        )
+        if (!ok) return
+      } else if (isBacklog) {
+        editBacklogActivity(activityId, patch)
+      } else {
+        editActivity(dayIndex, slot, activityId, patch)
+      }
+    } else if (isBacklog) {
+      addBacklogActivity({ id: uuid(), ...patch })
     } else {
-      if (activityId) await editActivity(dayIndex, slot, activityId, patch)
-      else             await addActivity(dayIndex, slot, { id: uuid(), ...patch })
+      addActivity(dayIndex, slot, { id: uuid(), ...patch })
     }
     closeModal('modal-activity')
-    showToast(activityId ? 'Activity updated!' : 'Activity added!')
+    showToast(moved ? 'Activity moved!' : activityId ? 'Activity updated!' : 'Activity added!')
     renderTagFilterChips()
   } catch (err) {
     showToast('Failed to save: ' + (err.code || err.message), 5000)
@@ -1884,29 +2021,22 @@ document.getElementById('selected-tags-display').addEventListener('click', e => 
 })
 
 // ── EVENT: SHARE MODAL ─────────────────────────────────────────────────────
-document.getElementById('form-share-trip').addEventListener('submit', async e => {
+document.getElementById('form-share-trip').addEventListener('submit', e => {
   e.preventDefault()
   if (!state.currentTrip) return
   const input = document.getElementById('share-email-input')
   const email = input.value.trim()
   if (!email) return
-  try {
-    await shareTrip(state.currentTrip.id, email)
+  if (shareTrip(state.currentTrip.id, email)) {
     input.value = ''
     showToast('Invited ' + email.toLowerCase())
-  } catch (err) {
-    showToast('Failed to share: ' + (err.code || err.message), 5000)
   }
 })
 
-document.getElementById('share-list').addEventListener('click', async e => {
+document.getElementById('share-list').addEventListener('click', e => {
   const btn = e.target.closest('[data-remove-share]')
   if (!btn || !state.currentTrip) return
-  try {
-    await unshareTrip(state.currentTrip.id, btn.dataset.removeShare)
-  } catch (err) {
-    showToast('Failed to remove access: ' + (err.code || err.message), 5000)
-  }
+  unshareTrip(state.currentTrip.id, btn.dataset.removeShare)
 })
 
 document.getElementById('btn-copy-share-link').addEventListener('click', async () => {
