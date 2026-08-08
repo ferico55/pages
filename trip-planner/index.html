@@ -894,6 +894,18 @@ body[data-view="detail"] #view-detail { display: block; }
         <label>Link <span style="color:var(--muted);text-transform:none;font-size:10px">(optional — auto Google search if empty)</span></label>
         <input name="link" type="url" placeholder="https://...">
       </div>
+      <div class="form-field" id="activity-schedule-field" hidden>
+        <label>Move to</label>
+        <div class="form-row">
+          <select id="activity-move-day" name="moveDay"></select>
+          <select id="activity-move-slot" name="moveSlot">
+            <option value="morning">Morning</option>
+            <option value="noon">Noon</option>
+            <option value="evening">Evening</option>
+            <option value="night">Night</option>
+          </select>
+        </div>
+      </div>
       <div class="form-field">
         <div class="tag-section-label">Tags</div>
         <div class="tag-preset-chips" id="tag-preset-chips"></div>
@@ -1340,6 +1352,30 @@ async function reorderBacklogToOrder(newIdOrder) {
   await saveBacklog(reordered)
 }
 
+// ── MOVE ACTIVITY (between days/slots, or to/from backlog) ───────────────────
+async function moveActivity(oldLoc, newLoc, patch) {
+  if (!requireEditAccess(state.currentTrip)) return false
+  const plans   = clonePlans()
+  const backlog = cloneBacklog()
+  const arrFor  = loc => loc.isBacklog ? backlog : plans[loc.dayIndex].slots[loc.slot]
+
+  const fromArr = arrFor(oldLoc)
+  const i = fromArr.findIndex(a => a.id === oldLoc.activityId)
+  if (i === -1) return false
+  const [activity] = fromArr.splice(i, 1)
+
+  const moved = { ...activity, ...patch }
+  const toArr = arrFor(newLoc)
+  moved.order = toArr.length
+  toArr.push(moved)
+
+  await updateDoc(doc(db, 'trips', state.currentTrip.id), { dayPlans: plans, backlog })
+  state.currentTrip = { ...state.currentTrip, dayPlans: plans, backlog }
+  renderTripDetail()
+  if (state.searchQuery || state.searchTags.length) renderSearchResults()
+  return true
+}
+
 // ── RENDER: TRIP LIST ──────────────────────────────────────────────────────
 function renderTripList() {
   const list        = document.getElementById('trip-list')
@@ -1634,6 +1670,19 @@ function openActivityModal(dayIndex, slot, activityId = null, isBacklog = false)
   form.querySelector('[name=link]').value = existing?.link || ''
   modalTags = [...(existing?.tags || [])]
 
+  const scheduleField = document.getElementById('activity-schedule-field')
+  scheduleField.hidden = !activityId
+  if (activityId) {
+    const daySelect  = document.getElementById('activity-move-day')
+    const slotSelect = document.getElementById('activity-move-slot')
+    daySelect.innerHTML = ['<option value="backlog">Backlog</option>']
+      .concat(Array.from({ length: state.currentTrip.days }, (_, i) => `<option value="${i}">Day ${i + 1}</option>`))
+      .join('')
+    daySelect.value = isBacklog ? 'backlog' : String(dayIndex)
+    slotSelect.value = isBacklog ? 'morning' : slot
+    slotSelect.disabled = isBacklog
+  }
+
   renderActivityTagUI()
   openModal('modal-activity')
 }
@@ -1827,6 +1876,10 @@ document.getElementById('form-create-trip').addEventListener('submit', async e =
 })
 
 // ── EVENT: ACTIVITY FORM ───────────────────────────────────────────────────
+document.getElementById('activity-move-day').addEventListener('change', e => {
+  document.getElementById('activity-move-slot').disabled = e.target.value === 'backlog'
+})
+
 document.getElementById('form-activity').addEventListener('submit', async e => {
   e.preventDefault()
   if (!requireAuth()) return
@@ -1838,15 +1891,32 @@ document.getElementById('form-activity').addEventListener('submit', async e => {
     tags: [...modalTags],
   }
   try {
-    if (isBacklog) {
-      if (activityId) await editBacklogActivity(activityId, patch)
-      else             await addBacklogActivity({ id: uuid(), ...patch })
+    let moved = false
+    if (activityId) {
+      const moveDayVal   = fd.get('moveDay')
+      const newIsBacklog = moveDayVal === 'backlog'
+      const newDayIndex  = newIsBacklog ? null : Number(moveDayVal)
+      const newSlot       = newIsBacklog ? null : fd.get('moveSlot')
+      moved = newIsBacklog !== isBacklog || (!newIsBacklog && (newDayIndex !== dayIndex || newSlot !== slot))
+      if (moved) {
+        const ok = await moveActivity(
+          { isBacklog, dayIndex, slot, activityId },
+          { isBacklog: newIsBacklog, dayIndex: newDayIndex, slot: newSlot },
+          patch
+        )
+        if (!ok) return
+      } else if (isBacklog) {
+        await editBacklogActivity(activityId, patch)
+      } else {
+        await editActivity(dayIndex, slot, activityId, patch)
+      }
+    } else if (isBacklog) {
+      await addBacklogActivity({ id: uuid(), ...patch })
     } else {
-      if (activityId) await editActivity(dayIndex, slot, activityId, patch)
-      else             await addActivity(dayIndex, slot, { id: uuid(), ...patch })
+      await addActivity(dayIndex, slot, { id: uuid(), ...patch })
     }
     closeModal('modal-activity')
-    showToast(activityId ? 'Activity updated!' : 'Activity added!')
+    showToast(moved ? 'Activity moved!' : activityId ? 'Activity updated!' : 'Activity added!')
     renderTagFilterChips()
   } catch (err) {
     showToast('Failed to save: ' + (err.code || err.message), 5000)
