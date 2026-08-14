@@ -34,19 +34,46 @@ def combine_date_time(date_str, time_str):
 VERSTAPPEN_CODE = "VER"
 
 
+def fetch_standings_after(round_num):
+    """Best-effort: returns {driver_code: cumulative_points} as of the end
+    of this round. Failure just leaves accumulated points null downstream;
+    it must never abort the overall run."""
+    try:
+        raw = fetch_json(f"{BASE}/current/{round_num}/driverStandings.json")
+        standings_lists = raw["MRData"]["StandingsTable"]["StandingsLists"]
+        if not standings_lists:
+            return {}
+        out = {}
+        for d in standings_lists[0].get("DriverStandings", []):
+            code = (d.get("Driver") or {}).get("code")
+            if not code:
+                continue
+            try:
+                out[code] = float(d.get("points", 0) or 0)
+            except (TypeError, ValueError):
+                pass
+        return out
+    except Exception as e:
+        print(f"WARN: couldn't fetch standings after round {round_num}: {e}", file=sys.stderr)
+        return {}
+
+
 def fetch_race_result_extras(round_num):
     """Best-effort: only used for races whose date has already passed.
-    Returns (winner_name, winner_constructor, verstappen_finish). Any
-    failure here just leaves these fields null; it must never abort the
+    Returns (winner_name, winner_constructor, verstappen_finish, top10).
+    top10 is a list of up to 10 dicts describing the top finishers: position,
+    driver, driver_code, constructor, points scored in that race, and points
+    accumulated in the championship immediately after that race. Any failure
+    here just leaves these fields null/empty; it must never abort the
     overall run."""
     try:
         raw = fetch_json(f"{BASE}/current/{round_num}/results.json")
         races = raw["MRData"]["RaceTable"]["Races"]
         if not races:
-            return None, None, None
+            return None, None, None, []
         results = races[0].get("Results") or []
         if not results:
-            return None, None, None
+            return None, None, None, []
 
         winner = results[0]
         driver = winner.get("Driver", {})
@@ -59,10 +86,31 @@ def fetch_race_result_extras(round_num):
                 verstappen_finish = result.get("positionText") or result.get("position")
                 break
 
-        return name or None, constructor, verstappen_finish
+        standings_after = fetch_standings_after(round_num)
+
+        top10 = []
+        for result in results[:10]:
+            try:
+                d = result.get("Driver", {})
+                code = d.get("code", "")
+                d_name = f"{d.get('givenName', '')} {d.get('familyName', '')}".strip()
+                d_constructor = result.get("Constructor", {}).get("name")
+                pos_text = result.get("positionText") or result.get("position")
+                top10.append({
+                    "position": pos_text,
+                    "driver": d_name,
+                    "driver_code": code,
+                    "constructor": "Red Bull" if is_red_bull(d_constructor) else d_constructor,
+                    "points": float(result.get("points", 0) or 0),
+                    "points_after": standings_after.get(code) if code else None,
+                })
+            except (KeyError, TypeError, ValueError) as e:
+                print(f"WARN: skipping malformed top10 entry for round {round_num}: {e}", file=sys.stderr)
+
+        return name or None, constructor, verstappen_finish, top10
     except Exception as e:
         print(f"WARN: couldn't fetch results for round {round_num}: {e}", file=sys.stderr)
-        return None, None, None
+        return None, None, None, []
 
 
 def fetch_schedule():
@@ -104,6 +152,7 @@ def fetch_schedule():
                 "winner": None,
                 "winner_constructor": None,
                 "verstappen_finish": None,
+                "top10": [],
             }
 
             if race_dt:
@@ -113,10 +162,11 @@ def fetch_schedule():
                     race_time = None
                 if race_time and race_time < now:
                     entry["status"] = "completed"
-                    winner, constructor, verstappen_finish = fetch_race_result_extras(entry["round"])
+                    winner, constructor, verstappen_finish, top10 = fetch_race_result_extras(entry["round"])
                     entry["winner"] = winner
                     entry["winner_constructor"] = "Red Bull" if is_red_bull(constructor) else constructor
                     entry["verstappen_finish"] = verstappen_finish
+                    entry["top10"] = top10
 
             races.append(entry)
         except (KeyError, TypeError, ValueError) as e:

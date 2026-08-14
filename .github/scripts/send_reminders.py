@@ -35,6 +35,9 @@ TIERS = (
 
 SPORT_ICONS = {"nfl": "🏈", "f1": "🏁"}
 
+# Reminder emails show local times in GMT+7 (no DST) rather than raw UTC.
+GMT7 = datetime.timezone(datetime.timedelta(hours=7))
+
 
 def parse_utc(s):
     if not s:
@@ -136,7 +139,7 @@ def build_email_body(now, new_reminders):
     lines = ["Heads up! Here's what's coming up:", ""]
     for r in sorted(by_key.values(), key=lambda x: x["when_utc"]):
         icon = SPORT_ICONS.get(r["sport"], "")
-        when_str = r["when_utc"].strftime("%a %b %-d, %Y %H:%M UTC")
+        when_str = r["when_utc"].astimezone(GMT7).strftime("%a %b %-d, %Y %H:%M GMT+7")
         lines.append(f"{icon} {r['label']} — {format_countdown(now, r['when_utc'])} ({when_str})")
     lines.append("")
     return "\n".join(lines)
