@@ -133,6 +133,28 @@
   tr.favorite td:first-child { border-left: 3px solid var(--rb-navy); }
   .standings-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
 
+  /* Expandable past-race rows */
+  tr.race-row.expandable { cursor: pointer; }
+  tr.race-row.expandable:hover td { background: rgba(255, 255, 255, 0.03); }
+  th.chevron-col, td.chevron-cell { width: 18px; padding-left: 8px; padding-right: 0; }
+  .chevron {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 10px;
+    transition: transform .15s ease;
+  }
+  tr.race-row.open .chevron { transform: rotate(90deg); color: var(--accent2); }
+  tr.detail-row.hidden { display: none; }
+  tr.detail-row td { padding: 0 8px 12px 26px; border-bottom: 1px solid var(--border); }
+  tr.detail-row:last-child td { border-bottom: none; }
+  .detail-table { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 4px 10px; }
+  .detail-table th { background: transparent; font-size: 9px; }
+  .detail-table td { padding: 5px 8px; font-size: 11px; }
+  .detail-table tr:last-child td { border-bottom: none; }
+  .detail-empty { color: var(--muted); font-size: 11px; padding: 10px 4px; }
+  .pts-gained { color: var(--accent); font-weight: 600; }
+  .pts-after { color: var(--muted); }
+
   .tab-bar { display: flex; gap: 6px; margin-bottom: 10px; }
   .tab-btn {
     flex: 1;
@@ -308,6 +330,55 @@
     el.innerHTML = html;
   }
 
+  // Populated by renderPast(); keyed by round so the click handler can look
+  // up a race's top10 without re-parsing the DOM.
+  var pastRacesByRound = {};
+
+  function fmtPoints(n) {
+    if (n == null || n === '') return '—';
+    var num = Number(n);
+    return isNaN(num) ? String(n) : String(num);
+  }
+
+  function top10Html(race) {
+    var top10 = (race && race.top10) || [];
+    if (top10.length === 0) {
+      return '<div class="detail-empty">Detailed results not available yet.</div>';
+    }
+    var html = '<table class="detail-table"><thead><tr>' +
+      '<th>Pos</th><th>Driver</th><th>Team</th><th>Pts</th><th>Pts After</th>' +
+      '</tr></thead><tbody>';
+    top10.forEach(function (d) {
+      var isRb = d.constructor === 'Red Bull';
+      html += '<tr class="' + (isRb ? 'favorite' : '') + '">' +
+        '<td>' + esc(fmtFinish(d.position)) + '</td>' +
+        '<td>' + esc(d.driver) + (isRb ? '<span class="badge">RB</span>' : '') + '</td>' +
+        '<td>' + esc(d.constructor) + '</td>' +
+        '<td class="pts-gained">+' + fmtPoints(d.points) + '</td>' +
+        '<td class="pts-after">' + fmtPoints(d.points_after) + '</td>' +
+        '</tr>';
+    });
+    html += '</tbody></table>';
+    return html;
+  }
+
+  function toggleRaceDetail(row) {
+    var round = row.getAttribute('data-round');
+    var detailRow = row.parentElement.querySelector('tr.detail-row[data-round-detail="' + round + '"]');
+    if (!detailRow) return;
+    var opening = detailRow.classList.contains('hidden');
+    if (opening) {
+      var cell = detailRow.querySelector('td');
+      if (!cell.dataset.rendered) {
+        cell.innerHTML = top10Html(pastRacesByRound[round]);
+        cell.dataset.rendered = '1';
+      }
+    }
+    detailRow.classList.toggle('hidden', !opening);
+    row.classList.toggle('open', opening);
+    row.setAttribute('aria-expanded', opening ? 'true' : 'false');
+  }
+
   function renderPast(schedule) {
     var count = document.getElementById('f1-past-count');
     var el = document.getElementById('f1-past-list');
@@ -318,18 +389,32 @@
       el.innerHTML = '<div class="empty-msg">No past races yet.</div>';
       return;
     }
-    var html = '<table><thead><tr><th>Date</th><th>Race</th><th>Winner</th><th>VER</th></tr></thead><tbody>';
+    pastRacesByRound = {};
+    var html = '<table><thead><tr><th class="chevron-col"></th><th>Date</th><th>Race</th><th>Winner</th><th>VER</th></tr></thead><tbody>';
     past.forEach(function (r) {
+      pastRacesByRound[r.round] = r;
       var isRb = r.winner_constructor === 'Red Bull';
-      html += '<tr class="' + (isRb ? 'favorite' : '') + '">' +
+      html += '<tr class="race-row expandable' + (isRb ? ' favorite' : '') + '" data-round="' + r.round + '" tabindex="0" role="button" aria-expanded="false">' +
+        '<td class="chevron-cell"><span class="chevron">▸</span></td>' +
         '<td>' + fmtDateOnly(r.race_date_utc) + '</td>' +
         '<td>Round ' + r.round + ' — ' + esc(r.race_name) + '</td>' +
         '<td>' + (r.winner ? esc(r.winner) + (isRb ? '<span class="badge">RED BULL</span>' : '') : '—') + '</td>' +
         '<td>' + esc(fmtFinish(r.verstappen_finish)) + '</td>' +
-        '</tr>';
+        '</tr>' +
+        '<tr class="detail-row hidden" data-round-detail="' + r.round + '"><td colspan="5"></td></tr>';
     });
     html += '</tbody></table>';
     el.innerHTML = html;
+
+    el.querySelectorAll('tr.race-row.expandable').forEach(function (row) {
+      row.addEventListener('click', function () { toggleRaceDetail(row); });
+      row.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleRaceDetail(row);
+        }
+      });
+    });
   }
 
   function renderStandings(standings) {
