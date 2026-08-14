@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-13T10:30:00.451007+00:00",
+  "last_updated": "2026-08-14T10:19:34.223349+00:00",
   "races": [
     {
       "round": 1,
@@ -14,7 +14,89 @@
       "status": "completed",
       "winner": "George Russell",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "6"
+      "verstappen_finish": "6",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 25.0
+        },
+        {
+          "position": "2",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 18.0,
+          "points_after": 18.0
+        },
+        {
+          "position": "3",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 15.0,
+          "points_after": 15.0
+        },
+        {
+          "position": "4",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 12.0
+        },
+        {
+          "position": "5",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": 10.0
+        },
+        {
+          "position": "6",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 8.0
+        },
+        {
+          "position": "7",
+          "driver": "Oliver Bearman",
+          "driver_code": "BEA",
+          "constructor": "Haas F1 Team",
+          "points": 6.0,
+          "points_after": 6.0
+        },
+        {
+          "position": "8",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 4.0,
+          "points_after": 4.0
+        },
+        {
+          "position": "9",
+          "driver": "Gabriel Bortoleto",
+          "driver_code": "BOR",
+          "constructor": "Audi",
+          "points": 2.0,
+          "points_after": 2.0
+        },
+        {
+          "position": "10",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 1.0,
+          "points_after": 1.0
+        }
+      ]
     },
     {
       "round": 2,
@@ -28,7 +110,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "R"
+      "verstappen_finish": "R",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 47.0
+        },
+        {
+          "position": "2",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 18.0,
+          "points_after": 51.0
+        },
+        {
+          "position": "3",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 15.0,
+          "points_after": 33.0
+        },
+        {
+          "position": "4",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 34.0
+        },
+        {
+          "position": "5",
+          "driver": "Oliver Bearman",
+          "driver_code": "BEA",
+          "constructor": "Haas F1 Team",
+          "points": 10.0,
+          "points_after": 17.0
+        },
+        {
+          "position": "6",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 8.0,
+          "points_after": 9.0
+        },
+        {
+          "position": "7",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 6.0,
+          "points_after": 8.0
+        },
+        {
+          "position": "8",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 4.0,
+          "points_after": 4.0
+        },
+        {
+          "position": "9",
+          "driver": "Carlos Sainz",
+          "driver_code": "SAI",
+          "constructor": "Williams",
+          "points": 2.0,
+          "points_after": 2.0
+        },
+        {
+          "position": "10",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 1.0,
+          "points_after": 1.0
+        }
+      ]
     },
     {
       "round": 3,
@@ -42,7 +206,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "8"
+      "verstappen_finish": "8",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 72.0
+        },
+        {
+          "position": "2",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 18.0,
+          "points_after": 21.0
+        },
+        {
+          "position": "3",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 15.0,
+          "points_after": 49.0
+        },
+        {
+          "position": "4",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 12.0,
+          "points_after": 63.0
+        },
+        {
+          "position": "5",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": 25.0
+        },
+        {
+          "position": "6",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 8.0,
+          "points_after": 41.0
+        },
+        {
+          "position": "7",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 6.0,
+          "points_after": 15.0
+        },
+        {
+          "position": "8",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 4.0,
+          "points_after": 12.0
+        },
+        {
+          "position": "9",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 2.0,
+          "points_after": 10.0
+        },
+        {
+          "position": "10",
+          "driver": "Esteban Ocon",
+          "driver_code": "OCO",
+          "constructor": "Haas F1 Team",
+          "points": 1.0,
+          "points_after": 1.0
+        }
+      ]
     },
     {
       "round": 4,
@@ -56,7 +302,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "5"
+      "verstappen_finish": "5",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 100.0
+        },
+        {
+          "position": "2",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 18.0,
+          "points_after": 51.0
+        },
+        {
+          "position": "3",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 15.0,
+          "points_after": 43.0
+        },
+        {
+          "position": "4",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 12.0,
+          "points_after": 80.0
+        },
+        {
+          "position": "5",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 10.0,
+          "points_after": 26.0
+        },
+        {
+          "position": "6",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 8.0,
+          "points_after": 51.0
+        },
+        {
+          "position": "7",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 6.0,
+          "points_after": 7.0
+        },
+        {
+          "position": "8",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 4.0,
+          "points_after": 59.0
+        },
+        {
+          "position": "9",
+          "driver": "Carlos Sainz",
+          "driver_code": "SAI",
+          "constructor": "Williams",
+          "points": 2.0,
+          "points_after": 4.0
+        },
+        {
+          "position": "10",
+          "driver": "Alexander Albon",
+          "driver_code": "ALB",
+          "constructor": "Williams",
+          "points": 1.0,
+          "points_after": 1.0
+        }
+      ]
     },
     {
       "round": 5,
@@ -70,7 +398,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "3"
+      "verstappen_finish": "3",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 131.0
+        },
+        {
+          "position": "2",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 18.0,
+          "points_after": 72.0
+        },
+        {
+          "position": "3",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 15.0,
+          "points_after": 43.0
+        },
+        {
+          "position": "4",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 75.0
+        },
+        {
+          "position": "5",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 10.0,
+          "points_after": 14.0
+        },
+        {
+          "position": "6",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 8.0,
+          "points_after": 15.0
+        },
+        {
+          "position": "7",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 6.0,
+          "points_after": 16.0
+        },
+        {
+          "position": "8",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 4.0,
+          "points_after": 20.0
+        },
+        {
+          "position": "9",
+          "driver": "Carlos Sainz",
+          "driver_code": "SAI",
+          "constructor": "Williams",
+          "points": 2.0,
+          "points_after": 6.0
+        },
+        {
+          "position": "10",
+          "driver": "Oliver Bearman",
+          "driver_code": "BEA",
+          "constructor": "Haas F1 Team",
+          "points": 1.0,
+          "points_after": 18.0
+        }
+      ]
     },
     {
       "round": 6,
@@ -84,7 +494,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "R"
+      "verstappen_finish": "R",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 156.0
+        },
+        {
+          "position": "2",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 18.0,
+          "points_after": 90.0
+        },
+        {
+          "position": "3",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 15.0,
+          "points_after": 35.0
+        },
+        {
+          "position": "4",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 12.0,
+          "points_after": 26.0
+        },
+        {
+          "position": "5",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": 58.0
+        },
+        {
+          "position": "6",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 8.0,
+          "points_after": 24.0
+        },
+        {
+          "position": "7",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 6.0,
+          "points_after": 11.0
+        },
+        {
+          "position": "8",
+          "driver": "Alexander Albon",
+          "driver_code": "ALB",
+          "constructor": "Williams",
+          "points": 4.0,
+          "points_after": 5.0
+        },
+        {
+          "position": "9",
+          "driver": "Esteban Ocon",
+          "driver_code": "OCO",
+          "constructor": "Haas F1 Team",
+          "points": 2.0,
+          "points_after": 3.0
+        },
+        {
+          "position": "10",
+          "driver": "Fernando Alonso",
+          "driver_code": "ALO",
+          "constructor": "Aston Martin",
+          "points": 1.0,
+          "points_after": 1.0
+        }
+      ]
     },
     {
       "round": 7,
@@ -98,7 +590,89 @@
       "status": "completed",
       "winner": "Lewis Hamilton",
       "winner_constructor": "Ferrari",
-      "verstappen_finish": "4"
+      "verstappen_finish": "4",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 25.0,
+          "points_after": 115.0
+        },
+        {
+          "position": "2",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 18.0,
+          "points_after": 106.0
+        },
+        {
+          "position": "3",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 15.0,
+          "points_after": 73.0
+        },
+        {
+          "position": "4",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 12.0,
+          "points_after": 55.0
+        },
+        {
+          "position": "5",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": 68.0
+        },
+        {
+          "position": "6",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 34.0
+        },
+        {
+          "position": "7",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 6.0,
+          "points_after": 41.0
+        },
+        {
+          "position": "8",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 4.0,
+          "points_after": 28.0
+        },
+        {
+          "position": "9",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 2.0,
+          "points_after": 13.0
+        },
+        {
+          "position": "10",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 1.0,
+          "points_after": 16.0
+        }
+      ]
     },
     {
       "round": 8,
@@ -112,7 +686,89 @@
       "status": "completed",
       "winner": "George Russell",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "2"
+      "verstappen_finish": "2",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 131.0
+        },
+        {
+          "position": "2",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 18.0,
+          "points_after": 73.0
+        },
+        {
+          "position": "3",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 15.0,
+          "points_after": 171.0
+        },
+        {
+          "position": "4",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 12.0,
+          "points_after": 80.0
+        },
+        {
+          "position": "5",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 10.0,
+          "points_after": 125.0
+        },
+        {
+          "position": "6",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 42.0
+        },
+        {
+          "position": "7",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 6.0,
+          "points_after": 79.0
+        },
+        {
+          "position": "8",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 4.0,
+          "points_after": 79.0
+        },
+        {
+          "position": "9",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 2.0,
+          "points_after": 30.0
+        },
+        {
+          "position": "10",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 1.0,
+          "points_after": 14.0
+        }
+      ]
     },
     {
       "round": 9,
@@ -126,7 +782,89 @@
       "status": "completed",
       "winner": "Charles Leclerc",
       "winner_constructor": "Ferrari",
-      "verstappen_finish": "20"
+      "verstappen_finish": "20",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 25.0,
+          "points_after": 108.0
+        },
+        {
+          "position": "2",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 18.0,
+          "points_after": 154.0
+        },
+        {
+          "position": "3",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 15.0,
+          "points_after": 147.0
+        },
+        {
+          "position": "4",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 12.0,
+          "points_after": 97.0
+        },
+        {
+          "position": "5",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 10.0,
+          "points_after": 52.0
+        },
+        {
+          "position": "6",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 8.0,
+          "points_after": 39.0
+        },
+        {
+          "position": "7",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 6.0,
+          "points_after": 20.0
+        },
+        {
+          "position": "8",
+          "driver": "Gabriel Bortoleto",
+          "driver_code": "BOR",
+          "constructor": "Audi",
+          "points": 4.0,
+          "points_after": 6.0
+        },
+        {
+          "position": "9",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 2.0,
+          "points_after": 18.0
+        },
+        {
+          "position": "10",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 1.0,
+          "points_after": 42.0
+        }
+      ]
     },
     {
       "round": 10,
@@ -140,7 +878,89 @@
       "status": "completed",
       "winner": "Andrea Kimi Antonelli",
       "winner_constructor": "Mercedes",
-      "verstappen_finish": "3"
+      "verstappen_finish": "3",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 204.0
+        },
+        {
+          "position": "2",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 18.0,
+          "points_after": 126.0
+        },
+        {
+          "position": "3",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 15.0,
+          "points_after": 91.0
+        },
+        {
+          "position": "4",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 159.0
+        },
+        {
+          "position": "5",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": 92.0
+        },
+        {
+          "position": "6",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 60.0
+        },
+        {
+          "position": "7",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 6.0,
+          "points_after": 103.0
+        },
+        {
+          "position": "8",
+          "driver": "Gabriel Bortoleto",
+          "driver_code": "BOR",
+          "constructor": "Audi",
+          "points": 4.0,
+          "points_after": 10.0
+        },
+        {
+          "position": "9",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 2.0,
+          "points_after": 22.0
+        },
+        {
+          "position": "10",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 1.0,
+          "points_after": 19.0
+        }
+      ]
     },
     {
       "round": 11,
@@ -154,7 +974,89 @@
       "status": "completed",
       "winner": "Lando Norris",
       "winner_constructor": "McLaren",
-      "verstappen_finish": "2"
+      "verstappen_finish": "2",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 25.0,
+          "points_after": 128.0
+        },
+        {
+          "position": "2",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 18.0,
+          "points_after": 109.0
+        },
+        {
+          "position": "3",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 15.0,
+          "points_after": 219.0
+        },
+        {
+          "position": "4",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 138.0
+        },
+        {
+          "position": "5",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 10.0,
+          "points_after": 169.0
+        },
+        {
+          "position": "6",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 68.0
+        },
+        {
+          "position": "7",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 6.0,
+          "points_after": 160.0
+        },
+        {
+          "position": "8",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 4.0,
+          "points_after": 43.0
+        },
+        {
+          "position": "9",
+          "driver": "Nico H\u00fclkenberg",
+          "driver_code": "HUL",
+          "constructor": "Audi",
+          "points": 2.0,
+          "points_after": 2.0
+        },
+        {
+          "position": "10",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 1.0,
+          "points_after": 23.0
+        }
+      ]
     },
     {
       "round": 12,
@@ -168,7 +1070,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 13,
@@ -182,7 +1085,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 14,
@@ -196,7 +1100,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 15,
@@ -210,7 +1115,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 16,
@@ -224,7 +1130,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 17,
@@ -238,7 +1145,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 18,
@@ -252,7 +1160,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 19,
@@ -266,7 +1175,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 20,
@@ -280,7 +1190,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 21,
@@ -294,7 +1205,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 22,
@@ -308,7 +1220,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 23,
@@ -322,7 +1235,8 @@
       "status": "scheduled",
       "winner": null,
       "winner_constructor": null,
-      "verstappen_finish": null
+      "verstappen_finish": null,
+      "top10": []
     }
   ]
 }

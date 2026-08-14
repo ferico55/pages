@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-13T10:29:54.795112+00:00",
+  "last_updated": "2026-08-14T10:19:20.022373+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -9,18 +9,18 @@
           "name": "AFC East",
           "teams": [
             {
-              "team": "Buffalo Bills",
-              "abbr": "BUF",
+              "team": "New England Patriots",
+              "abbr": "NE",
               "wins": 0,
               "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
+              "ties": 1,
+              "win_pct": 0.5,
               "division_rank": 1,
               "is_eagles": false
             },
             {
-              "team": "Miami Dolphins",
-              "abbr": "MIA",
+              "team": "Buffalo Bills",
+              "abbr": "BUF",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -29,8 +29,8 @@
               "is_eagles": false
             },
             {
-              "team": "New England Patriots",
-              "abbr": "NE",
+              "team": "Miami Dolphins",
+              "abbr": "MIA",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -54,28 +54,28 @@
           "name": "AFC North",
           "teams": [
             {
-              "team": "Cincinnati Bengals",
-              "abbr": "CIN",
-              "wins": 0,
+              "team": "Pittsburgh Steelers",
+              "abbr": "PIT",
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 1,
+              "is_eagles": false
+            },
+            {
+              "team": "Cincinnati Bengals",
+              "abbr": "CIN",
+              "wins": 1,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 1.0,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
               "team": "Cleveland Browns",
               "abbr": "CLE",
-              "wins": 0,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
-              "division_rank": 2,
-              "is_eagles": false
-            },
-            {
-              "team": "Pittsburgh Steelers",
-              "abbr": "PIT",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -101,10 +101,10 @@
             {
               "team": "Tennessee Titans",
               "abbr": "TEN",
-              "wins": 0,
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -113,8 +113,8 @@
               "abbr": "IND",
               "wins": 0,
               "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
+              "ties": 1,
+              "win_pct": 0.5,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -132,7 +132,7 @@
               "team": "Houston Texans",
               "abbr": "HOU",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -144,13 +144,23 @@
           "name": "AFC West",
           "teams": [
             {
+              "team": "Los Angeles Chargers",
+              "abbr": "LAC",
+              "wins": 1,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 1.0,
+              "division_rank": 1,
+              "is_eagles": false
+            },
+            {
               "team": "Denver Broncos",
               "abbr": "DEN",
               "wins": 0,
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 1,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
@@ -160,24 +170,14 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 2,
+              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Las Vegas Raiders",
               "abbr": "LV",
               "wins": 0,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
-              "division_rank": 3,
-              "is_eagles": false
-            },
-            {
-              "team": "Los Angeles Chargers",
-              "abbr": "LAC",
-              "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -249,8 +249,8 @@
               "is_eagles": false
             },
             {
-              "team": "Detroit Lions",
-              "abbr": "DET",
+              "team": "Minnesota Vikings",
+              "abbr": "MIN",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -259,20 +259,20 @@
               "is_eagles": false
             },
             {
-              "team": "Green Bay Packers",
-              "abbr": "GB",
+              "team": "Detroit Lions",
+              "abbr": "DET",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
             {
-              "team": "Minnesota Vikings",
-              "abbr": "MIN",
+              "team": "Green Bay Packers",
+              "abbr": "GB",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -329,18 +329,18 @@
           "name": "NFC West",
           "teams": [
             {
-              "team": "Los Angeles Rams",
-              "abbr": "LAR",
-              "wins": 0,
-              "losses": 0,
+              "team": "Arizona Cardinals",
+              "abbr": "ARI",
+              "wins": 1,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.5,
               "division_rank": 1,
               "is_eagles": false
             },
             {
-              "team": "San Francisco 49ers",
-              "abbr": "SF",
+              "team": "Los Angeles Rams",
+              "abbr": "LAR",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -359,8 +359,8 @@
               "is_eagles": false
             },
             {
-              "team": "Arizona Cardinals",
-              "abbr": "ARI",
+              "team": "San Francisco 49ers",
+              "abbr": "SF",
               "wins": 0,
               "losses": 1,
               "ties": 0,
