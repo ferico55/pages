@@ -191,7 +191,7 @@
 <header>
   <a class="back" href="../">← Pages</a>
   <h1>🏈 NFL Schedule</h1>
-  <p class="subtitle">Season schedule &amp; standings · Philadelphia Eagles highlighted</p>
+  <p class="subtitle">Season schedule &amp; standings · Philadelphia Eagles highlighted · All times shown in UTC+7</p>
   <p class="updated" id="updated-line"></p>
 </header>
 
@@ -234,16 +234,21 @@
     });
   }
 
+  // All game times are displayed in a fixed UTC+7 timezone (Asia/Jakarta,
+  // no DST) rather than the viewer's local device timezone, so the schedule
+  // reads the same for everyone regardless of where the page is opened.
+  var DISPLAY_TZ = 'Asia/Jakarta';
+
   function fmtDateTime(iso) {
     var d = new Date(iso);
     if (isNaN(d)) return '';
-    return d.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    return d.toLocaleString('en-US', { timeZone: DISPLAY_TZ, weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' UTC+7';
   }
 
   function fmtDateOnly(iso) {
     var d = new Date(iso);
     if (isNaN(d)) return '';
-    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+    return d.toLocaleDateString('en-US', { timeZone: DISPLAY_TZ, month: 'short', day: 'numeric', year: 'numeric' });
   }
 
   function timeUntil(iso) {
