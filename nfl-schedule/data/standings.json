@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-14T10:19:20.022373+00:00",
+  "last_updated": "2026-08-15T09:43:47.980881+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -29,20 +29,20 @@
               "is_eagles": false
             },
             {
-              "team": "Miami Dolphins",
-              "abbr": "MIA",
+              "team": "New York Jets",
+              "abbr": "NYJ",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
             {
-              "team": "New York Jets",
-              "abbr": "NYJ",
+              "team": "Miami Dolphins",
+              "abbr": "MIA",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -156,10 +156,10 @@
             {
               "team": "Denver Broncos",
               "abbr": "DEN",
-              "wins": 0,
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -194,13 +194,23 @@
           "name": "NFC East",
           "teams": [
             {
+              "team": "Washington Commanders",
+              "abbr": "WSH",
+              "wins": 1,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 1.0,
+              "division_rank": 1,
+              "is_eagles": false
+            },
+            {
               "team": "Dallas Cowboys",
               "abbr": "DAL",
               "wins": 0,
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 1,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
@@ -210,7 +220,7 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 2,
+              "division_rank": 3,
               "is_eagles": false
             },
             {
@@ -220,18 +230,8 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 3,
-              "is_eagles": true
-            },
-            {
-              "team": "Washington Commanders",
-              "abbr": "WSH",
-              "wins": 0,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
               "division_rank": 4,
-              "is_eagles": false
+              "is_eagles": true
             }
           ]
         },
@@ -294,12 +294,12 @@
               "is_eagles": false
             },
             {
-              "team": "Atlanta Falcons",
-              "abbr": "ATL",
-              "wins": 0,
+              "team": "Tampa Bay Buccaneers",
+              "abbr": "TB",
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -314,10 +314,10 @@
               "is_eagles": false
             },
             {
-              "team": "Tampa Bay Buccaneers",
-              "abbr": "TB",
+              "team": "Atlanta Falcons",
+              "abbr": "ATL",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
