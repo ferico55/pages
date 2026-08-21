@@ -1,0 +1,55 @@
+name: Send Sports Reminders
+
+# Runs the reminder check on its own, more frequent schedule, separate from
+# the once-daily data refresh in update-sports-data.yml. It reads whatever
+# schedule.json is already committed (no external API calls) and only
+# sends/records reminders whose tier newly became due.
+#
+# Why this exists: the "24h before" tier is a hard <=24h cutoff, checked
+# once per run. When the only check was the once-daily 09:17 UTC fetch, a
+# race/game starting shortly after that time each day could have its 24h
+# tier evaluated at e.g. 24h06m (not yet due) and then not checked again
+# until the *next* day's run, by which point the event was only minutes
+# away — a "24 hour reminder" arriving effectively at kickoff/lights-out.
+# Checking hourly bounds that drift to ~1h instead of ~1 day.
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: send-reminders
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Send race/match reminders
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REMINDER_EMAIL_TO: ferico55@gmail.com
+        run: python3 .github/scripts/send_reminders.py
+
+      - name: Commit and push reminder state if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/scripts/state/reminders_sent.json
+          if git diff --cached --quiet; then
+            echo "No reminder state changes, skipping commit."
+            exit 0
+          fi
+          git pull --rebase origin main
+          git commit -m "chore: update reminder state"
+          git push
