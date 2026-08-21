@@ -1,5 +1,7 @@
 {
-  "12-gp": {},
+  "12-gp": {
+    "3day": true
+  },
   "12-sprint": {
     "3day": true
   },
