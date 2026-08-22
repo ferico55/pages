@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-21T09:53:58.795872+00:00",
+  "last_updated": "2026-08-22T09:45:08.125218+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -19,22 +19,22 @@
               "is_eagles": false
             },
             {
+              "team": "New York Jets",
+              "abbr": "NYJ",
+              "wins": 1,
+              "losses": 1,
+              "ties": 0,
+              "win_pct": 0.5,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
               "team": "New England Patriots",
               "abbr": "NE",
               "wins": 0,
               "losses": 0,
               "ties": 1,
               "win_pct": 0.5,
-              "division_rank": 2,
-              "is_eagles": false
-            },
-            {
-              "team": "New York Jets",
-              "abbr": "NYJ",
-              "wins": 0,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -54,23 +54,13 @@
           "name": "AFC North",
           "teams": [
             {
-              "team": "Pittsburgh Steelers",
-              "abbr": "PIT",
-              "wins": 1,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 1.0,
-              "division_rank": 1,
-              "is_eagles": false
-            },
-            {
               "team": "Baltimore Ravens",
               "abbr": "BAL",
               "wins": 1,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
-              "division_rank": 2,
+              "division_rank": 1,
               "is_eagles": false
             },
             {
@@ -80,6 +70,16 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "Pittsburgh Steelers",
+              "abbr": "PIT",
+              "wins": 1,
+              "losses": 1,
+              "ties": 0,
+              "win_pct": 0.5,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -112,9 +112,9 @@
               "team": "Jacksonville Jaguars",
               "abbr": "JAX",
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.5,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -144,18 +144,18 @@
           "name": "AFC West",
           "teams": [
             {
-              "team": "Denver Broncos",
-              "abbr": "DEN",
+              "team": "Los Angeles Chargers",
+              "abbr": "LAC",
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.5,
               "division_rank": 1,
               "is_eagles": false
             },
             {
-              "team": "Los Angeles Chargers",
-              "abbr": "LAC",
+              "team": "Las Vegas Raiders",
+              "abbr": "LV",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -164,8 +164,8 @@
               "is_eagles": false
             },
             {
-              "team": "Las Vegas Raiders",
-              "abbr": "LV",
+              "team": "Denver Broncos",
+              "abbr": "DEN",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -259,18 +259,18 @@
               "is_eagles": false
             },
             {
-              "team": "Detroit Lions",
-              "abbr": "DET",
-              "wins": 0,
+              "team": "Green Bay Packers",
+              "abbr": "GB",
+              "wins": 1,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.5,
               "division_rank": 3,
               "is_eagles": false
             },
             {
-              "team": "Green Bay Packers",
-              "abbr": "GB",
+              "team": "Detroit Lions",
+              "abbr": "DET",
               "wins": 0,
               "losses": 1,
               "ties": 0,
@@ -296,10 +296,10 @@
             {
               "team": "Carolina Panthers",
               "abbr": "CAR",
-              "wins": 1,
+              "wins": 2,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.6666667,
               "division_rank": 2,
               "is_eagles": false
             },
