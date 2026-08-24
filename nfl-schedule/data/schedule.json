@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-23T09:45:40.282369+00:00",
+  "last_updated": "2026-08-24T10:06:38.080641+00:00",
   "games": [
     {
       "id": "401873271",
@@ -292,23 +292,6 @@
       "away_record": "0-0"
     },
     {
-      "id": "401873297",
-      "week": 3,
-      "season_type": "preseason",
-      "date_utc": "2026-08-24T00:00Z",
-      "status": "scheduled",
-      "home_team": "Tennessee Titans",
-      "home_abbr": "TEN",
-      "away_team": "Seattle Seahawks",
-      "away_abbr": "SEA",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Nissan Stadium",
-      "is_favorite": false,
-      "home_record": "0-0",
-      "away_record": "0-0"
-    },
-    {
       "id": "401873286",
       "week": 3,
       "season_type": "preseason",
@@ -559,6 +542,23 @@
       "home_score": 13,
       "away_score": 34,
       "venue": "State Farm Stadium",
+      "is_favorite": false,
+      "home_record": "0-0",
+      "away_record": "0-0"
+    },
+    {
+      "id": "401873297",
+      "week": 3,
+      "season_type": "preseason",
+      "date_utc": "2026-08-24T00:00Z",
+      "status": "final",
+      "home_team": "Tennessee Titans",
+      "home_abbr": "TEN",
+      "away_team": "Seattle Seahawks",
+      "away_abbr": "SEA",
+      "home_score": 19,
+      "away_score": 16,
+      "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "0-0",
       "away_record": "0-0"

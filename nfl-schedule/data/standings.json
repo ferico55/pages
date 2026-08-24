@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-23T09:45:40.384963+00:00",
+  "last_updated": "2026-08-24T10:06:38.171221+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -101,7 +101,7 @@
             {
               "team": "Tennessee Titans",
               "abbr": "TEN",
-              "wins": 1,
+              "wins": 2,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
@@ -362,7 +362,7 @@
               "team": "Seattle Seahawks",
               "abbr": "SEA",
               "wins": 0,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
