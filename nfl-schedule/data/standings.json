@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-27T19:52:11.732563+00:00",
+  "last_updated": "2026-08-28T20:56:08.590551+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -11,21 +11,11 @@
             {
               "team": "Buffalo Bills",
               "abbr": "BUF",
-              "wins": 2,
+              "wins": 3,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
               "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "New England Patriots",
-              "abbr": "NE",
-              "wins": 1,
-              "losses": 0,
-              "ties": 1,
-              "win_pct": 0.75,
-              "division_rank": 2,
               "is_eagles": false
             },
             {
@@ -34,6 +24,16 @@
               "wins": 1,
               "losses": 1,
               "ties": 0,
+              "win_pct": 0.5,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "New England Patriots",
+              "abbr": "NE",
+              "wins": 1,
+              "losses": 1,
+              "ties": 1,
               "win_pct": 0.5,
               "division_rank": 3,
               "is_eagles": false
@@ -74,22 +74,22 @@
               "is_eagles": false
             },
             {
-              "team": "Pittsburgh Steelers",
-              "abbr": "PIT",
+              "team": "Cleveland Browns",
+              "abbr": "CLE",
               "wins": 1,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.33333334,
               "division_rank": 3,
               "is_eagles": false
             },
             {
-              "team": "Cleveland Browns",
-              "abbr": "CLE",
-              "wins": 0,
+              "team": "Pittsburgh Steelers",
+              "abbr": "PIT",
+              "wins": 1,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.33333334,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -144,8 +144,8 @@
           "name": "AFC West",
           "teams": [
             {
-              "team": "Los Angeles Chargers",
-              "abbr": "LAC",
+              "team": "Denver Broncos",
+              "abbr": "DEN",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -154,22 +154,22 @@
               "is_eagles": false
             },
             {
-              "team": "Las Vegas Raiders",
-              "abbr": "LV",
+              "team": "Los Angeles Chargers",
+              "abbr": "LAC",
               "wins": 1,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.33333334,
               "division_rank": 2,
               "is_eagles": false
             },
             {
-              "team": "Denver Broncos",
-              "abbr": "DEN",
+              "team": "Las Vegas Raiders",
+              "abbr": "LV",
               "wins": 1,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.33333334,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -331,7 +331,7 @@
             {
               "team": "Los Angeles Rams",
               "abbr": "LAR",
-              "wins": 2,
+              "wins": 3,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
@@ -341,10 +341,10 @@
             {
               "team": "San Francisco 49ers",
               "abbr": "SF",
-              "wins": 1,
+              "wins": 2,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.6666667,
               "division_rank": 2,
               "is_eagles": false
             },
