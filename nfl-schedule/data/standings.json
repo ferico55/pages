@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-08-29T14:31:33.474321+00:00",
+  "last_updated": "2026-08-30T14:26:21.732160+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -99,18 +99,18 @@
           "name": "AFC South",
           "teams": [
             {
-              "team": "Tennessee Titans",
-              "abbr": "TEN",
+              "team": "Jacksonville Jaguars",
+              "abbr": "JAX",
               "wins": 2,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.6666667,
               "division_rank": 1,
               "is_eagles": false
             },
             {
-              "team": "Jacksonville Jaguars",
-              "abbr": "JAX",
+              "team": "Tennessee Titans",
+              "abbr": "TEN",
               "wins": 2,
               "losses": 1,
               "ties": 0,
@@ -122,9 +122,9 @@
               "team": "Indianapolis Colts",
               "abbr": "IND",
               "wins": 0,
-              "losses": 1,
+              "losses": 2,
               "ties": 1,
-              "win_pct": 0.25,
+              "win_pct": 0.16666667,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -251,20 +251,20 @@
             {
               "team": "Detroit Lions",
               "abbr": "DET",
-              "wins": 1,
+              "wins": 2,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.6666667,
               "division_rank": 2,
               "is_eagles": false
             },
             {
               "team": "Chicago Bears",
               "abbr": "CHI",
-              "wins": 1,
+              "wins": 2,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.6666667,
               "division_rank": 3,
               "is_eagles": false
             },
