@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-05T12:46:04.994668+00:00",
+  "last_updated": "2026-09-06T12:54:44.968327+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -11,38 +11,38 @@
             {
               "team": "Buffalo Bills",
               "abbr": "BUF",
-              "wins": 3,
+              "wins": 0,
               "losses": 0,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.0,
               "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "New England Patriots",
-              "abbr": "NE",
-              "wins": 1,
-              "losses": 1,
-              "ties": 1,
-              "win_pct": 0.5,
-              "division_rank": 2,
-              "is_eagles": false
-            },
-            {
-              "team": "New York Jets",
-              "abbr": "NYJ",
-              "wins": 1,
-              "losses": 2,
-              "ties": 0,
-              "win_pct": 0.33333334,
-              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Miami Dolphins",
               "abbr": "MIA",
               "wins": 0,
-              "losses": 3,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "New England Patriots",
+              "abbr": "NE",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 3,
+              "is_eagles": false
+            },
+            {
+              "team": "New York Jets",
+              "abbr": "NYJ",
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -56,40 +56,40 @@
             {
               "team": "Cincinnati Bengals",
               "abbr": "CIN",
-              "wins": 3,
+              "wins": 0,
               "losses": 0,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.0,
               "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "Baltimore Ravens",
-              "abbr": "BAL",
-              "wins": 3,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 1.0,
-              "division_rank": 2,
               "is_eagles": false
             },
             {
               "team": "Cleveland Browns",
               "abbr": "CLE",
-              "wins": 1,
-              "losses": 2,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.33333334,
-              "division_rank": 3,
+              "win_pct": 0.0,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
               "team": "Pittsburgh Steelers",
               "abbr": "PIT",
-              "wins": 1,
-              "losses": 2,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.0,
+              "division_rank": 3,
+              "is_eagles": false
+            },
+            {
+              "team": "Baltimore Ravens",
+              "abbr": "BAL",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -99,32 +99,32 @@
           "name": "AFC South",
           "teams": [
             {
-              "team": "Jacksonville Jaguars",
-              "abbr": "JAX",
-              "wins": 2,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.6666667,
-              "division_rank": 1,
-              "is_eagles": false
-            },
-            {
               "team": "Tennessee Titans",
               "abbr": "TEN",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
-              "division_rank": 2,
+              "win_pct": 0.0,
+              "division_rank": 1,
               "is_eagles": false
             },
             {
               "team": "Indianapolis Colts",
               "abbr": "IND",
               "wins": 0,
-              "losses": 2,
-              "ties": 1,
-              "win_pct": 0.16666667,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "Jacksonville Jaguars",
+              "abbr": "JAX",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -132,7 +132,7 @@
               "team": "Houston Texans",
               "abbr": "HOU",
               "wins": 0,
-              "losses": 3,
+              "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -146,40 +146,40 @@
             {
               "team": "Denver Broncos",
               "abbr": "DEN",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "Los Angeles Chargers",
-              "abbr": "LAC",
-              "wins": 1,
-              "losses": 2,
-              "ties": 0,
-              "win_pct": 0.33333334,
-              "division_rank": 2,
-              "is_eagles": false
-            },
-            {
-              "team": "Las Vegas Raiders",
-              "abbr": "LV",
-              "wins": 1,
-              "losses": 2,
-              "ties": 0,
-              "win_pct": 0.33333334,
-              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Kansas City Chiefs",
               "abbr": "KC",
               "wins": 0,
-              "losses": 2,
-              "ties": 1,
-              "win_pct": 0.16666667,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "Las Vegas Raiders",
+              "abbr": "LV",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 3,
+              "is_eagles": false
+            },
+            {
+              "team": "Los Angeles Chargers",
+              "abbr": "LAC",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -196,42 +196,42 @@
             {
               "team": "Dallas Cowboys",
               "abbr": "DAL",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 1,
               "is_eagles": false
             },
             {
               "team": "New York Giants",
               "abbr": "NYG",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 2,
-              "is_eagles": false
-            },
-            {
-              "team": "Washington Commanders",
-              "abbr": "WSH",
-              "wins": 1,
-              "losses": 2,
-              "ties": 0,
-              "win_pct": 0.33333334,
-              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Philadelphia Eagles",
               "abbr": "PHI",
               "wins": 0,
-              "losses": 3,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 3,
+              "is_eagles": true
+            },
+            {
+              "team": "Washington Commanders",
+              "abbr": "WSH",
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
-              "is_eagles": true
+              "is_eagles": false
             }
           ]
         },
@@ -239,42 +239,42 @@
           "name": "NFC North",
           "teams": [
             {
-              "team": "Green Bay Packers",
-              "abbr": "GB",
-              "wins": 2,
-              "losses": 1,
+              "team": "Chicago Bears",
+              "abbr": "CHI",
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 1,
               "is_eagles": false
             },
             {
               "team": "Detroit Lions",
               "abbr": "DET",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 2,
               "is_eagles": false
             },
             {
-              "team": "Chicago Bears",
-              "abbr": "CHI",
-              "wins": 2,
-              "losses": 1,
+              "team": "Green Bay Packers",
+              "abbr": "GB",
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "Minnesota Vikings",
               "abbr": "MIN",
-              "wins": 1,
-              "losses": 2,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.0,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -284,42 +284,42 @@
           "name": "NFC South",
           "teams": [
             {
-              "team": "Carolina Panthers",
-              "abbr": "CAR",
-              "wins": 3,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.75,
-              "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "Tampa Bay Buccaneers",
-              "abbr": "TB",
-              "wins": 2,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.6666667,
-              "division_rank": 2,
-              "is_eagles": false
-            },
-            {
               "team": "Atlanta Falcons",
               "abbr": "ATL",
-              "wins": 2,
-              "losses": 1,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.6666667,
-              "division_rank": 3,
+              "win_pct": 0.0,
+              "division_rank": 1,
               "is_eagles": false
             },
             {
               "team": "New Orleans Saints",
               "abbr": "NO",
-              "wins": 1,
-              "losses": 2,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "Tampa Bay Buccaneers",
+              "abbr": "TB",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
+              "division_rank": 3,
+              "is_eagles": false
+            },
+            {
+              "team": "Carolina Panthers",
+              "abbr": "CAR",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -331,30 +331,30 @@
             {
               "team": "Los Angeles Rams",
               "abbr": "LAR",
-              "wins": 3,
+              "wins": 0,
               "losses": 0,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.0,
               "division_rank": 1,
-              "is_eagles": false
-            },
-            {
-              "team": "San Francisco 49ers",
-              "abbr": "SF",
-              "wins": 2,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.6666667,
-              "division_rank": 2,
               "is_eagles": false
             },
             {
               "team": "Arizona Cardinals",
               "abbr": "ARI",
-              "wins": 1,
-              "losses": 3,
+              "wins": 0,
+              "losses": 0,
               "ties": 0,
-              "win_pct": 0.25,
+              "win_pct": 0.0,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "San Francisco 49ers",
+              "abbr": "SF",
+              "wins": 0,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -362,9 +362,9 @@
               "team": "Seattle Seahawks",
               "abbr": "SEA",
               "wins": 0,
-              "losses": 2,
-              "ties": 1,
-              "win_pct": 0.16666667,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 0.0,
               "division_rank": 4,
               "is_eagles": false
             }
