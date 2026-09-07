@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-06T12:54:55.704101+00:00",
+  "last_updated": "2026-09-07T15:05:09.637665+00:00",
   "races": [
     {
       "round": 1,
@@ -514,43 +514,43 @@
         },
         {
           "position": "3",
-          "driver": "Pierre Gasly",
-          "driver_code": "GAS",
-          "constructor": "Alpine F1 Team",
-          "points": 15.0,
-          "points_after": 35.0
-        },
-        {
-          "position": "4",
           "driver": "Isack Hadjar",
           "driver_code": "HAD",
           "constructor": "Red Bull",
-          "points": 12.0,
-          "points_after": 26.0
+          "points": 15.0,
+          "points_after": 29.0
         },
         {
-          "position": "5",
+          "position": "4",
           "driver": "Oscar Piastri",
           "driver_code": "PIA",
           "constructor": "McLaren",
-          "points": 10.0,
-          "points_after": 58.0
+          "points": 12.0,
+          "points_after": 60.0
         },
         {
-          "position": "6",
+          "position": "5",
           "driver": "Liam Lawson",
           "driver_code": "LAW",
           "constructor": "RB F1 Team",
-          "points": 8.0,
-          "points_after": 24.0
+          "points": 10.0,
+          "points_after": 26.0
         },
         {
-          "position": "7",
+          "position": "6",
           "driver": "Arvid Lindblad",
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
+          "points": 8.0,
+          "points_after": 13.0
+        },
+        {
+          "position": "7",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
           "points": 6.0,
-          "points_after": 11.0
+          "points_after": 26.0
         },
         {
           "position": "8",
@@ -630,7 +630,7 @@
           "driver_code": "PIA",
           "constructor": "McLaren",
           "points": 10.0,
-          "points_after": 68.0
+          "points_after": 70.0
         },
         {
           "position": "6",
@@ -638,7 +638,7 @@
           "driver_code": "HAD",
           "constructor": "Red Bull",
           "points": 8.0,
-          "points_after": 34.0
+          "points_after": 37.0
         },
         {
           "position": "7",
@@ -646,7 +646,7 @@
           "driver_code": "GAS",
           "constructor": "Alpine F1 Team",
           "points": 6.0,
-          "points_after": 41.0
+          "points_after": 32.0
         },
         {
           "position": "8",
@@ -654,7 +654,7 @@
           "driver_code": "LAW",
           "constructor": "RB F1 Team",
           "points": 4.0,
-          "points_after": 28.0
+          "points_after": 30.0
         },
         {
           "position": "9",
@@ -662,7 +662,7 @@
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
           "points": 2.0,
-          "points_after": 13.0
+          "points_after": 15.0
         },
         {
           "position": "10",
@@ -718,7 +718,7 @@
           "driver_code": "PIA",
           "constructor": "McLaren",
           "points": 12.0,
-          "points_after": 80.0
+          "points_after": 82.0
         },
         {
           "position": "5",
@@ -734,7 +734,7 @@
           "driver_code": "HAD",
           "constructor": "Red Bull",
           "points": 8.0,
-          "points_after": 42.0
+          "points_after": 45.0
         },
         {
           "position": "7",
@@ -758,7 +758,7 @@
           "driver_code": "LAW",
           "constructor": "RB F1 Team",
           "points": 2.0,
-          "points_after": 30.0
+          "points_after": 32.0
         },
         {
           "position": "10",
@@ -766,7 +766,7 @@
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
           "points": 1.0,
-          "points_after": 14.0
+          "points_after": 16.0
         }
       ]
     },
@@ -822,7 +822,7 @@
           "driver_code": "HAD",
           "constructor": "Red Bull",
           "points": 10.0,
-          "points_after": 52.0
+          "points_after": 55.0
         },
         {
           "position": "6",
@@ -830,7 +830,7 @@
           "driver_code": "LAW",
           "constructor": "RB F1 Team",
           "points": 8.0,
-          "points_after": 39.0
+          "points_after": 41.0
         },
         {
           "position": "7",
@@ -838,7 +838,7 @@
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
           "points": 6.0,
-          "points_after": 20.0
+          "points_after": 22.0
         },
         {
           "position": "8",
@@ -862,7 +862,7 @@
           "driver_code": "GAS",
           "constructor": "Alpine F1 Team",
           "points": 1.0,
-          "points_after": 42.0
+          "points_after": 33.0
         }
       ]
     },
@@ -918,7 +918,7 @@
           "driver_code": "PIA",
           "constructor": "McLaren",
           "points": 10.0,
-          "points_after": 92.0
+          "points_after": 94.0
         },
         {
           "position": "6",
@@ -926,7 +926,7 @@
           "driver_code": "HAD",
           "constructor": "Red Bull",
           "points": 8.0,
-          "points_after": 60.0
+          "points_after": 63.0
         },
         {
           "position": "7",
@@ -950,7 +950,7 @@
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
           "points": 2.0,
-          "points_after": 22.0
+          "points_after": 24.0
         },
         {
           "position": "10",
@@ -1022,7 +1022,7 @@
           "driver_code": "HAD",
           "constructor": "Red Bull",
           "points": 8.0,
-          "points_after": 68.0
+          "points_after": 71.0
         },
         {
           "position": "7",
@@ -1038,7 +1038,7 @@
           "driver_code": "LAW",
           "constructor": "RB F1 Team",
           "points": 4.0,
-          "points_after": 43.0
+          "points_after": 45.0
         },
         {
           "position": "9",
@@ -1054,7 +1054,7 @@
           "driver_code": "LIN",
           "constructor": "RB F1 Team",
           "points": 1.0,
-          "points_after": 23.0
+          "points_after": 25.0
         }
       ]
     },
@@ -1118,7 +1118,7 @@
           "driver_code": "PIA",
           "constructor": "McLaren",
           "points": 8.0,
-          "points_after": 104.0
+          "points_after": 106.0
         },
         {
           "position": "7",
@@ -1126,7 +1126,7 @@
           "driver_code": "LAW",
           "constructor": "Red Bull",
           "points": 6.0,
-          "points_after": 49.0
+          "points_after": 51.0
         },
         {
           "position": "8",
@@ -1150,7 +1150,7 @@
           "driver_code": "GAS",
           "constructor": "Alpine F1 Team",
           "points": 1.0,
-          "points_after": 44.0
+          "points_after": 35.0
         }
       ]
     },
@@ -1163,11 +1163,92 @@
       "race_date_utc": "2026-09-06T13:00:00Z",
       "qualifying_date_utc": "2026-09-05T14:00:00Z",
       "sprint_date_utc": null,
-      "status": "scheduled",
-      "winner": null,
-      "winner_constructor": null,
-      "verstappen_finish": null,
-      "top10": []
+      "status": "completed",
+      "winner": "Andrea Kimi Antonelli",
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "3",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": null
+        },
+        {
+          "position": "2",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 18.0,
+          "points_after": null
+        },
+        {
+          "position": "3",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 15.0,
+          "points_after": null
+        },
+        {
+          "position": "4",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 12.0,
+          "points_after": null
+        },
+        {
+          "position": "5",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 10.0,
+          "points_after": null
+        },
+        {
+          "position": "6",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 8.0,
+          "points_after": null
+        },
+        {
+          "position": "7",
+          "driver": "Pierre Gasly",
+          "driver_code": "GAS",
+          "constructor": "Alpine F1 Team",
+          "points": 6.0,
+          "points_after": null
+        },
+        {
+          "position": "8",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 4.0,
+          "points_after": null
+        },
+        {
+          "position": "9",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 2.0,
+          "points_after": null
+        },
+        {
+          "position": "10",
+          "driver": "Yuki Tsunoda",
+          "driver_code": "TSU",
+          "constructor": "RB F1 Team",
+          "points": 1.0,
+          "points_after": null
+        }
+      ]
     },
     {
       "round": 14,
