@@ -1,14 +1,14 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-06T12:54:56.161384+00:00",
+  "last_updated": "2026-09-08T13:40:28.011628+00:00",
   "drivers": [
     {
       "position": 1,
       "driver": "Andrea Kimi Antonelli",
       "driver_code": "ANT",
       "constructor": "Mercedes",
-      "points": 242.0,
-      "wins": 6,
+      "points": 267.0,
+      "wins": 7,
       "is_red_bull": false
     },
     {
@@ -16,7 +16,7 @@
       "driver": "George Russell",
       "driver_code": "RUS",
       "constructor": "Mercedes",
-      "points": 183.0,
+      "points": 201.0,
       "wins": 2,
       "is_red_bull": false
     },
@@ -25,7 +25,7 @@
       "driver": "Lewis Hamilton",
       "driver_code": "HAM",
       "constructor": "Ferrari",
-      "points": 183.0,
+      "points": 191.0,
       "wins": 1,
       "is_red_bull": false
     },
@@ -34,7 +34,7 @@
       "driver": "Lando Norris",
       "driver_code": "NOR",
       "constructor": "McLaren",
-      "points": 159.0,
+      "points": 171.0,
       "wins": 2,
       "is_red_bull": false
     },
@@ -52,7 +52,7 @@
       "driver": "Max Verstappen",
       "driver_code": "VER",
       "constructor": "Red Bull",
-      "points": 112.0,
+      "points": 127.0,
       "wins": 0,
       "is_red_bull": true
     },
@@ -61,7 +61,7 @@
       "driver": "Oscar Piastri",
       "driver_code": "PIA",
       "constructor": "McLaren",
-      "points": 104.0,
+      "points": 116.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -70,7 +70,7 @@
       "driver": "Isack Hadjar",
       "driver_code": "HAD",
       "constructor": "Red Bull",
-      "points": 68.0,
+      "points": 71.0,
       "wins": 0,
       "is_red_bull": true
     },
@@ -79,7 +79,7 @@
       "driver": "Liam Lawson",
       "driver_code": "LAW",
       "constructor": "RB F1 Team",
-      "points": 49.0,
+      "points": 51.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -88,7 +88,7 @@
       "driver": "Pierre Gasly",
       "driver_code": "GAS",
       "constructor": "Alpine F1 Team",
-      "points": 44.0,
+      "points": 41.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -97,7 +97,7 @@
       "driver": "Arvid Lindblad",
       "driver_code": "LIN",
       "constructor": "RB F1 Team",
-      "points": 23.0,
+      "points": 29.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -106,7 +106,7 @@
       "driver": "Franco Colapinto",
       "driver_code": "COL",
       "constructor": "Alpine F1 Team",
-      "points": 19.0,
+      "points": 21.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -178,7 +178,7 @@
       "driver": "Yuki Tsunoda",
       "driver_code": "TSU",
       "constructor": "RB F1 Team",
-      "points": 0.0,
+      "points": 1.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -214,42 +214,42 @@
     {
       "position": 1,
       "constructor": "Mercedes",
-      "points": 425.0,
-      "wins": 8,
+      "points": 468.0,
+      "wins": 9,
       "is_red_bull": false
     },
     {
       "position": 2,
       "constructor": "Ferrari",
-      "points": 338.0,
+      "points": 346.0,
       "wins": 2,
       "is_red_bull": false
     },
     {
       "position": 3,
       "constructor": "McLaren",
-      "points": 263.0,
+      "points": 287.0,
       "wins": 2,
       "is_red_bull": false
     },
     {
       "position": 4,
       "constructor": "Red Bull",
-      "points": 186.0,
+      "points": 204.0,
       "wins": 0,
       "is_red_bull": true
     },
     {
       "position": 5,
       "constructor": "RB F1 Team",
-      "points": 66.0,
+      "points": 75.0,
       "wins": 0,
       "is_red_bull": false
     },
     {
       "position": 6,
       "constructor": "Alpine F1 Team",
-      "points": 63.0,
+      "points": 62.0,
       "wins": 0,
       "is_red_bull": false
     },
