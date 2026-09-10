@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-09T13:45:45.775713+00:00",
+  "last_updated": "2026-09-10T13:39:08.812570+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -29,8 +29,8 @@
               "is_eagles": false
             },
             {
-              "team": "New England Patriots",
-              "abbr": "NE",
+              "team": "New York Jets",
+              "abbr": "NYJ",
               "wins": 0,
               "losses": 0,
               "ties": 0,
@@ -39,10 +39,10 @@
               "is_eagles": false
             },
             {
-              "team": "New York Jets",
-              "abbr": "NYJ",
+              "team": "New England Patriots",
+              "abbr": "NE",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,
@@ -329,13 +329,23 @@
           "name": "NFC West",
           "teams": [
             {
+              "team": "Seattle Seahawks",
+              "abbr": "SEA",
+              "wins": 1,
+              "losses": 0,
+              "ties": 0,
+              "win_pct": 1.0,
+              "division_rank": 1,
+              "is_eagles": false
+            },
+            {
               "team": "Los Angeles Rams",
               "abbr": "LAR",
               "wins": 0,
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 1,
+              "division_rank": 2,
               "is_eagles": false
             },
             {
@@ -345,22 +355,12 @@
               "losses": 0,
               "ties": 0,
               "win_pct": 0.0,
-              "division_rank": 2,
+              "division_rank": 3,
               "is_eagles": false
             },
             {
               "team": "San Francisco 49ers",
               "abbr": "SF",
-              "wins": 0,
-              "losses": 0,
-              "ties": 0,
-              "win_pct": 0.0,
-              "division_rank": 3,
-              "is_eagles": false
-            },
-            {
-              "team": "Seattle Seahawks",
-              "abbr": "SEA",
               "wins": 0,
               "losses": 0,
               "ties": 0,
