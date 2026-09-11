@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-10T13:39:08.812570+00:00",
+  "last_updated": "2026-09-11T13:37:22.227103+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -329,8 +329,8 @@
           "name": "NFC West",
           "teams": [
             {
-              "team": "Seattle Seahawks",
-              "abbr": "SEA",
+              "team": "San Francisco 49ers",
+              "abbr": "SF",
               "wins": 1,
               "losses": 0,
               "ties": 0,
@@ -339,12 +339,12 @@
               "is_eagles": false
             },
             {
-              "team": "Los Angeles Rams",
-              "abbr": "LAR",
-              "wins": 0,
+              "team": "Seattle Seahawks",
+              "abbr": "SEA",
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -359,10 +359,10 @@
               "is_eagles": false
             },
             {
-              "team": "San Francisco 49ers",
-              "abbr": "SF",
+              "team": "Los Angeles Rams",
+              "abbr": "LAR",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 4,

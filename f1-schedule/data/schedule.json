@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-10T13:39:23.840037+00:00",
+  "last_updated": "2026-09-11T13:37:32.852704+00:00",
   "races": [
     {
       "round": 1,
@@ -1078,7 +1078,7 @@
           "driver_code": "NOR",
           "constructor": "McLaren",
           "points": 25.0,
-          "points_after": 159.0
+          "points_after": null
         },
         {
           "position": "2",
@@ -1086,7 +1086,7 @@
           "driver_code": "ANT",
           "constructor": "Mercedes",
           "points": 18.0,
-          "points_after": 242.0
+          "points_after": null
         },
         {
           "position": "3",
@@ -1094,7 +1094,7 @@
           "driver_code": "RUS",
           "constructor": "Mercedes",
           "points": 15.0,
-          "points_after": 183.0
+          "points_after": null
         },
         {
           "position": "4",
@@ -1102,7 +1102,7 @@
           "driver_code": "HAM",
           "constructor": "Ferrari",
           "points": 12.0,
-          "points_after": 183.0
+          "points_after": null
         },
         {
           "position": "5",
@@ -1110,7 +1110,7 @@
           "driver_code": "LEC",
           "constructor": "Ferrari",
           "points": 10.0,
-          "points_after": 155.0
+          "points_after": null
         },
         {
           "position": "6",
@@ -1118,7 +1118,7 @@
           "driver_code": "PIA",
           "constructor": "McLaren",
           "points": 8.0,
-          "points_after": 106.0
+          "points_after": null
         },
         {
           "position": "7",
@@ -1126,7 +1126,7 @@
           "driver_code": "LAW",
           "constructor": "Red Bull",
           "points": 6.0,
-          "points_after": 51.0
+          "points_after": null
         },
         {
           "position": "8",
@@ -1134,7 +1134,7 @@
           "driver_code": "HUL",
           "constructor": "Audi",
           "points": 4.0,
-          "points_after": 6.0
+          "points_after": null
         },
         {
           "position": "9",
@@ -1142,7 +1142,7 @@
           "driver_code": "ALO",
           "constructor": "Aston Martin",
           "points": 2.0,
-          "points_after": 3.0
+          "points_after": null
         },
         {
           "position": "10",
@@ -1150,7 +1150,7 @@
           "driver_code": "GAS",
           "constructor": "Alpine F1 Team",
           "points": 1.0,
-          "points_after": 35.0
+          "points_after": null
         }
       ]
     },
@@ -1164,91 +1164,10 @@
       "qualifying_date_utc": "2026-09-05T14:00:00Z",
       "sprint_date_utc": null,
       "status": "completed",
-      "winner": "Andrea Kimi Antonelli",
-      "winner_constructor": "Mercedes",
-      "verstappen_finish": "3",
-      "top10": [
-        {
-          "position": "1",
-          "driver": "Andrea Kimi Antonelli",
-          "driver_code": "ANT",
-          "constructor": "Mercedes",
-          "points": 25.0,
-          "points_after": 267.0
-        },
-        {
-          "position": "2",
-          "driver": "George Russell",
-          "driver_code": "RUS",
-          "constructor": "Mercedes",
-          "points": 18.0,
-          "points_after": 201.0
-        },
-        {
-          "position": "3",
-          "driver": "Max Verstappen",
-          "driver_code": "VER",
-          "constructor": "Red Bull",
-          "points": 15.0,
-          "points_after": 127.0
-        },
-        {
-          "position": "4",
-          "driver": "Lando Norris",
-          "driver_code": "NOR",
-          "constructor": "McLaren",
-          "points": 12.0,
-          "points_after": 171.0
-        },
-        {
-          "position": "5",
-          "driver": "Oscar Piastri",
-          "driver_code": "PIA",
-          "constructor": "McLaren",
-          "points": 10.0,
-          "points_after": 116.0
-        },
-        {
-          "position": "6",
-          "driver": "Lewis Hamilton",
-          "driver_code": "HAM",
-          "constructor": "Ferrari",
-          "points": 8.0,
-          "points_after": 191.0
-        },
-        {
-          "position": "7",
-          "driver": "Pierre Gasly",
-          "driver_code": "GAS",
-          "constructor": "Alpine F1 Team",
-          "points": 6.0,
-          "points_after": 41.0
-        },
-        {
-          "position": "8",
-          "driver": "Arvid Lindblad",
-          "driver_code": "LIN",
-          "constructor": "RB F1 Team",
-          "points": 4.0,
-          "points_after": 29.0
-        },
-        {
-          "position": "9",
-          "driver": "Franco Colapinto",
-          "driver_code": "COL",
-          "constructor": "Alpine F1 Team",
-          "points": 2.0,
-          "points_after": 21.0
-        },
-        {
-          "position": "10",
-          "driver": "Yuki Tsunoda",
-          "driver_code": "TSU",
-          "constructor": "RB F1 Team",
-          "points": 1.0,
-          "points_after": 1.0
-        }
-      ]
+      "winner": null,
+      "winner_constructor": null,
+      "verstappen_finish": null,
+      "top10": []
     },
     {
       "round": 14,
