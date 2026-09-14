@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-13T13:49:18.407185+00:00",
+  "last_updated": "2026-09-14T15:55:19.551908+00:00",
   "races": [
     {
       "round": 1,
@@ -1260,10 +1260,91 @@
       "qualifying_date_utc": "2026-09-12T14:00:00Z",
       "sprint_date_utc": null,
       "status": "completed",
-      "winner": null,
-      "winner_constructor": null,
-      "verstappen_finish": null,
-      "top10": []
+      "winner": "Andrea Kimi Antonelli",
+      "winner_constructor": "Mercedes",
+      "verstappen_finish": "2",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 25.0,
+          "points_after": 292.0
+        },
+        {
+          "position": "2",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 18.0,
+          "points_after": 145.0
+        },
+        {
+          "position": "3",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 15.0,
+          "points_after": 186.0
+        },
+        {
+          "position": "4",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 12.0,
+          "points_after": 167.0
+        },
+        {
+          "position": "5",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 10.0,
+          "points_after": 211.0
+        },
+        {
+          "position": "6",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "Red Bull",
+          "points": 8.0,
+          "points_after": 59.0
+        },
+        {
+          "position": "7",
+          "driver": "Franco Colapinto",
+          "driver_code": "COL",
+          "constructor": "Alpine F1 Team",
+          "points": 6.0,
+          "points_after": 27.0
+        },
+        {
+          "position": "8",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 4.0,
+          "points_after": 120.0
+        },
+        {
+          "position": "9",
+          "driver": "Arvid Lindblad",
+          "driver_code": "LIN",
+          "constructor": "RB F1 Team",
+          "points": 2.0,
+          "points_after": 31.0
+        },
+        {
+          "position": "10",
+          "driver": "Nico H\u00fclkenberg",
+          "driver_code": "HUL",
+          "constructor": "Audi",
+          "points": 1.0,
+          "points_after": 7.0
+        }
+      ]
     },
     {
       "round": 15,
