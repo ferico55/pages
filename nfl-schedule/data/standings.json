@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-14T15:55:00.656995+00:00",
+  "last_updated": "2026-09-15T14:20:59.007942+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -144,8 +144,8 @@
           "name": "AFC West",
           "teams": [
             {
-              "team": "Las Vegas Raiders",
-              "abbr": "LV",
+              "team": "Kansas City Chiefs",
+              "abbr": "KC",
               "wins": 1,
               "losses": 0,
               "ties": 0,
@@ -154,20 +154,20 @@
               "is_eagles": false
             },
             {
-              "team": "Denver Broncos",
-              "abbr": "DEN",
-              "wins": 0,
+              "team": "Las Vegas Raiders",
+              "abbr": "LV",
+              "wins": 1,
               "losses": 0,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 1.0,
               "division_rank": 2,
               "is_eagles": false
             },
             {
-              "team": "Kansas City Chiefs",
-              "abbr": "KC",
+              "team": "Denver Broncos",
+              "abbr": "DEN",
               "wins": 0,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
               "win_pct": 0.0,
               "division_rank": 3,
