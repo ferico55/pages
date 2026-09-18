@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-17T14:19:29.558841+00:00",
+  "last_updated": "2026-09-18T13:38:13.242730+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -11,7 +11,7 @@
             {
               "team": "Buffalo Bills",
               "abbr": "BUF",
-              "wins": 1,
+              "wins": 2,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
@@ -262,9 +262,9 @@
               "team": "Detroit Lions",
               "abbr": "DET",
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.5,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -294,8 +294,8 @@
               "is_eagles": false
             },
             {
-              "team": "New Orleans Saints",
-              "abbr": "NO",
+              "team": "Tampa Bay Buccaneers",
+              "abbr": "TB",
               "wins": 0,
               "losses": 1,
               "ties": 0,
@@ -304,8 +304,8 @@
               "is_eagles": false
             },
             {
-              "team": "Tampa Bay Buccaneers",
-              "abbr": "TB",
+              "team": "Atlanta Falcons",
+              "abbr": "ATL",
               "wins": 0,
               "losses": 1,
               "ties": 0,
@@ -314,8 +314,8 @@
               "is_eagles": false
             },
             {
-              "team": "Atlanta Falcons",
-              "abbr": "ATL",
+              "team": "New Orleans Saints",
+              "abbr": "NO",
               "wins": 0,
               "losses": 1,
               "ties": 0,
