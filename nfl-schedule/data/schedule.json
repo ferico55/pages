@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-19T13:12:13.831168+00:00",
+  "last_updated": "2026-09-20T13:36:07.145101+00:00",
   "games": [
     {
       "id": "401873271",
@@ -1108,23 +1108,6 @@
       "away_record": "0-0"
     },
     {
-      "id": "401872932",
-      "week": 2,
-      "season_type": "regular",
-      "date_utc": "2026-09-18T00:15Z",
-      "status": "final",
-      "home_team": "Buffalo Bills",
-      "home_abbr": "BUF",
-      "away_team": "Detroit Lions",
-      "away_abbr": "DET",
-      "home_score": 41,
-      "away_score": 31,
-      "venue": "Highmark Stadium",
-      "is_favorite": false,
-      "home_record": "1-0",
-      "away_record": "1-0"
-    },
-    {
       "id": "401872933",
       "week": 2,
       "season_type": "regular",
@@ -1361,6 +1344,23 @@
       "is_favorite": false,
       "home_record": "1-0",
       "away_record": "0-1"
+    },
+    {
+      "id": "401872932",
+      "week": 2,
+      "season_type": "regular",
+      "date_utc": "2026-09-18T00:15Z",
+      "status": "final",
+      "home_team": "Buffalo Bills",
+      "home_abbr": "BUF",
+      "away_team": "Detroit Lions",
+      "away_abbr": "DET",
+      "home_score": 41,
+      "away_score": 31,
+      "venue": "Highmark Stadium",
+      "is_favorite": false,
+      "home_record": "1-0",
+      "away_record": "1-0"
     },
     {
       "id": "401872947",
