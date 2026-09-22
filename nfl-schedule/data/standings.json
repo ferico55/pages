@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-21T15:55:25.262460+00:00",
+  "last_updated": "2026-09-22T14:03:30.454153+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -207,9 +207,9 @@
               "team": "New York Giants",
               "abbr": "NYG",
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.5,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -349,8 +349,8 @@
               "is_eagles": false
             },
             {
-              "team": "Arizona Cardinals",
-              "abbr": "ARI",
+              "team": "Los Angeles Rams",
+              "abbr": "LAR",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -359,12 +359,12 @@
               "is_eagles": false
             },
             {
-              "team": "Los Angeles Rams",
-              "abbr": "LAR",
-              "wins": 0,
+              "team": "Arizona Cardinals",
+              "abbr": "ARI",
+              "wins": 1,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.5,
               "division_rank": 4,
               "is_eagles": false
             }
