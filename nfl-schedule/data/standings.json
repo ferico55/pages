@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-24T14:14:23.075858+00:00",
+  "last_updated": "2026-09-25T14:37:43.315428+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -74,8 +74,8 @@
               "is_eagles": false
             },
             {
-              "team": "Cleveland Browns",
-              "abbr": "CLE",
+              "team": "Pittsburgh Steelers",
+              "abbr": "PIT",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -84,8 +84,8 @@
               "is_eagles": false
             },
             {
-              "team": "Pittsburgh Steelers",
-              "abbr": "PIT",
+              "team": "Cleveland Browns",
+              "abbr": "CLE",
               "wins": 1,
               "losses": 1,
               "ties": 0,
@@ -272,9 +272,9 @@
               "team": "Green Bay Packers",
               "abbr": "GB",
               "wins": 1,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.33333334,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -304,18 +304,18 @@
               "is_eagles": false
             },
             {
-              "team": "Tampa Bay Buccaneers",
-              "abbr": "TB",
-              "wins": 0,
+              "team": "Atlanta Falcons",
+              "abbr": "ATL",
+              "wins": 1,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.33333334,
               "division_rank": 3,
               "is_eagles": false
             },
             {
-              "team": "Atlanta Falcons",
-              "abbr": "ATL",
+              "team": "Tampa Bay Buccaneers",
+              "abbr": "TB",
               "wins": 0,
               "losses": 2,
               "ties": 0,
