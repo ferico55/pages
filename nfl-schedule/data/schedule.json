@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-26T13:46:05.076587+00:00",
+  "last_updated": "2026-09-27T14:42:56.465168+00:00",
   "games": [
     {
       "id": "401873271",
@@ -1380,23 +1380,6 @@
       "away_record": "1-0"
     },
     {
-      "id": "401872948",
-      "week": 3,
-      "season_type": "regular",
-      "date_utc": "2026-09-25T00:15Z",
-      "status": "final",
-      "home_team": "Green Bay Packers",
-      "home_abbr": "GB",
-      "away_team": "Atlanta Falcons",
-      "away_abbr": "ATL",
-      "home_score": 14,
-      "away_score": 35,
-      "venue": "Lambeau Field",
-      "is_favorite": false,
-      "home_record": "1-1",
-      "away_record": "0-2"
-    },
-    {
       "id": "401872953",
       "week": 3,
       "season_type": "regular",
@@ -1633,6 +1616,23 @@
       "is_favorite": false,
       "home_record": "1-1",
       "away_record": "1-1"
+    },
+    {
+      "id": "401872948",
+      "week": 3,
+      "season_type": "regular",
+      "date_utc": "2026-09-25T00:15Z",
+      "status": "final",
+      "home_team": "Green Bay Packers",
+      "home_abbr": "GB",
+      "away_team": "Atlanta Falcons",
+      "away_abbr": "ATL",
+      "home_score": 14,
+      "away_score": 35,
+      "venue": "Lambeau Field",
+      "is_favorite": false,
+      "home_record": "1-1",
+      "away_record": "0-2"
     },
     {
       "id": "401872963",
