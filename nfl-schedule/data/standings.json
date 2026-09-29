@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-28T17:41:20.379597+00:00",
+  "last_updated": "2026-09-29T15:56:52.134438+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -74,8 +74,8 @@
               "is_eagles": false
             },
             {
-              "team": "Cincinnati Bengals",
-              "abbr": "CIN",
+              "team": "Cleveland Browns",
+              "abbr": "CLE",
               "wins": 2,
               "losses": 1,
               "ties": 0,
@@ -84,8 +84,8 @@
               "is_eagles": false
             },
             {
-              "team": "Cleveland Browns",
-              "abbr": "CLE",
+              "team": "Cincinnati Bengals",
+              "abbr": "CIN",
               "wins": 2,
               "losses": 1,
               "ties": 0,
@@ -119,8 +119,8 @@
               "is_eagles": false
             },
             {
-              "team": "Houston Texans",
-              "abbr": "HOU",
+              "team": "Tennessee Titans",
+              "abbr": "TEN",
               "wins": 0,
               "losses": 3,
               "ties": 0,
@@ -129,8 +129,8 @@
               "is_eagles": false
             },
             {
-              "team": "Tennessee Titans",
-              "abbr": "TEN",
+              "team": "Houston Texans",
+              "abbr": "HOU",
               "wins": 0,
               "losses": 3,
               "ties": 0,
@@ -197,9 +197,9 @@
               "team": "Philadelphia Eagles",
               "abbr": "PHI",
               "wins": 2,
-              "losses": 0,
+              "losses": 1,
               "ties": 0,
-              "win_pct": 1.0,
+              "win_pct": 0.6666667,
               "division_rank": 1,
               "is_eagles": true
             },
@@ -261,10 +261,10 @@
             {
               "team": "Chicago Bears",
               "abbr": "CHI",
-              "wins": 1,
+              "wins": 2,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.6666667,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -294,8 +294,8 @@
               "is_eagles": false
             },
             {
-              "team": "Atlanta Falcons",
-              "abbr": "ATL",
+              "team": "New Orleans Saints",
+              "abbr": "NO",
               "wins": 1,
               "losses": 2,
               "ties": 0,
@@ -304,8 +304,8 @@
               "is_eagles": false
             },
             {
-              "team": "New Orleans Saints",
-              "abbr": "NO",
+              "team": "Atlanta Falcons",
+              "abbr": "ATL",
               "wins": 1,
               "losses": 2,
               "ties": 0,
