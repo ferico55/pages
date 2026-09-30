@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-09-29T15:56:51.989040+00:00",
+  "last_updated": "2026-09-30T15:56:49.420334+00:00",
   "games": [
     {
       "id": "401873271",
@@ -1958,6 +1958,23 @@
       "away_record": "2-1"
     },
     {
+      "id": "401872990",
+      "week": 5,
+      "season_type": "regular",
+      "date_utc": "2026-10-11T17:00Z",
+      "status": "scheduled",
+      "home_team": "Green Bay Packers",
+      "home_abbr": "GB",
+      "away_team": "Chicago Bears",
+      "away_abbr": "CHI",
+      "home_score": null,
+      "away_score": null,
+      "venue": "Lambeau Field",
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "2-1"
+    },
+    {
       "id": "401872984",
       "week": 5,
       "season_type": "regular",
@@ -2091,23 +2108,6 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "0-3",
-      "away_record": "2-1"
-    },
-    {
-      "id": "401872990",
-      "week": 5,
-      "season_type": "regular",
-      "date_utc": "2026-10-11T20:25Z",
-      "status": "scheduled",
-      "home_team": "Green Bay Packers",
-      "home_abbr": "GB",
-      "away_team": "Chicago Bears",
-      "away_abbr": "CHI",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Lambeau Field",
-      "is_favorite": false,
-      "home_record": "1-2",
       "away_record": "2-1"
     },
     {
