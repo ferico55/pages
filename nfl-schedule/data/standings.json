@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-01T16:29:16.786090+00:00",
+  "last_updated": "2026-10-02T15:51:37.778892+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -54,12 +54,12 @@
           "name": "AFC North",
           "teams": [
             {
-              "team": "Pittsburgh Steelers",
-              "abbr": "PIT",
-              "wins": 2,
+              "team": "Cleveland Browns",
+              "abbr": "CLE",
+              "wins": 3,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.75,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -74,8 +74,8 @@
               "is_eagles": false
             },
             {
-              "team": "Cleveland Browns",
-              "abbr": "CLE",
+              "team": "Cincinnati Bengals",
+              "abbr": "CIN",
               "wins": 2,
               "losses": 1,
               "ties": 0,
@@ -84,12 +84,12 @@
               "is_eagles": false
             },
             {
-              "team": "Cincinnati Bengals",
-              "abbr": "CIN",
+              "team": "Pittsburgh Steelers",
+              "abbr": "PIT",
               "wins": 2,
-              "losses": 1,
+              "losses": 2,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.5,
               "division_rank": 4,
               "is_eagles": false
             }
