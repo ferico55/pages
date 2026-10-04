@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-03T14:20:05.039062+00:00",
+  "last_updated": "2026-10-04T14:48:55.364996+00:00",
   "races": [
     {
       "round": 1,
@@ -1451,7 +1451,7 @@
       "race_date_utc": "2026-10-04T07:00:00Z",
       "qualifying_date_utc": "2026-10-03T08:00:00Z",
       "sprint_date_utc": null,
-      "status": "scheduled",
+      "status": "completed",
       "winner": null,
       "winner_constructor": null,
       "verstappen_finish": null,

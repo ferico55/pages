@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-03T14:19:46.050875+00:00",
+  "last_updated": "2026-10-04T14:48:36.918640+00:00",
   "games": [
     {
       "id": "401873271",
@@ -1652,34 +1652,17 @@
       "away_record": "2-0"
     },
     {
-      "id": "401872964",
-      "week": 4,
-      "season_type": "regular",
-      "date_utc": "2026-10-02T00:15Z",
-      "status": "final",
-      "home_team": "Cleveland Browns",
-      "home_abbr": "CLE",
-      "away_team": "Pittsburgh Steelers",
-      "away_abbr": "PIT",
-      "home_score": 27,
-      "away_score": 24,
-      "venue": "Huntington Bank Field",
-      "is_favorite": false,
-      "home_record": "2-1",
-      "away_record": "2-1"
-    },
-    {
       "id": "401872965",
       "week": 4,
       "season_type": "regular",
       "date_utc": "2026-10-04T13:30Z",
-      "status": "scheduled",
+      "status": "in_progress",
       "home_team": "Washington Commanders",
       "home_abbr": "WSH",
       "away_team": "Indianapolis Colts",
       "away_abbr": "IND",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 6,
+      "away_score": 7,
       "venue": "Tottenham Hotspur Stadium",
       "is_favorite": false,
       "home_record": "1-2",
@@ -1904,6 +1887,23 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "1-2",
+      "away_record": "2-1"
+    },
+    {
+      "id": "401872964",
+      "week": 4,
+      "season_type": "regular",
+      "date_utc": "2026-10-02T00:15Z",
+      "status": "final",
+      "home_team": "Cleveland Browns",
+      "home_abbr": "CLE",
+      "away_team": "Pittsburgh Steelers",
+      "away_abbr": "PIT",
+      "home_score": 27,
+      "away_score": 24,
+      "venue": "Huntington Bank Field",
+      "is_favorite": false,
+      "home_record": "2-1",
       "away_record": "2-1"
     },
     {
