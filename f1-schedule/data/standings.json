@@ -1,13 +1,13 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-04T14:48:55.404468+00:00",
+  "last_updated": "2026-10-05T18:32:34.093739+00:00",
   "drivers": [
     {
       "position": 1,
       "driver": "Andrea Kimi Antonelli",
       "driver_code": "ANT",
       "constructor": "Mercedes",
-      "points": 302.0,
+      "points": 320.0,
       "wins": 8,
       "is_red_bull": false
     },
@@ -25,26 +25,26 @@
       "driver": "Lewis Hamilton",
       "driver_code": "HAM",
       "constructor": "Ferrari",
-      "points": 199.0,
+      "points": 214.0,
       "wins": 1,
       "is_red_bull": false
     },
     {
       "position": 4,
-      "driver": "Lando Norris",
-      "driver_code": "NOR",
-      "constructor": "McLaren",
-      "points": 186.0,
-      "wins": 2,
+      "driver": "Charles Leclerc",
+      "driver_code": "LEC",
+      "constructor": "Ferrari",
+      "points": 191.0,
+      "wins": 1,
       "is_red_bull": false
     },
     {
       "position": 5,
-      "driver": "Charles Leclerc",
-      "driver_code": "LEC",
-      "constructor": "Ferrari",
-      "points": 179.0,
-      "wins": 1,
+      "driver": "Lando Norris",
+      "driver_code": "NOR",
+      "constructor": "McLaren",
+      "points": 188.0,
+      "wins": 2,
       "is_red_bull": false
     },
     {
@@ -52,8 +52,8 @@
       "driver": "Max Verstappen",
       "driver_code": "VER",
       "constructor": "Red Bull",
-      "points": 163.0,
-      "wins": 0,
+      "points": 188.0,
+      "wins": 1,
       "is_red_bull": true
     },
     {
@@ -61,7 +61,7 @@
       "driver": "Oscar Piastri",
       "driver_code": "PIA",
       "constructor": "McLaren",
-      "points": 120.0,
+      "points": 128.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -70,7 +70,7 @@
       "driver": "Isack Hadjar",
       "driver_code": "HAD",
       "constructor": "Red Bull",
-      "points": 86.0,
+      "points": 96.0,
       "wins": 0,
       "is_red_bull": true
     },
@@ -79,7 +79,7 @@
       "driver": "Liam Lawson",
       "driver_code": "LAW",
       "constructor": "RB F1 Team",
-      "points": 59.0,
+      "points": 65.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -97,7 +97,7 @@
       "driver": "Arvid Lindblad",
       "driver_code": "LIN",
       "constructor": "RB F1 Team",
-      "points": 37.0,
+      "points": 38.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -148,6 +148,15 @@
     },
     {
       "position": 17,
+      "driver": "Fernando Alonso",
+      "driver_code": "ALO",
+      "constructor": "Aston Martin",
+      "points": 7.0,
+      "wins": 0,
+      "is_red_bull": false
+    },
+    {
+      "position": 18,
       "driver": "Carlos Sainz",
       "driver_code": "SAI",
       "constructor": "Williams",
@@ -156,20 +165,11 @@
       "is_red_bull": false
     },
     {
-      "position": 18,
+      "position": 19,
       "driver": "Alexander Albon",
       "driver_code": "ALB",
       "constructor": "Williams",
       "points": 5.0,
-      "wins": 0,
-      "is_red_bull": false
-    },
-    {
-      "position": 19,
-      "driver": "Fernando Alonso",
-      "driver_code": "ALO",
-      "constructor": "Aston Martin",
-      "points": 3.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -214,35 +214,35 @@
     {
       "position": 1,
       "constructor": "Mercedes",
-      "points": 538.0,
+      "points": 556.0,
       "wins": 11,
       "is_red_bull": false
     },
     {
       "position": 2,
       "constructor": "Ferrari",
-      "points": 378.0,
+      "points": 405.0,
       "wins": 2,
       "is_red_bull": false
     },
     {
       "position": 3,
       "constructor": "McLaren",
-      "points": 306.0,
+      "points": 316.0,
       "wins": 2,
       "is_red_bull": false
     },
     {
       "position": 4,
       "constructor": "Red Bull",
-      "points": 263.0,
-      "wins": 0,
+      "points": 298.0,
+      "wins": 1,
       "is_red_bull": true
     },
     {
       "position": 5,
       "constructor": "RB F1 Team",
-      "points": 83.0,
+      "points": 90.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -277,7 +277,7 @@
     {
       "position": 10,
       "constructor": "Aston Martin",
-      "points": 3.0,
+      "points": 7.0,
       "wins": 0,
       "is_red_bull": false
     },
