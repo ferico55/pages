@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-05T18:31:58.648546+00:00",
+  "last_updated": "2026-10-06T15:59:39.942308+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -296,10 +296,10 @@
             {
               "team": "Atlanta Falcons",
               "abbr": "ATL",
-              "wins": 1,
+              "wins": 2,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.5,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -307,9 +307,9 @@
               "team": "New Orleans Saints",
               "abbr": "NO",
               "wins": 1,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.25,
               "division_rank": 3,
               "is_eagles": false
             },

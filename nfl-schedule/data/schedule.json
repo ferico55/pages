@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-05T18:31:58.464872+00:00",
+  "last_updated": "2026-10-06T15:59:39.853516+00:00",
   "games": [
     {
       "id": "401873271",
@@ -135,7 +135,7 @@
       "away_score": 27,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "2-2"
     },
     {
@@ -254,7 +254,7 @@
       "away_score": 24,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "3-1"
     },
     {
@@ -425,7 +425,7 @@
       "venue": "Lucas Oil Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873291",
@@ -459,7 +459,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401873292",
@@ -663,7 +663,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "0-4",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873307",
@@ -731,7 +731,7 @@
       "venue": "AT&T Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401874102",
@@ -1652,23 +1652,6 @@
       "away_record": "2-0"
     },
     {
-      "id": "401872979",
-      "week": 4,
-      "season_type": "regular",
-      "date_utc": "2026-10-06T00:15Z",
-      "status": "scheduled",
-      "home_team": "New Orleans Saints",
-      "home_abbr": "NO",
-      "away_team": "Atlanta Falcons",
-      "away_abbr": "ATL",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Caesars Superdome",
-      "is_favorite": false,
-      "home_record": "1-2",
-      "away_record": "1-2"
-    },
-    {
       "id": "401872964",
       "week": 4,
       "season_type": "regular",
@@ -1924,6 +1907,23 @@
       "away_record": "2-1"
     },
     {
+      "id": "401872979",
+      "week": 4,
+      "season_type": "regular",
+      "date_utc": "2026-10-06T00:15Z",
+      "status": "final",
+      "home_team": "New Orleans Saints",
+      "home_abbr": "NO",
+      "away_team": "Atlanta Falcons",
+      "away_abbr": "ATL",
+      "home_score": 24,
+      "away_score": 45,
+      "venue": "Caesars Superdome",
+      "is_favorite": false,
+      "home_record": "1-2",
+      "away_record": "1-2"
+    },
+    {
       "id": "401872980",
       "week": 5,
       "season_type": "regular",
@@ -2039,7 +2039,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "4-0"
     },
     {
@@ -2158,7 +2158,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "3-1"
     },
     {
@@ -2226,7 +2226,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "3-1"
     },
     {
@@ -2295,7 +2295,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "3-1",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401872998",
@@ -2447,7 +2447,7 @@
       "away_score": null,
       "venue": "Stade de France",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "2-2"
     },
     {
@@ -2464,7 +2464,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "4-0"
     },
     {
@@ -2788,7 +2788,7 @@
       "venue": "Raymond James Stadium",
       "is_favorite": false,
       "home_record": "0-4",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873028",
@@ -2923,7 +2923,7 @@
       "away_score": null,
       "venue": "Santiago Bernab\u00e9u",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "2-2"
     },
     {
@@ -2991,7 +2991,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "3-1"
     },
     {
@@ -3195,7 +3195,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "4-0"
     },
     {
@@ -3280,7 +3280,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "2-2"
     },
     {
@@ -3434,7 +3434,7 @@
       "venue": "Soldier Field",
       "is_favorite": false,
       "home_record": "3-1",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401873073",
@@ -3706,7 +3706,7 @@
       "venue": "Paycor Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401873086",
@@ -3774,7 +3774,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "4-0",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873085",
@@ -3909,7 +3909,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "2-2"
     },
     {
@@ -3977,7 +3977,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "2-2"
     },
     {
@@ -4148,7 +4148,7 @@
       "venue": "Huntington Bank Field",
       "is_favorite": false,
       "home_record": "3-1",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873117",
@@ -4250,7 +4250,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401873116",
@@ -4505,7 +4505,7 @@
       "venue": "Raymond James Stadium",
       "is_favorite": false,
       "home_record": "0-4",
-      "away_record": "1-2"
+      "away_record": "1-3"
     },
     {
       "id": "401873127",
@@ -4522,7 +4522,7 @@
       "venue": "Northwest Stadium",
       "is_favorite": false,
       "home_record": "1-3",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873129",
@@ -4725,7 +4725,7 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "2-2",
       "away_record": "0-4"
     },
     {
@@ -4810,7 +4810,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "1-3"
     },
     {
@@ -5014,8 +5014,8 @@
       "away_score": null,
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
-      "home_record": "1-2",
-      "away_record": "1-2"
+      "home_record": "2-2",
+      "away_record": "1-3"
     },
     {
       "id": "401873162",
@@ -5354,7 +5354,7 @@
       "away_score": null,
       "venue": "Caesars Superdome",
       "is_favorite": false,
-      "home_record": "1-2",
+      "home_record": "1-3",
       "away_record": "0-4"
     },
     {
@@ -5423,7 +5423,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "1-2"
+      "away_record": "2-2"
     },
     {
       "id": "401873183",
