@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-08T16:33:33.693013+00:00",
+  "last_updated": "2026-10-09T16:17:06.409912+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -119,8 +119,8 @@
               "is_eagles": false
             },
             {
-              "team": "Houston Texans",
-              "abbr": "HOU",
+              "team": "Tennessee Titans",
+              "abbr": "TEN",
               "wins": 0,
               "losses": 4,
               "ties": 0,
@@ -129,8 +129,8 @@
               "is_eagles": false
             },
             {
-              "team": "Tennessee Titans",
-              "abbr": "TEN",
+              "team": "Houston Texans",
+              "abbr": "HOU",
               "wins": 0,
               "losses": 4,
               "ties": 0,
@@ -217,9 +217,9 @@
               "team": "Dallas Cowboys",
               "abbr": "DAL",
               "wins": 2,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.4,
               "division_rank": 3,
               "is_eagles": false
             },
@@ -316,10 +316,10 @@
             {
               "team": "Tampa Bay Buccaneers",
               "abbr": "TB",
-              "wins": 0,
+              "wins": 1,
               "losses": 4,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.2,
               "division_rank": 4,
               "is_eagles": false
             }

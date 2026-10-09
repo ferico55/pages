@@ -3,7 +3,8 @@
     "3day": true
   },
   "17-sprint": {
-    "3day": true
+    "3day": true,
+    "24h": true
   },
   "18-gp": {},
   "19-gp": {},
