@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-10T15:25:22.119523+00:00",
+  "last_updated": "2026-10-11T15:45:58.007247+00:00",
   "games": [
     {
       "id": "401873271",
@@ -1924,34 +1924,17 @@
       "away_record": "1-2"
     },
     {
-      "id": "401872980",
-      "week": 5,
-      "season_type": "regular",
-      "date_utc": "2026-10-09T00:15Z",
-      "status": "final",
-      "home_team": "Dallas Cowboys",
-      "home_abbr": "DAL",
-      "away_team": "Tampa Bay Buccaneers",
-      "away_abbr": "TB",
-      "home_score": 16,
-      "away_score": 24,
-      "venue": "AT&T Stadium",
-      "is_favorite": false,
-      "home_record": "2-2",
-      "away_record": "0-4"
-    },
-    {
       "id": "401872981",
       "week": 5,
       "season_type": "regular",
       "date_utc": "2026-10-11T13:30Z",
-      "status": "scheduled",
+      "status": "in_progress",
       "home_team": "Jacksonville Jaguars",
       "home_abbr": "JAX",
       "away_team": "Philadelphia Eagles",
       "away_abbr": "PHI",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 7,
+      "away_score": 14,
       "venue": "Tottenham Hotspur Stadium",
       "is_favorite": true,
       "home_record": "3-1",
@@ -2160,6 +2143,23 @@
       "is_favorite": false,
       "home_record": "2-2",
       "away_record": "3-1"
+    },
+    {
+      "id": "401872980",
+      "week": 5,
+      "season_type": "regular",
+      "date_utc": "2026-10-09T00:15Z",
+      "status": "final",
+      "home_team": "Dallas Cowboys",
+      "home_abbr": "DAL",
+      "away_team": "Tampa Bay Buccaneers",
+      "away_abbr": "TB",
+      "home_score": 16,
+      "away_score": 24,
+      "venue": "AT&T Stadium",
+      "is_favorite": false,
+      "home_record": "2-2",
+      "away_record": "0-4"
     },
     {
       "id": "401872994",
