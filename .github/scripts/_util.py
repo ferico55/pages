@@ -8,9 +8,24 @@ USER_AGENT = "nfl-f1-schedules-bot/1.0 (+https://github.com/ferico55/pages)"
 
 
 def fetch_json(url, timeout=15):
+    """GET `url` once and parse the body as JSON.
+
+    HTTP errors, including 429, propagate immediately. Callers must not retry
+    or back off: a failed run should exit so the next scheduled run can try
+    again, instead of burning Actions minutes inside one job.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        detail = ""
+        try:
+            detail = e.read().decode(errors="replace")[:200].strip()
+        except Exception:
+            detail = ""
+        suffix = f": {detail}" if detail else ""
+        raise RuntimeError(f"HTTP {e.code} for {url}{suffix}") from e
 
 
 def write_json_atomic(path, data):
