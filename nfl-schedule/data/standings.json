@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-12T19:06:28.004089+00:00",
+  "last_updated": "2026-10-13T16:58:51.397644+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -11,10 +11,10 @@
             {
               "team": "Buffalo Bills",
               "abbr": "BUF",
-              "wins": 3,
+              "wins": 4,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.75,
+              "win_pct": 0.8,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -259,8 +259,8 @@
               "is_eagles": false
             },
             {
-              "team": "Chicago Bears",
-              "abbr": "CHI",
+              "team": "Detroit Lions",
+              "abbr": "DET",
               "wins": 3,
               "losses": 2,
               "ties": 0,
@@ -269,8 +269,8 @@
               "is_eagles": false
             },
             {
-              "team": "Detroit Lions",
-              "abbr": "DET",
+              "team": "Chicago Bears",
+              "abbr": "CHI",
               "wins": 3,
               "losses": 2,
               "ties": 0,
@@ -352,9 +352,9 @@
               "team": "Los Angeles Rams",
               "abbr": "LAR",
               "wins": 2,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.4,
               "division_rank": 3,
               "is_eagles": false
             },
