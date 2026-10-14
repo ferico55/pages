@@ -17,9 +17,10 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # v4/v5 of these actions are Node 20, which runners now warn on.
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -28,6 +29,7 @@ jobs:
         continue-on-error: true
 
       - name: Fetch F1 data
+        id: fetch_f1
         run: python3 .github/scripts/fetch_f1.py
         continue-on-error: true
 
@@ -63,3 +65,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml --ref main
+
+      # continue-on-error above lets NFL data and reminders still commit when
+      # Jolpica fails. This step is what turns the run red. No extra API calls.
+      - name: Flag F1 fetch failure
+        if: always() && steps.fetch_f1.outcome == 'failure'
+        run: |
+          echo "::warning title=F1 data fetch failed::Jolpica fetch failed. Existing F1 data was left unchanged; the next scheduled run will fill the gap."
+          exit 1
