@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-15T14:12:38.523004+00:00",
+  "last_updated": "2026-10-16T13:59:59.615878+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -156,10 +156,10 @@
             {
               "team": "Denver Broncos",
               "abbr": "DEN",
-              "wins": 3,
+              "wins": 4,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.6,
+              "win_pct": 0.6666667,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -342,9 +342,9 @@
               "team": "Seattle Seahawks",
               "abbr": "SEA",
               "wins": 3,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.6,
+              "win_pct": 0.5,
               "division_rank": 2,
               "is_eagles": false
             },

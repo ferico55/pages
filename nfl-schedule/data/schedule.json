@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-15T14:12:38.459387+00:00",
+  "last_updated": "2026-10-16T13:59:59.362108+00:00",
   "games": [
     {
       "id": "401873271",
@@ -136,7 +136,7 @@
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
       "home_record": "2-3",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873276",
@@ -288,7 +288,7 @@
       "away_score": 17,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "2-3"
     },
     {
@@ -373,7 +373,7 @@
       "away_score": 33,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "3-2"
     },
     {
@@ -561,7 +561,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "0-5",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873298",
@@ -765,7 +765,7 @@
       "venue": "Arrowhead Stadium",
       "is_favorite": false,
       "home_record": "4-0",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873301",
@@ -798,7 +798,7 @@
       "away_score": 6,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "5-0"
     },
     {
@@ -2183,13 +2183,13 @@
       "week": 6,
       "season_type": "regular",
       "date_utc": "2026-10-16T00:15Z",
-      "status": "scheduled",
+      "status": "final",
       "home_team": "Denver Broncos",
       "home_abbr": "DEN",
       "away_team": "Seattle Seahawks",
       "away_abbr": "SEA",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 17,
+      "away_score": 14,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "3-2",
@@ -2584,7 +2584,7 @@
       "venue": "State Farm Stadium",
       "is_favorite": false,
       "home_record": "1-4",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873020",
@@ -2634,7 +2634,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "4-0"
     },
     {
@@ -2838,7 +2838,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "4-0"
     },
     {
@@ -2889,7 +2889,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "3-2"
     },
     {
@@ -3043,7 +3043,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873046",
@@ -3110,7 +3110,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "1-4"
     },
     {
@@ -3315,7 +3315,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873061",
@@ -3552,7 +3552,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "3-2"
     },
     {
@@ -3689,7 +3689,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873087",
@@ -3842,7 +3842,7 @@
       "venue": "Levi's Stadium",
       "is_favorite": false,
       "home_record": "5-0",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873093",
@@ -4028,7 +4028,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "0-5"
     },
     {
@@ -4113,7 +4113,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "2-3"
     },
     {
@@ -4199,7 +4199,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "2-3",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873114",
@@ -4334,7 +4334,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "3-1-1"
     },
     {
@@ -4403,7 +4403,7 @@
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
       "home_record": "2-3",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873126",
@@ -4590,7 +4590,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873136",
@@ -4691,7 +4691,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "4-1"
     },
     {
@@ -4708,7 +4708,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "3-3",
       "away_record": "2-3"
     },
     {
@@ -4947,7 +4947,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "3-2"
+      "away_record": "4-2"
     },
     {
       "id": "401873158",
@@ -5117,7 +5117,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "2-2",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873168",
@@ -5235,7 +5235,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "3-2",
+      "home_record": "4-2",
       "away_record": "0-5"
     },
     {
@@ -5304,7 +5304,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "2-3",
-      "away_record": "3-2"
+      "away_record": "3-3"
     },
     {
       "id": "401873173",
