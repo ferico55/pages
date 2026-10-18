@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-17T13:00:06.020369+00:00",
+  "last_updated": "2026-10-18T13:20:41.485657+00:00",
   "games": [
     {
       "id": "401873271",
@@ -2179,23 +2179,6 @@
       "away_record": "3-1"
     },
     {
-      "id": "401872995",
-      "week": 6,
-      "season_type": "regular",
-      "date_utc": "2026-10-16T00:15Z",
-      "status": "final",
-      "home_team": "Denver Broncos",
-      "home_abbr": "DEN",
-      "away_team": "Seattle Seahawks",
-      "away_abbr": "SEA",
-      "home_score": 17,
-      "away_score": 14,
-      "venue": "Empower Field at Mile High",
-      "is_favorite": false,
-      "home_record": "3-2",
-      "away_record": "3-2"
-    },
-    {
       "id": "401872996",
       "week": 6,
       "season_type": "regular",
@@ -2398,6 +2381,23 @@
       "is_favorite": false,
       "home_record": "3-2",
       "away_record": "2-3"
+    },
+    {
+      "id": "401872995",
+      "week": 6,
+      "season_type": "regular",
+      "date_utc": "2026-10-16T00:15Z",
+      "status": "final",
+      "home_team": "Denver Broncos",
+      "home_abbr": "DEN",
+      "away_team": "Seattle Seahawks",
+      "away_abbr": "SEA",
+      "home_score": 17,
+      "away_score": 14,
+      "venue": "Empower Field at Mile High",
+      "is_favorite": false,
+      "home_record": "3-2",
+      "away_record": "3-2"
     },
     {
       "id": "401873008",
