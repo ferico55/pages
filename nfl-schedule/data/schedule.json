@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-19T16:30:20.627675+00:00",
+  "last_updated": "2026-10-20T14:20:37.188823+00:00",
   "games": [
     {
       "id": "401873271",
@@ -118,7 +118,7 @@
       "away_score": 19,
       "venue": "Levi's Stadium",
       "is_favorite": false,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "1-5"
     },
     {
@@ -169,7 +169,7 @@
       "away_score": 7,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "0-5"
     },
     {
@@ -323,7 +323,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "0-6",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873288",
@@ -391,7 +391,7 @@
       "venue": "Ford Field",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873294",
@@ -612,7 +612,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "3-3",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873300",
@@ -646,7 +646,7 @@
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
       "home_record": "4-2",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873304",
@@ -2179,23 +2179,6 @@
       "away_record": "3-1"
     },
     {
-      "id": "401873008",
-      "week": 6,
-      "season_type": "regular",
-      "date_utc": "2026-10-20T00:15Z",
-      "status": "scheduled",
-      "home_team": "San Francisco 49ers",
-      "home_abbr": "SF",
-      "away_team": "Washington Commanders",
-      "away_abbr": "WSH",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Levi's Stadium",
-      "is_favorite": false,
-      "home_record": "5-0",
-      "away_record": "1-3-1"
-    },
-    {
       "id": "401872995",
       "week": 6,
       "season_type": "regular",
@@ -2417,6 +2400,23 @@
       "away_record": "2-3"
     },
     {
+      "id": "401873008",
+      "week": 6,
+      "season_type": "regular",
+      "date_utc": "2026-10-20T00:15Z",
+      "status": "final",
+      "home_team": "San Francisco 49ers",
+      "home_abbr": "SF",
+      "away_team": "Washington Commanders",
+      "away_abbr": "WSH",
+      "home_score": 23,
+      "away_score": 17,
+      "venue": "Levi's Stadium",
+      "is_favorite": false,
+      "home_record": "5-0",
+      "away_record": "1-3-1"
+    },
+    {
       "id": "401873010",
       "week": 7,
       "season_type": "regular",
@@ -2465,7 +2465,7 @@
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
       "home_record": "2-4",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873013",
@@ -2872,7 +2872,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": true,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "2-4"
     },
     {
@@ -3025,7 +3025,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "2-4"
     },
     {
@@ -3076,7 +3076,7 @@
       "away_score": null,
       "venue": "Levi's Stadium",
       "is_favorite": false,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "3-3"
     },
     {
@@ -3162,7 +3162,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "3-2-1",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873053",
@@ -3349,7 +3349,7 @@
       "venue": "AT&T Stadium",
       "is_favorite": false,
       "home_record": "2-4",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873064",
@@ -3586,7 +3586,7 @@
       "away_score": null,
       "venue": "Estadio Banorte",
       "is_favorite": false,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "5-0"
     },
     {
@@ -3603,7 +3603,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "3-2"
     },
     {
@@ -3825,7 +3825,7 @@
       "venue": "State Farm Stadium",
       "is_favorite": false,
       "home_record": "2-4",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873091",
@@ -3841,7 +3841,7 @@
       "away_score": null,
       "venue": "Levi's Stadium",
       "is_favorite": false,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "3-3"
     },
     {
@@ -3961,7 +3961,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-5",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873099",
@@ -3995,7 +3995,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "3-2-1",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873101",
@@ -4232,7 +4232,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "2-4"
     },
     {
@@ -4317,7 +4317,7 @@
       "away_score": null,
       "venue": "Levi's Stadium",
       "is_favorite": false,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "2-4"
     },
     {
@@ -4386,7 +4386,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "0-6",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873125",
@@ -4521,7 +4521,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "2-4"
     },
     {
@@ -4760,7 +4760,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "5-0",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873144",
@@ -4879,7 +4879,7 @@
       "venue": "Arrowhead Stadium",
       "is_favorite": false,
       "home_record": "5-0",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873154",
@@ -4998,7 +4998,7 @@
       "venue": "EverBank Stadium",
       "is_favorite": false,
       "home_record": "4-2",
-      "away_record": "1-3-1"
+      "away_record": "1-4-1"
     },
     {
       "id": "401873164",
@@ -5167,7 +5167,7 @@
       "away_score": null,
       "venue": "Levi's Stadium",
       "is_favorite": true,
-      "home_record": "5-0",
+      "home_record": "6-0",
       "away_record": "2-4"
     },
     {
@@ -5389,7 +5389,7 @@
       "venue": "State Farm Stadium",
       "is_favorite": false,
       "home_record": "2-4",
-      "away_record": "5-0"
+      "away_record": "6-0"
     },
     {
       "id": "401873175",
@@ -5405,7 +5405,7 @@
       "away_score": null,
       "venue": "Northwest Stadium",
       "is_favorite": false,
-      "home_record": "1-3-1",
+      "home_record": "1-4-1",
       "away_record": "2-4"
     },
     {

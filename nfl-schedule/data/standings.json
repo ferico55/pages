@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-19T16:30:20.706350+00:00",
+  "last_updated": "2026-10-20T14:20:37.261227+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -227,9 +227,9 @@
               "team": "Washington Commanders",
               "abbr": "WSH",
               "wins": 1,
-              "losses": 3,
+              "losses": 4,
               "ties": 1,
-              "win_pct": 0.3,
+              "win_pct": 0.25,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -331,7 +331,7 @@
             {
               "team": "San Francisco 49ers",
               "abbr": "SF",
-              "wins": 5,
+              "wins": 6,
               "losses": 0,
               "ties": 0,
               "win_pct": 1.0,
