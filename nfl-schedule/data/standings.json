@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-22T14:32:44.321657+00:00",
+  "last_updated": "2026-10-23T14:16:35.895230+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -22,9 +22,9 @@
               "team": "New England Patriots",
               "abbr": "NE",
               "wins": 4,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.5714286,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -249,18 +249,18 @@
               "is_eagles": false
             },
             {
-              "team": "Green Bay Packers",
-              "abbr": "GB",
-              "wins": 4,
+              "team": "Chicago Bears",
+              "abbr": "CHI",
+              "wins": 5,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.6666667,
+              "win_pct": 0.71428573,
               "division_rank": 2,
               "is_eagles": false
             },
             {
-              "team": "Chicago Bears",
-              "abbr": "CHI",
+              "team": "Green Bay Packers",
+              "abbr": "GB",
               "wins": 4,
               "losses": 2,
               "ties": 0,

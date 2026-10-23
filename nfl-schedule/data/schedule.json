@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-22T14:32:44.167720+00:00",
+  "last_updated": "2026-10-23T14:16:35.758328+00:00",
   "games": [
     {
       "id": "401873271",
@@ -67,7 +67,7 @@
       "away_score": 13,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "2-4"
     },
     {
@@ -203,7 +203,7 @@
       "away_score": 10,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "4-2"
     },
     {
@@ -493,7 +493,7 @@
       "venue": "Paycor Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873293",
@@ -509,7 +509,7 @@
       "away_score": 21,
       "venue": "Gillette Stadium",
       "is_favorite": true,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "2-4"
     },
     {
@@ -595,7 +595,7 @@
       "venue": "Huntington Bank Field",
       "is_favorite": false,
       "home_record": "4-2",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873641",
@@ -833,7 +833,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-5",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401872656",
@@ -2421,13 +2421,13 @@
       "week": 7,
       "season_type": "regular",
       "date_utc": "2026-10-23T00:15Z",
-      "status": "scheduled",
+      "status": "final",
       "home_team": "Chicago Bears",
       "home_abbr": "CHI",
       "away_team": "New England Patriots",
       "away_abbr": "NE",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 30,
+      "away_score": 24,
       "venue": "Soldier Field",
       "is_favorite": false,
       "home_record": "4-2",
@@ -2856,7 +2856,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "0-5",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873035",
@@ -2890,7 +2890,7 @@
       "venue": "Lumen Field",
       "is_favorite": false,
       "home_record": "3-3",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873037",
@@ -3093,7 +3093,7 @@
       "away_score": null,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "4-2"
     },
     {
@@ -3127,7 +3127,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "1-5"
     },
     {
@@ -3179,7 +3179,7 @@
       "venue": "FC Bayern Munich Stadium",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873058",
@@ -3433,7 +3433,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "2-4"
     },
     {
@@ -3638,7 +3638,7 @@
       "venue": "Ford Field",
       "is_favorite": false,
       "home_record": "3-2",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873080",
@@ -3859,7 +3859,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "0-6",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873094",
@@ -3926,7 +3926,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "4-2"
     },
     {
@@ -4079,7 +4079,7 @@
       "away_score": null,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "5-1"
     },
     {
@@ -4130,7 +4130,7 @@
       "away_score": null,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "5-0"
     },
     {
@@ -4182,7 +4182,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "0-5",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873112",
@@ -4420,7 +4420,7 @@
       "venue": "Highmark Stadium",
       "is_favorite": false,
       "home_record": "5-1",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873133",
@@ -4641,7 +4641,7 @@
       "venue": "Arrowhead Stadium",
       "is_favorite": false,
       "home_record": "5-0",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873140",
@@ -4674,7 +4674,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "4-2"
     },
     {
@@ -4828,7 +4828,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "2-4",
-      "away_record": "4-2"
+      "away_record": "4-3"
     },
     {
       "id": "401873149",
@@ -4946,7 +4946,7 @@
       "away_score": null,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "4-2"
     },
     {
@@ -5150,7 +5150,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "5-2",
       "away_record": "3-2"
     },
     {
@@ -5321,7 +5321,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "5-0",
-      "away_record": "4-2"
+      "away_record": "5-2"
     },
     {
       "id": "401873180",
@@ -5337,7 +5337,7 @@
       "away_score": null,
       "venue": "Gillette Stadium",
       "is_favorite": false,
-      "home_record": "4-2",
+      "home_record": "4-3",
       "away_record": "0-5"
     },
     {
