@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-26T16:10:10.445493+00:00",
+  "last_updated": "2026-10-27T15:24:01.007701+00:00",
   "games": [
     {
       "id": "401873271",
@@ -272,7 +272,7 @@
       "venue": "M&T Bank Stadium",
       "is_favorite": true,
       "home_record": "4-3",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873279",
@@ -289,7 +289,7 @@
       "venue": "Lumen Field",
       "is_favorite": false,
       "home_record": "4-3",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873286",
@@ -510,7 +510,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": true,
       "home_record": "4-3",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873296",
@@ -544,7 +544,7 @@
       "venue": "State Farm Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873297",
@@ -730,7 +730,7 @@
       "away_score": 27,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "2-5"
     },
     {
@@ -781,7 +781,7 @@
       "away_score": 30,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "4-2"
     },
     {
@@ -2417,23 +2417,6 @@
       "away_record": "1-3-1"
     },
     {
-      "id": "401873009",
-      "week": 7,
-      "season_type": "regular",
-      "date_utc": "2026-10-27T00:15Z",
-      "status": "scheduled",
-      "home_team": "Philadelphia Eagles",
-      "home_abbr": "PHI",
-      "away_team": "Dallas Cowboys",
-      "away_abbr": "DAL",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Lincoln Financial Field",
-      "is_favorite": true,
-      "home_record": "2-4",
-      "away_record": "2-4"
-    },
-    {
       "id": "401873010",
       "week": 7,
       "season_type": "regular",
@@ -2655,6 +2638,23 @@
       "away_record": "5-0"
     },
     {
+      "id": "401873009",
+      "week": 7,
+      "season_type": "regular",
+      "date_utc": "2026-10-27T00:15Z",
+      "status": "final",
+      "home_team": "Philadelphia Eagles",
+      "home_abbr": "PHI",
+      "away_team": "Dallas Cowboys",
+      "away_abbr": "DAL",
+      "home_score": 21,
+      "away_score": 38,
+      "venue": "Lincoln Financial Field",
+      "is_favorite": true,
+      "home_record": "2-4",
+      "away_record": "2-4"
+    },
+    {
       "id": "401873023",
       "week": 8,
       "season_type": "regular",
@@ -2719,7 +2719,7 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "2-5"
     },
     {
@@ -2873,7 +2873,7 @@
       "venue": "Northwest Stadium",
       "is_favorite": true,
       "home_record": "1-4-1",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873036",
@@ -2941,7 +2941,7 @@
       "venue": "Lucas Oil Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873045",
@@ -3008,7 +3008,7 @@
       "away_score": null,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "4-2-1"
     },
     {
@@ -3063,23 +3063,6 @@
       "away_record": "2-5"
     },
     {
-      "id": "401873047",
-      "week": 9,
-      "season_type": "regular",
-      "date_utc": "2026-11-08T21:05Z",
-      "status": "scheduled",
-      "home_team": "San Francisco 49ers",
-      "home_abbr": "SF",
-      "away_team": "Las Vegas Raiders",
-      "away_abbr": "LV",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Levi's Stadium",
-      "is_favorite": false,
-      "home_record": "6-1",
-      "away_record": "3-4"
-    },
-    {
       "id": "401873049",
       "week": 9,
       "season_type": "regular",
@@ -3095,6 +3078,23 @@
       "is_favorite": false,
       "home_record": "4-3",
       "away_record": "4-3"
+    },
+    {
+      "id": "401873047",
+      "week": 9,
+      "season_type": "regular",
+      "date_utc": "2026-11-08T21:25Z",
+      "status": "scheduled",
+      "home_team": "San Francisco 49ers",
+      "home_abbr": "SF",
+      "away_team": "Las Vegas Raiders",
+      "away_abbr": "LV",
+      "home_score": null,
+      "away_score": null,
+      "venue": "Levi's Stadium",
+      "is_favorite": false,
+      "home_record": "6-1",
+      "away_record": "3-4"
     },
     {
       "id": "401873048",
@@ -3348,7 +3348,7 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "6-1"
     },
     {
@@ -3450,7 +3450,7 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "1-6"
     },
     {
@@ -3569,7 +3569,7 @@
       "away_score": null,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "5-2"
     },
     {
@@ -3654,8 +3654,8 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": true,
-      "home_record": "2-4",
-      "away_record": "2-4"
+      "home_record": "3-4",
+      "away_record": "2-5"
     },
     {
       "id": "401873082",
@@ -4046,7 +4046,7 @@
       "venue": "State Farm Stadium",
       "is_favorite": true,
       "home_record": "2-5",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873106",
@@ -4114,7 +4114,7 @@
       "venue": "Lumen Field",
       "is_favorite": false,
       "home_record": "4-3",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873109",
@@ -4215,7 +4215,7 @@
       "away_score": null,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "2-5"
     },
     {
@@ -4402,7 +4402,7 @@
       "away_score": null,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "4-3"
     },
     {
@@ -4607,7 +4607,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "3-4",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873138",
@@ -4657,7 +4657,7 @@
       "away_score": null,
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
-      "home_record": "2-4",
+      "home_record": "2-5",
       "away_record": "2-5"
     },
     {
@@ -4895,7 +4895,7 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "4-2"
     },
     {
@@ -5048,7 +5048,7 @@
       "away_score": null,
       "venue": "AT&T Stadium",
       "is_favorite": false,
-      "home_record": "2-4",
+      "home_record": "3-4",
       "away_record": "4-2-1"
     },
     {
@@ -5168,7 +5168,7 @@
       "venue": "Levi's Stadium",
       "is_favorite": true,
       "home_record": "6-1",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873171",
@@ -5372,7 +5372,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": true,
       "home_record": "4-2-1",
-      "away_record": "2-4"
+      "away_record": "2-5"
     },
     {
       "id": "401873184",
@@ -5406,7 +5406,7 @@
       "venue": "Northwest Stadium",
       "is_favorite": false,
       "home_record": "1-4-1",
-      "away_record": "2-4"
+      "away_record": "3-4"
     },
     {
       "id": "401873172",
