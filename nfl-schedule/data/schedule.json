@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-29T16:12:52.495454+00:00",
+  "last_updated": "2026-10-30T15:58:37.454221+00:00",
   "games": [
     {
       "id": "401873271",
@@ -17,7 +17,7 @@
       "venue": "Tom Benson Hall of Fame Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873272",
@@ -51,7 +51,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873273",
@@ -187,7 +187,7 @@
       "venue": "Highmark Stadium",
       "is_favorite": false,
       "home_record": "5-1",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401874393",
@@ -357,7 +357,7 @@
       "venue": "EverBank Stadium",
       "is_favorite": false,
       "home_record": "4-2",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873613",
@@ -374,7 +374,7 @@
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873601",
@@ -679,7 +679,7 @@
       "away_score": 13,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "2-5"
     },
     {
@@ -747,7 +747,7 @@
       "away_score": 38,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "2-5"
     },
     {
@@ -2659,13 +2659,13 @@
       "week": 8,
       "season_type": "regular",
       "date_utc": "2026-10-30T00:15Z",
-      "status": "scheduled",
+      "status": "final",
       "home_team": "Green Bay Packers",
       "home_abbr": "GB",
       "away_team": "Carolina Panthers",
       "away_abbr": "CAR",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 27,
+      "away_score": 19,
       "venue": "Lambeau Field",
       "is_favorite": false,
       "home_record": "4-3",
@@ -3042,7 +3042,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "5-2"
     },
     {
@@ -3077,7 +3077,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": false,
       "home_record": "4-3",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873047",
@@ -3229,7 +3229,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "6-0"
     },
     {
@@ -3281,7 +3281,7 @@
       "venue": "Caesars Superdome",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873054",
@@ -3518,7 +3518,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "4-3"
     },
     {
@@ -3621,7 +3621,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "3-4",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873081",
@@ -3876,7 +3876,7 @@
       "venue": "Raymond James Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873096",
@@ -3978,7 +3978,7 @@
       "venue": "Caesars Superdome",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873095",
@@ -4063,7 +4063,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "6-0",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873105",
@@ -4249,7 +4249,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "2-5"
     },
     {
@@ -4351,7 +4351,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "5-1"
     },
     {
@@ -4436,7 +4436,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "1-5"
     },
     {
@@ -4538,7 +4538,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "4-2"
     },
     {
@@ -4675,7 +4675,7 @@
       "venue": "Soldier Field",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "4-3"
+      "away_record": "5-3"
     },
     {
       "id": "401873142",
@@ -4777,7 +4777,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "3-3"
+      "away_record": "3-4"
     },
     {
       "id": "401873150",
@@ -5116,7 +5116,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "4-3"
     },
     {
@@ -5184,7 +5184,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "2-5"
     },
     {
@@ -5252,7 +5252,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "5-3",
       "away_record": "4-2"
     },
     {
@@ -5422,7 +5422,7 @@
       "away_score": null,
       "venue": "Bank of America Stadium",
       "is_favorite": false,
-      "home_record": "3-3",
+      "home_record": "3-4",
       "away_record": "3-4"
     },
     {
