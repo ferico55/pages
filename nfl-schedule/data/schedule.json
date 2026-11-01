@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-10-31T15:22:27.830828+00:00",
+  "last_updated": "2026-11-01T16:05:20.587712+00:00",
   "games": [
     {
       "id": "401873271",
@@ -2655,23 +2655,6 @@
       "away_record": "2-4"
     },
     {
-      "id": "401873023",
-      "week": 8,
-      "season_type": "regular",
-      "date_utc": "2026-10-30T00:15Z",
-      "status": "final",
-      "home_team": "Green Bay Packers",
-      "home_abbr": "GB",
-      "away_team": "Carolina Panthers",
-      "away_abbr": "CAR",
-      "home_score": 27,
-      "away_score": 19,
-      "venue": "Lambeau Field",
-      "is_favorite": false,
-      "home_record": "4-3",
-      "away_record": "3-3"
-    },
-    {
       "id": "401873026",
       "week": 8,
       "season_type": "regular",
@@ -2874,6 +2857,23 @@
       "is_favorite": true,
       "home_record": "1-4-1",
       "away_record": "2-5"
+    },
+    {
+      "id": "401873023",
+      "week": 8,
+      "season_type": "regular",
+      "date_utc": "2026-10-30T00:15Z",
+      "status": "final",
+      "home_team": "Green Bay Packers",
+      "home_abbr": "GB",
+      "away_team": "Carolina Panthers",
+      "away_abbr": "CAR",
+      "home_score": 27,
+      "away_score": 19,
+      "venue": "Lambeau Field",
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "3-3"
     },
     {
       "id": "401873036",
