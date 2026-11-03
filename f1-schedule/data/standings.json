@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-02T19:32:42.874175+00:00",
+  "last_updated": "2026-11-03T17:07:16.003898+00:00",
   "drivers": [
     {
       "position": 1,
@@ -61,7 +61,7 @@
       "driver": "Oscar Piastri",
       "driver_code": "PIA",
       "constructor": "McLaren",
-      "points": 150.0,
+      "points": 144.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -70,7 +70,7 @@
       "driver": "Isack Hadjar",
       "driver_code": "HAD",
       "constructor": "Red Bull",
-      "points": 105.0,
+      "points": 107.0,
       "wins": 0,
       "is_red_bull": true
     },
@@ -79,7 +79,7 @@
       "driver": "Liam Lawson",
       "driver_code": "LAW",
       "constructor": "RB F1 Team",
-      "points": 79.0,
+      "points": 83.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -88,7 +88,7 @@
       "driver": "Pierre Gasly",
       "driver_code": "GAS",
       "constructor": "Alpine F1 Team",
-      "points": 43.0,
+      "points": 42.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -106,7 +106,7 @@
       "driver": "Franco Colapinto",
       "driver_code": "COL",
       "constructor": "Alpine F1 Team",
-      "points": 31.0,
+      "points": 27.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -121,19 +121,19 @@
     },
     {
       "position": 14,
-      "driver": "Nico H\u00fclkenberg",
-      "driver_code": "HUL",
+      "driver": "Gabriel Bortoleto",
+      "driver_code": "BOR",
       "constructor": "Audi",
-      "points": 13.0,
+      "points": 14.0,
       "wins": 0,
       "is_red_bull": false
     },
     {
       "position": 15,
-      "driver": "Gabriel Bortoleto",
-      "driver_code": "BOR",
+      "driver": "Nico H\u00fclkenberg",
+      "driver_code": "HUL",
       "constructor": "Audi",
-      "points": 10.0,
+      "points": 13.0,
       "wins": 0,
       "is_red_bull": false
     },
@@ -184,6 +184,15 @@
     },
     {
       "position": 21,
+      "driver": "Ryo Hirakawa",
+      "driver_code": "HIR",
+      "constructor": "Haas F1 Team",
+      "points": 1.0,
+      "wins": 0,
+      "is_red_bull": false
+    },
+    {
+      "position": 22,
       "driver": "Lance Stroll",
       "driver_code": "STR",
       "constructor": "Aston Martin",
@@ -192,19 +201,10 @@
       "is_red_bull": false
     },
     {
-      "position": 22,
+      "position": 23,
       "driver": "Valtteri Bottas",
       "driver_code": "BOT",
       "constructor": "Cadillac F1 Team",
-      "points": 0.0,
-      "wins": 0,
-      "is_red_bull": false
-    },
-    {
-      "position": 23,
-      "driver": "Ryo Hirakawa",
-      "driver_code": "HIR",
-      "constructor": "Haas F1 Team",
       "points": 0.0,
       "wins": 0,
       "is_red_bull": false
@@ -237,42 +237,42 @@
     {
       "position": 3,
       "constructor": "Red Bull",
-      "points": 380.0,
+      "points": 382.0,
       "wins": 3,
       "is_red_bull": true
     },
     {
       "position": 4,
       "constructor": "McLaren",
-      "points": 371.0,
+      "points": 365.0,
       "wins": 2,
       "is_red_bull": false
     },
     {
       "position": 5,
       "constructor": "RB F1 Team",
-      "points": 104.0,
+      "points": 108.0,
       "wins": 0,
       "is_red_bull": false
     },
     {
       "position": 6,
       "constructor": "Alpine F1 Team",
-      "points": 74.0,
+      "points": 69.0,
       "wins": 0,
       "is_red_bull": false
     },
     {
       "position": 7,
       "constructor": "Haas F1 Team",
-      "points": 30.0,
+      "points": 31.0,
       "wins": 0,
       "is_red_bull": false
     },
     {
       "position": 8,
       "constructor": "Audi",
-      "points": 23.0,
+      "points": 27.0,
       "wins": 0,
       "is_red_bull": false
     },

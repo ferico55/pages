@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-02T19:32:42.607753+00:00",
+  "last_updated": "2026-11-03T17:07:15.812690+00:00",
   "games": [
     {
       "id": "401873271",
@@ -203,7 +203,7 @@
       "away_score": 10,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "5-3"
     },
     {
@@ -288,7 +288,7 @@
       "away_score": 17,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "4-4",
       "away_record": "3-5"
     },
     {
@@ -493,7 +493,7 @@
       "venue": "Paycor Stadium",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873293",
@@ -561,7 +561,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-7",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873298",
@@ -765,7 +765,7 @@
       "venue": "Arrowhead Stadium",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873301",
@@ -833,7 +833,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-7",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401872656",
@@ -2655,23 +2655,6 @@
       "away_record": "2-4"
     },
     {
-      "id": "401873036",
-      "week": 8,
-      "season_type": "regular",
-      "date_utc": "2026-11-03T01:15Z",
-      "status": "scheduled",
-      "home_team": "Seattle Seahawks",
-      "home_abbr": "SEA",
-      "away_team": "Chicago Bears",
-      "away_abbr": "CHI",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Lumen Field",
-      "is_favorite": false,
-      "home_record": "4-3",
-      "away_record": "5-2"
-    },
-    {
       "id": "401873023",
       "week": 8,
       "season_type": "regular",
@@ -2893,6 +2876,23 @@
       "away_record": "2-5"
     },
     {
+      "id": "401873036",
+      "week": 8,
+      "season_type": "regular",
+      "date_utc": "2026-11-03T01:15Z",
+      "status": "final",
+      "home_team": "Seattle Seahawks",
+      "home_abbr": "SEA",
+      "away_team": "Chicago Bears",
+      "away_abbr": "CHI",
+      "home_score": 17,
+      "away_score": 34,
+      "venue": "Lumen Field",
+      "is_favorite": false,
+      "home_record": "4-3",
+      "away_record": "5-2"
+    },
+    {
       "id": "401873037",
       "week": 9,
       "season_type": "regular",
@@ -3110,7 +3110,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "4-4",
       "away_record": "3-5"
     },
     {
@@ -3127,7 +3127,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "3-5"
     },
     {
@@ -3315,7 +3315,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "4-4",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873061",
@@ -3433,7 +3433,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "2-5"
     },
     {
@@ -3638,7 +3638,7 @@
       "venue": "Ford Field",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873080",
@@ -3842,7 +3842,7 @@
       "venue": "Levi's Stadium",
       "is_favorite": false,
       "home_record": "6-1",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873093",
@@ -3926,7 +3926,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "5-2"
     },
     {
@@ -4113,7 +4113,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "4-4",
       "away_record": "3-5"
     },
     {
@@ -4182,7 +4182,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "1-6",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873112",
@@ -4334,7 +4334,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "4-4",
       "away_record": "4-2-1"
     },
     {
@@ -4403,7 +4403,7 @@
       "venue": "Lincoln Financial Field",
       "is_favorite": true,
       "home_record": "2-6",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873126",
@@ -4420,7 +4420,7 @@
       "venue": "Highmark Stadium",
       "is_favorite": false,
       "home_record": "6-1",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873133",
@@ -4674,7 +4674,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "5-3"
     },
     {
@@ -4708,7 +4708,7 @@
       "away_score": null,
       "venue": "Lumen Field",
       "is_favorite": false,
-      "home_record": "4-3",
+      "home_record": "4-4",
       "away_record": "4-4"
     },
     {
@@ -5117,7 +5117,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "3-4",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873168",
@@ -5150,7 +5150,7 @@
       "away_score": null,
       "venue": "Soldier Field",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "5-2"
     },
     {
@@ -5304,7 +5304,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "4-4",
-      "away_record": "4-3"
+      "away_record": "4-4"
     },
     {
       "id": "401873173",
@@ -5321,7 +5321,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "6-1",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873180",
