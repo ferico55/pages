@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-05T17:27:09.640919+00:00",
+  "last_updated": "2026-11-06T16:48:03.507776+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -87,9 +87,9 @@
               "team": "Baltimore Ravens",
               "abbr": "BAL",
               "wins": 4,
-              "losses": 4,
+              "losses": 5,
               "ties": 0,
-              "win_pct": 0.5,
+              "win_pct": 0.44444445,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -101,10 +101,10 @@
             {
               "team": "Jacksonville Jaguars",
               "abbr": "JAX",
-              "wins": 5,
+              "wins": 6,
               "losses": 2,
               "ties": 0,
-              "win_pct": 0.71428573,
+              "win_pct": 0.75,
               "division_rank": 1,
               "is_eagles": false
             },

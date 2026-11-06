@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-05T17:27:09.573466+00:00",
+  "last_updated": "2026-11-06T16:48:03.406883+00:00",
   "games": [
     {
       "id": "401873271",
@@ -255,7 +255,7 @@
       "venue": "Caesars Superdome",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873284",
@@ -271,7 +271,7 @@
       "away_score": 7,
       "venue": "M&T Bank Stadium",
       "is_favorite": true,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "2-6"
     },
     {
@@ -356,7 +356,7 @@
       "away_score": 34,
       "venue": "EverBank Stadium",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "3-4"
     },
     {
@@ -442,7 +442,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "6-1",
-      "away_record": "4-4"
+      "away_record": "4-5"
     },
     {
       "id": "401873290",
@@ -645,7 +645,7 @@
       "away_score": 3,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "2-4-1"
     },
     {
@@ -713,7 +713,7 @@
       "away_score": 0,
       "venue": "EverBank Stadium",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "3-5"
     },
     {
@@ -2897,13 +2897,13 @@
       "week": 9,
       "season_type": "regular",
       "date_utc": "2026-11-06T01:15Z",
-      "status": "scheduled",
+      "status": "final",
       "home_team": "Baltimore Ravens",
       "home_abbr": "BAL",
       "away_team": "Jacksonville Jaguars",
       "away_abbr": "JAX",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 10,
+      "away_score": 33,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
       "home_record": "4-4",
@@ -3247,7 +3247,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-7",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873059",
@@ -3382,7 +3382,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "0-7"
     },
     {
@@ -3502,7 +3502,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "4-2-1",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873068",
@@ -3519,7 +3519,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "3-4",
-      "away_record": "4-4"
+      "away_record": "4-5"
     },
     {
       "id": "401873074",
@@ -3791,7 +3791,7 @@
       "venue": "Reliant Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "4-4"
+      "away_record": "4-5"
     },
     {
       "id": "401873090",
@@ -3807,7 +3807,7 @@
       "away_score": null,
       "venue": "EverBank Stadium",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "1-7"
     },
     {
@@ -3927,7 +3927,7 @@
       "venue": "Soldier Field",
       "is_favorite": false,
       "home_record": "6-2",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873097",
@@ -4266,7 +4266,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "3-5"
     },
     {
@@ -4368,7 +4368,7 @@
       "away_score": null,
       "venue": "EverBank Stadium",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "6-2"
     },
     {
@@ -4488,7 +4488,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "6-2",
-      "away_record": "4-4"
+      "away_record": "4-5"
     },
     {
       "id": "401873134",
@@ -4556,7 +4556,7 @@
       "venue": "Reliant Stadium",
       "is_favorite": false,
       "home_record": "2-5",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873135",
@@ -4844,7 +4844,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "5-3"
     },
     {
@@ -4896,7 +4896,7 @@
       "venue": "AT&T Stadium",
       "is_favorite": false,
       "home_record": "3-5",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873155",
@@ -4930,7 +4930,7 @@
       "venue": "Paycor Stadium",
       "is_favorite": false,
       "home_record": "5-2",
-      "away_record": "4-4"
+      "away_record": "4-5"
     },
     {
       "id": "401873157",
@@ -4997,7 +4997,7 @@
       "away_score": null,
       "venue": "EverBank Stadium",
       "is_favorite": false,
-      "home_record": "5-2",
+      "home_record": "6-2",
       "away_record": "2-4-1"
     },
     {
@@ -5270,7 +5270,7 @@
       "venue": "Lucas Oil Stadium",
       "is_favorite": false,
       "home_record": "2-6",
-      "away_record": "5-2"
+      "away_record": "6-2"
     },
     {
       "id": "401873178",
@@ -5439,7 +5439,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-4",
+      "home_record": "4-5",
       "away_record": "6-2"
     },
     {
