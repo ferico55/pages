@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-07T15:42:36.245253+00:00",
+  "last_updated": "2026-11-08T16:01:18.598309+00:00",
   "games": [
     {
       "id": "401873271",
@@ -2893,34 +2893,17 @@
       "away_record": "5-2"
     },
     {
-      "id": "401873037",
-      "week": 9,
-      "season_type": "regular",
-      "date_utc": "2026-11-06T01:15Z",
-      "status": "final",
-      "home_team": "Baltimore Ravens",
-      "home_abbr": "BAL",
-      "away_team": "Jacksonville Jaguars",
-      "away_abbr": "JAX",
-      "home_score": 10,
-      "away_score": 33,
-      "venue": "M&T Bank Stadium",
-      "is_favorite": false,
-      "home_record": "4-4",
-      "away_record": "5-2"
-    },
-    {
       "id": "401873038",
       "week": 9,
       "season_type": "regular",
       "date_utc": "2026-11-08T14:30Z",
-      "status": "scheduled",
+      "status": "in_progress",
       "home_team": "Atlanta Falcons",
       "home_abbr": "ATL",
       "away_team": "Cincinnati Bengals",
       "away_abbr": "CIN",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 10,
+      "away_score": 24,
       "venue": "Santiago Bernab\u00e9u",
       "is_favorite": false,
       "home_record": "3-5",
@@ -3129,6 +3112,23 @@
       "is_favorite": false,
       "home_record": "6-2",
       "away_record": "3-5"
+    },
+    {
+      "id": "401873037",
+      "week": 9,
+      "season_type": "regular",
+      "date_utc": "2026-11-06T01:15Z",
+      "status": "final",
+      "home_team": "Baltimore Ravens",
+      "home_abbr": "BAL",
+      "away_team": "Jacksonville Jaguars",
+      "away_abbr": "JAX",
+      "home_score": 10,
+      "away_score": 33,
+      "venue": "M&T Bank Stadium",
+      "is_favorite": false,
+      "home_record": "4-4",
+      "away_record": "5-2"
     },
     {
       "id": "401873051",

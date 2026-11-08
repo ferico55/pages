@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-07T15:42:36.392877+00:00",
+  "last_updated": "2026-11-08T16:01:18.731247+00:00",
   "drivers": [
     {
       "position": 1,
@@ -214,6 +214,15 @@
       "driver": "Sergio P\u00e9rez",
       "driver_code": "PER",
       "constructor": "Cadillac F1 Team",
+      "points": 0.0,
+      "wins": 0,
+      "is_red_bull": false
+    },
+    {
+      "position": 25,
+      "driver": "Rafael Camara",
+      "driver_code": "",
+      "constructor": "Haas F1 Team",
       "points": 0.0,
       "wins": 0,
       "is_red_bull": false
