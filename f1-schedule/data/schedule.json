@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-08T16:01:18.731247+00:00",
+  "last_updated": "2026-11-09T19:52:23.128155+00:00",
   "races": [
     {
       "round": 1,
@@ -1835,11 +1835,92 @@
       "race_date_utc": "2026-11-08T17:00:00Z",
       "qualifying_date_utc": "2026-11-07T18:00:00Z",
       "sprint_date_utc": null,
-      "status": "scheduled",
-      "winner": null,
-      "winner_constructor": null,
-      "verstappen_finish": null,
-      "top10": []
+      "status": "completed",
+      "winner": "Lando Norris",
+      "winner_constructor": "McLaren",
+      "verstappen_finish": "2",
+      "top10": [
+        {
+          "position": "1",
+          "driver": "Lando Norris",
+          "driver_code": "NOR",
+          "constructor": "McLaren",
+          "points": 25.0,
+          "points_after": null
+        },
+        {
+          "position": "2",
+          "driver": "Max Verstappen",
+          "driver_code": "VER",
+          "constructor": "Red Bull",
+          "points": 18.0,
+          "points_after": null
+        },
+        {
+          "position": "3",
+          "driver": "Isack Hadjar",
+          "driver_code": "HAD",
+          "constructor": "Red Bull",
+          "points": 15.0,
+          "points_after": null
+        },
+        {
+          "position": "4",
+          "driver": "George Russell",
+          "driver_code": "RUS",
+          "constructor": "Mercedes",
+          "points": 12.0,
+          "points_after": null
+        },
+        {
+          "position": "5",
+          "driver": "Andrea Kimi Antonelli",
+          "driver_code": "ANT",
+          "constructor": "Mercedes",
+          "points": 10.0,
+          "points_after": null
+        },
+        {
+          "position": "6",
+          "driver": "Oscar Piastri",
+          "driver_code": "PIA",
+          "constructor": "McLaren",
+          "points": 8.0,
+          "points_after": null
+        },
+        {
+          "position": "7",
+          "driver": "Liam Lawson",
+          "driver_code": "LAW",
+          "constructor": "RB F1 Team",
+          "points": 6.0,
+          "points_after": null
+        },
+        {
+          "position": "8",
+          "driver": "Charles Leclerc",
+          "driver_code": "LEC",
+          "constructor": "Ferrari",
+          "points": 4.0,
+          "points_after": null
+        },
+        {
+          "position": "9",
+          "driver": "Lewis Hamilton",
+          "driver_code": "HAM",
+          "constructor": "Ferrari",
+          "points": 2.0,
+          "points_after": null
+        },
+        {
+          "position": "10",
+          "driver": "Nico H\u00fclkenberg",
+          "driver_code": "HUL",
+          "constructor": "Audi",
+          "points": 1.0,
+          "points_after": null
+        }
+      ]
     },
     {
       "round": 21,
