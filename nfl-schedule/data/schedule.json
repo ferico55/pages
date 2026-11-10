@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-09T19:52:22.917440+00:00",
+  "last_updated": "2026-11-10T17:05:50.273006+00:00",
   "games": [
     {
       "id": "401873271",
@@ -186,7 +186,7 @@
       "away_score": 14,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "3-5"
     },
     {
@@ -221,7 +221,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "5-2-1",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873283",
@@ -408,7 +408,7 @@
       "venue": "Huntington Bank Field",
       "is_favorite": false,
       "home_record": "5-4",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873295",
@@ -441,7 +441,7 @@
       "away_score": 13,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "4-5"
     },
     {
@@ -577,7 +577,7 @@
       "away_score": 27,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "6-2"
     },
     {
@@ -799,7 +799,7 @@
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "7-2",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873308",
@@ -2893,23 +2893,6 @@
       "away_record": "5-2"
     },
     {
-      "id": "401873051",
-      "week": 9,
-      "season_type": "regular",
-      "date_utc": "2026-11-10T01:15Z",
-      "status": "scheduled",
-      "home_team": "Minnesota Vikings",
-      "home_abbr": "MIN",
-      "away_team": "Buffalo Bills",
-      "away_abbr": "BUF",
-      "home_score": null,
-      "away_score": null,
-      "venue": "U.S. Bank Stadium",
-      "is_favorite": false,
-      "home_record": "6-1",
-      "away_record": "6-1"
-    },
-    {
       "id": "401873037",
       "week": 9,
       "season_type": "regular",
@@ -3148,6 +3131,23 @@
       "away_record": "3-5"
     },
     {
+      "id": "401873051",
+      "week": 9,
+      "season_type": "regular",
+      "date_utc": "2026-11-10T01:15Z",
+      "status": "final",
+      "home_team": "Minnesota Vikings",
+      "home_abbr": "MIN",
+      "away_team": "Buffalo Bills",
+      "away_abbr": "BUF",
+      "home_score": 6,
+      "away_score": 23,
+      "venue": "U.S. Bank Stadium",
+      "is_favorite": false,
+      "home_record": "6-1",
+      "away_record": "6-1"
+    },
+    {
       "id": "401873052",
       "week": 10,
       "season_type": "regular",
@@ -3230,7 +3230,7 @@
       "venue": "Lambeau Field",
       "is_favorite": false,
       "home_record": "6-3",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873057",
@@ -3298,7 +3298,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "2-7",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873062",
@@ -3416,7 +3416,7 @@
       "away_score": null,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "1-7"
     },
     {
@@ -3587,7 +3587,7 @@
       "venue": "Estadio Banorte",
       "is_favorite": false,
       "home_record": "7-1",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873078",
@@ -3671,7 +3671,7 @@
       "away_score": null,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "6-2"
     },
     {
@@ -3773,7 +3773,7 @@
       "away_score": null,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "3-6"
     },
     {
@@ -4062,7 +4062,7 @@
       "away_score": null,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "3-5"
     },
     {
@@ -4080,7 +4080,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": false,
       "home_record": "5-4",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873107",
@@ -4131,7 +4131,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": false,
       "home_record": "5-4",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873110",
@@ -4352,7 +4352,7 @@
       "venue": "Lambeau Field",
       "is_favorite": false,
       "home_record": "6-3",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873123",
@@ -4419,7 +4419,7 @@
       "away_score": null,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "7-2"
     },
     {
@@ -4623,7 +4623,7 @@
       "away_score": null,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "6-2"
     },
     {
@@ -4692,7 +4692,7 @@
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "7-2",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873143",
@@ -4759,7 +4759,7 @@
       "away_score": null,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "2-5-1"
     },
     {
@@ -5083,7 +5083,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "1-7",
-      "away_record": "6-1"
+      "away_record": "7-1"
     },
     {
       "id": "401873163",
@@ -5100,7 +5100,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "2-7",
-      "away_record": "6-1"
+      "away_record": "6-2"
     },
     {
       "id": "401873167",
@@ -5201,7 +5201,7 @@
       "away_score": null,
       "venue": "Highmark Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "7-1",
       "away_record": "2-7"
     },
     {
@@ -5320,7 +5320,7 @@
       "away_score": null,
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
-      "home_record": "6-1",
+      "home_record": "6-2",
       "away_record": "7-2"
     },
     {

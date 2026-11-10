@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-09T19:52:23.053955+00:00",
+  "last_updated": "2026-11-10T17:05:50.361486+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -11,10 +11,10 @@
             {
               "team": "Buffalo Bills",
               "abbr": "BUF",
-              "wins": 6,
+              "wins": 7,
               "losses": 1,
               "ties": 0,
-              "win_pct": 0.85714287,
+              "win_pct": 0.875,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -239,28 +239,28 @@
           "name": "NFC North",
           "teams": [
             {
-              "team": "Minnesota Vikings",
-              "abbr": "MIN",
-              "wins": 6,
-              "losses": 1,
-              "ties": 0,
-              "win_pct": 0.85714287,
-              "division_rank": 1,
-              "is_eagles": false
-            },
-            {
               "team": "Chicago Bears",
               "abbr": "CHI",
               "wins": 7,
               "losses": 2,
               "ties": 0,
               "win_pct": 0.7777778,
-              "division_rank": 2,
+              "division_rank": 1,
               "is_eagles": false
             },
             {
               "team": "Detroit Lions",
               "abbr": "DET",
+              "wins": 6,
+              "losses": 2,
+              "ties": 0,
+              "win_pct": 0.75,
+              "division_rank": 2,
+              "is_eagles": false
+            },
+            {
+              "team": "Minnesota Vikings",
+              "abbr": "MIN",
               "wins": 6,
               "losses": 2,
               "ties": 0,
