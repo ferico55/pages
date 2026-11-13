@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-12T17:37:40.516207+00:00",
+  "last_updated": "2026-11-13T17:15:00.863460+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -197,9 +197,9 @@
               "team": "New York Giants",
               "abbr": "NYG",
               "wins": 5,
-              "losses": 2,
+              "losses": 3,
               "ties": 1,
-              "win_pct": 0.6875,
+              "win_pct": 0.6111111,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -216,10 +216,10 @@
             {
               "team": "Washington Commanders",
               "abbr": "WSH",
-              "wins": 2,
+              "wins": 3,
               "losses": 5,
               "ties": 1,
-              "win_pct": 0.3125,
+              "win_pct": 0.3888889,
               "division_rank": 3,
               "is_eagles": false
             },
