@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-14T15:51:44.767565+00:00",
+  "last_updated": "2026-11-15T16:24:49.901760+00:00",
   "games": [
     {
       "id": "401873271",
@@ -3148,34 +3148,17 @@
       "away_record": "6-1"
     },
     {
-      "id": "401873052",
-      "week": 10,
-      "season_type": "regular",
-      "date_utc": "2026-11-13T01:15Z",
-      "status": "final",
-      "home_team": "New York Giants",
-      "home_abbr": "NYG",
-      "away_team": "Washington Commanders",
-      "away_abbr": "WSH",
-      "home_score": 21,
-      "away_score": 24,
-      "venue": "MetLife Stadium",
-      "is_favorite": false,
-      "home_record": "5-2-1",
-      "away_record": "2-5-1"
-    },
-    {
       "id": "401873053",
       "week": 10,
       "season_type": "regular",
       "date_utc": "2026-11-15T14:30Z",
-      "status": "scheduled",
+      "status": "in_progress",
       "home_team": "Detroit Lions",
       "home_abbr": "DET",
       "away_team": "New England Patriots",
       "away_abbr": "NE",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 21,
+      "away_score": 3,
       "venue": "FC Bayern Munich Stadium",
       "is_favorite": false,
       "home_record": "6-2",
@@ -3367,6 +3350,23 @@
       "is_favorite": false,
       "home_record": "6-2",
       "away_record": "6-2"
+    },
+    {
+      "id": "401873052",
+      "week": 10,
+      "season_type": "regular",
+      "date_utc": "2026-11-13T01:15Z",
+      "status": "final",
+      "home_team": "New York Giants",
+      "home_abbr": "NYG",
+      "away_team": "Washington Commanders",
+      "away_abbr": "WSH",
+      "home_score": 21,
+      "away_score": 24,
+      "venue": "MetLife Stadium",
+      "is_favorite": false,
+      "home_record": "5-2-1",
+      "away_record": "2-5-1"
     },
     {
       "id": "401873065",
