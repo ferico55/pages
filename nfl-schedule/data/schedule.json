@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-16T19:39:34.100120+00:00",
+  "last_updated": "2026-11-17T18:37:06.447973+00:00",
   "games": [
     {
       "id": "401873271",
@@ -102,7 +102,7 @@
       "venue": "Reliant Stadium",
       "is_favorite": false,
       "home_record": "3-6",
-      "away_record": "0-8"
+      "away_record": "1-8"
     },
     {
       "id": "401874392",
@@ -271,7 +271,7 @@
       "away_score": 7,
       "venue": "M&T Bank Stadium",
       "is_favorite": true,
-      "home_record": "4-5",
+      "home_record": "4-6",
       "away_record": "2-7"
     },
     {
@@ -322,7 +322,7 @@
       "away_score": 41,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "8-1"
     },
     {
@@ -442,7 +442,7 @@
       "venue": "U.S. Bank Stadium",
       "is_favorite": false,
       "home_record": "7-2",
-      "away_record": "4-5"
+      "away_record": "4-6"
     },
     {
       "id": "401873290",
@@ -628,7 +628,7 @@
       "away_score": 20,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "6-4"
     },
     {
@@ -645,7 +645,7 @@
       "away_score": 3,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-5",
+      "home_record": "4-6",
       "away_record": "3-5-1"
     },
     {
@@ -3148,23 +3148,6 @@
       "away_record": "6-1"
     },
     {
-      "id": "401873065",
-      "week": 10,
-      "season_type": "regular",
-      "date_utc": "2026-11-17T01:15Z",
-      "status": "scheduled",
-      "home_team": "Baltimore Ravens",
-      "home_abbr": "BAL",
-      "away_team": "Los Angeles Chargers",
-      "away_abbr": "LAC",
-      "home_score": null,
-      "away_score": null,
-      "venue": "M&T Bank Stadium",
-      "is_favorite": false,
-      "home_record": "4-5",
-      "away_record": "0-8"
-    },
-    {
       "id": "401873052",
       "week": 10,
       "season_type": "regular",
@@ -3386,6 +3369,23 @@
       "away_record": "6-2"
     },
     {
+      "id": "401873065",
+      "week": 10,
+      "season_type": "regular",
+      "date_utc": "2026-11-17T01:15Z",
+      "status": "final",
+      "home_team": "Baltimore Ravens",
+      "home_abbr": "BAL",
+      "away_team": "Los Angeles Chargers",
+      "away_abbr": "LAC",
+      "home_score": 20,
+      "away_score": 23,
+      "venue": "M&T Bank Stadium",
+      "is_favorite": false,
+      "home_record": "4-5",
+      "away_record": "0-8"
+    },
+    {
       "id": "401873066",
       "week": 11,
       "season_type": "regular",
@@ -3519,7 +3519,7 @@
       "venue": "Bank of America Stadium",
       "is_favorite": false,
       "home_record": "4-5",
-      "away_record": "4-5"
+      "away_record": "4-6"
     },
     {
       "id": "401873074",
@@ -3535,7 +3535,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "2-8"
     },
     {
@@ -3791,7 +3791,7 @@
       "venue": "Reliant Stadium",
       "is_favorite": false,
       "home_record": "3-6",
-      "away_record": "4-5"
+      "away_record": "4-6"
     },
     {
       "id": "401873090",
@@ -3858,7 +3858,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "5-5"
     },
     {
@@ -4012,7 +4012,7 @@
       "venue": "Raymond James Stadium",
       "is_favorite": false,
       "home_record": "3-6",
-      "away_record": "0-8"
+      "away_record": "1-8"
     },
     {
       "id": "401873103",
@@ -4266,7 +4266,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-5",
+      "home_record": "4-6",
       "away_record": "3-6"
     },
     {
@@ -4284,7 +4284,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "4-6",
-      "away_record": "0-8"
+      "away_record": "1-8"
     },
     {
       "id": "401873119",
@@ -4385,7 +4385,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "8-1"
     },
     {
@@ -4488,7 +4488,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "6-3",
-      "away_record": "4-5"
+      "away_record": "4-6"
     },
     {
       "id": "401873134",
@@ -4794,7 +4794,7 @@
       "venue": "Hard Rock Stadium",
       "is_favorite": false,
       "home_record": "1-8",
-      "away_record": "0-8"
+      "away_record": "1-8"
     },
     {
       "id": "401873148",
@@ -4844,7 +4844,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-5",
+      "home_record": "4-6",
       "away_record": "6-4"
     },
     {
@@ -4930,7 +4930,7 @@
       "venue": "Paycor Stadium",
       "is_favorite": false,
       "home_record": "7-2",
-      "away_record": "4-5"
+      "away_record": "4-6"
     },
     {
       "id": "401873157",
@@ -4963,7 +4963,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "0-8",
+      "home_record": "1-8",
       "away_record": "7-2"
     },
     {
@@ -5236,7 +5236,7 @@
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "7-2",
-      "away_record": "0-8"
+      "away_record": "1-8"
     },
     {
       "id": "401873176",
@@ -5439,7 +5439,7 @@
       "away_score": null,
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
-      "home_record": "4-5",
+      "home_record": "4-6",
       "away_record": "6-3"
     },
     {

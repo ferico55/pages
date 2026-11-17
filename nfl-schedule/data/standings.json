@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-16T19:39:34.152181+00:00",
+  "last_updated": "2026-11-17T18:37:06.542091+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -87,9 +87,9 @@
               "team": "Baltimore Ravens",
               "abbr": "BAL",
               "wins": 4,
-              "losses": 5,
+              "losses": 6,
               "ties": 0,
-              "win_pct": 0.44444445,
+              "win_pct": 0.4,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -176,10 +176,10 @@
             {
               "team": "Los Angeles Chargers",
               "abbr": "LAC",
-              "wins": 0,
+              "wins": 1,
               "losses": 8,
               "ties": 0,
-              "win_pct": 0.0,
+              "win_pct": 0.11111111,
               "division_rank": 4,
               "is_eagles": false
             }
