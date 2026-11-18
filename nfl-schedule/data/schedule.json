@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-17T18:37:06.447973+00:00",
+  "last_updated": "2026-11-18T18:08:42.689828+00:00",
   "games": [
     {
       "id": "401873271",
@@ -3709,23 +3709,6 @@
       "away_record": "3-6"
     },
     {
-      "id": "401873086",
-      "week": 12,
-      "season_type": "regular",
-      "date_utc": "2026-11-29T18:00Z",
-      "status": "scheduled",
-      "home_team": "Cleveland Browns",
-      "home_abbr": "CLE",
-      "away_team": "Las Vegas Raiders",
-      "away_abbr": "LV",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Huntington Bank Field",
-      "is_favorite": false,
-      "home_record": "6-4",
-      "away_record": "4-6"
-    },
-    {
       "id": "401873088",
       "week": 12,
       "season_type": "regular",
@@ -3777,6 +3760,23 @@
       "away_record": "3-7"
     },
     {
+      "id": "401873090",
+      "week": 12,
+      "season_type": "regular",
+      "date_utc": "2026-11-29T18:00Z",
+      "status": "scheduled",
+      "home_team": "Jacksonville Jaguars",
+      "home_abbr": "JAX",
+      "away_team": "Tennessee Titans",
+      "away_abbr": "TEN",
+      "home_score": null,
+      "away_score": null,
+      "venue": "EverBank Stadium",
+      "is_favorite": false,
+      "home_record": "7-2",
+      "away_record": "1-8"
+    },
+    {
       "id": "401873085",
       "week": 12,
       "season_type": "regular",
@@ -3794,21 +3794,21 @@
       "away_record": "4-6"
     },
     {
-      "id": "401873090",
+      "id": "401873093",
       "week": 12,
       "season_type": "regular",
       "date_utc": "2026-11-29T21:05Z",
       "status": "scheduled",
-      "home_team": "Jacksonville Jaguars",
-      "home_abbr": "JAX",
-      "away_team": "Tennessee Titans",
-      "away_abbr": "TEN",
+      "home_team": "Los Angeles Chargers",
+      "home_abbr": "LAC",
+      "away_team": "New England Patriots",
+      "away_abbr": "NE",
       "home_score": null,
       "away_score": null,
-      "venue": "EverBank Stadium",
+      "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "7-2",
-      "away_record": "1-8"
+      "home_record": "1-8",
+      "away_record": "5-5"
     },
     {
       "id": "401873092",
@@ -3845,21 +3845,21 @@
       "away_record": "6-4"
     },
     {
-      "id": "401873093",
+      "id": "401873086",
       "week": 12,
       "season_type": "regular",
       "date_utc": "2026-11-30T01:20Z",
       "status": "scheduled",
-      "home_team": "Los Angeles Chargers",
-      "home_abbr": "LAC",
-      "away_team": "New England Patriots",
-      "away_abbr": "NE",
+      "home_team": "Cleveland Browns",
+      "home_abbr": "CLE",
+      "away_team": "Las Vegas Raiders",
+      "away_abbr": "LV",
       "home_score": null,
       "away_score": null,
-      "venue": "SoFi Stadium",
+      "venue": "Huntington Bank Field",
       "is_favorite": false,
-      "home_record": "1-8",
-      "away_record": "5-5"
+      "home_record": "6-4",
+      "away_record": "4-6"
     },
     {
       "id": "401873094",
