@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-19T18:20:33.937371+00:00",
+  "last_updated": "2026-11-20T17:51:33.799857+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -111,10 +111,10 @@
             {
               "team": "Houston Texans",
               "abbr": "HOU",
-              "wins": 3,
+              "wins": 4,
               "losses": 6,
               "ties": 0,
-              "win_pct": 0.33333334,
+              "win_pct": 0.4,
               "division_rank": 2,
               "is_eagles": false
             },
@@ -122,9 +122,9 @@
               "team": "Indianapolis Colts",
               "abbr": "IND",
               "wins": 3,
-              "losses": 7,
+              "losses": 8,
               "ties": 0,
-              "win_pct": 0.3,
+              "win_pct": 0.27272728,
               "division_rank": 3,
               "is_eagles": false
             },
