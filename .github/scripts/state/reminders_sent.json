@@ -1,6 +1,7 @@
 {
   "21-gp": {
-    "3day": true
+    "3day": true,
+    "24h": true
   },
   "22-gp": {},
   "23-gp": {},
