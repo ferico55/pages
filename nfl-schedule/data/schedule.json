@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-21T16:49:18.202883+00:00",
+  "last_updated": "2026-11-22T17:12:20.795903+00:00",
   "games": [
     {
       "id": "401873271",
@@ -3386,23 +3386,6 @@
       "away_record": "0-8"
     },
     {
-      "id": "401873066",
-      "week": 11,
-      "season_type": "regular",
-      "date_utc": "2026-11-20T01:15Z",
-      "status": "final",
-      "home_team": "Houston Texans",
-      "home_abbr": "HOU",
-      "away_team": "Indianapolis Colts",
-      "away_abbr": "IND",
-      "home_score": 26,
-      "away_score": 3,
-      "venue": "Reliant Stadium",
-      "is_favorite": false,
-      "home_record": "3-6",
-      "away_record": "3-7"
-    },
-    {
       "id": "401873070",
       "week": 11,
       "season_type": "regular",
@@ -3588,6 +3571,23 @@
       "is_favorite": false,
       "home_record": "8-1",
       "away_record": "7-2"
+    },
+    {
+      "id": "401873066",
+      "week": 11,
+      "season_type": "regular",
+      "date_utc": "2026-11-20T01:15Z",
+      "status": "final",
+      "home_team": "Houston Texans",
+      "home_abbr": "HOU",
+      "away_team": "Indianapolis Colts",
+      "away_abbr": "IND",
+      "home_score": 26,
+      "away_score": 3,
+      "venue": "Reliant Stadium",
+      "is_favorite": false,
+      "home_record": "3-6",
+      "away_record": "3-7"
     },
     {
       "id": "401873078",
