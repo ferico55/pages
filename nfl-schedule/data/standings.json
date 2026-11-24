@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-23T21:29:18.566753+00:00",
+  "last_updated": "2026-11-24T20:12:09.525586+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -57,9 +57,9 @@
               "team": "Cincinnati Bengals",
               "abbr": "CIN",
               "wins": 7,
-              "losses": 2,
+              "losses": 3,
               "ties": 0,
-              "win_pct": 0.7777778,
+              "win_pct": 0.7,
               "division_rank": 1,
               "is_eagles": false
             },
@@ -216,10 +216,10 @@
             {
               "team": "Washington Commanders",
               "abbr": "WSH",
-              "wins": 3,
+              "wins": 4,
               "losses": 5,
               "ties": 1,
-              "win_pct": 0.3888889,
+              "win_pct": 0.45,
               "division_rank": 3,
               "is_eagles": false
             },
