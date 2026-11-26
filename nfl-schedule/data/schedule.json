@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-25T19:22:07.962460+00:00",
+  "last_updated": "2026-11-26T19:05:11.030225+00:00",
   "games": [
     {
       "id": "401873271",
@@ -51,7 +51,7 @@
       "venue": "Acrisure Stadium",
       "is_favorite": false,
       "home_record": "6-4",
-      "away_record": "6-4"
+      "away_record": "6-5"
     },
     {
       "id": "401873273",
@@ -238,7 +238,7 @@
       "venue": "Arrowhead Stadium",
       "is_favorite": false,
       "home_record": "8-2",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873281",
@@ -374,7 +374,7 @@
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
       "home_record": "8-2",
-      "away_record": "6-4"
+      "away_record": "6-5"
     },
     {
       "id": "401873601",
@@ -458,7 +458,7 @@
       "away_score": 0,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "3-7"
     },
     {
@@ -629,7 +629,7 @@
       "venue": "SoFi Stadium",
       "is_favorite": false,
       "home_record": "1-9",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873302",
@@ -747,7 +747,7 @@
       "away_score": 38,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "6-5",
       "away_record": "3-8"
     },
     {
@@ -3607,34 +3607,17 @@
       "away_record": "7-2"
     },
     {
-      "id": "401873079",
-      "week": 12,
-      "season_type": "regular",
-      "date_utc": "2026-11-26T01:00Z",
-      "status": "scheduled",
-      "home_team": "Los Angeles Rams",
-      "home_abbr": "LAR",
-      "away_team": "Green Bay Packers",
-      "away_abbr": "GB",
-      "home_score": null,
-      "away_score": null,
-      "venue": "SoFi Stadium",
-      "is_favorite": false,
-      "home_record": "6-4",
-      "away_record": "6-4"
-    },
-    {
       "id": "401873081",
       "week": 12,
       "season_type": "regular",
       "date_utc": "2026-11-26T18:00Z",
-      "status": "scheduled",
+      "status": "in_progress",
       "home_team": "Detroit Lions",
       "home_abbr": "DET",
       "away_team": "Chicago Bears",
       "away_abbr": "CHI",
-      "home_score": null,
-      "away_score": null,
+      "home_score": 10,
+      "away_score": 3,
       "venue": "Ford Field",
       "is_favorite": false,
       "home_record": "8-2",
@@ -3673,6 +3656,23 @@
       "is_favorite": false,
       "home_record": "9-1",
       "away_record": "8-2"
+    },
+    {
+      "id": "401873079",
+      "week": 12,
+      "season_type": "regular",
+      "date_utc": "2026-11-26T01:00Z",
+      "status": "final",
+      "home_team": "Los Angeles Rams",
+      "home_abbr": "LAR",
+      "away_team": "Green Bay Packers",
+      "away_abbr": "GB",
+      "home_score": 26,
+      "away_score": 13,
+      "venue": "SoFi Stadium",
+      "is_favorite": false,
+      "home_record": "6-4",
+      "away_record": "6-4"
     },
     {
       "id": "401873083",
@@ -3892,7 +3892,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "8-2"
     },
     {
@@ -3978,7 +3978,7 @@
       "venue": "Caesars Superdome",
       "is_favorite": false,
       "home_record": "3-7",
-      "away_record": "6-4"
+      "away_record": "6-5"
     },
     {
       "id": "401873095",
@@ -4318,7 +4318,7 @@
       "venue": "Levi's Stadium",
       "is_favorite": false,
       "home_record": "9-1",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873121",
@@ -4351,7 +4351,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "6-5",
       "away_record": "9-1"
     },
     {
@@ -4436,7 +4436,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "6-5",
       "away_record": "1-9"
     },
     {
@@ -4606,7 +4606,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "5-6"
     },
     {
@@ -4675,7 +4675,7 @@
       "venue": "Soldier Field",
       "is_favorite": false,
       "home_record": "8-2",
-      "away_record": "6-4"
+      "away_record": "6-5"
     },
     {
       "id": "401873142",
@@ -4709,7 +4709,7 @@
       "venue": "Lumen Field",
       "is_favorite": false,
       "home_record": "6-4",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873146",
@@ -4981,7 +4981,7 @@
       "venue": "Raymond James Stadium",
       "is_favorite": false,
       "home_record": "3-7",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873160",
@@ -5184,7 +5184,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "6-5",
       "away_record": "4-6"
     },
     {
@@ -5252,7 +5252,7 @@
       "away_score": null,
       "venue": "Lambeau Field",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "6-5",
       "away_record": "8-2"
     },
     {
@@ -5303,7 +5303,7 @@
       "away_score": null,
       "venue": "SoFi Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "6-4"
     },
     {

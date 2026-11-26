@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-25T19:22:08.025539+00:00",
+  "last_updated": "2026-11-26T19:05:11.084217+00:00",
   "conferences": [
     {
       "name": "American Football Conference",
@@ -272,9 +272,9 @@
               "team": "Green Bay Packers",
               "abbr": "GB",
               "wins": 6,
-              "losses": 4,
+              "losses": 5,
               "ties": 0,
-              "win_pct": 0.6,
+              "win_pct": 0.54545456,
               "division_rank": 4,
               "is_eagles": false
             }
@@ -339,18 +339,18 @@
               "is_eagles": false
             },
             {
-              "team": "Seattle Seahawks",
-              "abbr": "SEA",
-              "wins": 6,
+              "team": "Los Angeles Rams",
+              "abbr": "LAR",
+              "wins": 7,
               "losses": 4,
               "ties": 0,
-              "win_pct": 0.6,
+              "win_pct": 0.6363636,
               "division_rank": 2,
               "is_eagles": false
             },
             {
-              "team": "Los Angeles Rams",
-              "abbr": "LAR",
+              "team": "Seattle Seahawks",
+              "abbr": "SEA",
               "wins": 6,
               "losses": 4,
               "ties": 0,
