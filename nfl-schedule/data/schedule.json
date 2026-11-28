@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "last_updated": "2026-11-27T19:01:31.346409+00:00",
+  "last_updated": "2026-11-28T17:37:00.031793+00:00",
   "games": [
     {
       "id": "401873271",
@@ -50,7 +50,7 @@
       "away_score": 9,
       "venue": "Acrisure Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "6-5"
     },
     {
@@ -136,7 +136,7 @@
       "venue": "Mercedes-Benz Stadium",
       "is_favorite": false,
       "home_record": "3-7",
-      "away_record": "8-2"
+      "away_record": "8-3"
     },
     {
       "id": "401873276",
@@ -339,7 +339,7 @@
       "away_score": 17,
       "venue": "Acrisure Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "3-8"
     },
     {
@@ -373,7 +373,7 @@
       "away_score": 33,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "8-2",
+      "home_record": "8-3",
       "away_record": "6-5"
     },
     {
@@ -578,7 +578,7 @@
       "venue": "Highmark Stadium",
       "is_favorite": false,
       "home_record": "10-1",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873299",
@@ -798,7 +798,7 @@
       "away_score": 6,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "8-2",
+      "home_record": "8-3",
       "away_record": "7-3"
     },
     {
@@ -3607,23 +3607,6 @@
       "away_record": "7-2"
     },
     {
-      "id": "401873083",
-      "week": 12,
-      "season_type": "regular",
-      "date_utc": "2026-11-27T20:00Z",
-      "status": "scheduled",
-      "home_team": "Pittsburgh Steelers",
-      "home_abbr": "PIT",
-      "away_team": "Denver Broncos",
-      "away_abbr": "DEN",
-      "home_score": null,
-      "away_score": null,
-      "venue": "Acrisure Stadium",
-      "is_favorite": false,
-      "home_record": "6-4",
-      "away_record": "8-2"
-    },
-    {
       "id": "401873079",
       "week": 12,
       "season_type": "regular",
@@ -3689,6 +3672,23 @@
       "venue": "Highmark Stadium",
       "is_favorite": false,
       "home_record": "9-1",
+      "away_record": "8-2"
+    },
+    {
+      "id": "401873083",
+      "week": 12,
+      "season_type": "regular",
+      "date_utc": "2026-11-27T20:00Z",
+      "status": "final",
+      "home_team": "Pittsburgh Steelers",
+      "home_abbr": "PIT",
+      "away_team": "Denver Broncos",
+      "away_abbr": "DEN",
+      "home_score": 27,
+      "away_score": 5,
+      "venue": "Acrisure Stadium",
+      "is_favorite": false,
+      "home_record": "6-4",
       "away_record": "8-2"
     },
     {
@@ -4028,7 +4028,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "8-2",
+      "home_record": "8-3",
       "away_record": "1-9"
     },
     {
@@ -4096,7 +4096,7 @@
       "away_score": null,
       "venue": "Acrisure Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "4-6"
     },
     {
@@ -4199,7 +4199,7 @@
       "venue": "MetLife Stadium",
       "is_favorite": false,
       "home_record": "3-8",
-      "away_record": "8-2"
+      "away_record": "8-3"
     },
     {
       "id": "401873114",
@@ -4369,7 +4369,7 @@
       "venue": "EverBank Stadium",
       "is_favorite": false,
       "home_record": "7-3",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873124",
@@ -4487,7 +4487,7 @@
       "away_score": null,
       "venue": "Acrisure Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "4-7"
     },
     {
@@ -4590,7 +4590,7 @@
       "venue": "Allegiant Stadium",
       "is_favorite": false,
       "home_record": "4-7",
-      "away_record": "8-2"
+      "away_record": "8-3"
     },
     {
       "id": "401873136",
@@ -4691,7 +4691,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "8-2",
+      "home_record": "8-3",
       "away_record": "10-1"
     },
     {
@@ -4776,7 +4776,7 @@
       "away_score": null,
       "venue": "Acrisure Stadium",
       "is_favorite": false,
-      "home_record": "6-4",
+      "home_record": "7-4",
       "away_record": "5-5"
     },
     {
@@ -4947,7 +4947,7 @@
       "venue": "Gillette Stadium",
       "is_favorite": false,
       "home_record": "5-5",
-      "away_record": "8-2"
+      "away_record": "8-3"
     },
     {
       "id": "401873158",
@@ -5066,7 +5066,7 @@
       "venue": "Nissan Stadium",
       "is_favorite": false,
       "home_record": "1-9",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873161",
@@ -5235,7 +5235,7 @@
       "away_score": null,
       "venue": "Empower Field at Mile High",
       "is_favorite": false,
-      "home_record": "8-2",
+      "home_record": "8-3",
       "away_record": "1-9"
     },
     {
@@ -5440,7 +5440,7 @@
       "venue": "M&T Bank Stadium",
       "is_favorite": false,
       "home_record": "4-7",
-      "away_record": "6-4"
+      "away_record": "7-4"
     },
     {
       "id": "401873187",
